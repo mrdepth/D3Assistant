@@ -57,6 +57,9 @@
 		12FB061A15F781EF00AE78E4 /* EUOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB061315F781EF00AE78E4 /* EUOperation.m */; };
 		12FB061B15F781EF00AE78E4 /* EUOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB061515F781EF00AE78E4 /* EUOperationQueue.m */; };
 		12FB061C15F781EF00AE78E4 /* UIImageView+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB061815F781EF00AE78E4 /* UIImageView+URL.m */; };
+		12FB063215F78C7F00AE78E4 /* UIView+Nib.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB063115F78C7F00AE78E4 /* UIView+Nib.m */; };
+		12FB063515F78C9900AE78E4 /* ProfileHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB063415F78C9900AE78E4 /* ProfileHeaderView.m */; };
+		12FB063715F78CA800AE78E4 /* ProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12FB063615F78CA800AE78E4 /* ProfileHeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -129,6 +132,11 @@
 		12FB061515F781EF00AE78E4 /* EUOperationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EUOperationQueue.m; sourceTree = "<group>"; };
 		12FB061715F781EF00AE78E4 /* UIImageView+URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+URL.h"; sourceTree = "<group>"; };
 		12FB061815F781EF00AE78E4 /* UIImageView+URL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+URL.m"; sourceTree = "<group>"; };
+		12FB063015F78C7F00AE78E4 /* UIView+Nib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Nib.h"; sourceTree = "<group>"; };
+		12FB063115F78C7F00AE78E4 /* UIView+Nib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Nib.m"; sourceTree = "<group>"; };
+		12FB063315F78C9900AE78E4 /* ProfileHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileHeaderView.h; sourceTree = "<group>"; };
+		12FB063415F78C9900AE78E4 /* ProfileHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileHeaderView.m; sourceTree = "<group>"; };
+		12FB063615F78CA800AE78E4 /* ProfileHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileHeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,6 +292,8 @@
 			children = (
 				12FB05C815F780CB00AE78E4 /* UITableViewCell+Nib.h */,
 				12FB05C915F780CB00AE78E4 /* UITableViewCell+Nib.m */,
+				12FB063015F78C7F00AE78E4 /* UIView+Nib.h */,
+				12FB063115F78C7F00AE78E4 /* UIView+Nib.m */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -301,6 +311,7 @@
 			isa = PBXGroup;
 			children = (
 				12FB05FC15F7811200AE78E4 /* Cells */,
+				12FB062115F78C5400AE78E4 /* Views */,
 				12FB05F415F7810100AE78E4 /* ProfilesViewController.h */,
 				12FB05F515F7810100AE78E4 /* ProfilesViewController.m */,
 				12FB05F615F7810100AE78E4 /* ProfilesViewController.xib */,
@@ -338,6 +349,16 @@
 				12FB061815F781EF00AE78E4 /* UIImageView+URL.m */,
 			);
 			path = "UIImageView+URL";
+			sourceTree = "<group>";
+		};
+		12FB062115F78C5400AE78E4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				12FB063315F78C9900AE78E4 /* ProfileHeaderView.h */,
+				12FB063415F78C9900AE78E4 /* ProfileHeaderView.m */,
+				12FB063615F78CA800AE78E4 /* ProfileHeaderView.xib */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -422,6 +443,7 @@
 				12FB059115F780C200AE78E4 /* wizard1@2x.png in Resources */,
 				12FB05F815F7810100AE78E4 /* HeroCellView.xib in Resources */,
 				12FB05FA15F7810100AE78E4 /* ProfilesViewController.xib in Resources */,
+				12FB063715F78CA800AE78E4 /* ProfileHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +470,8 @@
 				12FB061A15F781EF00AE78E4 /* EUOperation.m in Sources */,
 				12FB061B15F781EF00AE78E4 /* EUOperationQueue.m in Sources */,
 				12FB061C15F781EF00AE78E4 /* UIImageView+URL.m in Sources */,
+				12FB063215F78C7F00AE78E4 /* UIView+Nib.m in Sources */,
+				12FB063515F78C9900AE78E4 /* ProfileHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,7 +10,9 @@
 #import "EUOperationQueue.h"
 #import "DiabloAPISession.h"
 #import "HeroCellView.h"
+#import "ProfileHeaderView.h"
 #import "UITableViewCell+Nib.h"
+#import "UIView+Nib.h"
 
 @interface ProfilesViewController ()
 @property (nonatomic, strong) NSDictionary* searchResults;
@@ -126,6 +128,17 @@
 */
 
 #pragma mark - Table view delegate
+
+- (UIView*) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+	ProfileHeaderView* view = [ProfileHeaderView viewWithNibName:@"ProfileHeaderView" bundle:nil];
+	NSDictionary* profile = tableView == self.searchDisplayController.searchResultsTableView ? self.searchResults : [self.profiles objectAtIndex:section];
+	view.battleTagLabel.text = [profile valueForKey:@"battleTag"];
+	return view;
+}
+
+- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+	return 30;
+}
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 	return 116;
