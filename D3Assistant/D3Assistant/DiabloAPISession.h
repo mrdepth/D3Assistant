@@ -22,5 +22,6 @@
 - (NSDictionary*) artisanInfoWithArtisanType:(NSString*) artisanType error:(NSError* __autoreleasing*) error;
 
 - (UIImage*) profileImageWithClass:(NSString*) className gender:(NSInteger) gender;
-- (NSURL*) itemImageURLWithItem:(NSString*) item;
+- (NSURL*) itemImageURLWithItem:(NSString*) item size:(NSString*) size;
+- (NSURL*) skillImageURLWithItem:(NSString*) skill size:(NSString*) size;
 @end

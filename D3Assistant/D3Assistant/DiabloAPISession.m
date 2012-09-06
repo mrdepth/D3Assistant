@@ -49,8 +49,12 @@
 	return nil;
 }
 
-- (NSURL*) itemImageURLWithItem:(NSString*) item {
-	return [NSURL URLWithString:[NSString stringWithFormat:@"http://us.media.blizzard.com/d3/icons/items/large/%@.png", item]];
+- (NSURL*) itemImageURLWithItem:(NSString*) item size:(NSString*) size {
+	return [NSURL URLWithString:[NSString stringWithFormat:@"http://us.media.blizzard.com/d3/icons/items/%@/%@.png", item, size]];
+}
+
+- (NSURL*) skillImageURLWithItem:(NSString*) item size:(NSString*) size {
+	return [NSURL URLWithString:[NSString stringWithFormat:@"http://us.media.blizzard.com/d3/icons/skills/%@/%@.png", item, size]];
 }
 
 #pragma mark - Private

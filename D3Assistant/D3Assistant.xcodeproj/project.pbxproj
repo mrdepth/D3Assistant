@@ -82,6 +82,16 @@
 		71B0AAC915F93BA80079F9B9 /* favoritesOn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71B0AAA015F93BA80079F9B9 /* favoritesOn@2x.png */; };
 		71B0AACA15F93BA80079F9B9 /* separator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71B0AAA115F93BA80079F9B9 /* separator@2x.png */; };
 		71B0AACB15F93BA80079F9B9 /* skull@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71B0AAA215F93BA80079F9B9 /* skull@2x.png */; };
+		71BF0B9D15F961D900CDEA4A /* backgroundWizard1.png in Resources */ = {isa = PBXBuildFile; fileRef = 71BF0B9C15F961D900CDEA4A /* backgroundWizard1.png */; };
+		71BF0BA115F9624600CDEA4A /* GearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BF0B9F15F9624600CDEA4A /* GearViewController.m */; };
+		71BF0BA215F9624600CDEA4A /* GearViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71BF0BA015F9624600CDEA4A /* GearViewController.xib */; };
+		71BF0BA915F9684D00CDEA4A /* blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 71BF0BA415F9684D00CDEA4A /* blue.png */; };
+		71BF0BAA15F9684D00CDEA4A /* brown.png in Resources */ = {isa = PBXBuildFile; fileRef = 71BF0BA515F9684D00CDEA4A /* brown.png */; };
+		71BF0BAB15F9684D00CDEA4A /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = 71BF0BA615F9684D00CDEA4A /* green.png */; };
+		71BF0BAC15F9684D00CDEA4A /* orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 71BF0BA715F9684D00CDEA4A /* orange.png */; };
+		71BF0BAD15F9684D00CDEA4A /* yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 71BF0BA815F9684D00CDEA4A /* yellow.png */; };
+		71BF0BB015F9686F00CDEA4A /* GearView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BF0BAF15F9686F00CDEA4A /* GearView.m */; };
+		71BF0BB215F96D9400CDEA4A /* socket.png in Resources */ = {isa = PBXBuildFile; fileRef = 71BF0BB115F96D9400CDEA4A /* socket.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -188,6 +198,18 @@
 		71B0AAA015F93BA80079F9B9 /* favoritesOn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favoritesOn@2x.png"; sourceTree = "<group>"; };
 		71B0AAA115F93BA80079F9B9 /* separator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "separator@2x.png"; sourceTree = "<group>"; };
 		71B0AAA215F93BA80079F9B9 /* skull@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "skull@2x.png"; sourceTree = "<group>"; };
+		71BF0B9C15F961D900CDEA4A /* backgroundWizard1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundWizard1.png; sourceTree = "<group>"; };
+		71BF0B9E15F9624600CDEA4A /* GearViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GearViewController.h; sourceTree = "<group>"; };
+		71BF0B9F15F9624600CDEA4A /* GearViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GearViewController.m; sourceTree = "<group>"; };
+		71BF0BA015F9624600CDEA4A /* GearViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GearViewController.xib; sourceTree = "<group>"; };
+		71BF0BA415F9684D00CDEA4A /* blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue.png; sourceTree = "<group>"; };
+		71BF0BA515F9684D00CDEA4A /* brown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brown.png; sourceTree = "<group>"; };
+		71BF0BA615F9684D00CDEA4A /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
+		71BF0BA715F9684D00CDEA4A /* orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orange.png; sourceTree = "<group>"; };
+		71BF0BA815F9684D00CDEA4A /* yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow.png; sourceTree = "<group>"; };
+		71BF0BAE15F9686F00CDEA4A /* GearView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GearView.h; sourceTree = "<group>"; };
+		71BF0BAF15F9686F00CDEA4A /* GearView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GearView.m; sourceTree = "<group>"; };
+		71BF0BB115F96D9400CDEA4A /* socket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = socket.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +275,7 @@
 				12FB05FB15F7810700AE78E4 /* ProfilesViewController */,
 				124C68FC15F88F5800353EFB /* ProgressionView */,
 				12FB054B15F7806700AE78E4 /* AppDelegate.h */,
+				71BF0B9A15F961C500CDEA4A /* GearViewController */,
 				12FB054C15F7806700AE78E4 /* AppDelegate.m */,
 				12FB054315F7806700AE78E4 /* Supporting Files */,
 			);
@@ -398,6 +421,13 @@
 		71B0AA7815F93BA80079F9B9 /* 1x */ = {
 			isa = PBXGroup;
 			children = (
+				71BF0BB115F96D9400CDEA4A /* socket.png */,
+				71BF0BA415F9684D00CDEA4A /* blue.png */,
+				71BF0BA515F9684D00CDEA4A /* brown.png */,
+				71BF0BA615F9684D00CDEA4A /* green.png */,
+				71BF0BA715F9684D00CDEA4A /* orange.png */,
+				71BF0BA815F9684D00CDEA4A /* yellow.png */,
+				71BF0B9C15F961D900CDEA4A /* backgroundWizard1.png */,
 				71B0AA7915F93BA80079F9B9 /* background.png */,
 				71B0AA7A15F93BA80079F9B9 /* bar.png */,
 				71B0AA7B15F93BA80079F9B9 /* barbarian0.png */,
@@ -448,6 +478,26 @@
 				71B0AAA215F93BA80079F9B9 /* skull@2x.png */,
 			);
 			path = 2x;
+			sourceTree = "<group>";
+		};
+		71BF0B9A15F961C500CDEA4A /* GearViewController */ = {
+			isa = PBXGroup;
+			children = (
+				71BF0BA315F9672900CDEA4A /* GearView */,
+				71BF0B9E15F9624600CDEA4A /* GearViewController.h */,
+				71BF0B9F15F9624600CDEA4A /* GearViewController.m */,
+				71BF0BA015F9624600CDEA4A /* GearViewController.xib */,
+			);
+			name = GearViewController;
+			sourceTree = "<group>";
+		};
+		71BF0BA315F9672900CDEA4A /* GearView */ = {
+			isa = PBXGroup;
+			children = (
+				71BF0BAE15F9686F00CDEA4A /* GearView.h */,
+				71BF0BAF15F9686F00CDEA4A /* GearView.m */,
+			);
+			name = GearView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -547,6 +597,14 @@
 				71B0AAC915F93BA80079F9B9 /* favoritesOn@2x.png in Resources */,
 				71B0AACA15F93BA80079F9B9 /* separator@2x.png in Resources */,
 				71B0AACB15F93BA80079F9B9 /* skull@2x.png in Resources */,
+				71BF0B9D15F961D900CDEA4A /* backgroundWizard1.png in Resources */,
+				71BF0BA215F9624600CDEA4A /* GearViewController.xib in Resources */,
+				71BF0BA915F9684D00CDEA4A /* blue.png in Resources */,
+				71BF0BAA15F9684D00CDEA4A /* brown.png in Resources */,
+				71BF0BAB15F9684D00CDEA4A /* green.png in Resources */,
+				71BF0BAC15F9684D00CDEA4A /* orange.png in Resources */,
+				71BF0BAD15F9684D00CDEA4A /* yellow.png in Resources */,
+				71BF0BB215F96D9400CDEA4A /* socket.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,6 +640,8 @@
 				71B0AA1D15F924EA0079F9B9 /* NSDictionary+DeepMutableCopy.m in Sources */,
 				71B0AA2015F925F20079F9B9 /* NSArray+DeepMutableCopy.m in Sources */,
 				71B0AA2715F934F40079F9B9 /* UIColor+NSNumber.m in Sources */,
+				71BF0BA115F9624600CDEA4A /* GearViewController.m in Sources */,
+				71BF0BB015F9686F00CDEA4A /* GearView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
