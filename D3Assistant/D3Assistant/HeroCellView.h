@@ -16,5 +16,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *levelLabel;
 @property (weak, nonatomic) IBOutlet UILabel *paragonLevelLabel;
 @property (weak, nonatomic) IBOutlet UILabel *deadLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *skullImageView;
 
 @end

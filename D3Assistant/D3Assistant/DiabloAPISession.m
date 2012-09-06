@@ -26,7 +26,7 @@
 }
 
 - (NSDictionary*) careerProfileWithBattleTag:(NSString*) battleTag error:(NSError* __autoreleasing*) error {
-	return [self sendRequestWithPath:[NSString stringWithFormat:@"profile/%@/", [battleTag stringByReplacingOccurrencesOfString:@"#" withString:@"-"]] error:error];
+	return [self sendRequestWithPath:[NSString stringWithFormat:@"profile/%@/", [battleTag validBattleTagURLString]] error:error];
 }
 
 - (NSDictionary*) heroProfileWithBattleTag:(NSString*) battleTag heroID:(NSInteger) heroID error:(NSError* __autoreleasing*) error {

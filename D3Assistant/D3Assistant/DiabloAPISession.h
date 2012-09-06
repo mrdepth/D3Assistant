@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NSString+D3API.h"
+#import "D3Utility.h"
 
 @interface DiabloAPISession : NSObject
 @property (nonatomic, strong) NSString* host;

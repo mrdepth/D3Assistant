@@ -1,22 +1,16 @@
 //
-//  HeroCellView.m
+//  CareerCellView.m
 //  D3Assistant
 //
-//  Created by Artem Shimanski on 05.09.12.
+//  Created by Artem Shimanski on 06.09.12.
 //  Copyright (c) 2012 Artem Shimanski. All rights reserved.
 //
 
-#import "HeroCellView.h"
+#import "CareerCellView.h"
 
-@implementation HeroCellView
-@synthesize avatarImageView;
-@synthesize frameImageView;
-@synthesize nameLabels;
-@synthesize classLabel;
-@synthesize levelLabel;
-@synthesize paragonLevelLabel;
-@synthesize deadLabel;
-@synthesize skullImageView;
+@implementation CareerCellView
+@synthesize progressionSCView;
+@synthesize progressionHCView;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

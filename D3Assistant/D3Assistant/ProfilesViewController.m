@@ -10,40 +10,34 @@
 #import "EUOperationQueue.h"
 #import "DiabloAPISession.h"
 #import "HeroCellView.h"
-#import "ProfileHeaderView.h"
 #import "UITableViewCell+Nib.h"
 #import "UIView+Nib.h"
+#import "ProgressionView.h"
+#import "CareerCellView.h"
 
 @interface ProfilesViewController ()
-@property (nonatomic, strong) NSDictionary* searchResults;
+@property (nonatomic, strong) NSString* host;
+@property (nonatomic, strong) NSMutableArray* searchResults;
 @property (nonatomic, strong) NSMutableArray* profiles;
 @end
 
 @implementation ProfilesViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+	self.profiles = [NSMutableArray array];
+	self.host = @"http://eu.battle.net";
+	
+//	ProgressionView* v = [[ProgressionView alloc] initWithFrame:CGRectMake(10, 10, 290, 27)];
+//	v.progression = 0.5;
+//	[self.view addSubview:v];
 }
 
 - (void)viewDidUnload
 {
+	[self setTableView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -58,34 +52,67 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return tableView == self.searchDisplayController.searchResultsTableView ? (self.searchResults ? 1 : 0) : self.profiles.count;
+    return tableView == self.searchDisplayController.searchResultsTableView ? (self.searchResults ? [self.searchResults count] : 0) : self.profiles.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return tableView == self.searchDisplayController.searchResultsTableView ? [[self.searchResults valueForKey:@"heroes"] count] : [[[self.profiles objectAtIndex:section] valueForKey:@"heroes"] count];
+	NSDictionary* profile = tableView == self.searchDisplayController.searchResultsTableView ? [self.searchResults objectAtIndex:section] : [self.profiles objectAtIndex:section];
+	return [[profile valueForKey:@"heroes"] count] + [[profile valueForKey:@"fallenHeroes"] count] + 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"HeroCellView";
-    HeroCellView *cell = (HeroCellView*) [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (!cell)
-		cell = [HeroCellView cellWithNibName:@"HeroCellView" bundle:nil reuseIdentifier:CellIdentifier];
-	NSDictionary* profile = tableView == self.searchDisplayController.searchResultsTableView ? self.searchResults : [self.profiles objectAtIndex:indexPath.section];
-	NSDictionary* hero = [[profile valueForKey:@"heroes"] objectAtIndex:indexPath.row];
-	
-	for (UILabel* label in cell.nameLabels)
-		label.text = [hero valueForKey:@"name"];
-	
-	cell.levelLabel.text = [NSString stringWithFormat:@"%@", [hero valueForKey:@"level"]];
-	cell.paragonLevelLabel.text = [NSString stringWithFormat:@"%@", [hero valueForKey:@"paragonLevel"]];
-	cell.classLabel.text = [NSString stringWithFormat:@"%@ %@", [[hero valueForKey:@"class"] capitalizedString], [[hero valueForKey:@"hardcore"] boolValue] ? @"(Hardcore)" : @""];
-	
-	cell.avatarImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@%@.png", [hero valueForKey:@"class"], [hero valueForKey:@"gender"]]];
-    // Configure the cell...
-    
-    return cell;
+	if (indexPath.row == 0) {
+		static NSString *CellIdentifier = @"CareerCellView";
+		CareerCellView *cell = (CareerCellView*) [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+		if (!cell)
+			cell = [CareerCellView cellWithNibName:@"CareerCellView" bundle:nil reuseIdentifier:CellIdentifier];
+		NSDictionary* profile = tableView == self.searchDisplayController.searchResultsTableView ? [self.searchResults objectAtIndex:indexPath.section] : [self.profiles objectAtIndex:indexPath.section];
+		cell.progressionHCView.hardcore = YES;
+
+		cell.progressionSCView.progression = [D3Utility progressionWithProfile:profile hardcore:NO];
+		cell.progressionHCView.progression = [D3Utility progressionWithProfile:profile hardcore:YES];
+		return cell;
+	}
+	else {
+		static NSString *CellIdentifier = @"HeroCellView";
+		HeroCellView *cell = (HeroCellView*) [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+		if (!cell)
+			cell = [HeroCellView cellWithNibName:@"HeroCellView" bundle:nil reuseIdentifier:CellIdentifier];
+		NSDictionary* profile = tableView == self.searchDisplayController.searchResultsTableView ? [self.searchResults objectAtIndex:indexPath.section] : [self.profiles objectAtIndex:indexPath.section];
+		NSArray* array = [profile valueForKey:@"heroes"];
+		NSInteger count = [array count];
+		
+		NSDictionary* hero;
+		BOOL dead;
+		if (indexPath.row - 1 >= count) {
+			hero = [[profile valueForKey:@"fallenHeroes"] objectAtIndex:indexPath.row - 1 - count];
+			dead = YES;
+		}
+		else {
+			hero = [[profile valueForKey:@"heroes"] objectAtIndex:indexPath.row - 1];
+			dead = NO;
+		}
+		
+		BOOL hardcore = [[hero valueForKey:@"hardcore"] boolValue];
+		
+		for (UILabel* label in cell.nameLabels) {
+			label.text = [hero valueForKey:@"name"];
+			label.textColor = hardcore ? [UIColor redColor] : cell.levelLabel.textColor;
+		}
+		
+		cell.frameImageView.image = [UIImage imageNamed:hardcore ? @"frameHeroHC.png" : @"frameHeroSC.png"];
+		
+		cell.levelLabel.text = [NSString stringWithFormat:@"%@", [hero valueForKey:@"level"]];
+		cell.paragonLevelLabel.text = [NSString stringWithFormat:@"%@", [hero valueForKey:@"paragonLevel"]];
+		cell.classLabel.text = [NSString stringWithFormat:@"%@ %@", [[hero valueForKey:@"class"] capitalizedString], hardcore ? @"(Hardcore)" : @""];
+		
+		cell.avatarImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@%@.png", [hero valueForKey:@"class"], [hero valueForKey:@"gender"]]];
+		cell.deadLabel.hidden = !dead;
+		cell.skullImageView.hidden = !dead;
+		return cell;
+	}
 }
 
 /*
@@ -131,8 +158,13 @@
 
 - (UIView*) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
 	ProfileHeaderView* view = [ProfileHeaderView viewWithNibName:@"ProfileHeaderView" bundle:nil];
-	NSDictionary* profile = tableView == self.searchDisplayController.searchResultsTableView ? self.searchResults : [self.profiles objectAtIndex:section];
-	view.battleTagLabel.text = [profile valueForKey:@"battleTag"];
+	NSDictionary* profile = tableView == self.searchDisplayController.searchResultsTableView ? [self.searchResults objectAtIndex:section] : [self.profiles objectAtIndex:section];
+	NSString* battleTag = [profile valueForKey:@"battleTag"];
+	view.profile = profile;
+	view.battleTagLabel.text = battleTag;
+	view.delegate = self;
+	view.favoritesButton.selected = [[profile valueForKey:@"inFavorites"] boolValue];
+	
 	return view;
 }
 
@@ -141,7 +173,7 @@
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	return 116;
+	return indexPath.row == 0 ? 65 : 116;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -159,36 +191,60 @@
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
 	NSString* text = searchBar.text;
-	__block __weak EUOperation* operation = [EUOperation operationWithIdentifier:@"Search" name:@"Searching"];
 	
-	__block NSError* error = nil;
-	__block NSDictionary* resultTmp = nil;
-	
-	[operation addExecutionBlock:^{
-		@autoreleasepool {
-			DiabloAPISession* session = [[DiabloAPISession alloc] initWithHost:@"http://eu.battle.net" locale:[[NSLocale currentLocale] localeIdentifier]];
-			resultTmp = [session careerProfileWithBattleTag:text error:&error];
-			operation.progress = 1;
-		}
-	}];
-	
-	[operation setCompletionBlockInCurrentThread:^{
-		if (![operation isCancelled]) {
-			if (resultTmp) {
-				self.searchResults = resultTmp;
-				[self.searchDisplayController.searchResultsTableView reloadData];
-				[self.tableView reloadData];
+	NSPredicate* predicate = [NSPredicate predicateWithFormat:@"battleTag like[c] %@", [text validBattleTagString]];
+	NSArray* array = [self.profiles filteredArrayUsingPredicate:predicate];
+	if (array.count > 0) {
+		self.searchResults = [NSMutableArray arrayWithArray:array];
+		[self.searchDisplayController.searchResultsTableView reloadData];
+	}
+	else {
+		__block __weak EUOperation* operation = [EUOperation operationWithIdentifier:@"Search" name:@"Searching"];
+		
+		__block NSError* error = nil;
+		__block NSDictionary* resultTmp = nil;
+		
+		[operation addExecutionBlock:^{
+			@autoreleasepool {
+				DiabloAPISession* session = [[DiabloAPISession alloc] initWithHost:self.host locale:[[NSLocale currentLocale] localeIdentifier]];
+				resultTmp = [session careerProfileWithBattleTag:text error:&error];
+				operation.progress = 1;
 			}
-		}
-	}];
-	
-	[[EUOperationQueue sharedQueue] addOperation:operation];
+		}];
+		
+		[operation setCompletionBlockInCurrentThread:^{
+			if (![operation isCancelled]) {
+				if (resultTmp) {
+					self.searchResults = nil;
+					NSString* battleTag = [resultTmp valueForKey:@"battleTag"];
+					for (NSMutableDictionary* profile in self.profiles) {
+						if ([[profile valueForKey:@"battleTag"] isEqualToString:battleTag]) {
+							self.searchResults = [NSMutableArray arrayWithObject:profile];
+							break;
+						}
+					}
+					if (!self.searchResults) {
+						self.searchResults = [NSMutableArray arrayWithObject:[NSMutableDictionary dictionaryWithDictionary:resultTmp]];
+						NSArray* sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"hardcore" ascending:YES],
+						[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES],
+						];
+						[[[self.searchResults objectAtIndex:0] valueForKey:@"heroes"] sortUsingDescriptors:sortDescriptors];
+					}
+				}
+				[self.searchDisplayController.searchResultsTableView reloadData];
+			}
+		}];
+		
+		[[EUOperationQueue sharedQueue] addOperation:operation];
+	}
 }
 
-#pragma mark UISearchDisplayControllerDelegate
+#pragma mark - UISearchDisplayDelegate
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
-	return NO;
+	NSPredicate* predicate = [NSPredicate predicateWithFormat:@"battleTag CONTAINS[c] %@", [searchString validBattleTagString]];
+	self.searchResults = [NSMutableArray arrayWithArray:[self.profiles filteredArrayUsingPredicate:predicate]];
+	return YES;
 }
 
 - (void)searchDisplayController:(UISearchDisplayController *)controller didLoadSearchResultsTableView:(UITableView *)aTableView {
@@ -200,6 +256,43 @@
 	else
 		aTableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
 	aTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+}
+
+- (void)searchDisplayController:(UISearchDisplayController *)controller willHideSearchResultsTableView:(UITableView *)tableView {
+	[self.tableView reloadData];
+}
+
+#pragma mark - ProfileHeaderViewDelegate
+
+- (void) profileHeaderViewDidPressFavoritesButton:(ProfileHeaderView*) profileHeaderView {
+	NSString* battleTag = [profileHeaderView.profile valueForKey:@"battleTag"];
+	
+	if ([[profileHeaderView.profile valueForKey:@"inFavorites"] boolValue]) {
+		NSInteger i = 0;
+		[profileHeaderView.profile setValue:@(NO) forKey:@"inFavorites"];
+		profileHeaderView.favoritesButton.selected = NO;
+		for (NSDictionary* profile in self.profiles) {
+			if ([[profile valueForKey:@"battleTag"] isEqualToString:battleTag]) {
+				[self.profiles removeObjectAtIndex:i];
+				[self.tableView deleteSections:[NSIndexSet indexSetWithIndex:i] withRowAnimation:UITableViewRowAnimationFade];
+				break;
+			}
+			i++;
+		}
+	}
+	else {
+		NSInteger i = 0;
+		for (NSDictionary* profile in self.profiles) {
+			if ([[profile valueForKey:@"battleTag"] compare:battleTag options:NSCaseInsensitivePredicateOption] == NSOrderedDescending) {
+				break;
+			}
+			i++;
+		}
+		[profileHeaderView.profile setValue:@(YES) forKey:@"inFavorites"];
+		[self.profiles insertObject:profileHeaderView.profile atIndex:i];
+		[self.tableView insertSections:[NSIndexSet indexSetWithIndex:i] withRowAnimation:UITableViewRowAnimationFade];
+		profileHeaderView.favoritesButton.selected = YES;
+	}
 }
 
 @end

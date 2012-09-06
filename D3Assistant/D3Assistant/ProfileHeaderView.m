@@ -11,6 +11,8 @@
 @implementation ProfileHeaderView
 @synthesize battleTagLabel;
 @synthesize favoritesButton;
+@synthesize profile;
+@synthesize delegate;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -29,5 +31,9 @@
     // Drawing code
 }
 */
+
+- (IBAction) onFavorites:(id)sender {
+	[self.delegate profileHeaderViewDidPressFavoritesButton:self];
+}
 
 @end

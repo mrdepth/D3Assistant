@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ProfileHeaderView.h"
 
-@interface ProfilesViewController : UITableViewController
+@interface ProfilesViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate, ProfileHeaderViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
