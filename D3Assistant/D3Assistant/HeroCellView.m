@@ -7,16 +7,19 @@
 //
 
 #import "HeroCellView.h"
+#import "UIColor+NSNumber.h"
 
 @implementation HeroCellView
 @synthesize avatarImageView;
 @synthesize frameImageView;
 @synthesize nameLabels;
+@synthesize levelLabels;
 @synthesize classLabel;
-@synthesize levelLabel;
 @synthesize paragonLevelLabel;
 @synthesize deadLabel;
 @synthesize skullImageView;
+@synthesize hardcoreLabel;
+@synthesize hardcore;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -30,8 +33,21 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
+	if (selected) {
+		self.frameImageView.image = [UIImage imageNamed:hardcore ? @"frameHeroSelectedHC.png" : @"frameHeroSelectedSC.png"];
+	}
+	else {
+		self.frameImageView.image = [UIImage imageNamed:hardcore ? @"frameHeroHC.png" : @"frameHeroSC.png"];
+	}
+}
 
-    // Configure the view for the selected state
+- (void) setHardcore:(BOOL)value {
+	hardcore = value;
+	
+	self.frameImageView.image = [UIImage imageNamed:hardcore ? @"frameHeroHC.png" : @"frameHeroSC.png"];
+	for (UILabel* label in self.nameLabels)
+		label.textColor = [UIColor colorWithNumber:hardcore ? @(HeroHCNameColor) : @(HeroSCNameColor)];
+	self.hardcoreLabel.hidden = !hardcore;
 }
 
 @end

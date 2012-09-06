@@ -14,11 +14,14 @@
 #import "UIView+Nib.h"
 #import "ProgressionView.h"
 #import "CareerCellView.h"
+#import "AppDelegate.h"
+#import "NSDictionary+DeepMutableCopy.h"
 
 @interface ProfilesViewController ()
 @property (nonatomic, strong) NSString* host;
 @property (nonatomic, strong) NSMutableArray* searchResults;
 @property (nonatomic, strong) NSMutableArray* profiles;
+
 @end
 
 @implementation ProfilesViewController
@@ -27,8 +30,57 @@
 {
     [super viewDidLoad];
 	self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
-	self.profiles = [NSMutableArray array];
 	self.host = @"http://eu.battle.net";
+	
+	NSString* path = [[AppDelegate documentsDirectory] stringByAppendingPathComponent:@"profiles.plist"];
+	self.profiles = [NSMutableArray arrayWithContentsOfFile:path];
+	if (self.profiles) {
+		NSArray* profilesCopy = [NSArray arrayWithArray:self.profiles];
+		__block __weak EUOperation* operation = [EUOperation operationWithIdentifier:@"ProfilesViewController+Update" name:@"Updating"];
+		
+		NSMutableArray* profilesTmp = [NSMutableArray array];
+		
+		[operation addExecutionBlock:^{
+			@autoreleasepool {
+				operation.progress = 0;
+				DiabloAPISession* session = [[DiabloAPISession alloc] initWithHost:self.host locale:[[NSLocale currentLocale] localeIdentifier]];
+				
+				NSInteger n = profilesCopy.count;
+				NSInteger i = 0;
+				for (NSMutableDictionary* profile in profilesCopy) {
+					NSDictionary* result = [session careerProfileWithBattleTag:[profile valueForKey:@"battleTag"] error:nil];
+					if (result) {
+						NSMutableDictionary* profileTmp = [result deepMutableCopy];
+						[profileTmp setValue:@(YES) forKey:@"inFavorites"];
+						NSArray* sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"hardcore" ascending:YES],
+						[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
+						
+						[[profileTmp valueForKey:@"heroes"] sortUsingDescriptors:sortDescriptors];
+						[[profileTmp valueForKey:@"fallenHeroes"] sortUsingDescriptors:sortDescriptors];
+						[profilesTmp addObject:profileTmp];
+					}
+					else
+						[profilesTmp addObject:profile];
+					
+					operation.progress = (float) ++i / (float) n;
+				}
+			}
+		}];
+		
+		[operation setCompletionBlockInCurrentThread:^{
+			if (![operation isCancelled]) {
+				self.profiles = profilesTmp;
+				[self.searchDisplayController.searchResultsTableView reloadData];
+				[self.tableView reloadData];
+			}
+		}];
+		
+		[[EUOperationQueue sharedQueue] addOperation:operation];
+	}
+	else {
+		self.profiles = [NSMutableArray array];
+	}
+
 	
 //	ProgressionView* v = [[ProgressionView alloc] initWithFrame:CGRectMake(10, 10, 290, 27)];
 //	v.progression = 0.5;
@@ -96,17 +148,17 @@
 		}
 		
 		BOOL hardcore = [[hero valueForKey:@"hardcore"] boolValue];
+		cell.hardcore = hardcore;
 		
-		for (UILabel* label in cell.nameLabels) {
+		for (UILabel* label in cell.nameLabels)
 			label.text = [hero valueForKey:@"name"];
-			label.textColor = hardcore ? [UIColor redColor] : cell.levelLabel.textColor;
-		}
-		
-		cell.frameImageView.image = [UIImage imageNamed:hardcore ? @"frameHeroHC.png" : @"frameHeroSC.png"];
-		
-		cell.levelLabel.text = [NSString stringWithFormat:@"%@", [hero valueForKey:@"level"]];
-		cell.paragonLevelLabel.text = [NSString stringWithFormat:@"%@", [hero valueForKey:@"paragonLevel"]];
-		cell.classLabel.text = [NSString stringWithFormat:@"%@ %@", [[hero valueForKey:@"class"] capitalizedString], hardcore ? @"(Hardcore)" : @""];
+
+		NSString* level = [NSString stringWithFormat:@"%d", [[hero valueForKey:@"level"] integerValue]];
+		for (UILabel* label in cell.levelLabels)
+			label.text = level;
+
+		cell.paragonLevelLabel.text = [NSString stringWithFormat:@"%d", [[hero valueForKey:@"paragonLevel"] integerValue]];
+		cell.classLabel.text = [[hero valueForKey:@"class"] capitalizedString];
 		
 		cell.avatarImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@%@.png", [hero valueForKey:@"class"], [hero valueForKey:@"gender"]]];
 		cell.deadLabel.hidden = !dead;
@@ -199,7 +251,7 @@
 		[self.searchDisplayController.searchResultsTableView reloadData];
 	}
 	else {
-		__block __weak EUOperation* operation = [EUOperation operationWithIdentifier:@"Search" name:@"Searching"];
+		__block __weak EUOperation* operation = [EUOperation operationWithIdentifier:@"ProfilesViewController+Search" name:@"Searching"];
 		
 		__block NSError* error = nil;
 		__block NSDictionary* resultTmp = nil;
@@ -224,11 +276,11 @@
 						}
 					}
 					if (!self.searchResults) {
-						self.searchResults = [NSMutableArray arrayWithObject:[NSMutableDictionary dictionaryWithDictionary:resultTmp]];
+						self.searchResults = [NSMutableArray arrayWithObject:[resultTmp deepMutableCopy]];
 						NSArray* sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"hardcore" ascending:YES],
-						[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES],
-						];
+						[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
 						[[[self.searchResults objectAtIndex:0] valueForKey:@"heroes"] sortUsingDescriptors:sortDescriptors];
+						[[[self.searchResults objectAtIndex:0] valueForKey:@"fallenHeroes"] sortUsingDescriptors:sortDescriptors];
 					}
 				}
 				[self.searchDisplayController.searchResultsTableView reloadData];
@@ -293,6 +345,9 @@
 		[self.tableView insertSections:[NSIndexSet indexSetWithIndex:i] withRowAnimation:UITableViewRowAnimationFade];
 		profileHeaderView.favoritesButton.selected = YES;
 	}
+
+	NSString* path = [[AppDelegate documentsDirectory] stringByAppendingPathComponent:@"profiles.plist"];
+	[self.profiles writeToFile:path atomically:YES];
 }
 
 @end

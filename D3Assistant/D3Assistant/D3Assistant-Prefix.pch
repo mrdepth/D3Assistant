@@ -13,3 +13,6 @@
 	#import <Foundation/Foundation.h>
 	#import <QuartzCore/QuartzCore.h>
 #endif
+
+#define HeroSCNameColor 0xcb6501ff
+#define HeroHCNameColor 0xff0000ff
