@@ -8,7 +8,7 @@
 
 #import "ProfilesViewController.h"
 #import "EUOperationQueue.h"
-#import "DiabloAPISession.h"
+#import "D3APISession.h"
 #import "HeroCellView.h"
 #import "UITableViewCell+Nib.h"
 #import "UIView+Nib.h"
@@ -16,6 +16,8 @@
 #import "CareerCellView.h"
 #import "AppDelegate.h"
 #import "NSDictionary+DeepMutableCopy.h"
+#import "HeroViewController.h"
+#import "UIAlertView+Error.h"
 
 @interface ProfilesViewController ()
 @property (nonatomic, strong) NSString* host;
@@ -28,9 +30,12 @@
 
 - (void)viewDidLoad
 {
+
     [super viewDidLoad];
 	self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
 	self.host = @"http://eu.battle.net";
+	[D3APISession setSharedSession:[[D3APISession alloc] initWithHost:self.host locale:[[NSLocale currentLocale] identifier]]];
+	
 	
 	NSString* path = [[AppDelegate documentsDirectory] stringByAppendingPathComponent:@"profiles.plist"];
 	self.profiles = [NSMutableArray arrayWithContentsOfFile:path];
@@ -43,7 +48,7 @@
 		[operation addExecutionBlock:^{
 			@autoreleasepool {
 				operation.progress = 0;
-				DiabloAPISession* session = [[DiabloAPISession alloc] initWithHost:self.host locale:[[NSLocale currentLocale] localeIdentifier]];
+				D3APISession* session = [D3APISession sharedSession];
 				
 				NSInteger n = profilesCopy.count;
 				NSInteger i = 0;
@@ -230,13 +235,56 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+	if (indexPath.row > 0) {
+		NSDictionary* profile = tableView == self.searchDisplayController.searchResultsTableView ? [self.searchResults objectAtIndex:indexPath.section] : [self.profiles objectAtIndex:indexPath.section];
+		NSArray* array = [profile valueForKey:@"heroes"];
+		NSInteger count = [array count];
+		
+		NSDictionary* hero;
+		BOOL dead;
+		if (indexPath.row - 1 >= count) {
+			hero = [[profile valueForKey:@"fallenHeroes"] objectAtIndex:indexPath.row - 1 - count];
+			dead = YES;
+		}
+		else {
+			hero = [[profile valueForKey:@"heroes"] objectAtIndex:indexPath.row - 1];
+			dead = NO;
+		}
+		
+		if (dead) {
+			HeroViewController* controller = [[HeroViewController alloc] initWithNibName:@"HeroViewControllerWF" bundle:nil];
+			controller.hero = hero;
+			[self.navigationController pushViewController:controller animated:YES];
+		}
+		else {
+			__block __weak EUOperation* operation = [EUOperation operationWithIdentifier:@"ProfilesViewController+LoadingHero" name:@"Loading Hero"];
+			
+			__block NSError* error = nil;
+			__block NSDictionary* heroDetails = nil;
+			
+			[operation addExecutionBlock:^{
+				@autoreleasepool {
+					D3APISession* session = [D3APISession sharedSession];
+					heroDetails = [session heroProfileWithBattleTag:[profile valueForKey:@"battleTag"] heroID:[[hero valueForKey:@"id"] integerValue] error:&error];
+					operation.progress = 1;
+				}
+			}];
+			
+			[operation setCompletionBlockInCurrentThread:^{
+				if (![operation isCancelled]) {
+					if (error)
+						[[UIAlertView alertViewWithError:error] show];
+					else {
+						HeroViewController* controller = [[HeroViewController alloc] initWithNibName:@"HeroViewControllerWF" bundle:nil];
+						controller.hero = heroDetails;
+						[self.navigationController pushViewController:controller animated:YES];
+					}
+				}
+			}];
+			
+			[[EUOperationQueue sharedQueue] addOperation:operation];
+		}
+	}
 }
 
 #pragma mark - UISearchBarDelegate
@@ -258,7 +306,7 @@
 		
 		[operation addExecutionBlock:^{
 			@autoreleasepool {
-				DiabloAPISession* session = [[DiabloAPISession alloc] initWithHost:self.host locale:[[NSLocale currentLocale] localeIdentifier]];
+				D3APISession* session = [D3APISession sharedSession];
 				resultTmp = [session careerProfileWithBattleTag:text error:&error];
 				operation.progress = 1;
 			}

@@ -13,6 +13,11 @@
 		124C694C15F89B0A00353EFB /* CareerCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 124C694B15F89B0900353EFB /* CareerCellView.xib */; };
 		124C694F15F89D7200353EFB /* D3Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 124C694E15F89D7200353EFB /* D3Utility.m */; };
 		124C697615F8CE5800353EFB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 124C697515F8CE5800353EFB /* QuartzCore.framework */; };
+		12A76F3915F9C0E600B2E9D4 /* SocketView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A76F3815F9C0E600B2E9D4 /* SocketView.m */; };
+		12A76F3C15F9CF3500B2E9D4 /* UIAlertView+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A76F3B15F9CF3500B2E9D4 /* UIAlertView+Error.m */; };
+		12A76F3E15F9D3BF00B2E9D4 /* backgroundWizardFemale.png in Resources */ = {isa = PBXBuildFile; fileRef = 12A76F3D15F9D3BF00B2E9D4 /* backgroundWizardFemale.png */; };
+		12A76F4115F9D56500B2E9D4 /* AttributesDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A76F4015F9D56500B2E9D4 /* AttributesDataSource.m */; };
+		12A76F5015F9E7D300B2E9D4 /* backgroundTable.png in Resources */ = {isa = PBXBuildFile; fileRef = 12A76F4F15F9E7D300B2E9D4 /* backgroundTable.png */; };
 		12FB053D15F7806700AE78E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12FB053C15F7806700AE78E4 /* UIKit.framework */; };
 		12FB053F15F7806700AE78E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12FB053E15F7806700AE78E4 /* Foundation.framework */; };
 		12FB054115F7806700AE78E4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12FB054015F7806700AE78E4 /* CoreGraphics.framework */; };
@@ -26,7 +31,7 @@
 		12FB05DD15F780CB00AE78E4 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB05B115F780CA00AE78E4 /* SBJsonParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		12FB05DE15F780CB00AE78E4 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB05B315F780CA00AE78E4 /* SBJsonWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		12FB05E615F780CB00AE78E4 /* UITableViewCell+Nib.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB05C915F780CB00AE78E4 /* UITableViewCell+Nib.m */; };
-		12FB05F015F780ED00AE78E4 /* DiabloAPISession.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB05EF15F780ED00AE78E4 /* DiabloAPISession.m */; };
+		12FB05F015F780ED00AE78E4 /* D3APISession.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB05EF15F780ED00AE78E4 /* D3APISession.m */; };
 		12FB05F715F7810100AE78E4 /* HeroCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB05F215F7810100AE78E4 /* HeroCellView.m */; };
 		12FB05F815F7810100AE78E4 /* HeroCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12FB05F315F7810100AE78E4 /* HeroCellView.xib */; };
 		12FB05F915F7810100AE78E4 /* ProfilesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB05F515F7810100AE78E4 /* ProfilesViewController.m */; };
@@ -83,8 +88,8 @@
 		71B0AACA15F93BA80079F9B9 /* separator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71B0AAA115F93BA80079F9B9 /* separator@2x.png */; };
 		71B0AACB15F93BA80079F9B9 /* skull@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71B0AAA215F93BA80079F9B9 /* skull@2x.png */; };
 		71BF0B9D15F961D900CDEA4A /* backgroundWizard1.png in Resources */ = {isa = PBXBuildFile; fileRef = 71BF0B9C15F961D900CDEA4A /* backgroundWizard1.png */; };
-		71BF0BA115F9624600CDEA4A /* GearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BF0B9F15F9624600CDEA4A /* GearViewController.m */; };
-		71BF0BA215F9624600CDEA4A /* GearViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71BF0BA015F9624600CDEA4A /* GearViewController.xib */; };
+		71BF0BA115F9624600CDEA4A /* HeroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BF0B9F15F9624600CDEA4A /* HeroViewController.m */; };
+		71BF0BA215F9624600CDEA4A /* HeroViewControllerWF.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71BF0BA015F9624600CDEA4A /* HeroViewControllerWF.xib */; };
 		71BF0BA915F9684D00CDEA4A /* blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 71BF0BA415F9684D00CDEA4A /* blue.png */; };
 		71BF0BAA15F9684D00CDEA4A /* brown.png in Resources */ = {isa = PBXBuildFile; fileRef = 71BF0BA515F9684D00CDEA4A /* brown.png */; };
 		71BF0BAB15F9684D00CDEA4A /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = 71BF0BA615F9684D00CDEA4A /* green.png */; };
@@ -105,6 +110,14 @@
 		124C694D15F89D7200353EFB /* D3Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3Utility.h; sourceTree = "<group>"; };
 		124C694E15F89D7200353EFB /* D3Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3Utility.m; sourceTree = "<group>"; };
 		124C697515F8CE5800353EFB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		12A76F3715F9C0E600B2E9D4 /* SocketView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketView.h; sourceTree = "<group>"; };
+		12A76F3815F9C0E600B2E9D4 /* SocketView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketView.m; sourceTree = "<group>"; };
+		12A76F3A15F9CF3500B2E9D4 /* UIAlertView+Error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Error.h"; sourceTree = "<group>"; };
+		12A76F3B15F9CF3500B2E9D4 /* UIAlertView+Error.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Error.m"; sourceTree = "<group>"; };
+		12A76F3D15F9D3BF00B2E9D4 /* backgroundWizardFemale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundWizardFemale.png; sourceTree = "<group>"; };
+		12A76F3F15F9D56500B2E9D4 /* AttributesDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributesDataSource.h; sourceTree = "<group>"; };
+		12A76F4015F9D56500B2E9D4 /* AttributesDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributesDataSource.m; sourceTree = "<group>"; };
+		12A76F4F15F9E7D300B2E9D4 /* backgroundTable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundTable.png; sourceTree = "<group>"; };
 		12FB053815F7806700AE78E4 /* D3Assistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = D3Assistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12FB053C15F7806700AE78E4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		12FB053E15F7806700AE78E4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -130,8 +143,8 @@
 		12FB05B315F780CA00AE78E4 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		12FB05C815F780CB00AE78E4 /* UITableViewCell+Nib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Nib.h"; sourceTree = "<group>"; };
 		12FB05C915F780CB00AE78E4 /* UITableViewCell+Nib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Nib.m"; sourceTree = "<group>"; };
-		12FB05EE15F780ED00AE78E4 /* DiabloAPISession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiabloAPISession.h; sourceTree = "<group>"; };
-		12FB05EF15F780ED00AE78E4 /* DiabloAPISession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiabloAPISession.m; sourceTree = "<group>"; };
+		12FB05EE15F780ED00AE78E4 /* D3APISession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3APISession.h; sourceTree = "<group>"; };
+		12FB05EF15F780ED00AE78E4 /* D3APISession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3APISession.m; sourceTree = "<group>"; };
 		12FB05F115F7810100AE78E4 /* HeroCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroCellView.h; sourceTree = "<group>"; };
 		12FB05F215F7810100AE78E4 /* HeroCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeroCellView.m; sourceTree = "<group>"; };
 		12FB05F315F7810100AE78E4 /* HeroCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeroCellView.xib; sourceTree = "<group>"; };
@@ -199,9 +212,9 @@
 		71B0AAA115F93BA80079F9B9 /* separator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "separator@2x.png"; sourceTree = "<group>"; };
 		71B0AAA215F93BA80079F9B9 /* skull@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "skull@2x.png"; sourceTree = "<group>"; };
 		71BF0B9C15F961D900CDEA4A /* backgroundWizard1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundWizard1.png; sourceTree = "<group>"; };
-		71BF0B9E15F9624600CDEA4A /* GearViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GearViewController.h; sourceTree = "<group>"; };
-		71BF0B9F15F9624600CDEA4A /* GearViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GearViewController.m; sourceTree = "<group>"; };
-		71BF0BA015F9624600CDEA4A /* GearViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GearViewController.xib; sourceTree = "<group>"; };
+		71BF0B9E15F9624600CDEA4A /* HeroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroViewController.h; sourceTree = "<group>"; };
+		71BF0B9F15F9624600CDEA4A /* HeroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeroViewController.m; sourceTree = "<group>"; };
+		71BF0BA015F9624600CDEA4A /* HeroViewControllerWF.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeroViewControllerWF.xib; sourceTree = "<group>"; };
 		71BF0BA415F9684D00CDEA4A /* blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue.png; sourceTree = "<group>"; };
 		71BF0BA515F9684D00CDEA4A /* brown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brown.png; sourceTree = "<group>"; };
 		71BF0BA615F9684D00CDEA4A /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
@@ -234,6 +247,15 @@
 				124C68FE15F88F6D00353EFB /* ProgressionView.m */,
 			);
 			name = ProgressionView;
+			sourceTree = "<group>";
+		};
+		12A76F3515F9C0D700B2E9D4 /* SocketView */ = {
+			isa = PBXGroup;
+			children = (
+				12A76F3715F9C0E600B2E9D4 /* SocketView.h */,
+				12A76F3815F9C0E600B2E9D4 /* SocketView.m */,
+			);
+			name = SocketView;
 			sourceTree = "<group>";
 		};
 		12FB052D15F7806700AE78E4 = {
@@ -275,7 +297,7 @@
 				12FB05FB15F7810700AE78E4 /* ProfilesViewController */,
 				124C68FC15F88F5800353EFB /* ProgressionView */,
 				12FB054B15F7806700AE78E4 /* AppDelegate.h */,
-				71BF0B9A15F961C500CDEA4A /* GearViewController */,
+				71BF0B9A15F961C500CDEA4A /* HeroViewController */,
 				12FB054C15F7806700AE78E4 /* AppDelegate.m */,
 				12FB054315F7806700AE78E4 /* Supporting Files */,
 			);
@@ -334,6 +356,8 @@
 		12FB05C715F780CB00AE78E4 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				12A76F3A15F9CF3500B2E9D4 /* UIAlertView+Error.h */,
+				12A76F3B15F9CF3500B2E9D4 /* UIAlertView+Error.m */,
 				12FB05C815F780CB00AE78E4 /* UITableViewCell+Nib.h */,
 				12FB05C915F780CB00AE78E4 /* UITableViewCell+Nib.m */,
 				12FB063015F78C7F00AE78E4 /* UIView+Nib.h */,
@@ -351,8 +375,8 @@
 		12FB05ED15F780DE00AE78E4 /* D3API */ = {
 			isa = PBXGroup;
 			children = (
-				12FB05EE15F780ED00AE78E4 /* DiabloAPISession.h */,
-				12FB05EF15F780ED00AE78E4 /* DiabloAPISession.m */,
+				12FB05EE15F780ED00AE78E4 /* D3APISession.h */,
+				12FB05EF15F780ED00AE78E4 /* D3APISession.m */,
 				124C694D15F89D7200353EFB /* D3Utility.h */,
 				124C694E15F89D7200353EFB /* D3Utility.m */,
 				124C68F915F887F800353EFB /* NSString+D3API.h */,
@@ -421,6 +445,8 @@
 		71B0AA7815F93BA80079F9B9 /* 1x */ = {
 			isa = PBXGroup;
 			children = (
+				12A76F4F15F9E7D300B2E9D4 /* backgroundTable.png */,
+				12A76F3D15F9D3BF00B2E9D4 /* backgroundWizardFemale.png */,
 				71BF0BB115F96D9400CDEA4A /* socket.png */,
 				71BF0BA415F9684D00CDEA4A /* blue.png */,
 				71BF0BA515F9684D00CDEA4A /* brown.png */,
@@ -480,20 +506,23 @@
 			path = 2x;
 			sourceTree = "<group>";
 		};
-		71BF0B9A15F961C500CDEA4A /* GearViewController */ = {
+		71BF0B9A15F961C500CDEA4A /* HeroViewController */ = {
 			isa = PBXGroup;
 			children = (
 				71BF0BA315F9672900CDEA4A /* GearView */,
-				71BF0B9E15F9624600CDEA4A /* GearViewController.h */,
-				71BF0B9F15F9624600CDEA4A /* GearViewController.m */,
-				71BF0BA015F9624600CDEA4A /* GearViewController.xib */,
+				71BF0B9E15F9624600CDEA4A /* HeroViewController.h */,
+				71BF0B9F15F9624600CDEA4A /* HeroViewController.m */,
+				71BF0BA015F9624600CDEA4A /* HeroViewControllerWF.xib */,
+				12A76F3F15F9D56500B2E9D4 /* AttributesDataSource.h */,
+				12A76F4015F9D56500B2E9D4 /* AttributesDataSource.m */,
 			);
-			name = GearViewController;
+			name = HeroViewController;
 			sourceTree = "<group>";
 		};
 		71BF0BA315F9672900CDEA4A /* GearView */ = {
 			isa = PBXGroup;
 			children = (
+				12A76F3515F9C0D700B2E9D4 /* SocketView */,
 				71BF0BAE15F9686F00CDEA4A /* GearView.h */,
 				71BF0BAF15F9686F00CDEA4A /* GearView.m */,
 			);
@@ -598,13 +627,15 @@
 				71B0AACA15F93BA80079F9B9 /* separator@2x.png in Resources */,
 				71B0AACB15F93BA80079F9B9 /* skull@2x.png in Resources */,
 				71BF0B9D15F961D900CDEA4A /* backgroundWizard1.png in Resources */,
-				71BF0BA215F9624600CDEA4A /* GearViewController.xib in Resources */,
+				71BF0BA215F9624600CDEA4A /* HeroViewControllerWF.xib in Resources */,
 				71BF0BA915F9684D00CDEA4A /* blue.png in Resources */,
 				71BF0BAA15F9684D00CDEA4A /* brown.png in Resources */,
 				71BF0BAB15F9684D00CDEA4A /* green.png in Resources */,
 				71BF0BAC15F9684D00CDEA4A /* orange.png in Resources */,
 				71BF0BAD15F9684D00CDEA4A /* yellow.png in Resources */,
 				71BF0BB215F96D9400CDEA4A /* socket.png in Resources */,
+				12A76F3E15F9D3BF00B2E9D4 /* backgroundWizardFemale.png in Resources */,
+				12A76F5015F9E7D300B2E9D4 /* backgroundTable.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -624,7 +655,7 @@
 				12FB05DD15F780CB00AE78E4 /* SBJsonParser.m in Sources */,
 				12FB05DE15F780CB00AE78E4 /* SBJsonWriter.m in Sources */,
 				12FB05E615F780CB00AE78E4 /* UITableViewCell+Nib.m in Sources */,
-				12FB05F015F780ED00AE78E4 /* DiabloAPISession.m in Sources */,
+				12FB05F015F780ED00AE78E4 /* D3APISession.m in Sources */,
 				12FB05F715F7810100AE78E4 /* HeroCellView.m in Sources */,
 				12FB05F915F7810100AE78E4 /* ProfilesViewController.m in Sources */,
 				12FB061915F781EF00AE78E4 /* EUActivityView.m in Sources */,
@@ -640,8 +671,11 @@
 				71B0AA1D15F924EA0079F9B9 /* NSDictionary+DeepMutableCopy.m in Sources */,
 				71B0AA2015F925F20079F9B9 /* NSArray+DeepMutableCopy.m in Sources */,
 				71B0AA2715F934F40079F9B9 /* UIColor+NSNumber.m in Sources */,
-				71BF0BA115F9624600CDEA4A /* GearViewController.m in Sources */,
+				71BF0BA115F9624600CDEA4A /* HeroViewController.m in Sources */,
 				71BF0BB015F9686F00CDEA4A /* GearView.m in Sources */,
+				12A76F3915F9C0E600B2E9D4 /* SocketView.m in Sources */,
+				12A76F3C15F9CF3500B2E9D4 /* UIAlertView+Error.m in Sources */,
+				12A76F4115F9D56500B2E9D4 /* AttributesDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

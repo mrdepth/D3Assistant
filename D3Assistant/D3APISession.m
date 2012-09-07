@@ -1,21 +1,36 @@
 //
-//  DiabloAPISession.m
+//  D3APISession.m
 //  D3Assistant
 //
 //  Created by Artem Shimanski on 04.09.12.
 //  Copyright (c) 2012 Artem Shimanski. All rights reserved.
 //
 
-#import "DiabloAPISession.h"
+#import "D3APISession.h"
 #import "SBJSON.h"
 
-@interface DiabloAPISession()
+static D3APISession* sharedSession;
+
+@interface D3APISession()
 
 - (NSDictionary*) sendRequestWithPath:(NSString*) path error:(NSError* __autoreleasing*) error;
 
 @end
 
-@implementation DiabloAPISession
+@implementation D3APISession
+
++ (id) sharedSession {
+	@synchronized(self) {
+		return sharedSession;
+	}
+}
+
++ (void) setSharedSession: (D3APISession*) session {
+	@synchronized(self) {
+		sharedSession = session;
+	}
+}
+
 
 - (id) initWithHost:(NSString*) host locale:(NSString*) locale {
 	if (self = [super init]) {
@@ -30,10 +45,12 @@
 }
 
 - (NSDictionary*) heroProfileWithBattleTag:(NSString*) battleTag heroID:(NSInteger) heroID error:(NSError* __autoreleasing*) error {
-	return [self sendRequestWithPath:[NSString stringWithFormat:@"profile/%@/hero/%d", [battleTag stringByReplacingOccurrencesOfString:@"#" withString:@"-"], heroID] error:error];
+	return [self sendRequestWithPath:[NSString stringWithFormat:@"profile/%@/hero/%d", [battleTag validBattleTagURLString], heroID] error:error];
 }
 
 - (NSDictionary*) itemInfoWithItemID:(NSString*) itemID error:(NSError* __autoreleasing*) error {
+	if ([itemID hasPrefix:@"item/"])
+		itemID = [itemID substringFromIndex:5];
 	return [self sendRequestWithPath:[NSString stringWithFormat:@"data/item/%@", itemID] error:error];
 }
 
@@ -50,11 +67,11 @@
 }
 
 - (NSURL*) itemImageURLWithItem:(NSString*) item size:(NSString*) size {
-	return [NSURL URLWithString:[NSString stringWithFormat:@"http://us.media.blizzard.com/d3/icons/items/%@/%@.png", item, size]];
+	return [NSURL URLWithString:[NSString stringWithFormat:@"http://us.media.blizzard.com/d3/icons/items/%@/%@.png", size, item]];
 }
 
 - (NSURL*) skillImageURLWithItem:(NSString*) item size:(NSString*) size {
-	return [NSURL URLWithString:[NSString stringWithFormat:@"http://us.media.blizzard.com/d3/icons/skills/%@/%@.png", item, size]];
+	return [NSURL URLWithString:[NSString stringWithFormat:@"http://us.media.blizzard.com/d3/icons/skills/%@/%@.png", size, item]];
 }
 
 #pragma mark - Private

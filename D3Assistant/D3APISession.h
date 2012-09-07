@@ -1,5 +1,5 @@
 //
-//  DiabloAPISession.h
+//  D3APISession.h
 //  D3Assistant
 //
 //  Created by Artem Shimanski on 04.09.12.
@@ -10,9 +10,12 @@
 #import "NSString+D3API.h"
 #import "D3Utility.h"
 
-@interface DiabloAPISession : NSObject
+@interface D3APISession : NSObject
 @property (nonatomic, strong) NSString* host;
 @property (nonatomic, strong) NSString* locale;
+
++ (id) sharedSession;
++ (void) setSharedSession: (D3APISession*) session;
 
 - (id) initWithHost:(NSString*) host locale:(NSString*) locale;
 - (NSDictionary*) careerProfileWithBattleTag:(NSString*) battleTag error:(NSError* __autoreleasing*) error;

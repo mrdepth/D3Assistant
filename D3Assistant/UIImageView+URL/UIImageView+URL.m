@@ -115,6 +115,10 @@ static NSOperationQueue* sharedQueue = nil;
 	return sharedQueue;
 }
 
+- (void) setImageWithContentsOfURL: (NSURL*) url {
+	[self setImageWithContentsOfURL:url completion:nil failureBlock:nil];
+}
+
 - (void) setImageWithContentsOfURL: (NSURL*) url completion:(void(^)()) completion failureBlock:(void(^)(NSError *error)) failureBlock {
 #if ! __has_feature(objc_arc)
 	__block URLOperation* operation = [[[URLOperation alloc] init] autorelease];

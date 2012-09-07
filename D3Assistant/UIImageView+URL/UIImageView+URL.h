@@ -13,6 +13,7 @@
 @interface UIImageView (URL)
 @property (nonatomic, assign) UIActivityIndicatorViewStyle activityIndicatorViewStyle;
 
+- (void) setImageWithContentsOfURL: (NSURL*) url;
 - (void) setImageWithContentsOfURL: (NSURL*) url completion:(void(^)()) completion failureBlock:(void(^)(NSError *error)) failureBlock;
 - (void) cancelAllURLRequests;
 @end
