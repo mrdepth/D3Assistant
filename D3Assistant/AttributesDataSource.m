@@ -8,6 +8,10 @@
 
 #import "AttributesDataSource.h"
 #import "UIColor+NSNumber.h"
+#import "AttributesHeaderView.h"
+#import "UIView+Nib.h"
+#import "AttributeCellView.h"
+#import "UITableViewCell+Nib.h"
 
 @interface AttributesDataSource()
 @property (nonatomic, strong) NSMutableArray* sections;
@@ -41,19 +45,19 @@
 
 	rows = @[
 	@{@"title" : @"Damage", @"stat" : @"damage"},
-	@{@"title" : [NSString stringWithFormat:@"Damage Increased by %@", primaryAttribute], @"stat" : @"damageIncrease"},
+	@{@"title" : [NSString stringWithFormat:@"Damage Increased by %@", primaryAttribute], @"value" : [NSString stringWithFormat:@"%.1f%%", [[self.hero valueForKeyPath:@"stats.damageIncrease"] floatValue] * 100]},
 	@{@"title" : @"Attacks per Second", @"stat" : @"attackSpeed"},
-	@{@"title" : @"Critical Hit Change", @"stat" : @"critChance"},
-	@{@"title" : @"Critical Hit Damage", @"stat" : @"critDamage"}];
+	@{@"title" : @"Critical Hit Change", @"value" : [NSString stringWithFormat:@"%.1f%%", [[self.hero valueForKeyPath:@"stats.critChance"] floatValue] * 100]},
+	@{@"title" : @"Critical Hit Damage", @"value" : [NSString stringWithFormat:@"%.1f%%", [[self.hero valueForKeyPath:@"stats.critDamage"] floatValue] * 100]}];
 	
 	section = @{@"title" : @"Offense", @"rows" : rows};
 	[self.sections addObject:section];
 	
 	rows = @[
 	@{@"title" : @"Armor", @"stat" : @"armor"},
-	@{@"title" : @"Block Amount", @"value" : @(([[hero valueForKeyPath:@"stats.blockAmountMax"] floatValue] + [[hero valueForKeyPath:@"stats.blockAmountMin"] floatValue]) / 2.0)},
-	@{@"title" : @"Block Chance", @"stat" : @"blockChance"},
-	@{@"title" : @"Damage Reduction", @"stat" : @"damageReduction"},
+	@{@"title" : @"Block Amount", @"stat" : @"blockAmountMax"},
+	@{@"title" : @"Block Chance", @"value" : [NSString stringWithFormat:@"%.1f%%", [[self.hero valueForKeyPath:@"stats.blockChance"] floatValue] * 100]},
+	@{@"title" : @"Damage Reduction", @"value" : [NSString stringWithFormat:@"%.1f%%", [[self.hero valueForKeyPath:@"stats.damageReduction"] floatValue] * 100]},
 	@{@"title" : @"Physical Resistance", @"stat" : @"physicalResist"},
 	@{@"title" : @"Cold Resistance", @"stat" : @"coldResist"},
 	@{@"title" : @"Fire Resistance", @"stat" : @"fireResist"},
@@ -67,7 +71,7 @@
 
 	rows = @[
 	@{@"title" : @"Maximum Life", @"stat" : @"life"},
-	@{@"title" : @"Life Steal", @"stat" : @"lifeSteal"},
+	@{@"title" : @"Life Steal", @"value" : [NSString stringWithFormat:@"%.1f%%", [[self.hero valueForKeyPath:@"stats.lifeSteal"] floatValue] * 100]},
 	@{@"title" : @"Life per Kill", @"stat" : @"lifePerKill"},
 	@{@"title" : @"Life per Hit", @"stat" : @"lifeOnHit"}];
 	
@@ -94,8 +98,8 @@
 	[self.sections addObject:section];
 
 	rows = @[
-	@{@"title" : @"Gold Find", @"stat" : @"goldFind"},
-	@{@"title" : @"Magic Find", @"stat" : @"magicFind"}];
+	@{@"title" : @"Gold Find", @"value" : [NSString stringWithFormat:@"%.1f%%", [[self.hero valueForKeyPath:@"stats.goldFind"] floatValue] * 100]},
+	@{@"title" : @"Magic Find", @"value" : [NSString stringWithFormat:@"%.1f%%", [[self.hero valueForKeyPath:@"stats.magicFind"] floatValue] * 100]}];
 	
 	section = @{@"title" : @"Adventure", @"rows" : rows};
 	[self.sections addObject:section];
@@ -116,22 +120,18 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	static NSString *CellIdentifier = @"Cell";
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+	static NSString *CellIdentifier = @"AttributeCellView";
+	AttributeCellView *cell = (AttributeCellView*) [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	if (!cell) {
-		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
-		cell.textLabel.textColor = [UIColor colorWithNumber:@(0x660000ff)];
-		cell.textLabel.font = [cell.textLabel.font fontWithSize:14];
-		cell.detailTextLabel.font = [cell.detailTextLabel.font fontWithSize:14];
-		cell.detailTextLabel.textColor = [UIColor blackColor];
+		cell = [AttributeCellView cellWithNibName:@"AttributeCellView" bundle:nil reuseIdentifier:CellIdentifier];
 	}
 	NSDictionary* row = [[[self.sections objectAtIndex:indexPath.section] valueForKey:@"rows"] objectAtIndex:indexPath.row];
-	cell.textLabel.text = [row valueForKey:@"title"];
-	NSNumber* value = [row valueForKey:@"value"];
+	cell.titleLabel.text = [row valueForKey:@"title"];
+	NSString* value = [row valueForKey:@"value"];
 	if (value)
-		cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2f", [value floatValue]];
+		cell.valueLabel.text = value;
 	else
-		cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2f", [[[hero valueForKey:@"stats"] valueForKey:[row valueForKey:@"stat"]] floatValue]];
+		cell.valueLabel.text = [NSString stringWithFormat:@"%.2f", [[[hero valueForKey:@"stats"] valueForKey:[row valueForKey:@"stat"]] floatValue]];
 	
 	return cell;
 }
@@ -177,9 +177,11 @@
 
 #pragma mark - Table view delegate
 
-/*- (UIView*) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-	return nil;
-}*/
+- (UIView*) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+	AttributesHeaderView* view = [AttributesHeaderView viewWithNibName:@"AttributesHeaderView" bundle:nil];
+	view.titleLabel.text = [self tableView:tableView titleForHeaderInSection:section];
+	return view;
+}
 
 /*- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
 	return 30;

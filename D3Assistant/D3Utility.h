@@ -11,5 +11,7 @@
 @interface D3Utility : NSObject
 
 + (float) progressionWithProfile:(NSDictionary*) profile hardcore:(BOOL) hardcore;
++ (UIColor*) itemBorderColorWithColorName:(NSString*) colorName highlighted:(BOOL) highlighted;
++ (UIColor*) colorWithColorName:(NSString*) colorName;
 
 @end

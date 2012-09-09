@@ -8,7 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@class GearView;
+@protocol GearViewDelegate <NSObject>
+
+- (void) didSelectGearView:(GearView*) gearView;
+
+@end
+
 @interface GearView : UIView
+@property (nonatomic, weak) IBOutlet id<GearViewDelegate> delegate;
 @property (nonatomic, strong) NSDictionary* gear;
+@property (nonatomic, strong) NSString* slot;
 
 @end

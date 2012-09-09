@@ -16,3 +16,15 @@
 
 #define HeroSCNameColor 0xcb6501ff
 #define HeroHCNameColor 0xff0000ff
+
+#define ItemBrownBorderColor 0x513f2eff
+#define ItemBlueBorderColor 0x6091a6ff
+#define ItemYellowBorderColor 0x9b8e3cff
+#define ItemOrangeBorderColor 0xb07b38ff
+#define ItemGreenBorderColor 0x748e3dff
+
+#define ItemBrownBorderHighlightedColor 0x7a5f45ff
+#define ItemBlueBorderHighlightedColor 0x90c8d3ff
+#define ItemYellowBorderHighlightedColor 0xc4b44dff
+#define ItemOrangeBorderHighlightedColor 0xd99645ff
+#define ItemGreenBorderHighlightedColor 0x96b84fff

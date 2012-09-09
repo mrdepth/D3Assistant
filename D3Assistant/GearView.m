@@ -17,11 +17,17 @@
 @property (nonatomic, strong) UIImageView* itemColorImageView;
 @property (nonatomic, strong) UIImageView* itemIconImageView;
 @property (nonatomic, strong) NSMutableArray* sockets;
+@property (nonatomic, assign) BOOL highlighted;
+
+- (void) onTap:(UITapGestureRecognizer*) recognizer;
 
 @end
 
 @implementation GearView
 @synthesize gear;
+@synthesize slot;
+@synthesize delegate;
+@synthesize highlighted;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -45,6 +51,8 @@
 
 	[self addSubview:self.itemColorImageView];
 	[self addSubview:self.itemIconImageView];
+	
+	[self addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTap:)]];
 }
 
 - (void) setGear:(NSDictionary *)value {
@@ -64,18 +72,7 @@
 	if (!self.itemColorImageView.image)
 		self.itemColorImageView.image = [UIImage imageNamed:@"brown.png"];
 
-	if ([color isEqualToString:@"blue"])
-		self.itemColorImageView.layer.borderColor = [[UIColor colorWithNumber:@(0x8bc8d4ff)] CGColor];
-	else if ([color isEqualToString:@"brown"])
-		self.itemColorImageView.layer.borderColor = [[UIColor colorWithNumber:@(0x8bc8d4ff)] CGColor];
-	else if ([color isEqualToString:@"green"])
-		self.itemColorImageView.layer.borderColor = [[UIColor colorWithNumber:@(0x8bc8d4ff)] CGColor];
-	else if ([color isEqualToString:@"orange"])
-		self.itemColorImageView.layer.borderColor = [[UIColor colorWithNumber:@(0x8bc8d4ff)] CGColor];
-	else if ([color isEqualToString:@"yellow"])
-		self.itemColorImageView.layer.borderColor = [[UIColor colorWithNumber:@(0x8bc8d4ff)] CGColor];
-	else
-		self.itemColorImageView.layer.borderColor = [[UIColor colorWithNumber:@(0x8bc8d4ff)] CGColor];
+	self.itemColorImageView.layer.borderColor = [[D3Utility itemBorderColorWithColorName:color highlighted:NO] CGColor];
 	
 	NSArray* gems = [gear valueForKey:@"gems"];
 	NSInteger numberOfGems = gems.count;
@@ -87,6 +84,44 @@
 		[self addSubview:socket];
 		frame.origin.y += frame.size.height;
 	}
+}
+
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+	self.highlighted = YES;
+}
+
+- (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+	self.highlighted = NO;
+}
+
+- (void) touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
+	self.highlighted = NO;
+}
+
+#pragma mark - Private
+
+- (void) setHighlighted:(BOOL)value {
+	highlighted = value;
+	if (self.gear) {
+		NSString* color = [self.gear valueForKey:@"displayColor"];
+		
+		if (highlighted) {
+			self.itemColorImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@Highlighted.png", color]];
+			if (!self.itemColorImageView.image)
+				self.itemColorImageView.image = [UIImage imageNamed:@"brownHighlighted.png"];
+		}
+		else {
+			self.itemColorImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", color]];
+			if (!self.itemColorImageView.image)
+				self.itemColorImageView.image = [UIImage imageNamed:@"brown.png"];
+		}
+		
+		self.itemColorImageView.layer.borderColor = [[D3Utility itemBorderColorWithColorName:color highlighted:highlighted] CGColor];
+	}
+}
+
+- (void) onTap:(UITapGestureRecognizer*) recognizer {
+	[self.delegate didSelectGearView:self];
 }
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "D3Utility.h"
+#import "UIColor+NSNumber.h"
 
 @implementation D3Utility
 
@@ -33,6 +34,62 @@
 			break;
 	}
 	return progression;
+}
+
++ (UIColor*) itemBorderColorWithColorName:(NSString*) colorName highlighted:(BOOL) highlighted {
+	if (highlighted) {
+		if ([colorName isEqualToString:@"blue"])
+			return [UIColor colorWithNumber:@(ItemBlueBorderHighlightedColor)];
+		else if ([colorName isEqualToString:@"brown"])
+			return [UIColor colorWithNumber:@(ItemBrownBorderHighlightedColor)];
+		else if ([colorName isEqualToString:@"gray"])
+			return [UIColor colorWithNumber:@(ItemBrownBorderHighlightedColor)];
+		else if ([colorName isEqualToString:@"white"])
+			return [UIColor colorWithNumber:@(ItemBrownBorderHighlightedColor)];
+		else if ([colorName isEqualToString:@"green"])
+			return [UIColor colorWithNumber:@(ItemGreenBorderHighlightedColor)];
+		else if ([colorName isEqualToString:@"orange"])
+			return [UIColor colorWithNumber:@(ItemOrangeBorderHighlightedColor)];
+		else if ([colorName isEqualToString:@"yellow"])
+			return [UIColor colorWithNumber:@(ItemYellowBorderHighlightedColor)];
+		else
+			return [UIColor colorWithNumber:@(ItemBrownBorderHighlightedColor)];
+	}
+	else {
+		if ([colorName isEqualToString:@"blue"])
+			return [UIColor colorWithNumber:@(ItemBlueBorderColor)];
+		else if ([colorName isEqualToString:@"brown"])
+			return [UIColor colorWithNumber:@(ItemBrownBorderColor)];
+		else if ([colorName isEqualToString:@"gray"])
+			return [UIColor colorWithNumber:@(ItemBrownBorderColor)];
+		else if ([colorName isEqualToString:@"white"])
+			return [UIColor colorWithNumber:@(ItemBrownBorderColor)];
+		else if ([colorName isEqualToString:@"green"])
+			return [UIColor colorWithNumber:@(ItemGreenBorderColor)];
+		else if ([colorName isEqualToString:@"orange"])
+			return [UIColor colorWithNumber:@(ItemOrangeBorderColor)];
+		else if ([colorName isEqualToString:@"yellow"])
+			return [UIColor colorWithNumber:@(ItemYellowBorderColor)];
+		else
+			return [UIColor colorWithNumber:@(ItemBrownBorderColor)];
+	}
+}
+
++ (UIColor*) colorWithColorName:(NSString*) colorName {
+	if ([colorName isEqualToString:@"blue"])
+		return [UIColor colorWithNumber:@(0x7171c6ff)];
+	else if ([colorName isEqualToString:@"gray"])
+		return [UIColor colorWithNumber:@(0x909090ff)];
+	else if ([colorName isEqualToString:@"white"])
+		return [UIColor colorWithNumber:@(0xe1e1e0ff)];
+	else if ([colorName isEqualToString:@"green"])
+		return [UIColor colorWithNumber:@(0x748e3dff)];
+	else if ([colorName isEqualToString:@"orange"])
+		return [UIColor colorWithNumber:@(0xbf642fff)];
+	else if ([colorName isEqualToString:@"yellow"])
+		return [UIColor colorWithNumber:@(0xf8cc35ff)];
+	else
+		return [UIColor colorWithNumber:@(0xe1e1e0ff)];
 }
 
 @end

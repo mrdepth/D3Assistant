@@ -9,6 +9,7 @@
 #import "HeroViewController.h"
 #import "EUOperationQueue.h"
 #import "D3APISession.h"
+#import "GearInfoViewController.h"
 
 @interface HeroViewController ()
 @property (nonatomic, weak) UIView* currentSection;
@@ -32,6 +33,8 @@
 @synthesize gearsView;
 @synthesize attributesTableView;
 @synthesize attributesDataSource;
+@synthesize backgroundImageView;
+@synthesize skillsViewController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -46,10 +49,26 @@
 {
     [super viewDidLoad];
 	self.attributesDataSource.hero = self.hero;
+	self.skillsViewController.hero = self.hero;
 	self.title = [self.hero valueForKey:@"name"];
 	
-	self.attributesTableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"backgroundTable.png"]];
+	self.attributesTableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"attributesBackground.png"]];
+	self.attributesTableView.backgroundView.contentMode = UIViewContentModeScaleToFill;
+	self.attributesTableView.backgroundView.contentStretch = CGRectMake(0, 0.1, 1, 0.8);
     // Do any additional setup after loading the view from its nib.
+	
+	NSString* class = [self.hero valueForKey:@"class"];
+	NSInteger gender = [[self.hero valueForKey:@"gender"] integerValue];
+	if ([class isEqualToString:@"wizard"])
+		self.backgroundImageView.image = [UIImage imageNamed:gender == 0 ? @"gearWizardMale.png" : @"gearWizardFemale.png"];
+	else if ([class isEqualToString:@"monk"])
+		self.backgroundImageView.image = [UIImage imageNamed:gender == 0 ? @"gearMonkMale.png" : @"gearMonkFemale.png"];
+	else if ([class isEqualToString:@"barbarian"])
+		self.backgroundImageView.image = [UIImage imageNamed:gender == 0 ? @"gearBarbarianMale.png" : @"gearBarbarianFemale.png"];
+	else if ([class isEqualToString:@"demon-hunter"])
+		self.backgroundImageView.image = [UIImage imageNamed:gender == 0 ? @"gearDemonHunterMale.png" : @"gearDemonHunterFemale.png"];
+	else if ([class isEqualToString:@"witch-doctor"])
+		self.backgroundImageView.image = [UIImage imageNamed:gender == 0 ? @"gearWitchDoctorMale.png" : @"gearWitchDoctorFemale.png"];
 	
 	
 	NSDictionary* gear = @{@"head" : headView, @"shoulders" : shouldersView, @"torso" : torsoView, @"feet" : feetView, @"hands" : handsView, @"legs" : legsView, @"bracers" : bracersView,
@@ -82,7 +101,9 @@
 	[operation setCompletionBlockInCurrentThread:^{
 		if (![operation isCancelled]) {
 			for (NSString* key in [gears allKeys]) {
-				[[gear valueForKey:key] setGear:[gears valueForKey:key]];
+				GearView* gearView = [gear valueForKey:key];
+				gearView.gear = [gears valueForKey:key];
+				gearView.slot = key;
 			}
 		}
 	}];
@@ -112,6 +133,8 @@
 	[self setAttributesTableView:nil];
 	[self setAttributesDataSource:nil];
 	[self setGearsView:nil];
+    [self setBackgroundImageView:nil];
+	[self setSkillsViewController:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -124,10 +147,21 @@
 
 - (IBAction)onChangeSection:(id)sender {
 	[self.currentSection removeFromSuperview];
-	NSArray* sections = @[gearsView, attributesTableView];
+	NSArray* sections = @[gearsView, attributesTableView, self.skillsViewController.view];
 	self.currentSection = [sections objectAtIndex:[sender selectedSegmentIndex]];
 	[self.view addSubview:self.currentSection];
 	self.currentSection.frame = CGRectMake(0, 44, self.view.frame.size.width, self.view.frame.size.height - 44);
+}
+
+#pragma mark - GearViewDelegate
+
+- (void) didSelectGearView:(GearView*) gearView {
+	if (gearView.gear) {
+		GearInfoViewController* controller = [[GearInfoViewController alloc] initWithNibName:@"GearInfoViewController" bundle:nil];
+		controller.gear = gearView.gear;
+		controller.slot = gearView.slot;
+		[self.navigationController pushViewController:controller animated:YES];
+	}
 }
 
 @end

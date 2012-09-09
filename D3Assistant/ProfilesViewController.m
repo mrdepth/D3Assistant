@@ -77,6 +77,8 @@
 				self.profiles = profilesTmp;
 				[self.searchDisplayController.searchResultsTableView reloadData];
 				[self.tableView reloadData];
+				NSString* path = [[AppDelegate documentsDirectory] stringByAppendingPathComponent:@"profiles.plist"];
+				[self.profiles writeToFile:path atomically:YES];
 			}
 		}];
 		
@@ -252,7 +254,7 @@
 		}
 		
 		if (dead) {
-			HeroViewController* controller = [[HeroViewController alloc] initWithNibName:@"HeroViewControllerWF" bundle:nil];
+			HeroViewController* controller = [[HeroViewController alloc] initWithNibName:@"HeroViewController" bundle:nil];
 			controller.hero = hero;
 			[self.navigationController pushViewController:controller animated:YES];
 		}
@@ -275,7 +277,7 @@
 					if (error)
 						[[UIAlertView alertViewWithError:error] show];
 					else {
-						HeroViewController* controller = [[HeroViewController alloc] initWithNibName:@"HeroViewControllerWF" bundle:nil];
+						HeroViewController* controller = [[HeroViewController alloc] initWithNibName:@"HeroViewController" bundle:nil];
 						controller.hero = heroDetails;
 						[self.navigationController pushViewController:controller animated:YES];
 					}

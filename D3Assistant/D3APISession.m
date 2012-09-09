@@ -67,11 +67,11 @@ static D3APISession* sharedSession;
 }
 
 - (NSURL*) itemImageURLWithItem:(NSString*) item size:(NSString*) size {
-	return [NSURL URLWithString:[NSString stringWithFormat:@"http://us.media.blizzard.com/d3/icons/items/%@/%@.png", size, item]];
+	return [NSURL URLWithString:[NSString stringWithFormat:@"http://eu.media.blizzard.com/d3/icons/items/%@/%@.png", size, item]];
 }
 
 - (NSURL*) skillImageURLWithItem:(NSString*) item size:(NSString*) size {
-	return [NSURL URLWithString:[NSString stringWithFormat:@"http://us.media.blizzard.com/d3/icons/skills/%@/%@.png", size, item]];
+	return [NSURL URLWithString:[NSString stringWithFormat:@"http://eu.media.blizzard.com/d3/icons/skills/%@/%@.png", size, item]];
 }
 
 #pragma mark - Private

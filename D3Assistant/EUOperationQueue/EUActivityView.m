@@ -68,6 +68,7 @@
 }
 
 - (void) setup {
+	self.userInteractionEnabled = NO;
 	[[EUOperationQueue sharedQueue] setDelegate:self];
 	self.operations = [NSMutableArray array];
 	self.alpha = 0;

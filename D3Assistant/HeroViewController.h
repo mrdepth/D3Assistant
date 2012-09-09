@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "GearView.h"
 #import "AttributesDataSource.h"
+#import "SkillsViewController.h"
 
-@interface HeroViewController : UIViewController
+@interface HeroViewController : UIViewController<GearViewDelegate>
 @property (weak, nonatomic) IBOutlet GearView *headView;
 @property (weak, nonatomic) IBOutlet GearView *shouldersView;
 @property (weak, nonatomic) IBOutlet GearView *torsoView;
@@ -27,6 +28,8 @@
 @property (strong, nonatomic) IBOutlet UIView *gearsView;
 @property (strong, nonatomic) IBOutlet UITableView *attributesTableView;
 @property (strong, nonatomic) IBOutlet AttributesDataSource *attributesDataSource;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
+@property (strong, nonatomic) IBOutlet SkillsViewController *skillsViewController;
 
 @property (nonatomic, strong) NSDictionary* hero;
 
