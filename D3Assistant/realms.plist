@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>Americas</string>
+		<key>url</key>
+		<string>http://us.battle.net</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Europe</string>
+		<key>url</key>
+		<string>http://eu.battle.net</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Asia</string>
+		<key>url</key>
+		<string>http://tw.battle.net</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Korea</string>
+		<key>url</key>
+		<string>http://kr.battle.net</string>
+	</dict>
+</array>
+</plist>

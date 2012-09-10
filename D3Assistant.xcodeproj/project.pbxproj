@@ -27,6 +27,9 @@
 		12F6827615FDC84D0052A1AA /* PassiveSkillInfoCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F6827515FDC84D0052A1AA /* PassiveSkillInfoCellView.m */; };
 		12F6827815FDC8560052A1AA /* PassiveSkillInfoCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12F6827715FDC8560052A1AA /* PassiveSkillInfoCellView.xib */; };
 		12F6827A15FDCA590052A1AA /* skillPassiveFrameLarge.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F6827915FDCA590052A1AA /* skillPassiveFrameLarge.png */; };
+		12F6829F15FDFA250052A1AA /* realms.plist in Resources */ = {isa = PBXBuildFile; fileRef = 12F6829E15FDFA250052A1AA /* realms.plist */; };
+		12F682A515FDFBD80052A1AA /* RealmsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F682A315FDFBD80052A1AA /* RealmsViewController.m */; };
+		12F682A615FDFBD80052A1AA /* RealmsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12F682A415FDFBD80052A1AA /* RealmsViewController.xib */; };
 		12FB053D15F7806700AE78E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12FB053C15F7806700AE78E4 /* UIKit.framework */; };
 		12FB053F15F7806700AE78E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12FB053E15F7806700AE78E4 /* Foundation.framework */; };
 		12FB054115F7806700AE78E4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12FB054015F7806700AE78E4 /* CoreGraphics.framework */; };
@@ -207,6 +210,10 @@
 		12F6827515FDC84D0052A1AA /* PassiveSkillInfoCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PassiveSkillInfoCellView.m; sourceTree = "<group>"; };
 		12F6827715FDC8560052A1AA /* PassiveSkillInfoCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PassiveSkillInfoCellView.xib; sourceTree = "<group>"; };
 		12F6827915FDCA590052A1AA /* skillPassiveFrameLarge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skillPassiveFrameLarge.png; sourceTree = "<group>"; };
+		12F6829E15FDFA250052A1AA /* realms.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = realms.plist; sourceTree = "<group>"; };
+		12F682A215FDFBD80052A1AA /* RealmsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RealmsViewController.h; sourceTree = "<group>"; };
+		12F682A315FDFBD80052A1AA /* RealmsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RealmsViewController.m; sourceTree = "<group>"; };
+		12F682A415FDFBD80052A1AA /* RealmsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RealmsViewController.xib; sourceTree = "<group>"; };
 		12FB053815F7806700AE78E4 /* D3Assistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = D3Assistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12FB053C15F7806700AE78E4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		12FB053E15F7806700AE78E4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -490,6 +497,16 @@
 			name = PassiveSkillInfoCellView;
 			sourceTree = "<group>";
 		};
+		12F682A115FDFBBF0052A1AA /* RealmsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				12F682A215FDFBD80052A1AA /* RealmsViewController.h */,
+				12F682A315FDFBD80052A1AA /* RealmsViewController.m */,
+				12F682A415FDFBD80052A1AA /* RealmsViewController.xib */,
+			);
+			name = RealmsViewController;
+			sourceTree = "<group>";
+		};
 		12FB052D15F7806700AE78E4 = {
 			isa = PBXGroup;
 			children = (
@@ -531,6 +548,7 @@
 				71BF0B9A15F961C500CDEA4A /* HeroViewController */,
 				12A76F5A15FA22C800B2E9D4 /* GearInfoViewController */,
 				71ACC42E15FBE26D00544EBE /* SkillsViewController */,
+				12F682A115FDFBBF0052A1AA /* RealmsViewController */,
 				12FB054B15F7806700AE78E4 /* AppDelegate.h */,
 				12FB054C15F7806700AE78E4 /* AppDelegate.m */,
 				12FB054315F7806700AE78E4 /* Supporting Files */,
@@ -546,6 +564,7 @@
 				12FB054515F7806700AE78E4 /* InfoPlist.strings */,
 				12FB054815F7806700AE78E4 /* main.m */,
 				12FB054A15F7806700AE78E4 /* D3Assistant-Prefix.pch */,
+				12F6829E15FDFA250052A1AA /* realms.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1078,6 +1097,8 @@
 				12F6827215FDC1200052A1AA /* RuneInfoCellView.xib in Resources */,
 				12F6827815FDC8560052A1AA /* PassiveSkillInfoCellView.xib in Resources */,
 				12F6827A15FDCA590052A1AA /* skillPassiveFrameLarge.png in Resources */,
+				12F6829F15FDFA250052A1AA /* realms.plist in Resources */,
+				12F682A615FDFBD80052A1AA /* RealmsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1132,6 +1153,7 @@
 				12F6826A15FDB88D0052A1AA /* ActiveSkillInfoCellView.m in Sources */,
 				12F6827015FDC1160052A1AA /* RuneInfoCellView.m in Sources */,
 				12F6827615FDC84D0052A1AA /* PassiveSkillInfoCellView.m in Sources */,
+				12F682A515FDFBD80052A1AA /* RealmsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,11 +18,16 @@
 #import "NSDictionary+DeepMutableCopy.h"
 #import "HeroViewController.h"
 #import "UIAlertView+Error.h"
+#import "RealmsViewController.h"
 
 @interface ProfilesViewController ()
-@property (nonatomic, strong) NSString* host;
 @property (nonatomic, strong) NSMutableArray* searchResults;
 @property (nonatomic, strong) NSMutableArray* profiles;
+
+- (IBAction)onRealm:(id)sender;
+- (void) didChangeRealm:(NSNotification*) notification;
+- (void) reload;
+- (NSString*) profilesFilePath;
 
 @end
 
@@ -30,68 +35,22 @@
 
 - (void)viewDidLoad
 {
-
     [super viewDidLoad];
+	self.title = @"Profiles";
 	self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
-	self.host = @"http://eu.battle.net";
-	[D3APISession setSharedSession:[[D3APISession alloc] initWithHost:self.host locale:[[NSLocale preferredLanguages] objectAtIndex:0]]];
 	
-	
-	NSString* path = [[AppDelegate documentsDirectory] stringByAppendingPathComponent:@"profiles.plist"];
-	self.profiles = [NSMutableArray arrayWithContentsOfFile:path];
-	if (self.profiles) {
-		NSArray* profilesCopy = [NSArray arrayWithArray:self.profiles];
-		__block __weak EUOperation* operation = [EUOperation operationWithIdentifier:@"ProfilesViewController+Update" name:@"Updating"];
-		
-		NSMutableArray* profilesTmp = [NSMutableArray array];
-		
-		[operation addExecutionBlock:^{
-			@autoreleasepool {
-				operation.progress = 0;
-				D3APISession* session = [D3APISession sharedSession];
-				
-				NSInteger n = profilesCopy.count;
-				NSInteger i = 0;
-				for (NSMutableDictionary* profile in profilesCopy) {
-					NSDictionary* result = [session careerProfileWithBattleTag:[profile valueForKey:@"battleTag"] error:nil];
-					if (result) {
-						NSMutableDictionary* profileTmp = [result deepMutableCopy];
-						[profileTmp setValue:@(YES) forKey:@"inFavorites"];
-						NSArray* sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"hardcore" ascending:YES],
-						[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
-						
-						[[profileTmp valueForKey:@"heroes"] sortUsingDescriptors:sortDescriptors];
-						[[profileTmp valueForKey:@"fallenHeroes"] sortUsingDescriptors:sortDescriptors];
-						[profilesTmp addObject:profileTmp];
-					}
-					else
-						[profilesTmp addObject:profile];
-					
-					operation.progress = (float) ++i / (float) n;
-				}
-			}
-		}];
-		
-		[operation setCompletionBlockInCurrentThread:^{
-			if (![operation isCancelled]) {
-				self.profiles = profilesTmp;
-				[self.searchDisplayController.searchResultsTableView reloadData];
-				[self.tableView reloadData];
-				NSString* path = [[AppDelegate documentsDirectory] stringByAppendingPathComponent:@"profiles.plist"];
-				[self.profiles writeToFile:path atomically:YES];
-			}
-		}];
-		
-		[[EUOperationQueue sharedQueue] addOperation:operation];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didChangeRealm:) name:DidChangeRealmNotification object:nil];
+
+	if (![[NSUserDefaults standardUserDefaults] valueForKey:@"realm"]) {
+		self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Region" style:UIBarButtonItemStyleBordered target:nil action:nil];
+		RealmsViewController* controller = [[RealmsViewController alloc] initWithNibName:@"RealmsViewController" bundle:nil];
+		UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController:controller];
+		navController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+		[self presentModalViewController:navController animated:NO];
 	}
 	else {
-		self.profiles = [NSMutableArray array];
+		[self reload];
 	}
-
-	
-//	ProgressionView* v = [[ProgressionView alloc] initWithFrame:CGRectMake(10, 10, 290, 27)];
-//	v.progression = 0.5;
-//	[self.view addSubview:v];
 }
 
 - (void)viewDidUnload
@@ -396,8 +355,84 @@
 		profileHeaderView.favoritesButton.selected = YES;
 	}
 
-	NSString* path = [[AppDelegate documentsDirectory] stringByAppendingPathComponent:@"profiles.plist"];
-	[self.profiles writeToFile:path atomically:YES];
+	[self.profiles writeToFile:[self profilesFilePath] atomically:YES];
+}
+
+#pragma mark - Private
+
+- (IBAction)onRealm:(id)sender {
+	RealmsViewController* controller = [[RealmsViewController alloc] initWithNibName:@"RealmsViewController" bundle:nil];
+	UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController:controller];
+	navController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+	[self presentModalViewController:navController animated:YES];
+}
+
+- (void) didChangeRealm:(NSNotification*) notification {
+	self.searchResults = nil;
+	self.profiles = nil;
+	[self.tableView reloadData];
+	[self.searchDisplayController.searchResultsTableView reloadData];
+	[self reload];
+}
+
+- (void) reload {
+	NSDictionary* realm = [[NSUserDefaults standardUserDefaults] valueForKey:@"realm"];
+	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:[realm valueForKey:@"name"] style:UIBarButtonItemStyleBordered target:self action:@selector(onRealm:)];
+	[D3APISession setSharedSession:[[D3APISession alloc] initWithHost:[realm valueForKey:@"url"] locale:[[NSLocale preferredLanguages] objectAtIndex:0]]];
+	
+	self.profiles = [NSMutableArray arrayWithContentsOfFile:[self profilesFilePath]];
+	if (self.profiles) {
+		NSArray* profilesCopy = [NSArray arrayWithArray:self.profiles];
+		__block __weak EUOperation* operation = [EUOperation operationWithIdentifier:@"ProfilesViewController+Update" name:@"Updating"];
+		
+		NSMutableArray* profilesTmp = [NSMutableArray array];
+		
+		[operation addExecutionBlock:^{
+			@autoreleasepool {
+				operation.progress = 0;
+				D3APISession* session = [D3APISession sharedSession];
+				
+				NSInteger n = profilesCopy.count;
+				NSInteger i = 0;
+				for (NSMutableDictionary* profile in profilesCopy) {
+					NSDictionary* result = [session careerProfileWithBattleTag:[profile valueForKey:@"battleTag"] error:nil];
+					if (result) {
+						NSMutableDictionary* profileTmp = [result deepMutableCopy];
+						[profileTmp setValue:@(YES) forKey:@"inFavorites"];
+						NSArray* sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"hardcore" ascending:YES],
+						[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
+						
+						[[profileTmp valueForKey:@"heroes"] sortUsingDescriptors:sortDescriptors];
+						[[profileTmp valueForKey:@"fallenHeroes"] sortUsingDescriptors:sortDescriptors];
+						[profilesTmp addObject:profileTmp];
+					}
+					else
+						[profilesTmp addObject:profile];
+					
+					operation.progress = (float) ++i / (float) n;
+				}
+			}
+		}];
+		
+		[operation setCompletionBlockInCurrentThread:^{
+			if (![operation isCancelled]) {
+				self.profiles = profilesTmp;
+				[self.searchDisplayController.searchResultsTableView reloadData];
+				[self.tableView reloadData];
+				[self.profiles writeToFile:[self profilesFilePath] atomically:YES];
+			}
+		}];
+		
+		[[EUOperationQueue sharedQueue] addOperation:operation];
+	}
+	else {
+		self.profiles = [NSMutableArray array];
+	}
+}
+
+- (NSString*) profilesFilePath {
+	NSDictionary* realm = [[NSUserDefaults standardUserDefaults] valueForKey:@"realm"];
+	return [[AppDelegate documentsDirectory] stringByAppendingPathComponent:[NSString stringWithFormat:@"profiles%@.plist", [realm valueForKey:@"name"]]];
 }
 
 @end

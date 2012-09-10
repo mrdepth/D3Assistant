@@ -28,3 +28,5 @@
 #define ItemYellowBorderHighlightedColor 0xc4b44dff
 #define ItemOrangeBorderHighlightedColor 0xd99645ff
 #define ItemGreenBorderHighlightedColor 0x96b84fff
+
+#define DidChangeRealmNotification @"DidChangeRealmNotification"
