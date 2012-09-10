@@ -18,6 +18,15 @@
 		12A76F4115F9D56500B2E9D4 /* AttributesDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A76F4015F9D56500B2E9D4 /* AttributesDataSource.m */; };
 		12A76F5E15FA22E000B2E9D4 /* GearInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A76F5C15FA22E000B2E9D4 /* GearInfoViewController.m */; };
 		12A76F5F15FA22E000B2E9D4 /* GearInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12A76F5D15FA22E000B2E9D4 /* GearInfoViewController.xib */; };
+		12F6826515FDB6DC0052A1AA /* SkillInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F6826315FDB6DC0052A1AA /* SkillInfoViewController.m */; };
+		12F6826615FDB6DC0052A1AA /* SkillInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12F6826415FDB6DC0052A1AA /* SkillInfoViewController.xib */; };
+		12F6826A15FDB88D0052A1AA /* ActiveSkillInfoCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F6826915FDB88D0052A1AA /* ActiveSkillInfoCellView.m */; };
+		12F6826C15FDB8A00052A1AA /* ActiveSkillInfoCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12F6826B15FDB8A00052A1AA /* ActiveSkillInfoCellView.xib */; };
+		12F6827015FDC1160052A1AA /* RuneInfoCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F6826F15FDC1160052A1AA /* RuneInfoCellView.m */; };
+		12F6827215FDC1200052A1AA /* RuneInfoCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12F6827115FDC1200052A1AA /* RuneInfoCellView.xib */; };
+		12F6827615FDC84D0052A1AA /* PassiveSkillInfoCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F6827515FDC84D0052A1AA /* PassiveSkillInfoCellView.m */; };
+		12F6827815FDC8560052A1AA /* PassiveSkillInfoCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12F6827715FDC8560052A1AA /* PassiveSkillInfoCellView.xib */; };
+		12F6827A15FDCA590052A1AA /* skillPassiveFrameLarge.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F6827915FDCA590052A1AA /* skillPassiveFrameLarge.png */; };
 		12FB053D15F7806700AE78E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12FB053C15F7806700AE78E4 /* UIKit.framework */; };
 		12FB053F15F7806700AE78E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12FB053E15F7806700AE78E4 /* Foundation.framework */; };
 		12FB054115F7806700AE78E4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12FB054015F7806700AE78E4 /* CoreGraphics.framework */; };
@@ -185,6 +194,19 @@
 		12A76F5B15FA22E000B2E9D4 /* GearInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GearInfoViewController.h; sourceTree = "<group>"; };
 		12A76F5C15FA22E000B2E9D4 /* GearInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GearInfoViewController.m; sourceTree = "<group>"; };
 		12A76F5D15FA22E000B2E9D4 /* GearInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GearInfoViewController.xib; sourceTree = "<group>"; };
+		12F6826215FDB6DC0052A1AA /* SkillInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkillInfoViewController.h; sourceTree = "<group>"; };
+		12F6826315FDB6DC0052A1AA /* SkillInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkillInfoViewController.m; sourceTree = "<group>"; };
+		12F6826415FDB6DC0052A1AA /* SkillInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SkillInfoViewController.xib; sourceTree = "<group>"; };
+		12F6826815FDB88D0052A1AA /* ActiveSkillInfoCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActiveSkillInfoCellView.h; sourceTree = "<group>"; };
+		12F6826915FDB88D0052A1AA /* ActiveSkillInfoCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActiveSkillInfoCellView.m; sourceTree = "<group>"; };
+		12F6826B15FDB8A00052A1AA /* ActiveSkillInfoCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActiveSkillInfoCellView.xib; sourceTree = "<group>"; };
+		12F6826E15FDC1160052A1AA /* RuneInfoCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuneInfoCellView.h; sourceTree = "<group>"; };
+		12F6826F15FDC1160052A1AA /* RuneInfoCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RuneInfoCellView.m; sourceTree = "<group>"; };
+		12F6827115FDC1200052A1AA /* RuneInfoCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RuneInfoCellView.xib; sourceTree = "<group>"; };
+		12F6827415FDC84D0052A1AA /* PassiveSkillInfoCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PassiveSkillInfoCellView.h; sourceTree = "<group>"; };
+		12F6827515FDC84D0052A1AA /* PassiveSkillInfoCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PassiveSkillInfoCellView.m; sourceTree = "<group>"; };
+		12F6827715FDC8560052A1AA /* PassiveSkillInfoCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PassiveSkillInfoCellView.xib; sourceTree = "<group>"; };
+		12F6827915FDCA590052A1AA /* skillPassiveFrameLarge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skillPassiveFrameLarge.png; sourceTree = "<group>"; };
 		12FB053815F7806700AE78E4 /* D3Assistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = D3Assistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12FB053C15F7806700AE78E4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		12FB053E15F7806700AE78E4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -425,6 +447,49 @@
 			name = GearInfoViewController;
 			sourceTree = "<group>";
 		};
+		12F6825B15FDB67C0052A1AA /* SkillInfoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				12F6826715FDB8740052A1AA /* ActiveSkillInfoCellView */,
+				12F6827315FDC8370052A1AA /* PassiveSkillInfoCellView */,
+				12F6826D15FDC1040052A1AA /* RuneInfoCellView */,
+				12F6826215FDB6DC0052A1AA /* SkillInfoViewController.h */,
+				12F6826315FDB6DC0052A1AA /* SkillInfoViewController.m */,
+				12F6826415FDB6DC0052A1AA /* SkillInfoViewController.xib */,
+			);
+			name = SkillInfoViewController;
+			sourceTree = "<group>";
+		};
+		12F6826715FDB8740052A1AA /* ActiveSkillInfoCellView */ = {
+			isa = PBXGroup;
+			children = (
+				12F6826815FDB88D0052A1AA /* ActiveSkillInfoCellView.h */,
+				12F6826915FDB88D0052A1AA /* ActiveSkillInfoCellView.m */,
+				12F6826B15FDB8A00052A1AA /* ActiveSkillInfoCellView.xib */,
+			);
+			name = ActiveSkillInfoCellView;
+			sourceTree = "<group>";
+		};
+		12F6826D15FDC1040052A1AA /* RuneInfoCellView */ = {
+			isa = PBXGroup;
+			children = (
+				12F6826E15FDC1160052A1AA /* RuneInfoCellView.h */,
+				12F6826F15FDC1160052A1AA /* RuneInfoCellView.m */,
+				12F6827115FDC1200052A1AA /* RuneInfoCellView.xib */,
+			);
+			name = RuneInfoCellView;
+			sourceTree = "<group>";
+		};
+		12F6827315FDC8370052A1AA /* PassiveSkillInfoCellView */ = {
+			isa = PBXGroup;
+			children = (
+				12F6827415FDC84D0052A1AA /* PassiveSkillInfoCellView.h */,
+				12F6827515FDC84D0052A1AA /* PassiveSkillInfoCellView.m */,
+				12F6827715FDC8560052A1AA /* PassiveSkillInfoCellView.xib */,
+			);
+			name = PassiveSkillInfoCellView;
+			sourceTree = "<group>";
+		};
 		12FB052D15F7806700AE78E4 = {
 			isa = PBXGroup;
 			children = (
@@ -616,6 +681,7 @@
 			children = (
 				71ACC4E015FBE69D00544EBE /* ActiveSkillView */,
 				71B9040315FC9A4F00307AC7 /* PassiveSkillView */,
+				12F6825B15FDB67C0052A1AA /* SkillInfoViewController */,
 				71ACC4DB15FBE62200544EBE /* SkillsViewController.h */,
 				71ACC4DC15FBE62200544EBE /* SkillsViewController.m */,
 				71ACC4DD15FBE62200544EBE /* SkillsViewController.xib */,
@@ -692,6 +758,7 @@
 				71ACC47715FBE60B00544EBE /* skillActiveFrameHighlighted.png */,
 				71ACC47815FBE60B00544EBE /* skillCalcBackground.png */,
 				71ACC47915FBE60B00544EBE /* skillPassiveFrame.png */,
+				12F6827915FDCA590052A1AA /* skillPassiveFrameLarge.png */,
 				71ACC47A15FBE60B00544EBE /* skillPassiveFrameHighlighted.png */,
 				71ACC47B15FBE60B00544EBE /* skull.png */,
 				71ACC47C15FBE60B00544EBE /* socket.png */,
@@ -1006,6 +1073,11 @@
 				71ACC4E815FBEBB800544EBE /* skillPrimary.png in Resources */,
 				71ACC4E915FBEBB800544EBE /* skillSecondary.png in Resources */,
 				71B9040915FC9A6D00307AC7 /* PassiveSkillView.xib in Resources */,
+				12F6826615FDB6DC0052A1AA /* SkillInfoViewController.xib in Resources */,
+				12F6826C15FDB8A00052A1AA /* ActiveSkillInfoCellView.xib in Resources */,
+				12F6827215FDC1200052A1AA /* RuneInfoCellView.xib in Resources */,
+				12F6827815FDC8560052A1AA /* PassiveSkillInfoCellView.xib in Resources */,
+				12F6827A15FDCA590052A1AA /* skillPassiveFrameLarge.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1056,6 +1128,10 @@
 				71ACC4DE15FBE62200544EBE /* SkillsViewController.m in Sources */,
 				71ACC4E315FBE6CF00544EBE /* ActiveSkillView.m in Sources */,
 				71B9040715FC9A6300307AC7 /* PassiveSkillView.m in Sources */,
+				12F6826515FDB6DC0052A1AA /* SkillInfoViewController.m in Sources */,
+				12F6826A15FDB88D0052A1AA /* ActiveSkillInfoCellView.m in Sources */,
+				12F6827015FDC1160052A1AA /* RuneInfoCellView.m in Sources */,
+				12F6827615FDC84D0052A1AA /* PassiveSkillInfoCellView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

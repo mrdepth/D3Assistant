@@ -7,6 +7,7 @@
 //
 
 #import "SkillsViewController.h"
+#import "SkillInfoViewController.h"
 
 @interface SkillsViewController ()
 
@@ -18,6 +19,7 @@
 @synthesize activeSkills;
 @synthesize passiveSkills;
 @synthesize hero;
+@synthesize navigationController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -79,10 +81,33 @@
 	tmp = nil;
 }
 
+- (UINavigationController*) navigationController {
+	if (navigationController)
+		return navigationController;
+	else
+		return [super navigationController];
+}
+
 #pragma mark - ActiveSkillViewDelegate
 
 - (void) didSelectActiveSkillView:(ActiveSkillView*) activeSkillView {
-	
+	if (activeSkillView.skill) {
+		SkillInfoViewController* controller = [[SkillInfoViewController alloc] initWithNibName:@"SkillInfoViewController" bundle:nil];
+		controller.activeSkill = activeSkillView.skill;
+		if (activeSkillView.rune)
+			controller.runes = @[activeSkillView.rune];
+		[self.navigationController pushViewController:controller animated:YES];
+	}
+}
+
+#pragma mark - PassiveSkillViewDelegate
+
+- (void) didSelectPassiveSkillView:(PassiveSkillView*) passiveSkillView {
+	if (passiveSkillView.skill) {
+		SkillInfoViewController* controller = [[SkillInfoViewController alloc] initWithNibName:@"SkillInfoViewController" bundle:nil];
+		controller.passiveSkill = passiveSkillView.skill;
+		[self.navigationController pushViewController:controller animated:YES];
+	}
 }
 
 @end

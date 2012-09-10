@@ -17,5 +17,6 @@
 @property (strong, nonatomic) IBOutletCollection(PassiveSkillView) NSArray *passiveSkills;
 
 @property (nonatomic, strong) NSDictionary* hero;
+@property (nonatomic, weak) UINavigationController* navigationController;
 
 @end

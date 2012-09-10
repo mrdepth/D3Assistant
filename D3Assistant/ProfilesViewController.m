@@ -34,7 +34,7 @@
     [super viewDidLoad];
 	self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
 	self.host = @"http://eu.battle.net";
-	[D3APISession setSharedSession:[[D3APISession alloc] initWithHost:self.host locale:[[NSLocale currentLocale] identifier]]];
+	[D3APISession setSharedSession:[[D3APISession alloc] initWithHost:self.host locale:[[NSLocale preferredLanguages] objectAtIndex:0]]];
 	
 	
 	NSString* path = [[AppDelegate documentsDirectory] stringByAppendingPathComponent:@"profiles.plist"];

@@ -50,6 +50,7 @@
     [super viewDidLoad];
 	self.attributesDataSource.hero = self.hero;
 	self.skillsViewController.hero = self.hero;
+	self.skillsViewController.navigationController = self.navigationController;
 	self.title = [self.hero valueForKey:@"name"];
 	
 	self.attributesTableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"attributesBackground.png"]];
