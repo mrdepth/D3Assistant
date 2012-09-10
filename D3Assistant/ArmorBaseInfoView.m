@@ -57,7 +57,7 @@
 
 	NSNumber* armorValue = [armor valueForKeyPath:@"armor.max"];
 	if (armorValue)
-		self.armorValueLabel.text = [NSString stringWithFormat:@"%.1f", [armorValue floatValue]];
+		self.armorValueLabel.text = [NSString stringWithFormat:@"%i", [armorValue intValue]];
 	else {
 		self.armorValueLabel.hidden = YES;
 		self.armorLabel.hidden = YES;

@@ -16,6 +16,10 @@
 #import "UITableViewCell+Nib.h"
 #import "UIImageView+URL.h"
 
+#define GEAR_STAT_CELL_HEIGHT 20
+#define GEM_STAT_CELL_HEIGHT  30
+
+
 @interface GearInfoViewController ()
 
 @end
@@ -132,12 +136,18 @@
  return 30;
  }*/
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0)
+        return GEAR_STAT_CELL_HEIGHT;
+    else
+        return GEM_STAT_CELL_HEIGHT;
+};
+
 - (NSString*) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
 	return nil;
 }
 
-- (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[aTableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
