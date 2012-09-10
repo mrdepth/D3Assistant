@@ -42,7 +42,7 @@
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didChangeRealm:) name:DidChangeRealmNotification object:nil];
 
 	if (![[NSUserDefaults standardUserDefaults] valueForKey:@"realm"]) {
-		self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Region" style:UIBarButtonItemStyleBordered target:nil action:nil];
+		self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Region" style:UIBarButtonItemStyleBordered target:self action:@selector(onRealm:)];
 		RealmsViewController* controller = [[RealmsViewController alloc] initWithNibName:@"RealmsViewController" bundle:nil];
 		UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController:controller];
 		navController.navigationBar.barStyle = UIBarStyleBlackOpaque;
