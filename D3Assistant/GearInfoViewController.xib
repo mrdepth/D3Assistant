@@ -2,10 +2,10 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1296</int>
-		<string key="IBDocument.SystemVersion">11E53</string>
+		<string key="IBDocument.SystemVersion">12B19</string>
 		<string key="IBDocument.InterfaceBuilderVersion">2549</string>
-		<string key="IBDocument.AppKitVersion">1138.47</string>
-		<string key="IBDocument.HIToolboxVersion">569.00</string>
+		<string key="IBDocument.AppKitVersion">1187</string>
+		<string key="IBDocument.HIToolboxVersion">624.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			<string key="NS.object.0">1498</string>
@@ -117,7 +117,7 @@
 							<object class="IBUILabel" id="164148679">
 								<reference key="NSNextResponder" ref="953889762"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{10, 0}, {72, 21}}</string>
+								<string key="NSFrame">{{10, 0}, {70, 21}}</string>
 								<reference key="NSSuperview" ref="953889762"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="808428123"/>
@@ -148,7 +148,7 @@
 							<object class="IBUILabel" id="808428123">
 								<reference key="NSNextResponder" ref="953889762"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{86, 0}, {20, 21}}</string>
+								<string key="NSFrame">{{80, 0}, {20, 21}}</string>
 								<reference key="NSSuperview" ref="953889762"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="511986873"/>
@@ -172,7 +172,7 @@
 							<object class="IBUILabel" id="511986873">
 								<reference key="NSNextResponder" ref="953889762"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{186, 0}, {100, 21}}</string>
+								<string key="NSFrame">{{190, 0}, {100, 21}}</string>
 								<reference key="NSSuperview" ref="953889762"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="823735963"/>
@@ -365,9 +365,9 @@
 						<reference key="object" ref="953889762"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="823735963"/>
-							<reference ref="511986873"/>
 							<reference ref="808428123"/>
 							<reference ref="164148679"/>
+							<reference ref="511986873"/>
 						</array>
 						<reference key="parent" ref="191373211"/>
 					</object>
