@@ -12,25 +12,25 @@
 #import "SkillsViewController.h"
 
 @interface HeroViewController : UIViewController<GearViewDelegate>
-@property (weak, nonatomic) IBOutlet GearView *headView;
-@property (weak, nonatomic) IBOutlet GearView *shouldersView;
-@property (weak, nonatomic) IBOutlet GearView *torsoView;
-@property (weak, nonatomic) IBOutlet GearView *feetView;
-@property (weak, nonatomic) IBOutlet GearView *handsView;
-@property (weak, nonatomic) IBOutlet GearView *legsView;
-@property (weak, nonatomic) IBOutlet GearView *bracersView;
-@property (weak, nonatomic) IBOutlet GearView *mainHandView;
-@property (weak, nonatomic) IBOutlet GearView *offHandView;
-@property (weak, nonatomic) IBOutlet GearView *waistView;
-@property (weak, nonatomic) IBOutlet GearView *leftFingerView;
-@property (weak, nonatomic) IBOutlet GearView *rightFingerView;
-@property (weak, nonatomic) IBOutlet GearView *neckView;
+@property (assign, nonatomic) IBOutlet GearView *headView;
+@property (assign, nonatomic) IBOutlet GearView *shouldersView;
+@property (assign, nonatomic) IBOutlet GearView *torsoView;
+@property (assign, nonatomic) IBOutlet GearView *feetView;
+@property (assign, nonatomic) IBOutlet GearView *handsView;
+@property (assign, nonatomic) IBOutlet GearView *legsView;
+@property (assign, nonatomic) IBOutlet GearView *bracersView;
+@property (assign, nonatomic) IBOutlet GearView *mainHandView;
+@property (assign, nonatomic) IBOutlet GearView *offHandView;
+@property (assign, nonatomic) IBOutlet GearView *waistView;
+@property (assign, nonatomic) IBOutlet GearView *leftFingerView;
+@property (assign, nonatomic) IBOutlet GearView *rightFingerView;
+@property (assign, nonatomic) IBOutlet GearView *neckView;
 @property (strong, nonatomic) IBOutlet UIView *gearsView;
 @property (strong, nonatomic) IBOutlet UITableView *attributesTableView;
 @property (strong, nonatomic) IBOutlet AttributesDataSource *attributesDataSource;
-@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
+@property (assign, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @property (strong, nonatomic) IBOutlet SkillsViewController *skillsViewController;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *sectionsControl;
+@property (strong, nonatomic) IBOutlet UISegmentedControl *sectionsControl;
 
 @property (nonatomic, strong) NSDictionary* hero;
 @property (nonatomic, assign) BOOL fallen;

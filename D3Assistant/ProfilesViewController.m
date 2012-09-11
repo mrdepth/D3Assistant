@@ -44,7 +44,7 @@
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didChangeRealm:) name:DidChangeRealmNotification object:nil];
 
 	if (![[NSUserDefaults standardUserDefaults] valueForKey:@"realm"]) {
-		self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Region" style:UIBarButtonItemStyleBordered target:nil action:nil];
+		self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Region" style:UIBarButtonItemStyleBordered target:self action:@selector(onRealm:)];
 		RealmsViewController* controller = [[RealmsViewController alloc] initWithNibName:@"RealmsViewController" bundle:nil];
 		UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController:controller];
 		navController.navigationBar.barStyle = UIBarStyleBlackOpaque;
@@ -65,7 +65,10 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+		return UIInterfaceOrientationIsLandscape(interfaceOrientation);
+	else
+		return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 #pragma mark - Table view data source
@@ -215,13 +218,19 @@
 		}
 		
 		if (fallen) {
-			HeroViewController* controller = [[HeroViewController alloc] initWithNibName:@"HeroViewController" bundle:nil];
-			controller.hero = hero;
-			controller.fallen = fallen;
-			[self.navigationController pushViewController:controller animated:YES];
+			if (self.heroViewController) {
+				self.heroViewController.fallen = fallen;
+				self.heroViewController.hero = hero;
+			}
+			else {
+				HeroViewController* controller = [[HeroViewController alloc] initWithNibName:@"HeroViewController" bundle:nil];
+				controller.fallen = fallen;
+				controller.hero = hero;
+				[self.navigationController pushViewController:controller animated:YES];
+			}
 		}
 		else {
-			__block __weak EUOperation* operation = [EUOperation operationWithIdentifier:@"ProfilesViewController+LoadingHero" name:@"Loading Hero"];
+			__block __unsafe_unretained EUOperation* operation = [EUOperation operationWithIdentifier:@"ProfilesViewController+LoadingHero" name:@"Loading Hero"];
 			
 			__block NSError* error = nil;
 			__block NSDictionary* heroDetails = nil;
@@ -239,10 +248,16 @@
 					if (error)
 						[[UIAlertView alertViewWithError:error] show];
 					else {
-						HeroViewController* controller = [[HeroViewController alloc] initWithNibName:@"HeroViewController" bundle:nil];
-						controller.hero = heroDetails;
-						controller.fallen = fallen;
-						[self.navigationController pushViewController:controller animated:YES];
+						if (self.heroViewController) {
+							self.heroViewController.fallen = fallen;
+							self.heroViewController.hero = heroDetails;
+						}
+						else {
+							HeroViewController* controller = [[HeroViewController alloc] initWithNibName:@"HeroViewController" bundle:nil];
+							controller.fallen = fallen;
+							controller.hero = heroDetails;
+							[self.navigationController pushViewController:controller animated:YES];
+						}
 					}
 				}
 			}];
@@ -264,7 +279,7 @@
 		[self.searchDisplayController.searchResultsTableView reloadData];
 	}
 	else {
-		__block __weak EUOperation* operation = [EUOperation operationWithIdentifier:@"ProfilesViewController+Search" name:@"Searching"];
+		__block __unsafe_unretained EUOperation* operation = [EUOperation operationWithIdentifier:@"ProfilesViewController+Search" name:@"Searching"];
 		
 		__block NSError* error = nil;
 		__block NSDictionary* resultTmp = nil;
@@ -367,6 +382,7 @@
 - (IBAction)onRealm:(id)sender {
 	RealmsViewController* controller = [[RealmsViewController alloc] initWithNibName:@"RealmsViewController" bundle:nil];
 	UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController:controller];
+	navController.modalPresentationStyle = UIModalPresentationFormSheet;
 	navController.navigationBar.barStyle = UIBarStyleBlackOpaque;
 	[self presentModalViewController:navController animated:YES];
 }
@@ -391,7 +407,7 @@
 	self.profiles = [NSMutableArray arrayWithContentsOfFile:[self profilesFilePath]];
 	if (self.profiles) {
 		NSArray* profilesCopy = [NSArray arrayWithArray:self.profiles];
-		__block __weak EUOperation* operation = [EUOperation operationWithIdentifier:@"ProfilesViewController+Update" name:@"Updating"];
+		__block __unsafe_unretained EUOperation* operation = [EUOperation operationWithIdentifier:@"ProfilesViewController+Update" name:@"Updating"];
 		
 		NSMutableArray* profilesTmp = [NSMutableArray array];
 		

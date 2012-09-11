@@ -38,7 +38,7 @@
 			</object>
 			<object class="IBUIView" id="243886850">
 				<reference key="NSNextResponder"/>
-				<int key="NSvFlags">292</int>
+				<int key="NSvFlags">274</int>
 				<array class="NSMutableArray" key="NSSubviews">
 					<object class="IBUITableView" id="873029372">
 						<reference key="NSNextResponder" ref="243886850"/>
@@ -50,7 +50,6 @@
 								<string key="NSFrameSize">{320, 44}</string>
 								<reference key="NSSuperview" ref="873029372"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<int key="IBUIContentMode">3</int>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -256,6 +255,20 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">ProfilesViewController</string>
 					<string key="superclassName">UIViewController</string>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="onDonate:">id</string>
+						<string key="onRealm:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="onDonate:">
+							<string key="name">onDonate:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="onRealm:">
+							<string key="name">onRealm:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
 					<object class="NSMutableDictionary" key="outlets">
 						<string key="NS.key.0">tableView</string>
 						<string key="NS.object.0">UITableView</string>

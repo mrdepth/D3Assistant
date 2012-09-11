@@ -10,7 +10,8 @@
 #import "SkillInfoViewController.h"
 
 @interface SkillsViewController ()
-
+@property (nonatomic, strong) UIPopoverController* skillInfoPopoverController;
+- (void) reload;
 @end
 
 @implementation SkillsViewController
@@ -20,6 +21,8 @@
 @synthesize passiveSkills;
 @synthesize hero;
 @synthesize navigationController;
+
+@synthesize skillInfoPopoverController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,29 +36,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	[self.scrollView addSubview:self.contentView];
-	self.scrollView.contentSize = self.contentView.frame.size;
-	
-	NSArray* active = [self.hero valueForKeyPath:@"skills.active"];
-	NSArray* passive = [self.hero valueForKeyPath:@"skills.passive"];
-	
-	for (ActiveSkillView* skillView in self.activeSkills) {
-		skillView.order = skillView.tag;
-		if (skillView.order < active.count) {
-			NSDictionary* item = [active objectAtIndex:skillView.order];
-			skillView.skill = [item valueForKey:@"skill"];
-			skillView.rune = [item valueForKey:@"rune"];
-		}
+	if (self.scrollView) {
+		[self.scrollView addSubview:self.contentView];
+		self.scrollView.contentSize = self.contentView.frame.size;
 	}
 	
-	for (PassiveSkillView* skillView in self.passiveSkills) {
-		if (skillView.tag < passive.count) {
-			NSDictionary* item = [passive objectAtIndex:skillView.tag];
-			skillView.skill = [item valueForKey:@"skill"];
-		}
-	}
 
-	
+	[self reload];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -79,6 +66,9 @@
 	NSDictionary* tmp = hero;
 	hero = value;
 	tmp = nil;
+	
+	if (self.view)
+		[self reload];
 }
 
 - (UINavigationController*) navigationController {
@@ -96,7 +86,14 @@
 		controller.activeSkill = activeSkillView.skill;
 		if (activeSkillView.rune)
 			controller.runes = @[activeSkillView.rune];
-		[self.navigationController pushViewController:controller animated:YES];
+		
+		if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+			self.skillInfoPopoverController = [[UIPopoverController alloc] initWithContentViewController:controller];
+			[self.skillInfoPopoverController presentPopoverFromRect:activeSkillView.bounds inView:activeSkillView permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+		}
+		else {
+			[self.navigationController pushViewController:controller animated:YES];
+		}
 	}
 }
 
@@ -106,7 +103,42 @@
 	if (passiveSkillView.skill) {
 		SkillInfoViewController* controller = [[SkillInfoViewController alloc] initWithNibName:@"SkillInfoViewController" bundle:nil];
 		controller.passiveSkill = passiveSkillView.skill;
-		[self.navigationController pushViewController:controller animated:YES];
+		if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+			self.skillInfoPopoverController = [[UIPopoverController alloc] initWithContentViewController:controller];
+			[self.skillInfoPopoverController presentPopoverFromRect:passiveSkillView.bounds inView:passiveSkillView permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+		}
+		else {
+			[self.navigationController pushViewController:controller animated:YES];
+		}
+	}
+}
+
+#pragma mark - Private
+
+- (void) reload {
+	NSArray* active = [self.hero valueForKeyPath:@"skills.active"];
+	NSArray* passive = [self.hero valueForKeyPath:@"skills.passive"];
+	
+	for (ActiveSkillView* skillView in self.activeSkills) {
+		skillView.order = skillView.tag;
+		if (skillView.order < active.count) {
+			NSDictionary* item = [active objectAtIndex:skillView.order];
+			skillView.skill = [item valueForKey:@"skill"];
+			skillView.rune = [item valueForKey:@"rune"];
+		}
+		else {
+			skillView.skill = nil;
+			skillView.rune = nil;
+		}
+	}
+	
+	for (PassiveSkillView* skillView in self.passiveSkills) {
+		if (skillView.tag < passive.count) {
+			NSDictionary* item = [passive objectAtIndex:skillView.tag];
+			skillView.skill = [item valueForKey:@"skill"];
+		}
+		else
+			skillView.skill = nil;
 	}
 }
 

@@ -15,17 +15,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
-	
-	ProfilesViewController* controller = [[ProfilesViewController alloc] initWithNibName:@"ProfilesViewController" bundle:nil];
-	UINavigationController* navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
-	navigationController.navigationBar.barStyle = UIBarStyleBlack;
-	self.window.rootViewController = navigationController;
-	EUActivityView* activityView = [[EUActivityView alloc] initWithFrame:self.window.bounds];
-	[self.window addSubview:activityView];
+	EUActivityView* activityView = [[EUActivityView alloc] initWithFrame:self.window.rootViewController.view.bounds];
+	[self.window.rootViewController.view addSubview:activityView];
+	[self.window makeKeyAndVisible];
     return YES;
 }
 

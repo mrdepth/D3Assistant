@@ -9,6 +9,6 @@
 #import "GearStatCellView.h"
 
 @interface GemStatCellView : GearStatCellView
-@property (weak, nonatomic) IBOutlet UIImageView *gemImageView;
+@property (assign, nonatomic) IBOutlet UIImageView *gemImageView;
 
 @end

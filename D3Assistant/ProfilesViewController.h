@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "ProfileHeaderView.h"
+#import "HeroViewController.h"
 
 @interface ProfilesViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate, ProfileHeaderViewDelegate>
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (assign, nonatomic) IBOutlet UITableView *tableView;
+@property (assign, nonatomic) IBOutlet HeroViewController* heroViewController;
 
 @end

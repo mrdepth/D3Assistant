@@ -27,7 +27,10 @@
 @synthesize highlighted;
 
 - (void) awakeFromNib {
-	[[NSBundle mainBundle] loadNibNamed:@"PassiveSkillView" owner:self options:nil];
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+		[[NSBundle mainBundle] loadNibNamed:@"PassiveSkillView-iPad" owner:self options:nil];
+	else
+		[[NSBundle mainBundle] loadNibNamed:@"PassiveSkillView" owner:self options:nil];
 	[self addSubview:contentView];
 }
 

@@ -124,7 +124,7 @@ static NSOperationQueue* sharedQueue = nil;
 	__block URLOperation* operation = [[[URLOperation alloc] init] autorelease];
 #else
 	URLOperation* operation = [[URLOperation alloc] init];
-	__block URLOperation* __weak weakOperation = operation;
+	__block URLOperation* __unsafe_unretained weakOperation = operation;
 #endif
 	
 	operation.url = url;

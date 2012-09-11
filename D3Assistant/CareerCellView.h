@@ -10,7 +10,7 @@
 #import "ProgressionView.h"
 
 @interface CareerCellView : UITableViewCell
-@property (weak, nonatomic) IBOutlet ProgressionView *progressionSCView;
-@property (weak, nonatomic) IBOutlet ProgressionView *progressionHCView;
+@property (assign, nonatomic) IBOutlet ProgressionView *progressionSCView;
+@property (assign, nonatomic) IBOutlet ProgressionView *progressionHCView;
 
 @end

@@ -15,10 +15,10 @@
 
 @interface PassiveSkillView : UIView
 @property (strong, nonatomic) IBOutlet UIView *contentView;
-@property (weak, nonatomic) IBOutlet UIImageView *skillImageView;
-@property (weak, nonatomic) IBOutlet UILabel *skillNameLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *frameImageView;
-@property (weak, nonatomic) IBOutlet id<PassiveSkillViewDelegate> delegate;
+@property (assign, nonatomic) IBOutlet UIImageView *skillImageView;
+@property (assign, nonatomic) IBOutlet UILabel *skillNameLabel;
+@property (assign, nonatomic) IBOutlet UIImageView *frameImageView;
+@property (assign, nonatomic) IBOutlet id<PassiveSkillViewDelegate> delegate;
 
 @property (nonatomic, strong) NSDictionary* skill;
 

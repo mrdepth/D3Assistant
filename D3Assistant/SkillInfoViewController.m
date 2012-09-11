@@ -19,6 +19,7 @@
 @end
 
 @implementation SkillInfoViewController
+@synthesize tableView;
 @synthesize skillNameLabel;
 @synthesize activeSkill;
 @synthesize passiveSkill;
@@ -41,12 +42,25 @@
 		self.skillNameLabel.text = [self.activeSkill valueForKey:@"name"];
 	else
 		self.skillNameLabel.text = [self.passiveSkill valueForKey:@"name"];
-    // Do any additional setup after loading the view from its nib.
+	
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		CGFloat height = self.tableView.frame.origin.y + self.tableView.tableHeaderView.frame.size.height + self.tableView.tableFooterView.frame.size.height;
+		
+		NSInteger n = [self numberOfSectionsInTableView:self.tableView];
+		for (NSInteger i = 0; i < n; i++) {
+			NSInteger rows = [self tableView:self.tableView numberOfRowsInSection:i];
+			for (int j = 0; j < rows; j++)
+				height += [self tableView:self.tableView heightForRowAtIndexPath:[NSIndexPath indexPathForRow:j inSection:i]];
+		}
+		
+		self.contentSizeForViewInPopover = CGSizeMake(320, height);
+	}
 }
 
 - (void)viewDidUnload
 {
 	[self setSkillNameLabel:nil];
+	[self setTableView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

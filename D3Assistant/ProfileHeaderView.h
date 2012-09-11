@@ -15,10 +15,10 @@
 @end
 
 @interface ProfileHeaderView : UIView
-@property (weak, nonatomic) IBOutlet UILabel *battleTagLabel;
-@property (weak, nonatomic) IBOutlet UIButton *favoritesButton;
+@property (assign, nonatomic) IBOutlet UILabel *battleTagLabel;
+@property (assign, nonatomic) IBOutlet UIButton *favoritesButton;
 @property (nonatomic, strong) NSDictionary* profile;
-@property (nonatomic, weak) id<ProfileHeaderViewDelegate> delegate;
+@property (nonatomic, assign) id<ProfileHeaderViewDelegate> delegate;
 
 - (IBAction) onFavorites:(id)sender;
 @end

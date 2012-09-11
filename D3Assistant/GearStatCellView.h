@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface GearStatCellView : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *statLabel;
+@property (assign, nonatomic) IBOutlet UILabel *statLabel;
 
 @end

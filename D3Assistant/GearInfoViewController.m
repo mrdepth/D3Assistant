@@ -16,6 +16,10 @@
 #import "UITableViewCell+Nib.h"
 #import "UIImageView+URL.h"
 
+#define GEAR_STAT_CELL_HEIGHT 20
+#define GEM_STAT_CELL_HEIGHT  30
+
+
 @interface GearInfoViewController ()
 
 @end
@@ -68,7 +72,19 @@
 	
 	self.itemLevelLabel.text = [NSString stringWithFormat:@"%d", [[self.gear valueForKey:@"itemLevel"] integerValue]];
 	self.requiredLevelLabel.text = [NSString stringWithFormat:@"%d", [[self.gear valueForKey:@"requiredLevel"] integerValue]];
-    // Do any additional setup after loading the view from its nib.
+
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		CGFloat height = self.tableView.frame.origin.y + self.tableView.tableHeaderView.frame.size.height + self.tableView.tableFooterView.frame.size.height + 40;
+		
+		NSInteger n = [self numberOfSectionsInTableView:self.tableView];
+		for (NSInteger i = 0; i < n; i++) {
+			NSInteger rows = [self tableView:self.tableView numberOfRowsInSection:i];
+			if (rows > 0)
+				height += [self tableView:self.tableView heightForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:i]] * rows;
+		}
+		
+		self.contentSizeForViewInPopover = CGSizeMake(320, height);
+	}
 }
 
 - (void)viewDidUnload
@@ -132,12 +148,18 @@
  return 30;
  }*/
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0)
+        return GEAR_STAT_CELL_HEIGHT;
+    else
+        return GEM_STAT_CELL_HEIGHT;
+};
+
 - (NSString*) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
 	return nil;
 }
 
-- (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[aTableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

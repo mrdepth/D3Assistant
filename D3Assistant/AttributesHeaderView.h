@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface AttributesHeaderView : UIView
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (assign, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end

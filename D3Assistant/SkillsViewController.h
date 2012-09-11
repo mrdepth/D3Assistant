@@ -11,12 +11,12 @@
 #import "PassiveSkillView.h"
 
 @interface SkillsViewController : UIViewController<ActiveSkillViewDelegate>
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (assign, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet UIView *contentView;
 @property (strong, nonatomic) IBOutletCollection(ActiveSkillView) NSArray *activeSkills;
 @property (strong, nonatomic) IBOutletCollection(PassiveSkillView) NSArray *passiveSkills;
 
 @property (nonatomic, strong) NSDictionary* hero;
-@property (nonatomic, weak) UINavigationController* navigationController;
+@property (nonatomic, assign) UINavigationController* navigationController;
 
 @end

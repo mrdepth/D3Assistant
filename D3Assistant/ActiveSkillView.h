@@ -15,14 +15,14 @@
 
 @interface ActiveSkillView : UIView
 @property (strong, nonatomic) IBOutlet UIView *contentView;
-@property (weak, nonatomic) IBOutlet UIImageView *skillImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *runeImageView;
-@property (weak, nonatomic) IBOutlet UILabel *skillNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *runeNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *skillOrderLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *skillOrderImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *frameImageView;
-@property (weak, nonatomic) IBOutlet id<ActiveSkillViewDelegate> delegate;
+@property (assign, nonatomic) IBOutlet UIImageView *skillImageView;
+@property (assign, nonatomic) IBOutlet UIImageView *runeImageView;
+@property (assign, nonatomic) IBOutlet UILabel *skillNameLabel;
+@property (assign, nonatomic) IBOutlet UILabel *runeNameLabel;
+@property (assign, nonatomic) IBOutlet UILabel *skillOrderLabel;
+@property (assign, nonatomic) IBOutlet UIImageView *skillOrderImageView;
+@property (assign, nonatomic) IBOutlet UIImageView *frameImageView;
+@property (assign, nonatomic) IBOutlet id<ActiveSkillViewDelegate> delegate;
 
 @property (nonatomic, strong) NSDictionary* skill;
 @property (nonatomic, strong) NSDictionary* rune;

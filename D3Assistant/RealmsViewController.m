@@ -23,7 +23,7 @@
     [super viewDidLoad];
 	self.title = @"Select your Region";
 	self.realms = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"realms" ofType:@"plist"]];
-	
+
 	if ([[NSUserDefaults standardUserDefaults] valueForKey:@"realm"])
 		self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(onCancel:)];
 
@@ -43,6 +43,7 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
+	return YES;
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
