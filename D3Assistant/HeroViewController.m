@@ -54,6 +54,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	self.skillsViewController.navigationController = self.navigationController;
+
 	self.title = @"";
 	[self reload];
 	
@@ -121,7 +123,7 @@
 	hero = value;
 	tmp = nil;
 	
-	if (self.view)
+	if ([self isViewLoaded])
 		[self reload];
 }
 
@@ -146,7 +148,6 @@
 	self.attributesDataSource.fallen = self.fallen;
 	self.attributesDataSource.hero = self.hero;
 	self.skillsViewController.hero = self.hero;
-	self.skillsViewController.navigationController = self.navigationController;
 	self.title = [self.hero valueForKey:@"name"];
 	[self.attributesTableView reloadData];
 	

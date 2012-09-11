@@ -67,7 +67,7 @@
 	hero = value;
 	tmp = nil;
 	
-	if (self.view)
+	if ([self isViewLoaded])
 		[self reload];
 }
 
