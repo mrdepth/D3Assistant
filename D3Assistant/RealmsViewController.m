@@ -24,7 +24,8 @@
 	self.title = @"Select your Region";
 	self.realms = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"realms" ofType:@"plist"]];
 	
-	self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(onCancel:)];
+	if ([[NSUserDefaults standardUserDefaults] valueForKey:@"realm"])
+		self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(onCancel:)];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

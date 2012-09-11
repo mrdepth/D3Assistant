@@ -30,8 +30,10 @@
 @property (strong, nonatomic) IBOutlet AttributesDataSource *attributesDataSource;
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @property (strong, nonatomic) IBOutlet SkillsViewController *skillsViewController;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *sectionsControl;
 
 @property (nonatomic, strong) NSDictionary* hero;
+@property (nonatomic, assign) BOOL fallen;
 
 - (IBAction)onChangeSection:(id)sender;
 @end

@@ -10,5 +10,7 @@
 
 @interface AttributesDataSource : NSObject<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) NSDictionary* hero;
+@property (nonatomic, assign) BOOL fallen;
+
 
 @end

@@ -25,6 +25,7 @@
 @property (nonatomic, strong) NSMutableArray* profiles;
 
 - (IBAction)onRealm:(id)sender;
+- (IBAction)onDonate:(id)sender;
 - (void) didChangeRealm:(NSNotification*) notification;
 - (void) reload;
 - (NSString*) profilesFilePath;
@@ -38,6 +39,7 @@
     [super viewDidLoad];
 	self.title = @"Profiles";
 	self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
+	self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Donate" style:UIBarButtonItemStyleBordered target:self action:@selector(onDonate:)];
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didChangeRealm:) name:DidChangeRealmNotification object:nil];
 
@@ -202,19 +204,20 @@
 		NSInteger count = [array count];
 		
 		NSDictionary* hero;
-		BOOL dead;
+		BOOL fallen;
 		if (indexPath.row - 1 >= count) {
 			hero = [[profile valueForKey:@"fallenHeroes"] objectAtIndex:indexPath.row - 1 - count];
-			dead = YES;
+			fallen = YES;
 		}
 		else {
 			hero = [[profile valueForKey:@"heroes"] objectAtIndex:indexPath.row - 1];
-			dead = NO;
+			fallen = NO;
 		}
 		
-		if (dead) {
+		if (fallen) {
 			HeroViewController* controller = [[HeroViewController alloc] initWithNibName:@"HeroViewController" bundle:nil];
 			controller.hero = hero;
+			controller.fallen = fallen;
 			[self.navigationController pushViewController:controller animated:YES];
 		}
 		else {
@@ -238,6 +241,7 @@
 					else {
 						HeroViewController* controller = [[HeroViewController alloc] initWithNibName:@"HeroViewController" bundle:nil];
 						controller.hero = heroDetails;
+						controller.fallen = fallen;
 						[self.navigationController pushViewController:controller animated:YES];
 					}
 				}
@@ -365,6 +369,10 @@
 	UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController:controller];
 	navController.navigationBar.barStyle = UIBarStyleBlackOpaque;
 	[self presentModalViewController:navController animated:YES];
+}
+
+- (IBAction)onDonate:(id)sender {
+	
 }
 
 - (void) didChangeRealm:(NSNotification*) notification {

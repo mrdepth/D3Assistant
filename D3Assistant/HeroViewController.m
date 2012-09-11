@@ -35,6 +35,8 @@
 @synthesize attributesDataSource;
 @synthesize backgroundImageView;
 @synthesize skillsViewController;
+@synthesize sectionsControl;
+@synthesize fallen;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -48,10 +50,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	self.attributesDataSource.fallen = self.fallen;
 	self.attributesDataSource.hero = self.hero;
 	self.skillsViewController.hero = self.hero;
 	self.skillsViewController.navigationController = self.navigationController;
 	self.title = [self.hero valueForKey:@"name"];
+	
+	if (fallen)
+		[self.sectionsControl removeSegmentAtIndex:2 animated:NO];
 	
 	self.attributesTableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"attributesBackground.png"]];
 	self.attributesTableView.backgroundView.contentMode = UIViewContentModeScaleToFill;
@@ -136,6 +142,7 @@
 	[self setGearsView:nil];
     [self setBackgroundImageView:nil];
 	[self setSkillsViewController:nil];
+	[self setSectionsControl:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

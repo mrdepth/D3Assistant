@@ -20,6 +20,7 @@
 
 @implementation AttributesDataSource
 @synthesize hero;
+@synthesize fallen;
 
 - (void) setHero:(NSDictionary *)value {
 	NSDictionary* tmp = hero;
@@ -30,79 +31,119 @@
 	NSArray* rows;
 	NSDictionary* section;
 	
+	
 	NSString* class = [hero valueForKey:@"class"];
 	NSDictionary* primaryAttributes = @{@"demon-hunter" : @"Dexterity", @"monk" : @"Dexterity", @"witch-doctor" : @"Intelligence", @"wizard" : @"Intelligence", @"barbarian" : @"Strength"};
 	NSString* primaryAttribute = [primaryAttributes valueForKey:class];
-
-	rows = @[
-	@{@"title" : @"Strength", @"stat" : @"strength"},
-	@{@"title" : @"Dexterity", @"stat" : @"dexterity"},
-	@{@"title" : @"Intelligence", @"stat" : @"intelligence"},
-	@{@"title" : @"Vitality", @"stat" : @"vitality"}];
-
-	section = @{@"title" : @"Attributes", @"rows" : rows};
-	[self.sections addObject:section];
-
-	rows = @[
-	@{@"title" : @"Damage", @"stat" : @"damage"},
-	@{@"title" : [NSString stringWithFormat:@"Damage Increased by %@", primaryAttribute], @"value" : [NSString stringWithFormat:@"%.1f%%", [[self.hero valueForKeyPath:@"stats.damageIncrease"] floatValue] * 100]},
-	@{@"title" : @"Attacks per Second", @"stat" : @"attackSpeed"},
-	@{@"title" : @"Critical Hit Change", @"value" : [NSString stringWithFormat:@"%.1f%%", [[self.hero valueForKeyPath:@"stats.critChance"] floatValue] * 100]},
-	@{@"title" : @"Critical Hit Damage", @"value" : [NSString stringWithFormat:@"%.1f%%", [[self.hero valueForKeyPath:@"stats.critDamage"] floatValue] * 100]}];
 	
-	section = @{@"title" : @"Offense", @"rows" : rows};
-	[self.sections addObject:section];
-	
-	rows = @[
-	@{@"title" : @"Armor", @"stat" : @"armor"},
-	@{@"title" : @"Block Amount", @"stat" : @"blockAmountMax"},
-	@{@"title" : @"Block Chance", @"value" : [NSString stringWithFormat:@"%.1f%%", [[self.hero valueForKeyPath:@"stats.blockChance"] floatValue] * 100]},
-	@{@"title" : @"Damage Reduction", @"value" : [NSString stringWithFormat:@"%.1f%%", [[self.hero valueForKeyPath:@"stats.damageReduction"] floatValue] * 100]},
-	@{@"title" : @"Physical Resistance", @"stat" : @"physicalResist"},
-	@{@"title" : @"Cold Resistance", @"stat" : @"coldResist"},
-	@{@"title" : @"Fire Resistance", @"stat" : @"fireResist"},
-	@{@"title" : @"Lightning Resistance", @"stat" : @"lightningResist"},
-	@{@"title" : @"Arcane/Holy Resistance", @"stat" : @"arcaneResist"},
-	@{@"title" : @"Poison Resistance", @"stat" : @"poisonResist"},
-	@{@"title" : @"Thorns", @"stat" : @"thorns"}];
-	
-	section = @{@"title" : @"Defense", @"rows" : rows};
-	[self.sections addObject:section];
-
-	rows = @[
-	@{@"title" : @"Maximum Life", @"stat" : @"life"},
-	@{@"title" : @"Life Steal", @"value" : [NSString stringWithFormat:@"%.1f%%", [[self.hero valueForKeyPath:@"stats.lifeSteal"] floatValue] * 100]},
-	@{@"title" : @"Life per Kill", @"stat" : @"lifePerKill"},
-	@{@"title" : @"Life per Hit", @"stat" : @"lifeOnHit"}];
-	
-	section = @{@"title" : @"Life", @"rows" : rows};
-	[self.sections addObject:section];
-	
-	
-	
-	NSDictionary* primaryResources = @{@"demon-hunter" : @"Maximum Hatred", @"monk" : @"Maximum Spirit", @"witch-doctor" : @"Maximum Mana", @"wizard" : @"Maximum Arcane Power", @"barbarian" : @"Maximum Fury"};
-	NSDictionary* secondaryResources = @{@"demon-hunter" : @"Maximum Discipline"};
-	NSString* primaryResourceName = [primaryResources valueForKey:class];
-	NSString* secondaryResourceName = [secondaryResources valueForKey:class];
-
-	
-	NSDictionary* primaryResource = @{@"title" : primaryResourceName, @"stat" : @"primaryResource"};
-	NSDictionary* secondaryResource = secondaryResourceName ? @{@"title" : secondaryResourceName, @"stat" : @"secondaryResource"} : nil;
-	
-	if (secondaryResource)
-		rows = @[primaryResource, secondaryResource];
-	else
-		rows = @[primaryResource];
-
-	section = @{@"title" : @"Resources", @"rows" : rows};
-	[self.sections addObject:section];
-
-	rows = @[
-	@{@"title" : @"Gold Find", @"value" : [NSString stringWithFormat:@"%.1f%%", [[self.hero valueForKeyPath:@"stats.goldFind"] floatValue] * 100]},
-	@{@"title" : @"Magic Find", @"value" : [NSString stringWithFormat:@"%.1f%%", [[self.hero valueForKeyPath:@"stats.magicFind"] floatValue] * 100]}];
-	
-	section = @{@"title" : @"Adventure", @"rows" : rows};
-	[self.sections addObject:section];
+	if (self.fallen) {
+		rows = @[
+		@{@"title" : @"Strength", @"stat" : @"strength"},
+		@{@"title" : @"Dexterity", @"stat" : @"dexterity"},
+		@{@"title" : @"Intelligence", @"stat" : @"intelligence"},
+		@{@"title" : @"Vitality", @"stat" : @"vitality"}];
+		
+		section = @{@"title" : @"Attributes", @"rows" : rows};
+		[self.sections addObject:section];
+		
+		rows = @[
+		@{@"title" : @"Damage", @"stat" : @"damage"},
+		@{@"title" : [NSString stringWithFormat:@"Damage Increased by %@", primaryAttribute], @"value" : [NSString stringWithFormat:@"%.1f%%", [[self.hero valueForKeyPath:@"stats.damageIncrease"] floatValue] * 100]},
+		@{@"title" : @"Critical Hit Change", @"value" : [NSString stringWithFormat:@"%.1f%%", [[self.hero valueForKeyPath:@"stats.critChance"] floatValue] * 100]}];
+		
+		section = @{@"title" : @"Offense", @"rows" : rows};
+		[self.sections addObject:section];
+		
+		rows = @[
+		@{@"title" : @"Armor", @"stat" : @"armor"},
+		@{@"title" : @"Damage Reduction", @"value" : [NSString stringWithFormat:@"%.1f%%", [[self.hero valueForKeyPath:@"stats.damageReduction"] floatValue] * 100]},
+		@{@"title" : @"Physical Resistance", @"stat" : @"physicalResist"},
+		@{@"title" : @"Cold Resistance", @"stat" : @"coldResist"},
+		@{@"title" : @"Fire Resistance", @"stat" : @"fireResist"},
+		@{@"title" : @"Lightning Resistance", @"stat" : @"lightningResist"},
+		@{@"title" : @"Arcane/Holy Resistance", @"stat" : @"arcaneResist"},
+		@{@"title" : @"Poison Resistance", @"stat" : @"poisonResist"}];
+		
+		section = @{@"title" : @"Defense", @"rows" : rows};
+		[self.sections addObject:section];
+		
+		rows = @[
+		@{@"title" : @"Maximum Life", @"stat" : @"life"}];
+		
+		section = @{@"title" : @"Life", @"rows" : rows};
+		[self.sections addObject:section];
+	}
+	else {
+		rows = @[
+		@{@"title" : @"Strength", @"stat" : @"strength"},
+		@{@"title" : @"Dexterity", @"stat" : @"dexterity"},
+		@{@"title" : @"Intelligence", @"stat" : @"intelligence"},
+		@{@"title" : @"Vitality", @"stat" : @"vitality"}];
+		
+		section = @{@"title" : @"Attributes", @"rows" : rows};
+		[self.sections addObject:section];
+		
+		rows = @[
+		@{@"title" : @"Damage", @"stat" : @"damage"},
+		@{@"title" : [NSString stringWithFormat:@"Damage Increased by %@", primaryAttribute], @"value" : [NSString stringWithFormat:@"%.1f%%", [[self.hero valueForKeyPath:@"stats.damageIncrease"] floatValue] * 100]},
+		@{@"title" : @"Attacks per Second", @"stat" : @"attackSpeed"},
+		@{@"title" : @"Critical Hit Change", @"value" : [NSString stringWithFormat:@"%.1f%%", [[self.hero valueForKeyPath:@"stats.critChance"] floatValue] * 100]},
+		@{@"title" : @"Critical Hit Damage", @"value" : [NSString stringWithFormat:@"%.1f%%", [[self.hero valueForKeyPath:@"stats.critDamage"] floatValue] * 100]}];
+		
+		section = @{@"title" : @"Offense", @"rows" : rows};
+		[self.sections addObject:section];
+		
+		rows = @[
+		@{@"title" : @"Armor", @"stat" : @"armor"},
+		@{@"title" : @"Block Amount", @"stat" : @"blockAmountMax"},
+		@{@"title" : @"Block Chance", @"value" : [NSString stringWithFormat:@"%.1f%%", [[self.hero valueForKeyPath:@"stats.blockChance"] floatValue] * 100]},
+		@{@"title" : @"Damage Reduction", @"value" : [NSString stringWithFormat:@"%.1f%%", [[self.hero valueForKeyPath:@"stats.damageReduction"] floatValue] * 100]},
+		@{@"title" : @"Physical Resistance", @"stat" : @"physicalResist"},
+		@{@"title" : @"Cold Resistance", @"stat" : @"coldResist"},
+		@{@"title" : @"Fire Resistance", @"stat" : @"fireResist"},
+		@{@"title" : @"Lightning Resistance", @"stat" : @"lightningResist"},
+		@{@"title" : @"Arcane/Holy Resistance", @"stat" : @"arcaneResist"},
+		@{@"title" : @"Poison Resistance", @"stat" : @"poisonResist"},
+		@{@"title" : @"Thorns", @"stat" : @"thorns"}];
+		
+		section = @{@"title" : @"Defense", @"rows" : rows};
+		[self.sections addObject:section];
+		
+		rows = @[
+		@{@"title" : @"Maximum Life", @"stat" : @"life"},
+		@{@"title" : @"Life Steal", @"value" : [NSString stringWithFormat:@"%.1f%%", [[self.hero valueForKeyPath:@"stats.lifeSteal"] floatValue] * 100]},
+		@{@"title" : @"Life per Kill", @"stat" : @"lifePerKill"},
+		@{@"title" : @"Life per Hit", @"stat" : @"lifeOnHit"}];
+		
+		section = @{@"title" : @"Life", @"rows" : rows};
+		[self.sections addObject:section];
+		
+		
+		
+		NSDictionary* primaryResources = @{@"demon-hunter" : @"Maximum Hatred", @"monk" : @"Maximum Spirit", @"witch-doctor" : @"Maximum Mana", @"wizard" : @"Maximum Arcane Power", @"barbarian" : @"Maximum Fury"};
+		NSDictionary* secondaryResources = @{@"demon-hunter" : @"Maximum Discipline"};
+		NSString* primaryResourceName = [primaryResources valueForKey:class];
+		NSString* secondaryResourceName = [secondaryResources valueForKey:class];
+		
+		
+		NSDictionary* primaryResource = @{@"title" : primaryResourceName, @"stat" : @"primaryResource"};
+		NSDictionary* secondaryResource = secondaryResourceName ? @{@"title" : secondaryResourceName, @"stat" : @"secondaryResource"} : nil;
+		
+		if (secondaryResource)
+			rows = @[primaryResource, secondaryResource];
+		else
+			rows = @[primaryResource];
+		
+		section = @{@"title" : @"Resources", @"rows" : rows};
+		[self.sections addObject:section];
+		
+		rows = @[
+		@{@"title" : @"Gold Find", @"value" : [NSString stringWithFormat:@"%.1f%%", [[self.hero valueForKeyPath:@"stats.goldFind"] floatValue] * 100]},
+		@{@"title" : @"Magic Find", @"value" : [NSString stringWithFormat:@"%.1f%%", [[self.hero valueForKeyPath:@"stats.magicFind"] floatValue] * 100]}];
+		
+		section = @{@"title" : @"Adventure", @"rows" : rows};
+		[self.sections addObject:section];
+	}
 	
 }
 
@@ -131,7 +172,7 @@
 	if (value)
 		cell.valueLabel.text = value;
 	else
-		cell.valueLabel.text = [NSString stringWithFormat:@"%.2f", [[[hero valueForKey:@"stats"] valueForKey:[row valueForKey:@"stat"]] floatValue]];
+		cell.valueLabel.text = [NSString stringWithFormat:@"%.1f", [[[hero valueForKey:@"stats"] valueForKey:[row valueForKey:@"stat"]] floatValue]];
 	
 	return cell;
 }
