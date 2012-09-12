@@ -27,4 +27,13 @@
     // Configure the view for the selected state
 }
 
+- (CGSize) sizeThatFits:(CGSize)size {
+	CGSize s = [self.statLabel sizeThatFits:CGSizeMake(self.statLabel.frame.size.width, size.height - 1)];
+	s.height += 1;
+	if (s.height < 20)
+		s.height = 20;
+	s.width = size.width;
+	return s;
+}
+
 @end

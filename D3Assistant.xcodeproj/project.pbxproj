@@ -127,6 +127,10 @@
 		12A76F4115F9D56500B2E9D4 /* AttributesDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A76F4015F9D56500B2E9D4 /* AttributesDataSource.m */; };
 		12A76F5E15FA22E000B2E9D4 /* GearInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A76F5C15FA22E000B2E9D4 /* GearInfoViewController.m */; };
 		12A76F5F15FA22E000B2E9D4 /* GearInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12A76F5D15FA22E000B2E9D4 /* GearInfoViewController.xib */; };
+		12EB68251601C694004B1398 /* icon-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 12EB68211601C694004B1398 /* icon-iPad.png */; };
+		12EB68261601C694004B1398 /* icon-iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12EB68221601C694004B1398 /* icon-iPad@2x.png */; };
+		12EB68271601C694004B1398 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 12EB68231601C694004B1398 /* icon.png */; };
+		12EB68281601C694004B1398 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12EB68241601C694004B1398 /* icon@2x.png */; };
 		12F6826515FDB6DC0052A1AA /* SkillInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F6826315FDB6DC0052A1AA /* SkillInfoViewController.m */; };
 		12F6826615FDB6DC0052A1AA /* SkillInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12F6826415FDB6DC0052A1AA /* SkillInfoViewController.xib */; };
 		12F6826A15FDB88D0052A1AA /* ActiveSkillInfoCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F6826915FDB88D0052A1AA /* ActiveSkillInfoCellView.m */; };
@@ -330,6 +334,10 @@
 		12A76F5B15FA22E000B2E9D4 /* GearInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GearInfoViewController.h; sourceTree = "<group>"; };
 		12A76F5C15FA22E000B2E9D4 /* GearInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GearInfoViewController.m; sourceTree = "<group>"; };
 		12A76F5D15FA22E000B2E9D4 /* GearInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GearInfoViewController.xib; sourceTree = "<group>"; };
+		12EB68211601C694004B1398 /* icon-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-iPad.png"; sourceTree = "<group>"; };
+		12EB68221601C694004B1398 /* icon-iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-iPad@2x.png"; sourceTree = "<group>"; };
+		12EB68231601C694004B1398 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		12EB68241601C694004B1398 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		12F6826215FDB6DC0052A1AA /* SkillInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkillInfoViewController.h; sourceTree = "<group>"; };
 		12F6826315FDB6DC0052A1AA /* SkillInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkillInfoViewController.m; sourceTree = "<group>"; };
 		12F6826415FDB6DC0052A1AA /* SkillInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SkillInfoViewController.xib; sourceTree = "<group>"; };
@@ -681,6 +689,17 @@
 			name = GearInfoViewController;
 			sourceTree = "<group>";
 		};
+		12EB68201601C694004B1398 /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				12EB68211601C694004B1398 /* icon-iPad.png */,
+				12EB68221601C694004B1398 /* icon-iPad@2x.png */,
+				12EB68231601C694004B1398 /* icon.png */,
+				12EB68241601C694004B1398 /* icon@2x.png */,
+			);
+			path = icons;
+			sourceTree = "<group>";
+		};
 		12F6825B15FDB67C0052A1AA /* SkillInfoViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -804,6 +823,7 @@
 			children = (
 				121FD97615FF201000AA6947 /* 1x */,
 				71B0AA9A15F93BA80079F9B9 /* 2x */,
+				12EB68201601C694004B1398 /* icons */,
 			);
 			path = Graphics;
 			sourceTree = "<group>";
@@ -1250,6 +1270,10 @@
 				121FDA4615FF2C2500AA6947 /* PassiveSkillView-iPad.xib in Resources */,
 				121FDA4815FF363E00AA6947 /* skillCalcBackground-iPad.png in Resources */,
 				1232F2E616005F5D00EBB2BF /* HeroCareerCellView.xib in Resources */,
+				12EB68251601C694004B1398 /* icon-iPad.png in Resources */,
+				12EB68261601C694004B1398 /* icon-iPad@2x.png in Resources */,
+				12EB68271601C694004B1398 /* icon.png in Resources */,
+				12EB68281601C694004B1398 /* icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
