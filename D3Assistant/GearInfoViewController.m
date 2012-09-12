@@ -16,7 +16,7 @@
 #import "UITableViewCell+Nib.h"
 #import "UIImageView+URL.h"
 
-#define GEAR_STAT_CELL_HEIGHT 20
+#define GEAR_STAT_CELL_HEIGHT 30
 #define GEM_STAT_CELL_HEIGHT  30
 
 
@@ -148,11 +148,13 @@
  return 30;
  }*/
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0)
-        return GEAR_STAT_CELL_HEIGHT;
-    else
-        return GEM_STAT_CELL_HEIGHT;
+- (CGFloat)tableView:(UITableView *)aTableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+	UITableViewCell* cell = [self tableView:aTableView cellForRowAtIndexPath:indexPath];
+	return [cell sizeThatFits:CGSizeMake(self.tableView.frame.size.width, 64)].height;
+//    if (indexPath.section == 0)
+  //      return GEAR_STAT_CELL_HEIGHT;
+    //else
+      //  return GEM_STAT_CELL_HEIGHT;
 };
 
 - (NSString*) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
