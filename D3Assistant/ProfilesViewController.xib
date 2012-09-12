@@ -50,11 +50,11 @@
 								<string key="NSFrameSize">{320, 44}</string>
 								<reference key="NSSuperview" ref="873029372"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<int key="IBUIContentMode">3</int>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBBarStyle">1</int>
-								<string key="IBText">no6e9a-2764.</string>
 								<string key="IBPlaceholder">Enter battle tag</string>
 								<object class="IBUITextInputTraits" key="IBTextInputTraits">
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -253,6 +253,267 @@
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
+					<string key="className">ActiveSkillView</string>
+					<string key="superclassName">UIView</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">onTap:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">onTap:</string>
+						<object class="IBActionInfo" key="NS.object.0">
+							<string key="name">onTap:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="contentView">UIView</string>
+						<string key="delegate">id</string>
+						<string key="frameImageView">UIImageView</string>
+						<string key="runeImageView">UIImageView</string>
+						<string key="runeNameLabel">UILabel</string>
+						<string key="skillImageView">UIImageView</string>
+						<string key="skillNameLabel">UILabel</string>
+						<string key="skillOrderImageView">UIImageView</string>
+						<string key="skillOrderLabel">UILabel</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="contentView">
+							<string key="name">contentView</string>
+							<string key="candidateClassName">UIView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="delegate">
+							<string key="name">delegate</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="frameImageView">
+							<string key="name">frameImageView</string>
+							<string key="candidateClassName">UIImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="runeImageView">
+							<string key="name">runeImageView</string>
+							<string key="candidateClassName">UIImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="runeNameLabel">
+							<string key="name">runeNameLabel</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="skillImageView">
+							<string key="name">skillImageView</string>
+							<string key="candidateClassName">UIImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="skillNameLabel">
+							<string key="name">skillNameLabel</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="skillOrderImageView">
+							<string key="name">skillOrderImageView</string>
+							<string key="candidateClassName">UIImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="skillOrderLabel">
+							<string key="name">skillOrderLabel</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/ActiveSkillView.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">AttributesDataSource</string>
+					<string key="superclassName">NSObject</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/AttributesDataSource.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">GearView</string>
+					<string key="superclassName">UIView</string>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">delegate</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">delegate</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
+							<string key="name">delegate</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/GearView.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">HeroViewController</string>
+					<string key="superclassName">UIViewController</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">onChangeSection:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">onChangeSection:</string>
+						<object class="IBActionInfo" key="NS.object.0">
+							<string key="name">onChangeSection:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="attributesDataSource">AttributesDataSource</string>
+						<string key="attributesTableView">UITableView</string>
+						<string key="backgroundImageView">UIImageView</string>
+						<string key="bracersView">GearView</string>
+						<string key="feetView">GearView</string>
+						<string key="gearsView">UIView</string>
+						<string key="handsView">GearView</string>
+						<string key="headView">GearView</string>
+						<string key="leftFingerView">GearView</string>
+						<string key="legsView">GearView</string>
+						<string key="mainHandView">GearView</string>
+						<string key="neckView">GearView</string>
+						<string key="offHandView">GearView</string>
+						<string key="rightFingerView">GearView</string>
+						<string key="sectionsControl">UISegmentedControl</string>
+						<string key="shouldersView">GearView</string>
+						<string key="skillsViewController">SkillsViewController</string>
+						<string key="torsoView">GearView</string>
+						<string key="waistView">GearView</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="attributesDataSource">
+							<string key="name">attributesDataSource</string>
+							<string key="candidateClassName">AttributesDataSource</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="attributesTableView">
+							<string key="name">attributesTableView</string>
+							<string key="candidateClassName">UITableView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="backgroundImageView">
+							<string key="name">backgroundImageView</string>
+							<string key="candidateClassName">UIImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="bracersView">
+							<string key="name">bracersView</string>
+							<string key="candidateClassName">GearView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="feetView">
+							<string key="name">feetView</string>
+							<string key="candidateClassName">GearView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="gearsView">
+							<string key="name">gearsView</string>
+							<string key="candidateClassName">UIView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="handsView">
+							<string key="name">handsView</string>
+							<string key="candidateClassName">GearView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="headView">
+							<string key="name">headView</string>
+							<string key="candidateClassName">GearView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="leftFingerView">
+							<string key="name">leftFingerView</string>
+							<string key="candidateClassName">GearView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="legsView">
+							<string key="name">legsView</string>
+							<string key="candidateClassName">GearView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="mainHandView">
+							<string key="name">mainHandView</string>
+							<string key="candidateClassName">GearView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="neckView">
+							<string key="name">neckView</string>
+							<string key="candidateClassName">GearView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="offHandView">
+							<string key="name">offHandView</string>
+							<string key="candidateClassName">GearView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="rightFingerView">
+							<string key="name">rightFingerView</string>
+							<string key="candidateClassName">GearView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="sectionsControl">
+							<string key="name">sectionsControl</string>
+							<string key="candidateClassName">UISegmentedControl</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="shouldersView">
+							<string key="name">shouldersView</string>
+							<string key="candidateClassName">GearView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="skillsViewController">
+							<string key="name">skillsViewController</string>
+							<string key="candidateClassName">SkillsViewController</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="torsoView">
+							<string key="name">torsoView</string>
+							<string key="candidateClassName">GearView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="waistView">
+							<string key="name">waistView</string>
+							<string key="candidateClassName">GearView</string>
+						</object>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/HeroViewController.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">PassiveSkillView</string>
+					<string key="superclassName">UIView</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">onTap:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">onTap:</string>
+						<object class="IBActionInfo" key="NS.object.0">
+							<string key="name">onTap:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="contentView">UIView</string>
+						<string key="delegate">id</string>
+						<string key="frameImageView">UIImageView</string>
+						<string key="skillImageView">UIImageView</string>
+						<string key="skillNameLabel">UILabel</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="contentView">
+							<string key="name">contentView</string>
+							<string key="candidateClassName">UIView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="delegate">
+							<string key="name">delegate</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="frameImageView">
+							<string key="name">frameImageView</string>
+							<string key="candidateClassName">UIImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="skillImageView">
+							<string key="name">skillImageView</string>
+							<string key="candidateClassName">UIImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="skillNameLabel">
+							<string key="name">skillNameLabel</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/PassiveSkillView.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
 					<string key="className">ProfilesViewController</string>
 					<string key="superclassName">UIViewController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
@@ -269,20 +530,57 @@
 							<string key="candidateClassName">id</string>
 						</object>
 					</dictionary>
-					<object class="NSMutableDictionary" key="outlets">
-						<string key="NS.key.0">tableView</string>
-						<string key="NS.object.0">UITableView</string>
-					</object>
-					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<string key="NS.key.0">tableView</string>
-						<object class="IBToOneOutletInfo" key="NS.object.0">
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="heroViewController">HeroViewController</string>
+						<string key="tableView">UITableView</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="heroViewController">
+							<string key="name">heroViewController</string>
+							<string key="candidateClassName">HeroViewController</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="tableView">
 							<string key="name">tableView</string>
 							<string key="candidateClassName">UITableView</string>
 						</object>
-					</object>
+					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/ProfilesViewController.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">SkillsViewController</string>
+					<string key="superclassName">UIViewController</string>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="contentView">UIView</string>
+						<string key="scrollView">UIScrollView</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="contentView">
+							<string key="name">contentView</string>
+							<string key="candidateClassName">UIView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="scrollView">
+							<string key="name">scrollView</string>
+							<string key="candidateClassName">UIScrollView</string>
+						</object>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toManyOutletInfosByName">
+						<object class="IBToManyOutletInfo" key="activeSkills">
+							<string key="name">activeSkills</string>
+							<string key="candidateClassName">ActiveSkillView</string>
+							<string key="collectionClassName">NSArray</string>
+						</object>
+						<object class="IBToManyOutletInfo" key="passiveSkills">
+							<string key="name">passiveSkills</string>
+							<string key="candidateClassName">PassiveSkillView</string>
+							<string key="collectionClassName">NSArray</string>
+						</object>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/SkillsViewController.h</string>
 					</object>
 				</object>
 			</array>

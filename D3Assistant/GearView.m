@@ -42,11 +42,12 @@
 	self.itemColorImageView = [[UIImageView alloc] initWithFrame:self.bounds];
 	self.itemColorImageView.frame = self.bounds;
 	self.itemColorImageView.contentMode = UIViewContentModeScaleToFill;
-	self.itemColorImageView.layer.cornerRadius = 4;
-	self.itemColorImageView.layer.borderWidth = 1;
-	self.itemColorImageView.layer.borderColor = [[UIColor clearColor] CGColor];
+//	self.itemColorImageView.layer.cornerRadius = 4;
+//	self.itemColorImageView.layer.borderWidth = 1;
+//	self.itemColorImageView.layer.borderColor = [[UIColor clearColor] CGColor];
 	self.itemColorImageView.clipsToBounds = YES;
-
+	self.itemColorImageView.contentStretch = CGRectMake(0.1, 0.1, 0.8, 0.8);
+	
 	self.itemIconImageView = [[UIImageView alloc] initWithFrame:self.bounds];
 	self.itemIconImageView.contentMode = UIViewContentModeScaleAspectFill;
 
@@ -73,7 +74,7 @@
 		if (!self.itemColorImageView.image)
 			self.itemColorImageView.image = [UIImage imageNamed:@"brown.png"];
 		
-		self.itemColorImageView.layer.borderColor = [[D3Utility itemBorderColorWithColorName:color highlighted:NO] CGColor];
+//		self.itemColorImageView.layer.borderColor = [[D3Utility itemBorderColorWithColorName:color highlighted:NO] CGColor];
 		
 		NSArray* gems = [gear valueForKey:@"gems"];
 		NSInteger numberOfGems = gems.count;
@@ -124,7 +125,7 @@
 				self.itemColorImageView.image = [UIImage imageNamed:@"brown.png"];
 		}
 		
-		self.itemColorImageView.layer.borderColor = [[D3Utility itemBorderColorWithColorName:color highlighted:highlighted] CGColor];
+//		self.itemColorImageView.layer.borderColor = [[D3Utility itemBorderColorWithColorName:color highlighted:highlighted] CGColor];
 	}
 }
 
