@@ -57,7 +57,7 @@
 #pragma mark - Private
 
 - (void) layout {
-	CGSize labelSize = [self.activityNameLabel sizeThatFits:CGSizeMake(self.bounds.size.width - 20, labelSize.height)];
+	CGSize labelSize = [self.activityNameLabel sizeThatFits:CGSizeMake(self.bounds.size.width - 20, self.activityNameLabel.frame.size.height)];
 	CGRect frame = self.contentView.frame;
 	
 	if (labelSize.width < 128 - 20)

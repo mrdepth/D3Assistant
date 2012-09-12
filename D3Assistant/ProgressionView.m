@@ -68,8 +68,8 @@
 		frame.origin.x += frame.size.width;
 	}
 	[rightImage drawAtPoint:CGPointMake(self.frame.size.width - rightImage.size.width - 5, y)];
-	
-	if ((int) self.progression * 4 != self.progression * 4 || self.progression == 1) {
+
+	if ((self.progression * 4 - truncf(self.progression * 4)) > FLT_EPSILON || fabs(self.progression - 1) < FLT_EPSILON) {
 		CGPoint p = CGPointMake((self.frame.size.width - leftImage.size.width - rightImage.size.width - 10) * progression + 5 + leftImage.size.width - mark.size.width / 2,
 								self.frame.size.height / 2 - mark.size.height);
 		[mark drawAtPoint:p];

@@ -14,6 +14,8 @@
 + (float) progressionWithProfile:(NSDictionary*) profile hardcore:(BOOL) hardcore {
 	CGFloat progression = 1;
 	NSDictionary* mode = [profile valueForKey:hardcore ? @"hardcoreProgression" : @"progression"];
+	if (!mode)
+		mode = [profile valueForKey:@"progress"];
 	
 	for (NSString* key in @[@"inferno", @"hell", @"nightmare", @"normal"]) {
 		NSDictionary* difficulty = [mode valueForKey:key];

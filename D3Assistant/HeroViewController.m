@@ -119,9 +119,7 @@
 }
 
 - (void) setHero:(NSDictionary *)value {
-	NSDictionary* tmp = hero;
 	hero = value;
-	tmp = nil;
 	
 	if ([self isViewLoaded])
 		[self reload];

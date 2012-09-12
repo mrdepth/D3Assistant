@@ -53,7 +53,7 @@ static EUOperationQueue* sharedQueue;
 
 - (float) progress {
 	NSInteger n = 0;
-	float progress;
+	float progress = 0;
 	for (EUOperation* operation in [self operations]) {
 		if ([operation isKindOfClass:[EUOperation class]]) {
 			progress += operation.progress;

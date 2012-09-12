@@ -73,9 +73,7 @@
 }
 
 - (void) setSkill:(NSDictionary *)value {
-	NSDictionary* tmp = skill;
 	skill = value;
-	tmp = nil;
 	
 	if (skill) {
 		self.skillNameLabel.text = [skill valueForKey:@"name"];
@@ -88,9 +86,7 @@
 }
 
 - (void) setRune:(NSDictionary *)value {
-	NSDictionary* tmp = rune;
 	rune = value;
-	tmp = nil;
 	
 	if (rune) {
 		self.runeNameLabel.text = [rune valueForKey:@"name"];

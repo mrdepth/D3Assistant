@@ -9,17 +9,17 @@
 #import <UIKit/UIKit.h>
 
 @interface WeaponBaseInfoView : UIView
-@property (assign, nonatomic) IBOutlet UIImageView *itemColorImageView;
-@property (assign, nonatomic) IBOutlet UIImageView *itemEffectImageView;
-@property (assign, nonatomic) IBOutlet UIImageView *itemIconImageView;
-@property (assign, nonatomic) IBOutlet UILabel *typeLabel;
-@property (assign, nonatomic) IBOutlet UILabel *subtypeLabel;
-@property (assign, nonatomic) IBOutlet UILabel *classLabel;
-@property (assign, nonatomic) IBOutlet UILabel *dpsLabel;
-@property (assign, nonatomic) IBOutlet UILabel *damageValueLabel;
-@property (assign, nonatomic) IBOutlet UILabel *damageLabel;
-@property (assign, nonatomic) IBOutlet UILabel *apsValueLabel;
-@property (assign, nonatomic) IBOutlet UILabel *apsLabel;
+@property (unsafe_unretained, nonatomic) IBOutlet UIImageView *itemColorImageView;
+@property (unsafe_unretained, nonatomic) IBOutlet UIImageView *itemEffectImageView;
+@property (unsafe_unretained, nonatomic) IBOutlet UIImageView *itemIconImageView;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *typeLabel;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *subtypeLabel;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *classLabel;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *dpsLabel;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *damageValueLabel;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *damageLabel;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *apsValueLabel;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *apsLabel;
 
 @property (nonatomic, strong) NSDictionary* weapon;
 

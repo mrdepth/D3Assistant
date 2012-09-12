@@ -69,9 +69,7 @@
 }
 
 - (void) setSkill:(NSDictionary *)value {
-	NSDictionary* tmp = skill;
 	skill = value;
-	tmp = nil;
 	
 	if (skill) {
 		self.skillNameLabel.text = [skill valueForKey:@"name"];

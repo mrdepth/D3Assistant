@@ -139,9 +139,9 @@
  return 30;
  }*/
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+	[aTableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 

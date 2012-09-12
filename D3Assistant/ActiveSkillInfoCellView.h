@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ActiveSkillInfoCellView : UITableViewCell
-@property (assign, nonatomic) IBOutlet UIImageView *skillImageView;
-@property (assign, nonatomic) IBOutlet UILabel *skillDescriptionLabel;
-@property (assign, nonatomic) IBOutlet UILabel *skillCategoryLabel;
-@property (assign, nonatomic) IBOutlet UILabel *levelLabel;
+@property (unsafe_unretained, nonatomic) IBOutlet UIImageView *skillImageView;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *skillDescriptionLabel;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *skillCategoryLabel;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *levelLabel;
 
 @end

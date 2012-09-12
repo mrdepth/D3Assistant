@@ -12,23 +12,23 @@
 #import "SkillsViewController.h"
 
 @interface HeroViewController : UIViewController<GearViewDelegate>
-@property (assign, nonatomic) IBOutlet GearView *headView;
-@property (assign, nonatomic) IBOutlet GearView *shouldersView;
-@property (assign, nonatomic) IBOutlet GearView *torsoView;
-@property (assign, nonatomic) IBOutlet GearView *feetView;
-@property (assign, nonatomic) IBOutlet GearView *handsView;
-@property (assign, nonatomic) IBOutlet GearView *legsView;
-@property (assign, nonatomic) IBOutlet GearView *bracersView;
-@property (assign, nonatomic) IBOutlet GearView *mainHandView;
-@property (assign, nonatomic) IBOutlet GearView *offHandView;
-@property (assign, nonatomic) IBOutlet GearView *waistView;
-@property (assign, nonatomic) IBOutlet GearView *leftFingerView;
-@property (assign, nonatomic) IBOutlet GearView *rightFingerView;
-@property (assign, nonatomic) IBOutlet GearView *neckView;
+@property (unsafe_unretained, nonatomic) IBOutlet GearView *headView;
+@property (unsafe_unretained, nonatomic) IBOutlet GearView *shouldersView;
+@property (unsafe_unretained, nonatomic) IBOutlet GearView *torsoView;
+@property (unsafe_unretained, nonatomic) IBOutlet GearView *feetView;
+@property (unsafe_unretained, nonatomic) IBOutlet GearView *handsView;
+@property (unsafe_unretained, nonatomic) IBOutlet GearView *legsView;
+@property (unsafe_unretained, nonatomic) IBOutlet GearView *bracersView;
+@property (unsafe_unretained, nonatomic) IBOutlet GearView *mainHandView;
+@property (unsafe_unretained, nonatomic) IBOutlet GearView *offHandView;
+@property (unsafe_unretained, nonatomic) IBOutlet GearView *waistView;
+@property (unsafe_unretained, nonatomic) IBOutlet GearView *leftFingerView;
+@property (unsafe_unretained, nonatomic) IBOutlet GearView *rightFingerView;
+@property (unsafe_unretained, nonatomic) IBOutlet GearView *neckView;
+@property (unsafe_unretained, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @property (strong, nonatomic) IBOutlet UIView *gearsView;
 @property (strong, nonatomic) IBOutlet UITableView *attributesTableView;
 @property (strong, nonatomic) IBOutlet AttributesDataSource *attributesDataSource;
-@property (assign, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @property (strong, nonatomic) IBOutlet SkillsViewController *skillsViewController;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *sectionsControl;
 

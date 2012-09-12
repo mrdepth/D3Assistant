@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, SKPaymentTransactionObserver>
 
 @property (strong, nonatomic) IBOutlet UIWindow *window;
 
 + (NSString*) documentsDirectory;
+- (void) donate:(NSString*) productID;
 @end

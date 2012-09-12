@@ -57,9 +57,7 @@
 }
 
 - (void) setGear:(NSDictionary *)value {
-	NSDictionary* tmp = gear;
 	gear = value;
-	tmp = nil;
 	
 	for (SocketView* view in self.sockets)
 		[view removeFromSuperview];

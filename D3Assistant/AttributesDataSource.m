@@ -12,6 +12,8 @@
 #import "UIView+Nib.h"
 #import "AttributeCellView.h"
 #import "UITableViewCell+Nib.h"
+#import "HeroCareerCellView.h"
+#import "D3APISession.h"
 
 @interface AttributesDataSource()
 @property (nonatomic, strong) NSMutableArray* sections;
@@ -23,30 +25,37 @@
 @synthesize fallen;
 
 - (void) setHero:(NSDictionary *)value {
-	NSDictionary* tmp = hero;
 	hero = value;
-	tmp = nil;
 	
 	if (hero) {
 		self.sections = [NSMutableArray array];
 		NSArray* rows;
 		NSDictionary* section;
-		
+
+		if (!self.fallen) {
+			rows = @[
+			@{@"progression" : @(YES)},
+			@{@"title" : @"Elite Kills", @"value" : [NSNumberFormatter localizedStringFromNumber:@([[hero valueForKeyPath:@"kills.elites"] integerValue]) numberStyle:NSNumberFormatterDecimalStyle]}];
+			
+			section = @{@"title" : @"Progression", @"rows" : rows};
+			[self.sections addObject:section];
+		}
+
 		
 		NSString* class = [hero valueForKey:@"class"];
 		NSDictionary* primaryAttributes = @{@"demon-hunter" : @"Dexterity", @"monk" : @"Dexterity", @"witch-doctor" : @"Intelligence", @"wizard" : @"Intelligence", @"barbarian" : @"Strength"};
 		NSString* primaryAttribute = [primaryAttributes valueForKey:class];
 		
+		rows = @[
+		@{@"title" : @"Strength", @"stat" : @"strength"},
+		@{@"title" : @"Dexterity", @"stat" : @"dexterity"},
+		@{@"title" : @"Intelligence", @"stat" : @"intelligence"},
+		@{@"title" : @"Vitality", @"stat" : @"vitality"}];
+		
+		section = @{@"title" : @"Attributes", @"rows" : rows};
+		[self.sections addObject:section];
+
 		if (self.fallen) {
-			rows = @[
-			@{@"title" : @"Strength", @"stat" : @"strength"},
-			@{@"title" : @"Dexterity", @"stat" : @"dexterity"},
-			@{@"title" : @"Intelligence", @"stat" : @"intelligence"},
-			@{@"title" : @"Vitality", @"stat" : @"vitality"}];
-			
-			section = @{@"title" : @"Attributes", @"rows" : rows};
-			[self.sections addObject:section];
-			
 			rows = @[
 			@{@"title" : @"Damage", @"stat" : @"damage"},
 			@{@"title" : [NSString stringWithFormat:@"Damage Increased by %@", primaryAttribute], @"value" : [NSString stringWithFormat:@"%.1f%%", [[self.hero valueForKeyPath:@"stats.damageIncrease"] floatValue] * 100]},
@@ -75,15 +84,6 @@
 			[self.sections addObject:section];
 		}
 		else {
-			rows = @[
-			@{@"title" : @"Strength", @"stat" : @"strength"},
-			@{@"title" : @"Dexterity", @"stat" : @"dexterity"},
-			@{@"title" : @"Intelligence", @"stat" : @"intelligence"},
-			@{@"title" : @"Vitality", @"stat" : @"vitality"}];
-			
-			section = @{@"title" : @"Attributes", @"rows" : rows};
-			[self.sections addObject:section];
-			
 			rows = @[
 			@{@"title" : @"Damage", @"stat" : @"damage"},
 			@{@"title" : [NSString stringWithFormat:@"Damage Increased by %@", primaryAttribute], @"value" : [NSString stringWithFormat:@"%.1f%%", [[self.hero valueForKeyPath:@"stats.damageIncrease"] floatValue] * 100]},
@@ -164,20 +164,33 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	static NSString *CellIdentifier = @"AttributeCellView";
-	AttributeCellView *cell = (AttributeCellView*) [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-	if (!cell) {
-		cell = [AttributeCellView cellWithNibName:@"AttributeCellView" bundle:nil reuseIdentifier:CellIdentifier];
-	}
 	NSDictionary* row = [[[self.sections objectAtIndex:indexPath.section] valueForKey:@"rows"] objectAtIndex:indexPath.row];
-	cell.titleLabel.text = [row valueForKey:@"title"];
-	NSString* value = [row valueForKey:@"value"];
-	if (value)
-		cell.valueLabel.text = value;
-	else
-		cell.valueLabel.text = [NSString stringWithFormat:@"%.1f", [[[hero valueForKey:@"stats"] valueForKey:[row valueForKey:@"stat"]] floatValue]];
-	
-	return cell;
+	if ([[row valueForKey:@"progression"] boolValue]) {
+		static NSString *CellIdentifier = @"HeroCareerCellView";
+		HeroCareerCellView *cell = (HeroCareerCellView*) [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+		if (!cell)
+			cell = [HeroCareerCellView cellWithNibName:@"HeroCareerCellView" bundle:nil reuseIdentifier:CellIdentifier];
+		BOOL hardcore = [[hero valueForKey:@"hardcore"] boolValue];
+		cell.progressionView.hardcore = hardcore;
+		
+		cell.progressionView.progression = [D3Utility progressionWithProfile:hero hardcore:hardcore];
+		return cell;
+	}
+	else {
+		static NSString *CellIdentifier = @"AttributeCellView";
+		AttributeCellView *cell = (AttributeCellView*) [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+		if (!cell) {
+			cell = [AttributeCellView cellWithNibName:@"AttributeCellView" bundle:nil reuseIdentifier:CellIdentifier];
+		}
+		cell.titleLabel.text = [row valueForKey:@"title"];
+		NSString* value = [row valueForKey:@"value"];
+		if (value)
+			cell.valueLabel.text = value;
+		else
+			cell.valueLabel.text = [NSString stringWithFormat:@"%.1f", [[[hero valueForKey:@"stats"] valueForKey:[row valueForKey:@"stat"]] floatValue]];
+		
+		return cell;
+	}
 }
 
 /*
@@ -220,6 +233,11 @@
  */
 
 #pragma mark - Table view delegate
+
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+	NSDictionary* row = [[[self.sections objectAtIndex:indexPath.section] valueForKey:@"rows"] objectAtIndex:indexPath.row];
+	return [[row valueForKey:@"progression"] boolValue] ? 38 : 28;
+}
 
 - (UIView*) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
 	AttributesHeaderView* view = [AttributesHeaderView viewWithNibName:@"AttributesHeaderView" bundle:nil];

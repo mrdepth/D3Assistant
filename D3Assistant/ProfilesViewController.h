@@ -11,7 +11,7 @@
 #import "HeroViewController.h"
 
 @interface ProfilesViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate, ProfileHeaderViewDelegate>
-@property (assign, nonatomic) IBOutlet UITableView *tableView;
-@property (assign, nonatomic) IBOutlet HeroViewController* heroViewController;
+@property (unsafe_unretained, nonatomic) IBOutlet UITableView *tableView;
+@property (unsafe_unretained, nonatomic) IBOutlet HeroViewController* heroViewController;
 
 @end

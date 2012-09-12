@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface PassiveSkillInfoCellView : UITableViewCell
-@property (assign, nonatomic) IBOutlet UIImageView *skillImageView;
-@property (assign, nonatomic) IBOutlet UILabel *skillDescriptionLabel;
-@property (assign, nonatomic) IBOutlet UILabel *levelLabel;
+@property (unsafe_unretained, nonatomic) IBOutlet UIImageView *skillImageView;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *skillDescriptionLabel;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *levelLabel;
 @end

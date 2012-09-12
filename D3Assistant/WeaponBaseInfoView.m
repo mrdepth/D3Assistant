@@ -39,9 +39,7 @@
 }
 
 - (void) setWeapon:(NSDictionary *)value {
-	NSDictionary* tmp = weapon;
 	weapon = value;
-	tmp = nil;
 	
 	D3APISession* session = [D3APISession sharedSession];
 	NSString* color = [weapon valueForKey:@"displayColor"];

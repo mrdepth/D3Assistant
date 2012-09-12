@@ -111,6 +111,11 @@
 		121FDA4415FF2B7900AA6947 /* SkillsViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 121FDA4315FF2B7900AA6947 /* SkillsViewController-iPad.xib */; };
 		121FDA4615FF2C2500AA6947 /* PassiveSkillView-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 121FDA4515FF2C2500AA6947 /* PassiveSkillView-iPad.xib */; };
 		121FDA4815FF363E00AA6947 /* skillCalcBackground-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 121FDA4715FF363E00AA6947 /* skillCalcBackground-iPad.png */; };
+		1232F2E416005F4F00EBB2BF /* HeroCareerCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1232F2E316005F4F00EBB2BF /* HeroCareerCellView.m */; };
+		1232F2E616005F5D00EBB2BF /* HeroCareerCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1232F2E516005F5D00EBB2BF /* HeroCareerCellView.xib */; };
+		1232F2EB1600670D00EBB2BF /* UIActionSheet+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 1232F2E81600670D00EBB2BF /* UIActionSheet+Block.m */; };
+		1232F2EC1600670D00EBB2BF /* UIAlertView+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 1232F2EA1600670D00EBB2BF /* UIAlertView+Block.m */; };
+		1232F2F2160068EE00EBB2BF /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1232F2F1160068ED00EBB2BF /* StoreKit.framework */; };
 		124C68FB15F887F800353EFB /* NSString+D3API.m in Sources */ = {isa = PBXBuildFile; fileRef = 124C68FA15F887F800353EFB /* NSString+D3API.m */; };
 		124C68FF15F88F6D00353EFB /* ProgressionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 124C68FE15F88F6D00353EFB /* ProgressionView.m */; };
 		124C694A15F89AF600353EFB /* CareerCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 124C694915F89AF600353EFB /* CareerCellView.m */; };
@@ -298,6 +303,14 @@
 		121FDA4315FF2B7900AA6947 /* SkillsViewController-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "SkillsViewController-iPad.xib"; sourceTree = "<group>"; };
 		121FDA4515FF2C2500AA6947 /* PassiveSkillView-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "PassiveSkillView-iPad.xib"; sourceTree = "<group>"; };
 		121FDA4715FF363E00AA6947 /* skillCalcBackground-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "skillCalcBackground-iPad.png"; sourceTree = "<group>"; };
+		1232F2E216005F4F00EBB2BF /* HeroCareerCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroCareerCellView.h; sourceTree = "<group>"; };
+		1232F2E316005F4F00EBB2BF /* HeroCareerCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeroCareerCellView.m; sourceTree = "<group>"; };
+		1232F2E516005F5D00EBB2BF /* HeroCareerCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeroCareerCellView.xib; sourceTree = "<group>"; };
+		1232F2E71600670D00EBB2BF /* UIActionSheet+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+Block.h"; sourceTree = "<group>"; };
+		1232F2E81600670D00EBB2BF /* UIActionSheet+Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+Block.m"; sourceTree = "<group>"; };
+		1232F2E91600670D00EBB2BF /* UIAlertView+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Block.h"; sourceTree = "<group>"; };
+		1232F2EA1600670D00EBB2BF /* UIAlertView+Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Block.m"; sourceTree = "<group>"; };
+		1232F2F1160068ED00EBB2BF /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		124C68F915F887F800353EFB /* NSString+D3API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+D3API.h"; sourceTree = "<group>"; };
 		124C68FA15F887F800353EFB /* NSString+D3API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+D3API.m"; sourceTree = "<group>"; };
 		124C68FD15F88F6D00353EFB /* ProgressionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressionView.h; sourceTree = "<group>"; };
@@ -433,6 +446,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1232F2F2160068EE00EBB2BF /* StoreKit.framework in Frameworks */,
 				124C697615F8CE5800353EFB /* QuartzCore.framework in Frameworks */,
 				12FB053D15F7806700AE78E4 /* UIKit.framework in Frameworks */,
 				12FB053F15F7806700AE78E4 /* Foundation.framework in Frameworks */,
@@ -613,6 +627,16 @@
 			path = titleFrames;
 			sourceTree = "<group>";
 		};
+		1232F2E016005F3000EBB2BF /* HeroCareerCellView */ = {
+			isa = PBXGroup;
+			children = (
+				1232F2E216005F4F00EBB2BF /* HeroCareerCellView.h */,
+				1232F2E316005F4F00EBB2BF /* HeroCareerCellView.m */,
+				1232F2E516005F5D00EBB2BF /* HeroCareerCellView.xib */,
+			);
+			name = HeroCareerCellView;
+			sourceTree = "<group>";
+		};
 		124C68FC15F88F5800353EFB /* ProgressionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -636,6 +660,7 @@
 			children = (
 				71D2BAC315FB99BD007AFDC3 /* AttributeCellView */,
 				71D8394115FA8305002AD951 /* AttributesHeaderView */,
+				1232F2E016005F3000EBB2BF /* HeroCareerCellView */,
 				12A76F3F15F9D56500B2E9D4 /* AttributesDataSource.h */,
 				12A76F4015F9D56500B2E9D4 /* AttributesDataSource.m */,
 			);
@@ -712,6 +737,7 @@
 		12FB052D15F7806700AE78E4 = {
 			isa = PBXGroup;
 			children = (
+				1232F2F1160068ED00EBB2BF /* StoreKit.framework */,
 				124C697515F8CE5800353EFB /* QuartzCore.framework */,
 				12FB054215F7806700AE78E4 /* D3Assistant */,
 				12FB053B15F7806700AE78E4 /* Frameworks */,
@@ -813,6 +839,10 @@
 		12FB05C715F780CB00AE78E4 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				1232F2E71600670D00EBB2BF /* UIActionSheet+Block.h */,
+				1232F2E81600670D00EBB2BF /* UIActionSheet+Block.m */,
+				1232F2E91600670D00EBB2BF /* UIAlertView+Block.h */,
+				1232F2EA1600670D00EBB2BF /* UIAlertView+Block.m */,
 				12A76F3A15F9CF3500B2E9D4 /* UIAlertView+Error.h */,
 				12A76F3B15F9CF3500B2E9D4 /* UIAlertView+Error.m */,
 				12FB05C815F780CB00AE78E4 /* UITableViewCell+Nib.h */,
@@ -1219,6 +1249,7 @@
 				121FDA4415FF2B7900AA6947 /* SkillsViewController-iPad.xib in Resources */,
 				121FDA4615FF2C2500AA6947 /* PassiveSkillView-iPad.xib in Resources */,
 				121FDA4815FF363E00AA6947 /* skillCalcBackground-iPad.png in Resources */,
+				1232F2E616005F5D00EBB2BF /* HeroCareerCellView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1274,6 +1305,9 @@
 				12F6827015FDC1160052A1AA /* RuneInfoCellView.m in Sources */,
 				12F6827615FDC84D0052A1AA /* PassiveSkillInfoCellView.m in Sources */,
 				12F682A515FDFBD80052A1AA /* RealmsViewController.m in Sources */,
+				1232F2E416005F4F00EBB2BF /* HeroCareerCellView.m in Sources */,
+				1232F2EB1600670D00EBB2BF /* UIActionSheet+Block.m in Sources */,
+				1232F2EC1600670D00EBB2BF /* UIAlertView+Block.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1345,11 +1379,13 @@
 		12FB055115F7806700AE78E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Artem Shimanski (EB6EUZ8H2P)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "D3Assistant/D3Assistant-Prefix.pch";
 				INFOPLIST_FILE = "D3Assistant/D3Assistant-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C16152CC-57DC-4C40-B311-043274F552FD";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

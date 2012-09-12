@@ -10,14 +10,26 @@
 #import "ProfilesViewController.h"
 #import "EUOperationQueue.h"
 #import "EUActivityView.h"
+#import "UIAlertView+Error.h"
+
+@interface AppDelegate()
+@property (nonatomic, strong) UIView* donationActivityView;
+
+- (void) completeTransaction: (SKPaymentTransaction *)transaction;
+- (void) restoreTransaction: (SKPaymentTransaction *)transaction;
+- (void) failedTransaction: (SKPaymentTransaction *)transaction;
+
+@end
 
 @implementation AppDelegate
+@synthesize donationActivityView;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 	EUActivityView* activityView = [[EUActivityView alloc] initWithFrame:self.window.rootViewController.view.bounds];
 	[self.window.rootViewController.view addSubview:activityView];
 	[self.window makeKeyAndVisible];
+	[[SKPaymentQueue defaultQueue] addTransactionObserver:self];
     return YES;
 }
 
@@ -52,5 +64,81 @@
 + (NSString*) documentsDirectory {
 	return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
 }
+
+- (void) donate:(NSString*) productID {
+	self.donationActivityView.hidden = NO;
+	
+	SKPaymentQueue *paymentQueue = [SKPaymentQueue defaultQueue];
+	[paymentQueue addTransactionObserver:self];
+	SKPayment *payment = [SKPayment paymentWithProductIdentifier:productID];
+	[paymentQueue addPayment:payment];
+}
+
+#pragma mark SKPaymentTransactionObserver
+
+- (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions {
+	for (SKPaymentTransaction *transaction in transactions)
+	{
+		switch (transaction.transactionState)
+		{
+			case SKPaymentTransactionStatePurchased:
+				[self completeTransaction:transaction];
+				break;
+			case SKPaymentTransactionStateFailed:
+				[self failedTransaction:transaction];
+				break;
+			case SKPaymentTransactionStateRestored:
+				[self restoreTransaction:transaction];
+			default:
+				break;
+		}
+	}
+}
+
+#pragma mark - Private
+
+- (UIView*) donationActivityView {
+	if (!donationActivityView) {
+		donationActivityView = [[UIView alloc] initWithFrame:self.window.bounds];
+		donationActivityView.opaque = NO;
+		donationActivityView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
+		UIActivityIndicatorView* activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+		activityIndicator.center = CGPointMake(donationActivityView.frame.size.width / 2, donationActivityView.frame.size.height / 2);
+		[donationActivityView addSubview:activityIndicator];
+		[activityIndicator startAnimating];
+		donationActivityView.hidden = YES;
+		[self.window addSubview:donationActivityView];
+	}
+	return donationActivityView;
+}
+
+- (void) completeTransaction: (SKPaymentTransaction *)transaction
+{
+    [[SKPaymentQueue defaultQueue] finishTransaction: transaction];
+	UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"Thanks for the donation" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+	[alertView show];
+	[self.donationActivityView removeFromSuperview];
+	self.donationActivityView = nil;
+}
+
+- (void) restoreTransaction: (SKPaymentTransaction *)transaction
+{
+    [[SKPaymentQueue defaultQueue] finishTransaction: transaction];
+	UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"Thanks for the donation" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+	[alertView show];
+	[self.donationActivityView removeFromSuperview];
+	self.donationActivityView = nil;
+}
+
+- (void) failedTransaction: (SKPaymentTransaction *)transaction
+{
+    if (transaction.error.code != SKErrorPaymentCancelled) {
+        [[UIAlertView alertViewWithError:transaction.error] show];
+    }
+    [[SKPaymentQueue defaultQueue] finishTransaction: transaction];
+	[self.donationActivityView removeFromSuperview];
+	self.donationActivityView = nil;
+}
+
 
 @end

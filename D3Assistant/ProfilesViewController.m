@@ -19,6 +19,8 @@
 #import "HeroViewController.h"
 #import "UIAlertView+Error.h"
 #import "RealmsViewController.h"
+#import "UIActionSheet+Block.h"
+#import "AppDelegate.h"
 
 @interface ProfilesViewController ()
 @property (nonatomic, strong) NSMutableArray* searchResults;
@@ -388,7 +390,21 @@
 }
 
 - (IBAction)onDonate:(id)sender {
-	
+	[[UIActionSheet actionSheetWithTitle:@"Donation"
+					  cancelButtonTitle:@"Cancel"
+				 destructiveButtonTitle:nil
+					  otherButtonTitles:@[@"Donate $1", @"Donate $5", @"Donate $10"]
+						completionBlock:^(UIActionSheet *actionSheet, NSInteger selectedButtonIndex) {
+							if (selectedButtonIndex != actionSheet.cancelButtonIndex) {
+								AppDelegate* delegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
+								if (selectedButtonIndex == 0)
+									[delegate donate:@"com.shimanski.d3assistant.donate1"];
+								else if (selectedButtonIndex == 1)
+									[delegate donate:@"com.shimanski.d3assistant.donate5"];
+								else if (selectedButtonIndex == 2)
+									[delegate donate:@"com.shimanski.d3assistant.donate10"];
+							}
+						} cancelBlock:nil] showFromBarButtonItem:sender animated:YES];
 }
 
 - (void) didChangeRealm:(NSNotification*) notification {

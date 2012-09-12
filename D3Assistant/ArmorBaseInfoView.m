@@ -40,9 +40,7 @@
 }
 
 - (void) setArmor:(NSDictionary *)value {
-	NSDictionary* tmp = armor;
 	armor = value;
-	tmp = nil;
 	
 	D3APISession* session = [D3APISession sharedSession];
 	NSString* color = [armor valueForKey:@"displayColor"];

@@ -9,15 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @interface HeroCellView : UITableViewCell
-@property (assign, nonatomic) IBOutlet UIImageView *avatarImageView;
-@property (assign, nonatomic) IBOutlet UIImageView *frameImageView;
+@property (unsafe_unretained, nonatomic) IBOutlet UIImageView *avatarImageView;
+@property (unsafe_unretained, nonatomic) IBOutlet UIImageView *frameImageView;
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *nameLabels;
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *levelLabels;
-@property (assign, nonatomic) IBOutlet UILabel *classLabel;
-@property (assign, nonatomic) IBOutlet UILabel *paragonLevelLabel;
-@property (assign, nonatomic) IBOutlet UILabel *deadLabel;
-@property (assign, nonatomic) IBOutlet UIImageView *skullImageView;
-@property (assign, nonatomic) IBOutlet UILabel *hardcoreLabel;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *classLabel;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *paragonLevelLabel;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *deadLabel;
+@property (unsafe_unretained, nonatomic) IBOutlet UIImageView *skullImageView;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *hardcoreLabel;
 @property (nonatomic, assign) BOOL hardcore;
 
 @end
