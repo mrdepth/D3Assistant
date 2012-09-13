@@ -22,7 +22,7 @@
 }
 
 - (NSString*) validBattleTagURLString {
-	return [[self validBattleTagString] stringByReplacingOccurrencesOfString:@"#" withString:@"-"];
+	return [[[self validBattleTagString] stringByReplacingOccurrencesOfString:@"#" withString:@"-"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 }
 
 @end
