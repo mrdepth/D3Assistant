@@ -35,6 +35,7 @@
 
 - (void) awakeFromNib {
 	[[NSBundle mainBundle] loadNibNamed:@"ActiveSkillView" owner:self options:nil];
+	[self.contentView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTap:)]];
 	[self addSubview:contentView];
 }
 

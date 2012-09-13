@@ -39,6 +39,7 @@
 @synthesize backgroundImageView;
 @synthesize skillsViewController;
 @synthesize sectionsControl;
+@synthesize heroNameLabel;
 @synthesize hero;
 @synthesize fallen;
 
@@ -88,6 +89,7 @@
     [self setBackgroundImageView:nil];
 	[self setSkillsViewController:nil];
 	[self setSectionsControl:nil];
+	[self setHeroNameLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -147,6 +149,8 @@
 	self.attributesDataSource.hero = self.hero;
 	self.skillsViewController.hero = self.hero;
 	self.title = [self.hero valueForKey:@"name"];
+	self.heroNameLabel.text = self.title;
+	
 	[self.attributesTableView reloadData];
 	
 	if (!self.hero) {

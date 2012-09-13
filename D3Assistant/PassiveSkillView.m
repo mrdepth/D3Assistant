@@ -32,6 +32,7 @@
 	else
 		[[NSBundle mainBundle] loadNibNamed:@"PassiveSkillView" owner:self options:nil];
 	[self addSubview:contentView];
+	[self.contentView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTap:)]];
 }
 
 - (id)initWithFrame:(CGRect)frame

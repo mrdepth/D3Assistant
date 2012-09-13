@@ -31,6 +31,7 @@
 @property (strong, nonatomic) IBOutlet AttributesDataSource *attributesDataSource;
 @property (strong, nonatomic) IBOutlet SkillsViewController *skillsViewController;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *sectionsControl;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *heroNameLabel;
 
 @property (nonatomic, strong) NSDictionary* hero;
 @property (nonatomic, assign) BOOL fallen;
