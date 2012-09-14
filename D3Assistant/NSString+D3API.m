@@ -24,7 +24,8 @@
 		const char* cString = [s cStringUsingEncoding:NSUTF8StringEncoding];
 		for (NSInteger i = length - 1; i >= 0; i--) {
 			if (![set characterIsMember:cString[i]]) {
-				s = [NSString stringWithFormat:@"%@#%@", [s substringToIndex:i + 1], [s substringFromIndex:i + 1]];
+				if (i < length - 1)
+					s = [NSString stringWithFormat:@"%@#%@", [s substringToIndex:i + 1], [s substringFromIndex:i + 1]];
 				break;
 			}
 		}
