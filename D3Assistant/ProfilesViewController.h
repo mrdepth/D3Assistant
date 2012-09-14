@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "ProfileHeaderView.h"
 #import "HeroViewController.h"
+#import "CollapsableTableView.h"
 
-@interface ProfilesViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate, ProfileHeaderViewDelegate>
+@interface ProfilesViewController : UIViewController<UITableViewDataSource, CollapsableTableViewDelegate, UISearchDisplayDelegate, ProfileHeaderViewDelegate>
 @property (unsafe_unretained, nonatomic) IBOutlet UITableView *tableView;
 @property (unsafe_unretained, nonatomic) IBOutlet HeroViewController* heroViewController;
 

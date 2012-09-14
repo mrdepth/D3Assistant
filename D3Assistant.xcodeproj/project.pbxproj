@@ -125,6 +125,8 @@
 		12736E9216031718009D3263 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12736E8F16031718009D3263 /* Default-568h@2x.png */; };
 		12736E9316031718009D3263 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 12736E9016031718009D3263 /* Default.png */; };
 		12736E9416031718009D3263 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12736E9116031718009D3263 /* Default@2x.png */; };
+		12736E9A1603384B009D3263 /* ProfilesViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12736E991603384B009D3263 /* ProfilesViewController-iPad.xib */; };
+		12736E9F16033CC4009D3263 /* CollapsableTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12736E9E16033CC4009D3263 /* CollapsableTableView.m */; };
 		12A76F3915F9C0E600B2E9D4 /* SocketView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A76F3815F9C0E600B2E9D4 /* SocketView.m */; };
 		12A76F3C15F9CF3500B2E9D4 /* UIAlertView+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A76F3B15F9CF3500B2E9D4 /* UIAlertView+Error.m */; };
 		12A76F4115F9D56500B2E9D4 /* AttributesDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A76F4015F9D56500B2E9D4 /* AttributesDataSource.m */; };
@@ -331,6 +333,9 @@
 		12736E8F16031718009D3263 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		12736E9016031718009D3263 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		12736E9116031718009D3263 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		12736E991603384B009D3263 /* ProfilesViewController-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "ProfilesViewController-iPad.xib"; sourceTree = "<group>"; };
+		12736E9D16033CC4009D3263 /* CollapsableTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollapsableTableView.h; sourceTree = "<group>"; };
+		12736E9E16033CC4009D3263 /* CollapsableTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollapsableTableView.m; sourceTree = "<group>"; };
 		12A76F3715F9C0E600B2E9D4 /* SocketView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketView.h; sourceTree = "<group>"; };
 		12A76F3815F9C0E600B2E9D4 /* SocketView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketView.m; sourceTree = "<group>"; };
 		12A76F3A15F9CF3500B2E9D4 /* UIAlertView+Error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Error.h"; sourceTree = "<group>"; };
@@ -660,6 +665,15 @@
 			name = ProgressionView;
 			sourceTree = "<group>";
 		};
+		12736E9C16033CC4009D3263 /* CollapsableTableView */ = {
+			isa = PBXGroup;
+			children = (
+				12736E9D16033CC4009D3263 /* CollapsableTableView.h */,
+				12736E9E16033CC4009D3263 /* CollapsableTableView.m */,
+			);
+			path = CollapsableTableView;
+			sourceTree = "<group>";
+		};
 		12A76F3515F9C0D700B2E9D4 /* SocketView */ = {
 			isa = PBXGroup;
 			children = (
@@ -791,6 +805,7 @@
 		12FB054215F7806700AE78E4 /* D3Assistant */ = {
 			isa = PBXGroup;
 			children = (
+				12736E9C16033CC4009D3263 /* CollapsableTableView */,
 				12FB060F15F781EE00AE78E4 /* EUOperationQueue */,
 				12FB061615F781EF00AE78E4 /* UIImageView+URL */,
 				12FB05A515F780CA00AE78E4 /* ThirdParty */,
@@ -909,6 +924,7 @@
 				12FB05F415F7810100AE78E4 /* ProfilesViewController.h */,
 				12FB05F515F7810100AE78E4 /* ProfilesViewController.m */,
 				12FB05F615F7810100AE78E4 /* ProfilesViewController.xib */,
+				12736E991603384B009D3263 /* ProfilesViewController-iPad.xib */,
 			);
 			name = ProfilesViewController;
 			sourceTree = "<group>";
@@ -1286,6 +1302,7 @@
 				12736E9216031718009D3263 /* Default-568h@2x.png in Resources */,
 				12736E9316031718009D3263 /* Default.png in Resources */,
 				12736E9416031718009D3263 /* Default@2x.png in Resources */,
+				12736E9A1603384B009D3263 /* ProfilesViewController-iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1344,6 +1361,7 @@
 				1232F2E416005F4F00EBB2BF /* HeroCareerCellView.m in Sources */,
 				1232F2EB1600670D00EBB2BF /* UIActionSheet+Block.m in Sources */,
 				1232F2EC1600670D00EBB2BF /* UIAlertView+Block.m in Sources */,
+				12736E9F16033CC4009D3263 /* CollapsableTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -274,6 +274,10 @@
 	}
 }
 
+- (BOOL) tableView:(UITableView *)tableView canCollapsSection:(NSInteger)section {
+	return YES;
+}
+
 #pragma mark - UISearchBarDelegate
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
@@ -341,7 +345,8 @@
 	aTableView.backgroundColor = [UIColor clearColor];
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		aTableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
-		aTableView.backgroundView.contentMode = UIViewContentModeTopLeft;
+		aTableView.backgroundView.contentMode = UIViewContentModeScaleToFill;
+//		aTableView.backgroundView.frame = self.view.bounds;
 	}
 	else
 		aTableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];

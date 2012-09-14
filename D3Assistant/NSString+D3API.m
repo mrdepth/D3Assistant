@@ -18,6 +18,17 @@
 	while ((r = [s rangeOfCharacterFromSet:set]).location != NSNotFound) {
 		[s replaceCharactersInRange:r withString:@"#"];
 	}
+	set = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
+	if ([s rangeOfString:@"#"].location == NSNotFound) {
+		NSInteger length = s.length;
+		const char* cString = [s cStringUsingEncoding:NSUTF8StringEncoding];
+		for (NSInteger i = length - 1; i >= 0; i--) {
+			if (![set characterIsMember:cString[i]]) {
+				s = [NSString stringWithFormat:@"%@#%@", [s substringToIndex:i + 1], [s substringFromIndex:i + 1]];
+				break;
+			}
+		}
+	}
 	return s;
 }
 
