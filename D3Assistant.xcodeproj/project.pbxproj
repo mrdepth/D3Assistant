@@ -122,6 +122,9 @@
 		124C694C15F89B0A00353EFB /* CareerCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 124C694B15F89B0900353EFB /* CareerCellView.xib */; };
 		124C694F15F89D7200353EFB /* D3Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 124C694E15F89D7200353EFB /* D3Utility.m */; };
 		124C697615F8CE5800353EFB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 124C697515F8CE5800353EFB /* QuartzCore.framework */; };
+		12736E9216031718009D3263 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12736E8F16031718009D3263 /* Default-568h@2x.png */; };
+		12736E9316031718009D3263 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 12736E9016031718009D3263 /* Default.png */; };
+		12736E9416031718009D3263 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12736E9116031718009D3263 /* Default@2x.png */; };
 		12A76F3915F9C0E600B2E9D4 /* SocketView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A76F3815F9C0E600B2E9D4 /* SocketView.m */; };
 		12A76F3C15F9CF3500B2E9D4 /* UIAlertView+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A76F3B15F9CF3500B2E9D4 /* UIAlertView+Error.m */; };
 		12A76F4115F9D56500B2E9D4 /* AttributesDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A76F4015F9D56500B2E9D4 /* AttributesDataSource.m */; };
@@ -325,6 +328,9 @@
 		124C694D15F89D7200353EFB /* D3Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3Utility.h; sourceTree = "<group>"; };
 		124C694E15F89D7200353EFB /* D3Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3Utility.m; sourceTree = "<group>"; };
 		124C697515F8CE5800353EFB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		12736E8F16031718009D3263 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		12736E9016031718009D3263 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		12736E9116031718009D3263 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		12A76F3715F9C0E600B2E9D4 /* SocketView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketView.h; sourceTree = "<group>"; };
 		12A76F3815F9C0E600B2E9D4 /* SocketView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketView.m; sourceTree = "<group>"; };
 		12A76F3A15F9CF3500B2E9D4 /* UIAlertView+Error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Error.h"; sourceTree = "<group>"; };
@@ -824,6 +830,9 @@
 				121FD97615FF201000AA6947 /* 1x */,
 				71B0AA9A15F93BA80079F9B9 /* 2x */,
 				12EB68201601C694004B1398 /* icons */,
+				12736E8F16031718009D3263 /* Default-568h@2x.png */,
+				12736E9016031718009D3263 /* Default.png */,
+				12736E9116031718009D3263 /* Default@2x.png */,
 			);
 			path = Graphics;
 			sourceTree = "<group>";
@@ -1274,6 +1283,9 @@
 				12EB68261601C694004B1398 /* icon-iPad@2x.png in Resources */,
 				12EB68271601C694004B1398 /* icon.png in Resources */,
 				12EB68281601C694004B1398 /* icon@2x.png in Resources */,
+				12736E9216031718009D3263 /* Default-568h@2x.png in Resources */,
+				12736E9316031718009D3263 /* Default.png in Resources */,
+				12736E9416031718009D3263 /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

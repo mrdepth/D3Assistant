@@ -55,10 +55,15 @@
 	else {
 		[self reload];
 	}
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reload) name:UIApplicationWillEnterForegroundNotification object:nil];
 }
 
 - (void)viewDidUnload
 {
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationWillEnterForegroundNotification object:nil];
+	self.profiles = nil;
+	self.searchResults = nil;
 	[self setTableView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
@@ -307,7 +312,10 @@
 					}
 					if (!self.searchResults) {
 						self.searchResults = [NSMutableArray arrayWithObject:[resultTmp deepMutableCopy]];
+
 						NSArray* sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"hardcore" ascending:YES],
+						[NSSortDescriptor sortDescriptorWithKey:@"level" ascending:NO],
+						[NSSortDescriptor sortDescriptorWithKey:@"paragonLevel" ascending:NO],
 						[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
 						[[[self.searchResults objectAtIndex:0] valueForKey:@"heroes"] sortUsingDescriptors:sortDescriptors];
 						[[[self.searchResults objectAtIndex:0] valueForKey:@"fallenHeroes"] sortUsingDescriptors:sortDescriptors];
@@ -439,7 +447,10 @@
 					if (result) {
 						NSMutableDictionary* profileTmp = [result deepMutableCopy];
 						[profileTmp setValue:@(YES) forKey:@"inFavorites"];
+
 						NSArray* sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"hardcore" ascending:YES],
+						[NSSortDescriptor sortDescriptorWithKey:@"level" ascending:NO],
+						[NSSortDescriptor sortDescriptorWithKey:@"paragonLevel" ascending:NO],
 						[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
 						
 						[[profileTmp valueForKey:@"heroes"] sortUsingDescriptors:sortDescriptors];
