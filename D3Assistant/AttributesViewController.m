@@ -1,12 +1,12 @@
 //
-//  AttributesDataSource.m
+//  AttributesViewController.m
 //  D3Assistant
 //
-//  Created by Artem Shimanski on 07.09.12.
+//  Created by Artem Shimanski on 18.09.12.
 //  Copyright (c) 2012 Artem Shimanski. All rights reserved.
 //
 
-#import "AttributesDataSource.h"
+#import "AttributesViewController.h"
 #import "UIColor+NSNumber.h"
 #import "AttributesHeaderView.h"
 #import "UIView+Nib.h"
@@ -15,23 +15,30 @@
 #import "HeroCareerCellView.h"
 #import "D3APISession.h"
 
-@interface AttributesDataSource()
+@interface AttributesViewController ()
 @property (nonatomic, strong) NSMutableArray* sections;
-
 @end
 
-@implementation AttributesDataSource
+@implementation AttributesViewController
 @synthesize hero;
 @synthesize fallen;
 
-- (void) setHero:(NSDictionary *)value {
-	hero = value;
+- (void) viewDidLoad {
+	[super viewDidLoad];
+	self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"attributesBackground.png"]];
+	self.tableView.backgroundView.contentMode = UIViewContentModeScaleToFill;
+	self.tableView.backgroundView.contentStretch = CGRectMake(0, 0.1, 1, 0.8);
+}
+
+- (void) setHero:(NSDictionary *)aHero fallen:(BOOL) isFallen {
+	hero = aHero;
+	fallen = isFallen;
 	
 	if (hero) {
 		self.sections = [NSMutableArray array];
 		NSArray* rows;
 		NSDictionary* section;
-
+		
 		if (!self.fallen) {
 			rows = @[
 			@{@"progression" : @(YES)},
@@ -40,7 +47,7 @@
 			section = @{@"title" : @"Progression", @"rows" : rows};
 			[self.sections addObject:section];
 		}
-
+		
 		
 		NSString* class = [hero valueForKey:@"class"];
 		NSDictionary* primaryAttributes = @{@"demon-hunter" : @"Dexterity", @"monk" : @"Dexterity", @"witch-doctor" : @"Intelligence", @"wizard" : @"Intelligence", @"barbarian" : @"Strength"};
@@ -54,7 +61,7 @@
 		
 		section = @{@"title" : @"Attributes", @"rows" : rows};
 		[self.sections addObject:section];
-
+		
 		if (self.fallen) {
 			rows = @[
 			@{@"title" : @"Damage", @"stat" : @"damage"},
@@ -148,6 +155,8 @@
 	}
 	else
 		self.sections = nil;
+	
+	[self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
@@ -168,8 +177,6 @@
 	if ([[row valueForKey:@"progression"] boolValue]) {
 		static NSString *CellIdentifier = @"HeroCareerCellView";
 		HeroCareerCellView *cell = (HeroCareerCellView*) [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-		if (!cell)
-			cell = [HeroCareerCellView cellWithNibName:@"HeroCareerCellView" bundle:nil reuseIdentifier:CellIdentifier];
 		BOOL hardcore = [[hero valueForKey:@"hardcore"] boolValue];
 		cell.progressionView.hardcore = hardcore;
 		
@@ -179,9 +186,6 @@
 	else {
 		static NSString *CellIdentifier = @"AttributeCellView";
 		AttributeCellView *cell = (AttributeCellView*) [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-		if (!cell) {
-			cell = [AttributeCellView cellWithNibName:@"AttributeCellView" bundle:nil reuseIdentifier:CellIdentifier];
-		}
 		cell.titleLabel.text = [row valueForKey:@"title"];
 		NSString* value = [row valueForKey:@"value"];
 		if (value)
@@ -192,45 +196,6 @@
 		return cell;
 	}
 }
-
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
-
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
- {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- }
- else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
- {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
 
 #pragma mark - Table view delegate
 
@@ -244,10 +209,6 @@
 	view.titleLabel.text = [self tableView:tableView titleForHeaderInSection:section];
 	return view;
 }
-
-/*- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-	return 30;
-}*/
 
 - (NSString*) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
 	return [[self.sections objectAtIndex:section] valueForKey:@"title"];

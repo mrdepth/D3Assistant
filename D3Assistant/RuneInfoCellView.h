@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface RuneInfoCellView : UITableViewCell
-@property (unsafe_unretained, nonatomic) IBOutlet UIImageView *runeImageView;
-@property (unsafe_unretained, nonatomic) IBOutlet UILabel *runeNameLabel;
-@property (unsafe_unretained, nonatomic) IBOutlet UILabel *runeDescriptionLabel;
-@property (unsafe_unretained, nonatomic) IBOutlet UILabel *levelLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *runeImageView;
+@property (weak, nonatomic) IBOutlet UILabel *runeNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *runeDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *levelLabel;
 
 @end

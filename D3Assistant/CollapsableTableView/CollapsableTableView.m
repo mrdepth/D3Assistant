@@ -63,10 +63,7 @@
 }
 
 - (void) reloadData {
-	NSInteger numberOfSections = [self numberOfSections];
-	self.sections = [NSMutableArray arrayWithCapacity:numberOfSections];
-	for (NSInteger section = 0; section < numberOfSections; section++)
-		[self.sections addObject:[NSNull null]];
+	self.sections = nil;
 	[super reloadData];
 }
 
@@ -157,6 +154,17 @@
 			[self.moveSections addObject:@{@"from" : @(section), @"to" : @(newSection)}];
 		[super moveSection:section toSection:newSection];
 	}
+}
+
+- (NSMutableArray*) sections {
+	if (!sections) {
+		sections = [[NSMutableArray alloc] init];
+		NSInteger numberOfSections = [self numberOfSections];
+		self.sections = [NSMutableArray arrayWithCapacity:numberOfSections];
+		for (NSInteger section = 0; section < numberOfSections; section++)
+			[self.sections addObject:[NSNull null]];
+	}
+	return sections;
 }
 
 #pragma mark - UITableViewDataSource

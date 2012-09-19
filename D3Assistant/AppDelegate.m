@@ -26,9 +26,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+	[self.window makeKeyAndVisible];
 	EUActivityView* activityView = [[EUActivityView alloc] initWithFrame:self.window.rootViewController.view.bounds];
 	[self.window.rootViewController.view addSubview:activityView];
-	[self.window makeKeyAndVisible];
+
 	[[SKPaymentQueue defaultQueue] addTransactionObserver:self];
     return YES;
 }
@@ -70,7 +71,9 @@
 	
 	SKPaymentQueue *paymentQueue = [SKPaymentQueue defaultQueue];
 	[paymentQueue addTransactionObserver:self];
-	SKPayment *payment = [SKPayment paymentWithProductIdentifier:productID];
+	SKMutablePayment* payment = [[SKMutablePayment alloc] init];
+	payment.productIdentifier = productID;
+	payment.quantity = 1;
 	[paymentQueue addPayment:payment];
 }
 

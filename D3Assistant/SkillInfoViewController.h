@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface SkillInfoViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
-@property (unsafe_unretained, nonatomic) IBOutlet UITableView *tableView;
-@property (unsafe_unretained, nonatomic) IBOutlet UILabel *skillNameLabel;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UILabel *skillNameLabel;
 @property (nonatomic, strong) NSDictionary* activeSkill;
 @property (nonatomic, strong) NSDictionary* passiveSkill;
 @property (nonatomic, strong) NSArray* runes;
+@property (nonatomic, strong) NSDictionary* hero;
 
 @end

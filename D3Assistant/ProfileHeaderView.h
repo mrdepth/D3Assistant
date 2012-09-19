@@ -15,8 +15,8 @@
 @end
 
 @interface ProfileHeaderView : UIView
-@property (unsafe_unretained, nonatomic) IBOutlet UILabel *battleTagLabel;
-@property (unsafe_unretained, nonatomic) IBOutlet UIButton *favoritesButton;
+@property (weak, nonatomic) IBOutlet UILabel *battleTagLabel;
+@property (weak, nonatomic) IBOutlet UIButton *favoritesButton;
 @property (nonatomic, strong) NSDictionary* profile;
 @property (nonatomic, assign) id<ProfileHeaderViewDelegate> delegate;
 

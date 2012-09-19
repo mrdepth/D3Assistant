@@ -9,4 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface RealmsViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+
+- (IBAction)onCancel:(id)sender;
+
 @end

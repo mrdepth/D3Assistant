@@ -12,7 +12,9 @@
 #import "CollapsableTableView.h"
 
 @interface ProfilesViewController : UIViewController<UITableViewDataSource, CollapsableTableViewDelegate, UISearchDisplayDelegate, ProfileHeaderViewDelegate>
-@property (unsafe_unretained, nonatomic) IBOutlet UITableView *tableView;
-@property (unsafe_unretained, nonatomic) IBOutlet HeroViewController* heroViewController;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet HeroViewController* heroViewController;
+
+- (IBAction)onDonate:(id)sender;
 
 @end

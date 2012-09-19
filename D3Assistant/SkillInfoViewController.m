@@ -37,22 +37,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	self.title = @"Skill info";
+	self.title = [self.hero valueForKey:@"name"];
 	if (self.activeSkill)
 		self.skillNameLabel.text = [self.activeSkill valueForKey:@"name"];
 	else
 		self.skillNameLabel.text = [self.passiveSkill valueForKey:@"name"];
 	
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		CGFloat height = self.tableView.frame.origin.y + self.tableView.tableHeaderView.frame.size.height + self.tableView.tableFooterView.frame.size.height;
-		
-		NSInteger n = [self numberOfSectionsInTableView:self.tableView];
-		for (NSInteger i = 0; i < n; i++) {
-			NSInteger rows = [self tableView:self.tableView numberOfRowsInSection:i];
-			for (int j = 0; j < rows; j++)
-				height += [self tableView:self.tableView heightForRowAtIndexPath:[NSIndexPath indexPathForRow:j inSection:i]];
-		}
-		
+		[self.tableView reloadData];
+		CGRect r = [self.tableView rectForSection:[self numberOfSectionsInTableView:self.tableView] - 1];
+		CGFloat height = self.tableView.frame.origin.y + self.tableView.tableFooterView.frame.size.height + 40;
+		height += r.origin.y + r.size.height;
 		self.contentSizeForViewInPopover = CGSizeMake(320, height);
 	}
 }

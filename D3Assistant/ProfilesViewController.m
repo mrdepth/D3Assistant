@@ -26,8 +26,6 @@
 @property (nonatomic, strong) NSMutableArray* searchResults;
 @property (nonatomic, strong) NSMutableArray* profiles;
 
-- (IBAction)onRealm:(id)sender;
-- (IBAction)onDonate:(id)sender;
 - (void) didChangeRealm:(NSNotification*) notification;
 - (void) reload;
 - (NSString*) profilesFilePath;
@@ -46,17 +44,26 @@
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didChangeRealm:) name:DidChangeRealmNotification object:nil];
 
 	if (![[NSUserDefaults standardUserDefaults] valueForKey:@"realm"]) {
-		self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Region" style:UIBarButtonItemStyleBordered target:self action:@selector(onRealm:)];
-		RealmsViewController* controller = [[RealmsViewController alloc] initWithNibName:@"RealmsViewController" bundle:nil];
+		int64_t delayInSeconds = 0.0;
+		dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+		dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+			[self performSegueWithIdentifier:@"Realms" sender:nil];
+			self.navigationItem.rightBarButtonItem.title = @"Region";
+		});
+//		self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Region" style:UIBarButtonItemStyleBordered target:self action:@selector(onRealm:)];
+/*		RealmsViewController* controller = [[RealmsViewController alloc] initWithNibName:@"RealmsViewController" bundle:nil];
 		UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController:controller];
 		navController.navigationBar.barStyle = UIBarStyleBlackOpaque;
-		[self presentModalViewController:navController animated:NO];
+		[self presentModalViewController:navController animated:NO];*/
 	}
 	else {
 		[self reload];
 	}
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reload) name:UIApplicationWillEnterForegroundNotification object:nil];
+	
+	if (self.splitViewController)
+		self.heroViewController = (HeroViewController*) [[self.splitViewController.viewControllers objectAtIndex:1] topViewController];
 }
 
 - (void)viewDidUnload
@@ -70,7 +77,32 @@
     // e.g. self.myOutlet = nil;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+	if ([segue.identifier isEqualToString:@"HeroInfo"]) {
+		HeroViewController* controller = (HeroViewController*) [segue destinationViewController];
+		[controller setHero:[sender valueForKey:@"hero"] fallen:[[sender valueForKey:@"fallen"] boolValue]];
+	}
+}
+
+- (IBAction)onDonate:(id)sender {
+	[[UIActionSheet actionSheetWithTitle:@"Donation"
+					   cancelButtonTitle:@"Cancel"
+				  destructiveButtonTitle:nil
+					   otherButtonTitles:@[@"Donate $1", @"Donate $5", @"Donate $10"]
+						 completionBlock:^(UIActionSheet *actionSheet, NSInteger selectedButtonIndex) {
+							 if (selectedButtonIndex != actionSheet.cancelButtonIndex) {
+								 AppDelegate* delegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
+								 if (selectedButtonIndex == 0)
+									 [delegate donate:@"com.shimanski.d3assistant.donate1"];
+								 else if (selectedButtonIndex == 1)
+									 [delegate donate:@"com.shimanski.d3assistant.donate5"];
+								 else if (selectedButtonIndex == 2)
+									 [delegate donate:@"com.shimanski.d3assistant.donate10"];
+							 }
+						 } cancelBlock:nil] showFromBarButtonItem:sender animated:YES];
+}
+
+/*- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 		return UIInterfaceOrientationIsLandscape(interfaceOrientation);
@@ -78,11 +110,15 @@
 		return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (NSUInteger)supportedInterfaceOrientations {
+	return UIInterfaceOrientationMaskLandscape;
+}*/
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return tableView == self.searchDisplayController.searchResultsTableView ? (self.searchResults ? [self.searchResults count] : 0) : self.profiles.count;
+    return tableView == self.searchDisplayController.searchResultsTableView ? [self.searchResults count] : self.profiles.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -115,14 +151,14 @@
 		NSInteger count = [array count];
 		
 		NSDictionary* hero;
-		BOOL dead;
+		BOOL fallen;
 		if (indexPath.row - 1 >= count) {
 			hero = [[profile valueForKey:@"fallenHeroes"] objectAtIndex:indexPath.row - 1 - count];
-			dead = YES;
+			fallen = YES;
 		}
 		else {
 			hero = [[profile valueForKey:@"heroes"] objectAtIndex:indexPath.row - 1];
-			dead = NO;
+			fallen = NO;
 		}
 		
 		BOOL hardcore = [[hero valueForKey:@"hardcore"] boolValue];
@@ -139,8 +175,8 @@
 		cell.classLabel.text = [[hero valueForKey:@"class"] capitalizedString];
 		
 		cell.avatarImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@%@.png", [hero valueForKey:@"class"], [hero valueForKey:@"gender"]]];
-		cell.deadLabel.hidden = !dead;
-		cell.skullImageView.hidden = !dead;
+		cell.deadLabel.hidden = !fallen;
+		cell.skullImageView.hidden = !fallen;
 		return cell;
 	}
 }
@@ -226,18 +262,17 @@
 		
 		if (fallen) {
 			if (self.heroViewController) {
-				self.heroViewController.fallen = fallen;
-				self.heroViewController.hero = hero;
+				[self.heroViewController setHero:hero fallen:fallen];
 			}
 			else {
-				HeroViewController* controller = [[HeroViewController alloc] initWithNibName:@"HeroViewController" bundle:nil];
-				controller.fallen = fallen;
-				controller.hero = hero;
-				[self.navigationController pushViewController:controller animated:YES];
+				[self performSegueWithIdentifier:@"HeroInfo" sender:@{@"hero" : hero, @"fallen" : @(fallen)}];
+/*				HeroViewController* controller = [[HeroViewController alloc] initWithNibName:@"HeroViewController" bundle:nil];
+				[self.heroViewController setHero:hero fallen:fallen];
+				[self.navigationController pushViewController:controller animated:YES];*/
 			}
 		}
 		else {
-			__block __unsafe_unretained EUOperation* operation = [EUOperation operationWithIdentifier:@"ProfilesViewController+LoadingHero" name:@"Loading Hero"];
+			__block __weak EUOperation* operation = [EUOperation operationWithIdentifier:@"ProfilesViewController+LoadingHero" name:@"Loading Hero"];
 			
 			__block NSError* error = nil;
 			__block NSDictionary* heroDetails = nil;
@@ -256,14 +291,14 @@
 						[[UIAlertView alertViewWithError:error] show];
 					else {
 						if (self.heroViewController) {
-							self.heroViewController.fallen = fallen;
-							self.heroViewController.hero = heroDetails;
+							[self.heroViewController setHero:heroDetails fallen:fallen];
 						}
 						else {
+							[self performSegueWithIdentifier:@"HeroInfo" sender:@{@"hero" : heroDetails, @"fallen" : @(fallen)}];
+/*
 							HeroViewController* controller = [[HeroViewController alloc] initWithNibName:@"HeroViewController" bundle:nil];
-							controller.fallen = fallen;
-							controller.hero = heroDetails;
-							[self.navigationController pushViewController:controller animated:YES];
+							[self.heroViewController setHero:heroDetails fallen:fallen];
+							[self.navigationController pushViewController:controller animated:YES];*/
 						}
 					}
 				}
@@ -290,7 +325,7 @@
 		[self.searchDisplayController.searchResultsTableView reloadData];
 	}
 	else {
-		__block __unsafe_unretained EUOperation* operation = [EUOperation operationWithIdentifier:@"ProfilesViewController+Search" name:@"Searching"];
+		__block __weak EUOperation* operation = [EUOperation operationWithIdentifier:@"ProfilesViewController+Search" name:@"Searching"];
 		
 		__block NSError* error = nil;
 		__block NSDictionary* resultTmp = nil;
@@ -394,32 +429,6 @@
 
 #pragma mark - Private
 
-- (IBAction)onRealm:(id)sender {
-	RealmsViewController* controller = [[RealmsViewController alloc] initWithNibName:@"RealmsViewController" bundle:nil];
-	UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController:controller];
-	navController.modalPresentationStyle = UIModalPresentationFormSheet;
-	navController.navigationBar.barStyle = UIBarStyleBlackOpaque;
-	[self presentModalViewController:navController animated:YES];
-}
-
-- (IBAction)onDonate:(id)sender {
-	[[UIActionSheet actionSheetWithTitle:@"Donation"
-					  cancelButtonTitle:@"Cancel"
-				 destructiveButtonTitle:nil
-					  otherButtonTitles:@[@"Donate $1", @"Donate $5", @"Donate $10"]
-						completionBlock:^(UIActionSheet *actionSheet, NSInteger selectedButtonIndex) {
-							if (selectedButtonIndex != actionSheet.cancelButtonIndex) {
-								AppDelegate* delegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
-								if (selectedButtonIndex == 0)
-									[delegate donate:@"com.shimanski.d3assistant.donate1"];
-								else if (selectedButtonIndex == 1)
-									[delegate donate:@"com.shimanski.d3assistant.donate5"];
-								else if (selectedButtonIndex == 2)
-									[delegate donate:@"com.shimanski.d3assistant.donate10"];
-							}
-						} cancelBlock:nil] showFromBarButtonItem:sender animated:YES];
-}
-
 - (void) didChangeRealm:(NSNotification*) notification {
 	self.searchResults = nil;
 	self.profiles = nil;
@@ -430,13 +439,15 @@
 
 - (void) reload {
 	NSDictionary* realm = [[NSUserDefaults standardUserDefaults] valueForKey:@"realm"];
-	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:[realm valueForKey:@"name"] style:UIBarButtonItemStyleBordered target:self action:@selector(onRealm:)];
+	//self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:[realm valueForKey:@"name"] style:UIBarButtonItemStyleBordered target:self action:@selector(onRealm:)];
+	self.navigationItem.rightBarButtonItem.title = [realm valueForKey:@"name"];
+
 	[D3APISession setSharedSession:[[D3APISession alloc] initWithHost:[realm valueForKey:@"url"] locale:[[NSLocale preferredLanguages] objectAtIndex:0]]];
 	
 	self.profiles = [NSMutableArray arrayWithContentsOfFile:[self profilesFilePath]];
 	if (self.profiles) {
 		NSArray* profilesCopy = [NSArray arrayWithArray:self.profiles];
-		__block __unsafe_unretained EUOperation* operation = [EUOperation operationWithIdentifier:@"ProfilesViewController+Update" name:@"Updating"];
+		__block __weak EUOperation* operation = [EUOperation operationWithIdentifier:@"ProfilesViewController+Update" name:@"Updating"];
 		
 		NSMutableArray* profilesTmp = [NSMutableArray array];
 		

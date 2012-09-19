@@ -47,6 +47,8 @@
 //	self.itemColorImageView.layer.borderColor = [[UIColor clearColor] CGColor];
 	self.itemColorImageView.clipsToBounds = YES;
 	self.itemColorImageView.contentStretch = CGRectMake(0.1, 0.1, 0.8, 0.8);
+	self.itemColorImageView.userInteractionEnabled = NO;
+	self.itemIconImageView.userInteractionEnabled = NO;
 	
 	self.itemIconImageView = [[UIImageView alloc] initWithFrame:self.bounds];
 	self.itemIconImageView.contentMode = UIViewContentModeScaleAspectFill;

@@ -76,22 +76,30 @@
 		return [super navigationController];
 }
 
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+	if ([sender isKindOfClass:[ActiveSkillView class]]) {
+		SkillInfoViewController* controller = (SkillInfoViewController*) segue.destinationViewController;
+		controller.hero = self.hero;
+		NSDictionary* rune = [sender rune];
+		controller.activeSkill = [sender skill];
+		if (rune)
+			controller.runes = @[rune];
+	}
+	if ([sender isKindOfClass:[PassiveSkillView class]]) {
+		SkillInfoViewController* controller = (SkillInfoViewController*) segue.destinationViewController;
+		controller.hero = self.hero;
+		controller.passiveSkill = [sender skill];
+	}
+}
+
 #pragma mark - ActiveSkillViewDelegate
 
 - (void) didSelectActiveSkillView:(ActiveSkillView*) activeSkillView {
 	if (activeSkillView.skill) {
-		SkillInfoViewController* controller = [[SkillInfoViewController alloc] initWithNibName:@"SkillInfoViewController" bundle:nil];
-		controller.activeSkill = activeSkillView.skill;
-		if (activeSkillView.rune)
-			controller.runes = @[activeSkillView.rune];
-		
-		if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-			self.skillInfoPopoverController = [[UIPopoverController alloc] initWithContentViewController:controller];
-			[self.skillInfoPopoverController presentPopoverFromRect:activeSkillView.bounds inView:activeSkillView permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-		}
-		else {
-			[self.navigationController pushViewController:controller animated:YES];
-		}
+		if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+			[self performSegueWithIdentifier:[NSString stringWithFormat:@"ActiveSkill%d", activeSkillView.tag] sender:activeSkillView];
+		else
+			[self performSegueWithIdentifier:@"ActiveSkillInfo" sender:activeSkillView];
 	}
 }
 
@@ -99,15 +107,10 @@
 
 - (void) didSelectPassiveSkillView:(PassiveSkillView*) passiveSkillView {
 	if (passiveSkillView.skill) {
-		SkillInfoViewController* controller = [[SkillInfoViewController alloc] initWithNibName:@"SkillInfoViewController" bundle:nil];
-		controller.passiveSkill = passiveSkillView.skill;
-		if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-			self.skillInfoPopoverController = [[UIPopoverController alloc] initWithContentViewController:controller];
-			[self.skillInfoPopoverController presentPopoverFromRect:passiveSkillView.bounds inView:passiveSkillView permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-		}
-		else {
-			[self.navigationController pushViewController:controller animated:YES];
-		}
+		if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+			[self performSegueWithIdentifier:[NSString stringWithFormat:@"PassiveSkill%d", passiveSkillView.tag] sender:passiveSkillView];
+		else
+			[self performSegueWithIdentifier:@"PassiveSkillInfo" sender:passiveSkillView];
 	}
 }
 

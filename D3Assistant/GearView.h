@@ -16,7 +16,7 @@
 @end
 
 @interface GearView : UIView
-@property (nonatomic, unsafe_unretained) IBOutlet id<GearViewDelegate> delegate;
+@property (nonatomic, weak) IBOutlet id<GearViewDelegate> delegate;
 @property (nonatomic, strong) NSDictionary* gear;
 @property (nonatomic, strong) NSString* slot;
 
