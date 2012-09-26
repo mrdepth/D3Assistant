@@ -20,6 +20,7 @@
 @property (nonatomic, assign) BOOL highlighted;
 
 - (void) onTap:(UITapGestureRecognizer*) recognizer;
+- (UIImage*) placeholderImage;
 
 @end
 
@@ -43,8 +44,7 @@
 	self.itemColorImageView.frame = self.bounds;
 	self.itemColorImageView.contentMode = UIViewContentModeScaleToFill;
 //	self.itemColorImageView.layer.cornerRadius = 4;
-//	self.itemColorImageView.layer.borderWidth = 1;
-//	self.itemColorImageView.layer.borderColor = [[UIColor clearColor] CGColor];
+	self.itemColorImageView.layer.borderWidth = 1;
 	self.itemColorImageView.clipsToBounds = YES;
 	self.itemColorImageView.contentStretch = CGRectMake(0.1, 0.1, 0.8, 0.8);
 	self.itemColorImageView.userInteractionEnabled = NO;
@@ -52,6 +52,9 @@
 	
 	self.itemIconImageView = [[UIImageView alloc] initWithFrame:self.bounds];
 	self.itemIconImageView.contentMode = UIViewContentModeScaleAspectFill;
+
+	self.itemColorImageView.layer.borderColor = [[UIColor colorWithWhite:0.4 alpha:1] CGColor];
+	self.itemColorImageView.image = [self placeholderImage];
 
 	[self addSubview:self.itemColorImageView];
 	[self addSubview:self.itemIconImageView];
@@ -76,7 +79,7 @@
 		if (!self.itemColorImageView.image)
 			self.itemColorImageView.image = [UIImage imageNamed:@"brown.png"];
 		
-//		self.itemColorImageView.layer.borderColor = [[D3Utility itemBorderColorWithColorName:color highlighted:NO] CGColor];
+		self.itemColorImageView.layer.borderColor = [[D3Utility itemBorderColorWithColorName:color highlighted:NO] CGColor];
 		
 		NSArray* gems = [gear valueForKey:@"gems"];
 		NSInteger numberOfGems = gems.count;
@@ -91,9 +94,9 @@
 		}
 	}
 	else {
-		self.itemColorImageView.image = nil;
 		self.itemIconImageView.image = nil;
-		self.itemColorImageView.layer.borderColor = [[UIColor clearColor] CGColor];
+		self.itemColorImageView.layer.borderColor = [[UIColor colorWithWhite:0.4 alpha:1] CGColor];
+		self.itemColorImageView.image = [self placeholderImage];
 	}
 }
 
@@ -127,12 +130,19 @@
 				self.itemColorImageView.image = [UIImage imageNamed:@"brown.png"];
 		}
 		
-//		self.itemColorImageView.layer.borderColor = [[D3Utility itemBorderColorWithColorName:color highlighted:highlighted] CGColor];
+		self.itemColorImageView.layer.borderColor = [[D3Utility itemBorderColorWithColorName:color highlighted:highlighted] CGColor];
 	}
 }
 
 - (void) onTap:(UITapGestureRecognizer*) recognizer {
 	[self.delegate didSelectGearView:self];
+}
+
+- (UIImage*) placeholderImage {
+	NSDictionary* gear = @{@"head" : @"gearViewHead.png", @"shoulders" : @"gearViewShoulders.png", @"torso" : @"gearViewTorso.png", @"feet" : @"gearViewFeet.png", @"hands" : @"gearViewHands.png",
+	@"legs" : @"gearViewLegs.png", @"bracers" : @"gearViewBracers.png",	@"mainHand" : @"gearViewMainHand.png", @"offHand" : @"gearViewOffHand.png", @"waist" : @"gearViewWaist.png",
+	@"leftFinger" : @"gearViewFinger.png",  @"rightFinger" : @"gearViewFinger.png", @"neck" : @"gearViewNeck.png"};
+	return [UIImage imageNamed:[gear valueForKey:self.slot]];
 }
 
 @end

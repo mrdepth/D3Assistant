@@ -96,7 +96,7 @@
 	NSString* class = [self.hero valueForKey:@"class"];
 	NSString* deviceSuffix = nil;
 	NSString* className = nil;
-	NSString* gender = [[self.hero valueForKey:@"gender"] integerValue] ? @"Female" : @"Male";
+//	NSString* gender = [[self.hero valueForKey:@"gender"] integerValue] ? @"Female" : @"Male";
 
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 		deviceSuffix = @"-iPad";
@@ -116,7 +116,8 @@
 	else
 		className = @"Wizard";
 
-	self.backgroundImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"gear%@%@%@.png", className, gender, deviceSuffix]];
+	//self.backgroundImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"gear%@%@%@.png", className, gender, deviceSuffix]];
+	self.backgroundImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"gear%@%@.png", className, deviceSuffix]];
 	
 	
 	NSDictionary* gear = @{@"head" : self.headView, @"shoulders" : self.shouldersView, @"torso" : self.torsoView, @"feet" : self.feetView, @"hands" : self.handsView,
@@ -155,7 +156,7 @@
 			for (NSString* key in [gears allKeys]) {
 				GearView* gearView = [gear valueForKey:key];
 				gearView.gear = [gears valueForKey:key];
-				gearView.slot = key;
+//				gearView.slot = key;
 			}
 		}
 	}];

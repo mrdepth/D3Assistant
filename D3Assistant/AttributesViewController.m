@@ -96,7 +96,7 @@
 			@{@"title" : [NSString stringWithFormat:@"Damage Increased by %@", primaryAttribute], @"value" : [NSString stringWithFormat:@"%.1f%%", [[self.hero valueForKeyPath:@"stats.damageIncrease"] floatValue] * 100]},
 			@{@"title" : @"Attacks per Second", @"stat" : @"attackSpeed"},
 			@{@"title" : @"Critical Hit Change", @"value" : [NSString stringWithFormat:@"%.1f%%", [[self.hero valueForKeyPath:@"stats.critChance"] floatValue] * 100]},
-			@{@"title" : @"Critical Hit Damage", @"value" : [NSString stringWithFormat:@"%.1f%%", [[self.hero valueForKeyPath:@"stats.critDamage"] floatValue] * 100]}];
+			@{@"title" : @"Critical Hit Damage", @"value" : [NSString stringWithFormat:@"%.1f%%", ([[self.hero valueForKeyPath:@"stats.critDamage"] floatValue] - 1) * 100]}];
 			
 			section = @{@"title" : @"Offense", @"rows" : rows};
 			[self.sections addObject:section];

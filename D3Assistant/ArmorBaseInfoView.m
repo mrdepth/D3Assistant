@@ -51,7 +51,9 @@
 	if (!self.itemColorImageView.image)
 		self.itemColorImageView.image = [UIImage imageNamed:@"brown.png"];
 	
-//	self.itemColorImageView.layer.borderColor = [[D3Utility itemBorderColorWithColorName:color highlighted:NO] CGColor];
+	self.itemColorImageView.layer.borderWidth = 1;
+	self.itemColorImageView.layer.cornerRadius = 3;
+	self.itemColorImageView.layer.borderColor = [[D3Utility itemBorderColorWithColorName:color highlighted:NO] CGColor];
 
 	NSNumber* armorValue = [armor valueForKeyPath:@"armor.max"];
 	if (armorValue)

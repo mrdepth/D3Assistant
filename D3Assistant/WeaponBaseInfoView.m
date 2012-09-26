@@ -50,7 +50,9 @@
 	if (!self.itemColorImageView.image)
 		self.itemColorImageView.image = [UIImage imageNamed:@"brown.png"];
 	
-//	self.itemColorImageView.layer.borderColor = [[D3Utility itemBorderColorWithColorName:color highlighted:NO] CGColor];
+	self.itemColorImageView.layer.borderWidth = 1;
+	self.itemColorImageView.layer.cornerRadius = 3;
+	self.itemColorImageView.layer.borderColor = [[D3Utility itemBorderColorWithColorName:color highlighted:NO] CGColor];
 	
 	self.dpsLabel.text = [NSString stringWithFormat:@"%.1f", [[weapon valueForKeyPath:@"dps.max"] floatValue]];
 	self.damageValueLabel.text = [NSString stringWithFormat:@"%.1f-%.1f", [[weapon valueForKeyPath:@"minDamage.max"] floatValue], [[weapon valueForKeyPath:@"maxDamage.max"] floatValue]];

@@ -12,9 +12,9 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="bottom" image="gearWizardFemale.png" id="KLS-DD-m9f">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" image="gearWizard.png" id="KLS-DD-m9f">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="VMx-XM-oqo">
                                 <rect key="frame" x="60" y="26" width="200" height="48"/>
@@ -24,105 +24,144 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view opaque="NO" contentMode="scaleToFill" id="cB3-Qu-zRI" customClass="GearView">
-                                <rect key="frame" x="133" y="104" width="55" height="55"/>
+                                <rect key="frame" x="139.5" y="96" width="42" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="slot" value="head"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="delegate" destination="Beb-Bl-AII" id="TsB-2h-tKM"/>
                                 </connections>
                             </view>
                             <view opaque="NO" contentMode="scaleToFill" id="Jmw-BA-LER" customClass="GearView">
-                                <rect key="frame" x="63" y="124" width="56" height="74"/>
+                                <rect key="frame" x="70" y="124" width="42" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="slot" value="shoulders"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="delegate" destination="Beb-Bl-AII" id="nz2-mV-pcw"/>
                                 </connections>
                             </view>
                             <view opaque="NO" contentMode="scaleToFill" id="3rp-J4-lAC" customClass="GearView">
-                                <rect key="frame" x="41" y="207" width="56" height="74"/>
+                                <rect key="frame" x="25" y="215" width="42" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="slot" value="hands"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="delegate" destination="Beb-Bl-AII" id="CuO-sc-0Do"/>
                                 </connections>
                             </view>
                             <view opaque="NO" contentMode="scaleToFill" id="COr-ev-CJc" customClass="GearView">
-                                <rect key="frame" x="41" y="337" width="56" height="110"/>
+                                <rect key="frame" x="50" y="341" width="42" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="slot" value="mainHand"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="delegate" destination="Beb-Bl-AII" id="pIy-fO-3Qi"/>
                                 </connections>
                             </view>
                             <view opaque="NO" contentMode="scaleToFill" id="9bJ-Q7-4eO" customClass="GearView">
-                                <rect key="frame" x="224" y="338" width="56" height="110"/>
+                                <rect key="frame" x="231" y="341" width="42" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="slot" value="offHand"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="delegate" destination="Beb-Bl-AII" id="Pp9-0a-Mcr"/>
                                 </connections>
                             </view>
                             <view opaque="NO" contentMode="scaleToFill" id="3Zk-CU-fpo" customClass="GearView">
-                                <rect key="frame" x="204" y="141" width="47" height="47"/>
+                                <rect key="frame" x="206.5" y="141" width="42" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="slot" value="neck"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="delegate" destination="Beb-Bl-AII" id="723-ql-lPd"/>
                                 </connections>
                             </view>
                             <view opaque="NO" contentMode="scaleToFill" id="MzJ-CE-Fr8" customClass="GearView">
-                                <rect key="frame" x="126" y="163" width="69" height="96"/>
+                                <rect key="frame" x="133.5" y="191" width="54" height="108"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="slot" value="torso"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="delegate" destination="Beb-Bl-AII" id="DKD-nb-GKg"/>
                                 </connections>
                             </view>
                             <view opaque="NO" contentMode="scaleToFill" id="Qdb-WC-wqt" customClass="GearView">
-                                <rect key="frame" x="125" y="263" width="70" height="28"/>
+                                <rect key="frame" x="139" y="311" width="42" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="slot" value="waist"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="delegate" destination="Beb-Bl-AII" id="S7a-o1-M6Z"/>
                                 </connections>
                             </view>
                             <view opaque="NO" contentMode="scaleToFill" id="uvQ-Z5-tKb" customClass="GearView">
-                                <rect key="frame" x="132" y="295" width="56" height="74"/>
+                                <rect key="frame" x="108" y="367" width="42" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="slot" value="legs"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="delegate" destination="Beb-Bl-AII" id="9Kz-37-yZS"/>
                                 </connections>
                             </view>
                             <view opaque="NO" contentMode="scaleToFill" id="eYb-la-9CT" customClass="GearView">
-                                <rect key="frame" x="132" y="372" width="56" height="74"/>
+                                <rect key="frame" x="170" y="367" width="42" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="slot" value="feet"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="delegate" destination="Beb-Bl-AII" id="zGb-6I-cA3"/>
                                 </connections>
                             </view>
                             <view opaque="NO" contentMode="scaleToFill" id="mec-Z9-qU1" customClass="GearView">
-                                <rect key="frame" x="224" y="207" width="56" height="74"/>
+                                <rect key="frame" x="253" y="215" width="42" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="slot" value="bracers"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="delegate" destination="Beb-Bl-AII" id="1I8-no-4hP"/>
                                 </connections>
                             </view>
                             <view opaque="NO" contentMode="scaleToFill" id="joE-9O-2qp" customClass="GearView">
-                                <rect key="frame" x="234" y="291" width="36" height="36"/>
+                                <rect key="frame" x="195" y="282" width="42" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="slot" value="rightFinger"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="delegate" destination="Beb-Bl-AII" id="BM9-S6-DIA"/>
                                 </connections>
                             </view>
                             <view opaque="NO" contentMode="scaleToFill" id="AeY-WO-EBu" customClass="GearView">
-                                <rect key="frame" x="51" y="291" width="36" height="36"/>
+                                <rect key="frame" x="83" y="281" width="42" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="slot" value="leftFinger"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="delegate" destination="Beb-Bl-AII" id="cbd-J7-FtV"/>
                                 </connections>
@@ -1054,7 +1093,7 @@
         <image name="cellBackgroundSelected.png" width="320" height="75"/>
         <image name="disclosureIndicator.png" width="8" height="12"/>
         <image name="frameHeroSC.png" width="97" height="106"/>
-        <image name="gearWizardFemale.png" width="320" height="460"/>
+        <image name="gearWizard.png" width="320" height="460"/>
         <image name="runeA.png" width="36" height="46"/>
         <image name="separator.png" width="320" height="1"/>
         <image name="skillCalcBackground.png" width="320" height="416"/>
