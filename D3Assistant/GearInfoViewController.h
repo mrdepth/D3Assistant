@@ -9,12 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface GearInfoViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
-@property (unsafe_unretained, nonatomic) IBOutlet UIImageView *nameFrameImageView;
-@property (unsafe_unretained, nonatomic) IBOutlet UILabel *nameLabel;
-@property (unsafe_unretained, nonatomic) IBOutlet UITableView *tableView;
-@property (unsafe_unretained, nonatomic) IBOutlet UILabel *itemLevelLabel;
-@property (unsafe_unretained, nonatomic) IBOutlet UILabel *requiredLevelLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *nameFrameImageView;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UILabel *itemLevelLabel;
+@property (weak, nonatomic) IBOutlet UILabel *requiredLevelLabel;
 
+@property (nonatomic, strong) NSDictionary* hero;
 @property (nonatomic, strong) NSDictionary* gear;
 @property (nonatomic, strong) NSString* slot;
 

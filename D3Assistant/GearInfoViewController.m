@@ -61,8 +61,7 @@
 		self.tableView.tableHeaderView = view;
 	}
 	
-	//self.title = [self.gear valueForKey:@"name"];
-	self.title = @"Item Info";
+	self.title = [self.hero valueForKey:@"name"];
 	self.nameLabel.text = [self.gear valueForKey:@"name"];
 	NSString* color = [self.gear valueForKey:@"displayColor"];
 	self.nameFrameImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"title%@.png", [color capitalizedString]]];
@@ -72,17 +71,13 @@
 	
 	self.itemLevelLabel.text = [NSString stringWithFormat:@"%d", [[self.gear valueForKey:@"itemLevel"] integerValue]];
 	self.requiredLevelLabel.text = [NSString stringWithFormat:@"%d", [[self.gear valueForKey:@"requiredLevel"] integerValue]];
+	
 
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		CGFloat height = self.tableView.frame.origin.y + self.tableView.tableHeaderView.frame.size.height + self.tableView.tableFooterView.frame.size.height + 40;
-		
-		NSInteger n = [self numberOfSectionsInTableView:self.tableView];
-		for (NSInteger i = 0; i < n; i++) {
-			NSInteger rows = [self tableView:self.tableView numberOfRowsInSection:i];
-			if (rows > 0)
-				height += [self tableView:self.tableView heightForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:i]] * rows;
-		}
-		
+		[self.tableView reloadData];
+		CGRect r = [self.tableView rectForSection:[self numberOfSectionsInTableView:self.tableView] - 1];
+		CGFloat height = self.tableView.frame.origin.y + self.tableView.tableFooterView.frame.size.height + 40;
+		height += r.origin.y + r.size.height;
 		self.contentSizeForViewInPopover = CGSizeMake(320, height);
 	}
 }
@@ -151,10 +146,6 @@
 - (CGFloat)tableView:(UITableView *)aTableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 	UITableViewCell* cell = [self tableView:aTableView cellForRowAtIndexPath:indexPath];
 	return [cell sizeThatFits:CGSizeMake(self.tableView.frame.size.width, 64)].height;
-//    if (indexPath.section == 0)
-  //      return GEAR_STAT_CELL_HEIGHT;
-    //else
-      //  return GEM_STAT_CELL_HEIGHT;
 };
 
 - (NSString*) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {

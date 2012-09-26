@@ -9,18 +9,18 @@
 #import <UIKit/UIKit.h>
 
 @interface ArmorBaseInfoView : UIView
-@property (unsafe_unretained, nonatomic) IBOutlet UIImageView *itemColorImageView;
-@property (unsafe_unretained, nonatomic) IBOutlet UIImageView *itemEffectImageView;
-@property (unsafe_unretained, nonatomic) IBOutlet UIImageView *itemIconImageView;
-@property (unsafe_unretained, nonatomic) IBOutlet UILabel *typeLabel;
-@property (unsafe_unretained, nonatomic) IBOutlet UILabel *subtypeLabel;
-@property (unsafe_unretained, nonatomic) IBOutlet UILabel *classLabel;
-@property (unsafe_unretained, nonatomic) IBOutlet UILabel *armorValueLabel;
-@property (unsafe_unretained, nonatomic) IBOutlet UILabel *armorLabel;
-@property (unsafe_unretained, nonatomic) IBOutlet UILabel *blockChanceValueLabel;
-@property (unsafe_unretained, nonatomic) IBOutlet UILabel *blockChanceLabel;
-@property (unsafe_unretained, nonatomic) IBOutlet UILabel *blockAmountValueLabel;
-@property (unsafe_unretained, nonatomic) IBOutlet UILabel *blockAmountLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *itemColorImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *itemEffectImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *itemIconImageView;
+@property (weak, nonatomic) IBOutlet UILabel *typeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *subtypeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *classLabel;
+@property (weak, nonatomic) IBOutlet UILabel *armorValueLabel;
+@property (weak, nonatomic) IBOutlet UILabel *armorLabel;
+@property (weak, nonatomic) IBOutlet UILabel *blockChanceValueLabel;
+@property (weak, nonatomic) IBOutlet UILabel *blockChanceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *blockAmountValueLabel;
+@property (weak, nonatomic) IBOutlet UILabel *blockAmountLabel;
 
 @property (nonatomic, strong) NSDictionary* armor;
 

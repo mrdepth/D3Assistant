@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface AttributeCellView : UITableViewCell
-@property (unsafe_unretained, nonatomic) IBOutlet UILabel *titleLabel;
-@property (unsafe_unretained, nonatomic) IBOutlet UILabel *valueLabel;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *valueLabel;
 
 @end

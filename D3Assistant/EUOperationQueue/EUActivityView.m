@@ -33,16 +33,17 @@
     return self;
 }
 
-#if ! __has_feature(objc_arc)
 - (void) dealloc {
+	[[EUOperationQueue sharedQueue] setDelegate:nil];
+#if ! __has_feature(objc_arc)
 	[contentView release];
 	[activityIndicatorView release];
 	[activityNameLabel release];
 	[progressView release];
 	[operations release];
 	[super dealloc];
-}
 #endif
+}
 
 - (void) didMoveToSuperview {
 	

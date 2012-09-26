@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		121FD96215FF128600AA6947 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 121FD96115FF128600AA6947 /* MainWindow.xib */; };
-		121FD96915FF134F00AA6947 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 121FD96815FF134F00AA6947 /* MainWindow-iPad.xib */; };
-		121FD97315FF19BA00AA6947 /* HeroViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 121FD97215FF19BA00AA6947 /* HeroViewController-iPad.xib */; };
 		121FD9E115FF201000AA6947 /* attributesBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 121FD97715FF201000AA6947 /* attributesBackground.png */; };
 		121FD9E215FF201000AA6947 /* attributesHeaderView.png in Resources */ = {isa = PBXBuildFile; fileRef = 121FD97815FF201000AA6947 /* attributesHeaderView.png */; };
 		121FD9E315FF201000AA6947 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 121FD97915FF201000AA6947 /* background.png */; };
@@ -31,26 +29,6 @@
 		121FD9F315FF201000AA6947 /* frameHeroSC.png in Resources */ = {isa = PBXBuildFile; fileRef = 121FD98A15FF201000AA6947 /* frameHeroSC.png */; };
 		121FD9F415FF201000AA6947 /* frameHeroSelectedHC.png in Resources */ = {isa = PBXBuildFile; fileRef = 121FD98B15FF201000AA6947 /* frameHeroSelectedHC.png */; };
 		121FD9F515FF201000AA6947 /* frameHeroSelectedSC.png in Resources */ = {isa = PBXBuildFile; fileRef = 121FD98C15FF201000AA6947 /* frameHeroSelectedSC.png */; };
-		121FD9F615FF201000AA6947 /* gearBarbarianFemale-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 121FD98E15FF201000AA6947 /* gearBarbarianFemale-iPad.png */; };
-		121FD9F715FF201000AA6947 /* gearBarbarianFemale.png in Resources */ = {isa = PBXBuildFile; fileRef = 121FD98F15FF201000AA6947 /* gearBarbarianFemale.png */; };
-		121FD9F815FF201000AA6947 /* gearBarbarianMale-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 121FD99015FF201000AA6947 /* gearBarbarianMale-iPad.png */; };
-		121FD9F915FF201000AA6947 /* gearBarbarianMale.png in Resources */ = {isa = PBXBuildFile; fileRef = 121FD99115FF201000AA6947 /* gearBarbarianMale.png */; };
-		121FD9FA15FF201000AA6947 /* gearDemonHunterFemale-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 121FD99215FF201000AA6947 /* gearDemonHunterFemale-iPad.png */; };
-		121FD9FB15FF201000AA6947 /* gearDemonHunterFemale.png in Resources */ = {isa = PBXBuildFile; fileRef = 121FD99315FF201000AA6947 /* gearDemonHunterFemale.png */; };
-		121FD9FC15FF201000AA6947 /* gearDemonHunterMale-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 121FD99415FF201000AA6947 /* gearDemonHunterMale-iPad.png */; };
-		121FD9FD15FF201000AA6947 /* gearDemonHunterMale.png in Resources */ = {isa = PBXBuildFile; fileRef = 121FD99515FF201000AA6947 /* gearDemonHunterMale.png */; };
-		121FD9FE15FF201000AA6947 /* gearMonkFemale-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 121FD99615FF201000AA6947 /* gearMonkFemale-iPad.png */; };
-		121FD9FF15FF201000AA6947 /* gearMonkFemale.png in Resources */ = {isa = PBXBuildFile; fileRef = 121FD99715FF201000AA6947 /* gearMonkFemale.png */; };
-		121FDA0015FF201000AA6947 /* gearMonkMale-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 121FD99815FF201000AA6947 /* gearMonkMale-iPad.png */; };
-		121FDA0115FF201000AA6947 /* gearMonkMale.png in Resources */ = {isa = PBXBuildFile; fileRef = 121FD99915FF201000AA6947 /* gearMonkMale.png */; };
-		121FDA0215FF201000AA6947 /* gearWitchDoctorFemale-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 121FD99A15FF201000AA6947 /* gearWitchDoctorFemale-iPad.png */; };
-		121FDA0315FF201000AA6947 /* gearWitchDoctorFemale.png in Resources */ = {isa = PBXBuildFile; fileRef = 121FD99B15FF201000AA6947 /* gearWitchDoctorFemale.png */; };
-		121FDA0415FF201000AA6947 /* gearWitchDoctorMale-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 121FD99C15FF201000AA6947 /* gearWitchDoctorMale-iPad.png */; };
-		121FDA0515FF201000AA6947 /* gearWitchDoctorMale.png in Resources */ = {isa = PBXBuildFile; fileRef = 121FD99D15FF201000AA6947 /* gearWitchDoctorMale.png */; };
-		121FDA0615FF201000AA6947 /* gearWizardFemale-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 121FD99E15FF201000AA6947 /* gearWizardFemale-iPad.png */; };
-		121FDA0715FF201000AA6947 /* gearWizardFemale.png in Resources */ = {isa = PBXBuildFile; fileRef = 121FD99F15FF201000AA6947 /* gearWizardFemale.png */; };
-		121FDA0815FF201000AA6947 /* gearWizardMale-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 121FD9A015FF201000AA6947 /* gearWizardMale-iPad.png */; };
-		121FDA0915FF201000AA6947 /* gearWizardMale.png in Resources */ = {isa = PBXBuildFile; fileRef = 121FD9A115FF201000AA6947 /* gearWizardMale.png */; };
 		121FDA0A15FF201000AA6947 /* blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 121FD9A315FF201000AA6947 /* blue.png */; };
 		121FDA0B15FF201000AA6947 /* blueHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 121FD9A415FF201000AA6947 /* blueHighlighted.png */; };
 		121FDA0C15FF201000AA6947 /* brown.png in Resources */ = {isa = PBXBuildFile; fileRef = 121FD9A515FF201000AA6947 /* brown.png */; };
@@ -108,45 +86,61 @@
 		121FDA4015FF201000AA6947 /* titleGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 121FD9DE15FF201000AA6947 /* titleGreen.png */; };
 		121FDA4115FF201000AA6947 /* titleOrange.png in Resources */ = {isa = PBXBuildFile; fileRef = 121FD9DF15FF201000AA6947 /* titleOrange.png */; };
 		121FDA4215FF201000AA6947 /* titleYellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 121FD9E015FF201000AA6947 /* titleYellow.png */; };
-		121FDA4415FF2B7900AA6947 /* SkillsViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 121FDA4315FF2B7900AA6947 /* SkillsViewController-iPad.xib */; };
 		121FDA4615FF2C2500AA6947 /* PassiveSkillView-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 121FDA4515FF2C2500AA6947 /* PassiveSkillView-iPad.xib */; };
 		121FDA4815FF363E00AA6947 /* skillCalcBackground-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 121FDA4715FF363E00AA6947 /* skillCalcBackground-iPad.png */; };
 		1232F2E416005F4F00EBB2BF /* HeroCareerCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1232F2E316005F4F00EBB2BF /* HeroCareerCellView.m */; };
-		1232F2E616005F5D00EBB2BF /* HeroCareerCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1232F2E516005F5D00EBB2BF /* HeroCareerCellView.xib */; };
 		1232F2EB1600670D00EBB2BF /* UIActionSheet+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 1232F2E81600670D00EBB2BF /* UIActionSheet+Block.m */; };
 		1232F2EC1600670D00EBB2BF /* UIAlertView+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 1232F2EA1600670D00EBB2BF /* UIAlertView+Block.m */; };
 		1232F2F2160068EE00EBB2BF /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1232F2F1160068ED00EBB2BF /* StoreKit.framework */; };
 		124C68FB15F887F800353EFB /* NSString+D3API.m in Sources */ = {isa = PBXBuildFile; fileRef = 124C68FA15F887F800353EFB /* NSString+D3API.m */; };
 		124C68FF15F88F6D00353EFB /* ProgressionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 124C68FE15F88F6D00353EFB /* ProgressionView.m */; };
 		124C694A15F89AF600353EFB /* CareerCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 124C694915F89AF600353EFB /* CareerCellView.m */; };
-		124C694C15F89B0A00353EFB /* CareerCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 124C694B15F89B0900353EFB /* CareerCellView.xib */; };
 		124C694F15F89D7200353EFB /* D3Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 124C694E15F89D7200353EFB /* D3Utility.m */; };
 		124C697615F8CE5800353EFB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 124C697515F8CE5800353EFB /* QuartzCore.framework */; };
+		1259CA4E16085A8D00DAF114 /* MainStoryboard-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1259CA4D16085A8C00DAF114 /* MainStoryboard-iPad.storyboard */; };
 		12736E9216031718009D3263 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12736E8F16031718009D3263 /* Default-568h@2x.png */; };
 		12736E9316031718009D3263 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 12736E9016031718009D3263 /* Default.png */; };
 		12736E9416031718009D3263 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12736E9116031718009D3263 /* Default@2x.png */; };
-		12736E9A1603384B009D3263 /* ProfilesViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12736E991603384B009D3263 /* ProfilesViewController-iPad.xib */; };
 		12736E9F16033CC4009D3263 /* CollapsableTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12736E9E16033CC4009D3263 /* CollapsableTableView.m */; };
+		128E7AD21613020000E19EE3 /* gearBarbarian-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7AA71613020000E19EE3 /* gearBarbarian-iPad.png */; };
+		128E7AD31613020000E19EE3 /* gearBarbarian.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7AA81613020000E19EE3 /* gearBarbarian.png */; };
+		128E7AD81613020000E19EE3 /* gearDemonHunter-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7AAD1613020000E19EE3 /* gearDemonHunter-iPad.png */; };
+		128E7AD91613020000E19EE3 /* gearDemonHunter.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7AAE1613020000E19EE3 /* gearDemonHunter.png */; };
+		128E7ADE1613020000E19EE3 /* gearMonk-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7AB31613020000E19EE3 /* gearMonk-iPad.png */; };
+		128E7ADF1613020000E19EE3 /* gearMonk.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7AB41613020000E19EE3 /* gearMonk.png */; };
+		128E7AE51613020000E19EE3 /* gearViewBracers.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7ABA1613020000E19EE3 /* gearViewBracers.png */; };
+		128E7AE61613020000E19EE3 /* gearViewFeet.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7ABB1613020000E19EE3 /* gearViewFeet.png */; };
+		128E7AE71613020000E19EE3 /* gearViewFinger.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7ABC1613020000E19EE3 /* gearViewFinger.png */; };
+		128E7AE81613020000E19EE3 /* gearViewHands.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7ABD1613020000E19EE3 /* gearViewHands.png */; };
+		128E7AE91613020000E19EE3 /* gearViewHead.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7ABE1613020000E19EE3 /* gearViewHead.png */; };
+		128E7AEA1613020000E19EE3 /* gearViewLegs.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7ABF1613020000E19EE3 /* gearViewLegs.png */; };
+		128E7AEB1613020000E19EE3 /* gearViewMainHand.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7AC01613020000E19EE3 /* gearViewMainHand.png */; };
+		128E7AEC1613020000E19EE3 /* gearViewNeck.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7AC11613020000E19EE3 /* gearViewNeck.png */; };
+		128E7AED1613020000E19EE3 /* gearViewOffHand.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7AC21613020000E19EE3 /* gearViewOffHand.png */; };
+		128E7AEE1613020000E19EE3 /* gearViewShoulders.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7AC31613020000E19EE3 /* gearViewShoulders.png */; };
+		128E7AEF1613020000E19EE3 /* gearViewTorso.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7AC41613020000E19EE3 /* gearViewTorso.png */; };
+		128E7AF01613020000E19EE3 /* gearViewWaist.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7AC51613020000E19EE3 /* gearViewWaist.png */; };
+		128E7AF11613020000E19EE3 /* gearWitchDoctor-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7AC61613020000E19EE3 /* gearWitchDoctor-iPad.png */; };
+		128E7AF21613020000E19EE3 /* gearWitchDoctor.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7AC71613020000E19EE3 /* gearWitchDoctor.png */; };
+		128E7AF71613020000E19EE3 /* gearWizard-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7ACC1613020000E19EE3 /* gearWizard-iPad.png */; };
+		128E7AF81613020000E19EE3 /* gearWizard.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7ACD1613020000E19EE3 /* gearWizard.png */; };
+		128F22F51608760E0045B36F /* GearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 128F22F41608760E0045B36F /* GearViewController.m */; };
+		128F22FE160885F30045B36F /* AttributesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 128F22FD160885F30045B36F /* AttributesViewController.m */; };
+		128F23161608A0BE0045B36F /* GearAttributesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 128F23151608A0BE0045B36F /* GearAttributesViewController.m */; };
 		12A76F3915F9C0E600B2E9D4 /* SocketView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A76F3815F9C0E600B2E9D4 /* SocketView.m */; };
 		12A76F3C15F9CF3500B2E9D4 /* UIAlertView+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A76F3B15F9CF3500B2E9D4 /* UIAlertView+Error.m */; };
-		12A76F4115F9D56500B2E9D4 /* AttributesDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A76F4015F9D56500B2E9D4 /* AttributesDataSource.m */; };
 		12A76F5E15FA22E000B2E9D4 /* GearInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A76F5C15FA22E000B2E9D4 /* GearInfoViewController.m */; };
-		12A76F5F15FA22E000B2E9D4 /* GearInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12A76F5D15FA22E000B2E9D4 /* GearInfoViewController.xib */; };
+		12ACA3A11609BFCA0086ACEE /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12ACA3A01609BFCA0086ACEE /* MainStoryboard.storyboard */; };
 		12EB68251601C694004B1398 /* icon-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 12EB68211601C694004B1398 /* icon-iPad.png */; };
 		12EB68261601C694004B1398 /* icon-iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12EB68221601C694004B1398 /* icon-iPad@2x.png */; };
 		12EB68271601C694004B1398 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 12EB68231601C694004B1398 /* icon.png */; };
 		12EB68281601C694004B1398 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12EB68241601C694004B1398 /* icon@2x.png */; };
 		12F6826515FDB6DC0052A1AA /* SkillInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F6826315FDB6DC0052A1AA /* SkillInfoViewController.m */; };
-		12F6826615FDB6DC0052A1AA /* SkillInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12F6826415FDB6DC0052A1AA /* SkillInfoViewController.xib */; };
 		12F6826A15FDB88D0052A1AA /* ActiveSkillInfoCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F6826915FDB88D0052A1AA /* ActiveSkillInfoCellView.m */; };
-		12F6826C15FDB8A00052A1AA /* ActiveSkillInfoCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12F6826B15FDB8A00052A1AA /* ActiveSkillInfoCellView.xib */; };
 		12F6827015FDC1160052A1AA /* RuneInfoCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F6826F15FDC1160052A1AA /* RuneInfoCellView.m */; };
-		12F6827215FDC1200052A1AA /* RuneInfoCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12F6827115FDC1200052A1AA /* RuneInfoCellView.xib */; };
 		12F6827615FDC84D0052A1AA /* PassiveSkillInfoCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F6827515FDC84D0052A1AA /* PassiveSkillInfoCellView.m */; };
-		12F6827815FDC8560052A1AA /* PassiveSkillInfoCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12F6827715FDC8560052A1AA /* PassiveSkillInfoCellView.xib */; };
 		12F6829F15FDFA250052A1AA /* realms.plist in Resources */ = {isa = PBXBuildFile; fileRef = 12F6829E15FDFA250052A1AA /* realms.plist */; };
 		12F682A515FDFBD80052A1AA /* RealmsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F682A315FDFBD80052A1AA /* RealmsViewController.m */; };
-		12F682A615FDFBD80052A1AA /* RealmsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12F682A415FDFBD80052A1AA /* RealmsViewController.xib */; };
 		12FB053D15F7806700AE78E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12FB053C15F7806700AE78E4 /* UIKit.framework */; };
 		12FB053F15F7806700AE78E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12FB053E15F7806700AE78E4 /* Foundation.framework */; };
 		12FB054115F7806700AE78E4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12FB054015F7806700AE78E4 /* CoreGraphics.framework */; };
@@ -162,9 +156,7 @@
 		12FB05E615F780CB00AE78E4 /* UITableViewCell+Nib.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB05C915F780CB00AE78E4 /* UITableViewCell+Nib.m */; };
 		12FB05F015F780ED00AE78E4 /* D3APISession.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB05EF15F780ED00AE78E4 /* D3APISession.m */; };
 		12FB05F715F7810100AE78E4 /* HeroCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB05F215F7810100AE78E4 /* HeroCellView.m */; };
-		12FB05F815F7810100AE78E4 /* HeroCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12FB05F315F7810100AE78E4 /* HeroCellView.xib */; };
 		12FB05F915F7810100AE78E4 /* ProfilesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB05F515F7810100AE78E4 /* ProfilesViewController.m */; };
-		12FB05FA15F7810100AE78E4 /* ProfilesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12FB05F615F7810100AE78E4 /* ProfilesViewController.xib */; };
 		12FB061915F781EF00AE78E4 /* EUActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB061115F781EF00AE78E4 /* EUActivityView.m */; };
 		12FB061A15F781EF00AE78E4 /* EUOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB061315F781EF00AE78E4 /* EUOperation.m */; };
 		12FB061B15F781EF00AE78E4 /* EUOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB061515F781EF00AE78E4 /* EUOperationQueue.m */; };
@@ -173,7 +165,6 @@
 		12FB063515F78C9900AE78E4 /* ProfileHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB063415F78C9900AE78E4 /* ProfileHeaderView.m */; };
 		12FB063715F78CA800AE78E4 /* ProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12FB063615F78CA800AE78E4 /* ProfileHeaderView.xib */; };
 		71ACC4DE15FBE62200544EBE /* SkillsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71ACC4DC15FBE62200544EBE /* SkillsViewController.m */; };
-		71ACC4DF15FBE62200544EBE /* SkillsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71ACC4DD15FBE62200544EBE /* SkillsViewController.xib */; };
 		71ACC4E315FBE6CF00544EBE /* ActiveSkillView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71ACC4E215FBE6CF00544EBE /* ActiveSkillView.m */; };
 		71ACC4E515FBE6DC00544EBE /* ActiveSkillView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71ACC4E415FBE6DC00544EBE /* ActiveSkillView.xib */; };
 		71B0AA1D15F924EA0079F9B9 /* NSDictionary+DeepMutableCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B0AA1C15F924EA0079F9B9 /* NSDictionary+DeepMutableCopy.m */; };
@@ -190,14 +181,10 @@
 		71B9040715FC9A6300307AC7 /* PassiveSkillView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B9040615FC9A6300307AC7 /* PassiveSkillView.m */; };
 		71B9040915FC9A6D00307AC7 /* PassiveSkillView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71B9040815FC9A6D00307AC7 /* PassiveSkillView.xib */; };
 		71BF0BA115F9624600CDEA4A /* HeroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BF0B9F15F9624600CDEA4A /* HeroViewController.m */; };
-		71BF0BA215F9624600CDEA4A /* HeroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71BF0BA015F9624600CDEA4A /* HeroViewController.xib */; };
 		71BF0BB015F9686F00CDEA4A /* GearView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BF0BAF15F9686F00CDEA4A /* GearView.m */; };
 		71D2BAC615FB99D7007AFDC3 /* AttributeCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D2BAC515FB99D7007AFDC3 /* AttributeCellView.m */; };
-		71D2BAC815FB99E4007AFDC3 /* AttributeCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71D2BAC715FB99E4007AFDC3 /* AttributeCellView.xib */; };
 		71D2BACC15FB9E6C007AFDC3 /* GearStatCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D2BACB15FB9E6C007AFDC3 /* GearStatCellView.m */; };
-		71D2BACE15FB9E79007AFDC3 /* GearStatCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71D2BACD15FB9E79007AFDC3 /* GearStatCellView.xib */; };
 		71D2BAD415FBA0A6007AFDC3 /* GemStatCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D2BAD315FBA0A6007AFDC3 /* GemStatCellView.m */; };
-		71D2BAD615FBA0B2007AFDC3 /* GemStatCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71D2BAD515FBA0B2007AFDC3 /* GemStatCellView.xib */; };
 		71D2BADE15FBAEC3007AFDC3 /* ArmorBaseInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D2BADD15FBAEC3007AFDC3 /* ArmorBaseInfoView.m */; };
 		71D2BAE015FBAECE007AFDC3 /* ArmorBaseInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71D2BADF15FBAECE007AFDC3 /* ArmorBaseInfoView.xib */; };
 		71D2BAE215FBB5F2007AFDC3 /* ArmorBaseInfoSmallView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71D2BAE115FBB5F2007AFDC3 /* ArmorBaseInfoSmallView.xib */; };
@@ -209,8 +196,6 @@
 
 /* Begin PBXFileReference section */
 		121FD96115FF128600AA6947 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
-		121FD96815FF134F00AA6947 /* MainWindow-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "MainWindow-iPad.xib"; sourceTree = "<group>"; };
-		121FD97215FF19BA00AA6947 /* HeroViewController-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "HeroViewController-iPad.xib"; sourceTree = "<group>"; };
 		121FD97715FF201000AA6947 /* attributesBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = attributesBackground.png; sourceTree = "<group>"; };
 		121FD97815FF201000AA6947 /* attributesHeaderView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = attributesHeaderView.png; sourceTree = "<group>"; };
 		121FD97915FF201000AA6947 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
@@ -232,26 +217,6 @@
 		121FD98A15FF201000AA6947 /* frameHeroSC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frameHeroSC.png; sourceTree = "<group>"; };
 		121FD98B15FF201000AA6947 /* frameHeroSelectedHC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frameHeroSelectedHC.png; sourceTree = "<group>"; };
 		121FD98C15FF201000AA6947 /* frameHeroSelectedSC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frameHeroSelectedSC.png; sourceTree = "<group>"; };
-		121FD98E15FF201000AA6947 /* gearBarbarianFemale-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gearBarbarianFemale-iPad.png"; sourceTree = "<group>"; };
-		121FD98F15FF201000AA6947 /* gearBarbarianFemale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearBarbarianFemale.png; sourceTree = "<group>"; };
-		121FD99015FF201000AA6947 /* gearBarbarianMale-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gearBarbarianMale-iPad.png"; sourceTree = "<group>"; };
-		121FD99115FF201000AA6947 /* gearBarbarianMale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearBarbarianMale.png; sourceTree = "<group>"; };
-		121FD99215FF201000AA6947 /* gearDemonHunterFemale-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gearDemonHunterFemale-iPad.png"; sourceTree = "<group>"; };
-		121FD99315FF201000AA6947 /* gearDemonHunterFemale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearDemonHunterFemale.png; sourceTree = "<group>"; };
-		121FD99415FF201000AA6947 /* gearDemonHunterMale-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gearDemonHunterMale-iPad.png"; sourceTree = "<group>"; };
-		121FD99515FF201000AA6947 /* gearDemonHunterMale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearDemonHunterMale.png; sourceTree = "<group>"; };
-		121FD99615FF201000AA6947 /* gearMonkFemale-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gearMonkFemale-iPad.png"; sourceTree = "<group>"; };
-		121FD99715FF201000AA6947 /* gearMonkFemale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearMonkFemale.png; sourceTree = "<group>"; };
-		121FD99815FF201000AA6947 /* gearMonkMale-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gearMonkMale-iPad.png"; sourceTree = "<group>"; };
-		121FD99915FF201000AA6947 /* gearMonkMale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearMonkMale.png; sourceTree = "<group>"; };
-		121FD99A15FF201000AA6947 /* gearWitchDoctorFemale-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gearWitchDoctorFemale-iPad.png"; sourceTree = "<group>"; };
-		121FD99B15FF201000AA6947 /* gearWitchDoctorFemale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearWitchDoctorFemale.png; sourceTree = "<group>"; };
-		121FD99C15FF201000AA6947 /* gearWitchDoctorMale-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gearWitchDoctorMale-iPad.png"; sourceTree = "<group>"; };
-		121FD99D15FF201000AA6947 /* gearWitchDoctorMale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearWitchDoctorMale.png; sourceTree = "<group>"; };
-		121FD99E15FF201000AA6947 /* gearWizardFemale-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gearWizardFemale-iPad.png"; sourceTree = "<group>"; };
-		121FD99F15FF201000AA6947 /* gearWizardFemale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearWizardFemale.png; sourceTree = "<group>"; };
-		121FD9A015FF201000AA6947 /* gearWizardMale-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gearWizardMale-iPad.png"; sourceTree = "<group>"; };
-		121FD9A115FF201000AA6947 /* gearWizardMale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearWizardMale.png; sourceTree = "<group>"; };
 		121FD9A315FF201000AA6947 /* blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue.png; sourceTree = "<group>"; };
 		121FD9A415FF201000AA6947 /* blueHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueHighlighted.png; sourceTree = "<group>"; };
 		121FD9A515FF201000AA6947 /* brown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brown.png; sourceTree = "<group>"; };
@@ -309,12 +274,10 @@
 		121FD9DE15FF201000AA6947 /* titleGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = titleGreen.png; sourceTree = "<group>"; };
 		121FD9DF15FF201000AA6947 /* titleOrange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = titleOrange.png; sourceTree = "<group>"; };
 		121FD9E015FF201000AA6947 /* titleYellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = titleYellow.png; sourceTree = "<group>"; };
-		121FDA4315FF2B7900AA6947 /* SkillsViewController-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "SkillsViewController-iPad.xib"; sourceTree = "<group>"; };
 		121FDA4515FF2C2500AA6947 /* PassiveSkillView-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "PassiveSkillView-iPad.xib"; sourceTree = "<group>"; };
 		121FDA4715FF363E00AA6947 /* skillCalcBackground-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "skillCalcBackground-iPad.png"; sourceTree = "<group>"; };
 		1232F2E216005F4F00EBB2BF /* HeroCareerCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroCareerCellView.h; sourceTree = "<group>"; };
 		1232F2E316005F4F00EBB2BF /* HeroCareerCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeroCareerCellView.m; sourceTree = "<group>"; };
-		1232F2E516005F5D00EBB2BF /* HeroCareerCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeroCareerCellView.xib; sourceTree = "<group>"; };
 		1232F2E71600670D00EBB2BF /* UIActionSheet+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+Block.h"; sourceTree = "<group>"; };
 		1232F2E81600670D00EBB2BF /* UIActionSheet+Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+Block.m"; sourceTree = "<group>"; };
 		1232F2E91600670D00EBB2BF /* UIAlertView+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Block.h"; sourceTree = "<group>"; };
@@ -326,45 +289,65 @@
 		124C68FE15F88F6D00353EFB /* ProgressionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressionView.m; sourceTree = "<group>"; };
 		124C694815F89AF600353EFB /* CareerCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CareerCellView.h; sourceTree = "<group>"; };
 		124C694915F89AF600353EFB /* CareerCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CareerCellView.m; sourceTree = "<group>"; };
-		124C694B15F89B0900353EFB /* CareerCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CareerCellView.xib; sourceTree = "<group>"; };
 		124C694D15F89D7200353EFB /* D3Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3Utility.h; sourceTree = "<group>"; };
 		124C694E15F89D7200353EFB /* D3Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3Utility.m; sourceTree = "<group>"; };
 		124C697515F8CE5800353EFB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		1259CA4D16085A8C00DAF114 /* MainStoryboard-iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "MainStoryboard-iPad.storyboard"; sourceTree = "<group>"; };
 		12736E8F16031718009D3263 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		12736E9016031718009D3263 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		12736E9116031718009D3263 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		12736E991603384B009D3263 /* ProfilesViewController-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "ProfilesViewController-iPad.xib"; sourceTree = "<group>"; };
 		12736E9D16033CC4009D3263 /* CollapsableTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollapsableTableView.h; sourceTree = "<group>"; };
 		12736E9E16033CC4009D3263 /* CollapsableTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollapsableTableView.m; sourceTree = "<group>"; };
+		128E7AA71613020000E19EE3 /* gearBarbarian-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gearBarbarian-iPad.png"; sourceTree = "<group>"; };
+		128E7AA81613020000E19EE3 /* gearBarbarian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearBarbarian.png; sourceTree = "<group>"; };
+		128E7AAD1613020000E19EE3 /* gearDemonHunter-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gearDemonHunter-iPad.png"; sourceTree = "<group>"; };
+		128E7AAE1613020000E19EE3 /* gearDemonHunter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearDemonHunter.png; sourceTree = "<group>"; };
+		128E7AB31613020000E19EE3 /* gearMonk-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gearMonk-iPad.png"; sourceTree = "<group>"; };
+		128E7AB41613020000E19EE3 /* gearMonk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearMonk.png; sourceTree = "<group>"; };
+		128E7ABA1613020000E19EE3 /* gearViewBracers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearViewBracers.png; sourceTree = "<group>"; };
+		128E7ABB1613020000E19EE3 /* gearViewFeet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearViewFeet.png; sourceTree = "<group>"; };
+		128E7ABC1613020000E19EE3 /* gearViewFinger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearViewFinger.png; sourceTree = "<group>"; };
+		128E7ABD1613020000E19EE3 /* gearViewHands.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearViewHands.png; sourceTree = "<group>"; };
+		128E7ABE1613020000E19EE3 /* gearViewHead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearViewHead.png; sourceTree = "<group>"; };
+		128E7ABF1613020000E19EE3 /* gearViewLegs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearViewLegs.png; sourceTree = "<group>"; };
+		128E7AC01613020000E19EE3 /* gearViewMainHand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearViewMainHand.png; sourceTree = "<group>"; };
+		128E7AC11613020000E19EE3 /* gearViewNeck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearViewNeck.png; sourceTree = "<group>"; };
+		128E7AC21613020000E19EE3 /* gearViewOffHand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearViewOffHand.png; sourceTree = "<group>"; };
+		128E7AC31613020000E19EE3 /* gearViewShoulders.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearViewShoulders.png; sourceTree = "<group>"; };
+		128E7AC41613020000E19EE3 /* gearViewTorso.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearViewTorso.png; sourceTree = "<group>"; };
+		128E7AC51613020000E19EE3 /* gearViewWaist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearViewWaist.png; sourceTree = "<group>"; };
+		128E7AC61613020000E19EE3 /* gearWitchDoctor-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gearWitchDoctor-iPad.png"; sourceTree = "<group>"; };
+		128E7AC71613020000E19EE3 /* gearWitchDoctor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearWitchDoctor.png; sourceTree = "<group>"; };
+		128E7ACC1613020000E19EE3 /* gearWizard-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gearWizard-iPad.png"; sourceTree = "<group>"; };
+		128E7ACD1613020000E19EE3 /* gearWizard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearWizard.png; sourceTree = "<group>"; };
+		128F22F31608760E0045B36F /* GearViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GearViewController.h; sourceTree = "<group>"; };
+		128F22F41608760E0045B36F /* GearViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GearViewController.m; sourceTree = "<group>"; };
+		128F22FC160885F30045B36F /* AttributesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributesViewController.h; sourceTree = "<group>"; };
+		128F22FD160885F30045B36F /* AttributesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributesViewController.m; sourceTree = "<group>"; };
+		128F23141608A0BE0045B36F /* GearAttributesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GearAttributesViewController.h; sourceTree = "<group>"; };
+		128F23151608A0BE0045B36F /* GearAttributesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GearAttributesViewController.m; sourceTree = "<group>"; };
 		12A76F3715F9C0E600B2E9D4 /* SocketView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketView.h; sourceTree = "<group>"; };
 		12A76F3815F9C0E600B2E9D4 /* SocketView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketView.m; sourceTree = "<group>"; };
 		12A76F3A15F9CF3500B2E9D4 /* UIAlertView+Error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Error.h"; sourceTree = "<group>"; };
 		12A76F3B15F9CF3500B2E9D4 /* UIAlertView+Error.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Error.m"; sourceTree = "<group>"; };
-		12A76F3F15F9D56500B2E9D4 /* AttributesDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributesDataSource.h; sourceTree = "<group>"; };
-		12A76F4015F9D56500B2E9D4 /* AttributesDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributesDataSource.m; sourceTree = "<group>"; };
 		12A76F5B15FA22E000B2E9D4 /* GearInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GearInfoViewController.h; sourceTree = "<group>"; };
 		12A76F5C15FA22E000B2E9D4 /* GearInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GearInfoViewController.m; sourceTree = "<group>"; };
-		12A76F5D15FA22E000B2E9D4 /* GearInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GearInfoViewController.xib; sourceTree = "<group>"; };
+		12ACA3A01609BFCA0086ACEE /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		12EB68211601C694004B1398 /* icon-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-iPad.png"; sourceTree = "<group>"; };
 		12EB68221601C694004B1398 /* icon-iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-iPad@2x.png"; sourceTree = "<group>"; };
 		12EB68231601C694004B1398 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		12EB68241601C694004B1398 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		12F6826215FDB6DC0052A1AA /* SkillInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkillInfoViewController.h; sourceTree = "<group>"; };
 		12F6826315FDB6DC0052A1AA /* SkillInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkillInfoViewController.m; sourceTree = "<group>"; };
-		12F6826415FDB6DC0052A1AA /* SkillInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SkillInfoViewController.xib; sourceTree = "<group>"; };
-		12F6826815FDB88D0052A1AA /* ActiveSkillInfoCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActiveSkillInfoCellView.h; sourceTree = "<group>"; };
+		12F6826815FDB88D0052A1AA /* ActiveSkillInfoCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ActiveSkillInfoCellView.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		12F6826915FDB88D0052A1AA /* ActiveSkillInfoCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActiveSkillInfoCellView.m; sourceTree = "<group>"; };
-		12F6826B15FDB8A00052A1AA /* ActiveSkillInfoCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActiveSkillInfoCellView.xib; sourceTree = "<group>"; };
 		12F6826E15FDC1160052A1AA /* RuneInfoCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuneInfoCellView.h; sourceTree = "<group>"; };
 		12F6826F15FDC1160052A1AA /* RuneInfoCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RuneInfoCellView.m; sourceTree = "<group>"; };
-		12F6827115FDC1200052A1AA /* RuneInfoCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RuneInfoCellView.xib; sourceTree = "<group>"; };
 		12F6827415FDC84D0052A1AA /* PassiveSkillInfoCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PassiveSkillInfoCellView.h; sourceTree = "<group>"; };
 		12F6827515FDC84D0052A1AA /* PassiveSkillInfoCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PassiveSkillInfoCellView.m; sourceTree = "<group>"; };
-		12F6827715FDC8560052A1AA /* PassiveSkillInfoCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PassiveSkillInfoCellView.xib; sourceTree = "<group>"; };
 		12F6829E15FDFA250052A1AA /* realms.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = realms.plist; sourceTree = "<group>"; };
 		12F682A215FDFBD80052A1AA /* RealmsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RealmsViewController.h; sourceTree = "<group>"; };
 		12F682A315FDFBD80052A1AA /* RealmsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RealmsViewController.m; sourceTree = "<group>"; };
-		12F682A415FDFBD80052A1AA /* RealmsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RealmsViewController.xib; sourceTree = "<group>"; };
 		12FB053815F7806700AE78E4 /* D3Assistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = D3Assistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12FB053C15F7806700AE78E4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		12FB053E15F7806700AE78E4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -394,10 +377,8 @@
 		12FB05EF15F780ED00AE78E4 /* D3APISession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3APISession.m; sourceTree = "<group>"; };
 		12FB05F115F7810100AE78E4 /* HeroCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroCellView.h; sourceTree = "<group>"; };
 		12FB05F215F7810100AE78E4 /* HeroCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeroCellView.m; sourceTree = "<group>"; };
-		12FB05F315F7810100AE78E4 /* HeroCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeroCellView.xib; sourceTree = "<group>"; };
 		12FB05F415F7810100AE78E4 /* ProfilesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfilesViewController.h; sourceTree = "<group>"; };
 		12FB05F515F7810100AE78E4 /* ProfilesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfilesViewController.m; sourceTree = "<group>"; };
-		12FB05F615F7810100AE78E4 /* ProfilesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfilesViewController.xib; sourceTree = "<group>"; };
 		12FB061015F781EF00AE78E4 /* EUActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUActivityView.h; sourceTree = "<group>"; };
 		12FB061115F781EF00AE78E4 /* EUActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EUActivityView.m; sourceTree = "<group>"; };
 		12FB061215F781EF00AE78E4 /* EUOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUOperation.h; sourceTree = "<group>"; };
@@ -413,8 +394,7 @@
 		12FB063615F78CA800AE78E4 /* ProfileHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileHeaderView.xib; sourceTree = "<group>"; };
 		71ACC4DB15FBE62200544EBE /* SkillsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkillsViewController.h; sourceTree = "<group>"; };
 		71ACC4DC15FBE62200544EBE /* SkillsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkillsViewController.m; sourceTree = "<group>"; };
-		71ACC4DD15FBE62200544EBE /* SkillsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SkillsViewController.xib; sourceTree = "<group>"; };
-		71ACC4E115FBE6CF00544EBE /* ActiveSkillView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActiveSkillView.h; sourceTree = "<group>"; };
+		71ACC4E115FBE6CF00544EBE /* ActiveSkillView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ActiveSkillView.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		71ACC4E215FBE6CF00544EBE /* ActiveSkillView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActiveSkillView.m; sourceTree = "<group>"; };
 		71ACC4E415FBE6DC00544EBE /* ActiveSkillView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActiveSkillView.xib; sourceTree = "<group>"; };
 		71B0AA1B15F924EA0079F9B9 /* NSDictionary+DeepMutableCopy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+DeepMutableCopy.h"; sourceTree = "<group>"; };
@@ -436,18 +416,14 @@
 		71B9040815FC9A6D00307AC7 /* PassiveSkillView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PassiveSkillView.xib; sourceTree = "<group>"; };
 		71BF0B9E15F9624600CDEA4A /* HeroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroViewController.h; sourceTree = "<group>"; };
 		71BF0B9F15F9624600CDEA4A /* HeroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeroViewController.m; sourceTree = "<group>"; };
-		71BF0BA015F9624600CDEA4A /* HeroViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeroViewController.xib; sourceTree = "<group>"; };
 		71BF0BAE15F9686F00CDEA4A /* GearView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GearView.h; sourceTree = "<group>"; };
 		71BF0BAF15F9686F00CDEA4A /* GearView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GearView.m; sourceTree = "<group>"; };
 		71D2BAC415FB99D7007AFDC3 /* AttributeCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributeCellView.h; sourceTree = "<group>"; };
 		71D2BAC515FB99D7007AFDC3 /* AttributeCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributeCellView.m; sourceTree = "<group>"; };
-		71D2BAC715FB99E4007AFDC3 /* AttributeCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttributeCellView.xib; sourceTree = "<group>"; };
 		71D2BACA15FB9E6C007AFDC3 /* GearStatCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GearStatCellView.h; sourceTree = "<group>"; };
 		71D2BACB15FB9E6C007AFDC3 /* GearStatCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GearStatCellView.m; sourceTree = "<group>"; };
-		71D2BACD15FB9E79007AFDC3 /* GearStatCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GearStatCellView.xib; sourceTree = "<group>"; };
 		71D2BAD215FBA0A6007AFDC3 /* GemStatCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GemStatCellView.h; sourceTree = "<group>"; };
 		71D2BAD315FBA0A6007AFDC3 /* GemStatCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GemStatCellView.m; sourceTree = "<group>"; };
-		71D2BAD515FBA0B2007AFDC3 /* GemStatCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GemStatCellView.xib; sourceTree = "<group>"; };
 		71D2BADC15FBAEC3007AFDC3 /* ArmorBaseInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArmorBaseInfoView.h; sourceTree = "<group>"; };
 		71D2BADD15FBAEC3007AFDC3 /* ArmorBaseInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArmorBaseInfoView.m; sourceTree = "<group>"; };
 		71D2BADF15FBAECE007AFDC3 /* ArmorBaseInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArmorBaseInfoView.xib; sourceTree = "<group>"; };
@@ -479,6 +455,7 @@
 		121FD97615FF201000AA6947 /* 1x */ = {
 			isa = PBXGroup;
 			children = (
+				128E7AA61613020000E19EE3 /* gear */,
 				121FD97715FF201000AA6947 /* attributesBackground.png */,
 				121FD97815FF201000AA6947 /* attributesHeaderView.png */,
 				121FD97915FF201000AA6947 /* background.png */,
@@ -495,7 +472,6 @@
 				121FD98A15FF201000AA6947 /* frameHeroSC.png */,
 				121FD98B15FF201000AA6947 /* frameHeroSelectedHC.png */,
 				121FD98C15FF201000AA6947 /* frameHeroSelectedSC.png */,
-				121FD98D15FF201000AA6947 /* gear */,
 				121FD9A215FF201000AA6947 /* ItemColors */,
 				121FD9AD15FF201000AA6947 /* portraits */,
 				121FD9B815FF201000AA6947 /* progression */,
@@ -520,33 +496,6 @@
 				121FD98615FF201000AA6947 /* poison.png */,
 			);
 			path = effects;
-			sourceTree = "<group>";
-		};
-		121FD98D15FF201000AA6947 /* gear */ = {
-			isa = PBXGroup;
-			children = (
-				121FD98E15FF201000AA6947 /* gearBarbarianFemale-iPad.png */,
-				121FD98F15FF201000AA6947 /* gearBarbarianFemale.png */,
-				121FD99015FF201000AA6947 /* gearBarbarianMale-iPad.png */,
-				121FD99115FF201000AA6947 /* gearBarbarianMale.png */,
-				121FD99215FF201000AA6947 /* gearDemonHunterFemale-iPad.png */,
-				121FD99315FF201000AA6947 /* gearDemonHunterFemale.png */,
-				121FD99415FF201000AA6947 /* gearDemonHunterMale-iPad.png */,
-				121FD99515FF201000AA6947 /* gearDemonHunterMale.png */,
-				121FD99615FF201000AA6947 /* gearMonkFemale-iPad.png */,
-				121FD99715FF201000AA6947 /* gearMonkFemale.png */,
-				121FD99815FF201000AA6947 /* gearMonkMale-iPad.png */,
-				121FD99915FF201000AA6947 /* gearMonkMale.png */,
-				121FD99A15FF201000AA6947 /* gearWitchDoctorFemale-iPad.png */,
-				121FD99B15FF201000AA6947 /* gearWitchDoctorFemale.png */,
-				121FD99C15FF201000AA6947 /* gearWitchDoctorMale-iPad.png */,
-				121FD99D15FF201000AA6947 /* gearWitchDoctorMale.png */,
-				121FD99E15FF201000AA6947 /* gearWizardFemale-iPad.png */,
-				121FD99F15FF201000AA6947 /* gearWizardFemale.png */,
-				121FD9A015FF201000AA6947 /* gearWizardMale-iPad.png */,
-				121FD9A115FF201000AA6947 /* gearWizardMale.png */,
-			);
-			path = gear;
 			sourceTree = "<group>";
 		};
 		121FD9A215FF201000AA6947 /* ItemColors */ = {
@@ -651,7 +600,6 @@
 			children = (
 				1232F2E216005F4F00EBB2BF /* HeroCareerCellView.h */,
 				1232F2E316005F4F00EBB2BF /* HeroCareerCellView.m */,
-				1232F2E516005F5D00EBB2BF /* HeroCareerCellView.xib */,
 			);
 			name = HeroCareerCellView;
 			sourceTree = "<group>";
@@ -674,6 +622,66 @@
 			path = CollapsableTableView;
 			sourceTree = "<group>";
 		};
+		128E7AA61613020000E19EE3 /* gear */ = {
+			isa = PBXGroup;
+			children = (
+				128E7AA71613020000E19EE3 /* gearBarbarian-iPad.png */,
+				128E7AA81613020000E19EE3 /* gearBarbarian.png */,
+				128E7AAD1613020000E19EE3 /* gearDemonHunter-iPad.png */,
+				128E7AAE1613020000E19EE3 /* gearDemonHunter.png */,
+				128E7AB31613020000E19EE3 /* gearMonk-iPad.png */,
+				128E7AB41613020000E19EE3 /* gearMonk.png */,
+				128E7ABA1613020000E19EE3 /* gearViewBracers.png */,
+				128E7ABB1613020000E19EE3 /* gearViewFeet.png */,
+				128E7ABC1613020000E19EE3 /* gearViewFinger.png */,
+				128E7ABD1613020000E19EE3 /* gearViewHands.png */,
+				128E7ABE1613020000E19EE3 /* gearViewHead.png */,
+				128E7ABF1613020000E19EE3 /* gearViewLegs.png */,
+				128E7AC01613020000E19EE3 /* gearViewMainHand.png */,
+				128E7AC11613020000E19EE3 /* gearViewNeck.png */,
+				128E7AC21613020000E19EE3 /* gearViewOffHand.png */,
+				128E7AC31613020000E19EE3 /* gearViewShoulders.png */,
+				128E7AC41613020000E19EE3 /* gearViewTorso.png */,
+				128E7AC51613020000E19EE3 /* gearViewWaist.png */,
+				128E7AC61613020000E19EE3 /* gearWitchDoctor-iPad.png */,
+				128E7AC71613020000E19EE3 /* gearWitchDoctor.png */,
+				128E7ACC1613020000E19EE3 /* gearWizard-iPad.png */,
+				128E7ACD1613020000E19EE3 /* gearWizard.png */,
+			);
+			path = gear;
+			sourceTree = "<group>";
+		};
+		128F22F1160875E80045B36F /* GearViewController */ = {
+			isa = PBXGroup;
+			children = (
+				71BF0BA315F9672900CDEA4A /* GearView */,
+				128F22F31608760E0045B36F /* GearViewController.h */,
+				128F22F41608760E0045B36F /* GearViewController.m */,
+			);
+			name = GearViewController;
+			sourceTree = "<group>";
+		};
+		128F22FB160885DA0045B36F /* AttributesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				71D2BAC315FB99BD007AFDC3 /* AttributeCellView */,
+				1232F2E016005F3000EBB2BF /* HeroCareerCellView */,
+				71D8394115FA8305002AD951 /* AttributesHeaderView */,
+				128F22FC160885F30045B36F /* AttributesViewController.h */,
+				128F22FD160885F30045B36F /* AttributesViewController.m */,
+			);
+			name = AttributesViewController;
+			sourceTree = "<group>";
+		};
+		128F23131608A0A50045B36F /* GearAttributesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				128F23141608A0BE0045B36F /* GearAttributesViewController.h */,
+				128F23151608A0BE0045B36F /* GearAttributesViewController.m */,
+			);
+			name = GearAttributesViewController;
+			sourceTree = "<group>";
+		};
 		12A76F3515F9C0D700B2E9D4 /* SocketView */ = {
 			isa = PBXGroup;
 			children = (
@@ -681,18 +689,6 @@
 				12A76F3815F9C0E600B2E9D4 /* SocketView.m */,
 			);
 			name = SocketView;
-			sourceTree = "<group>";
-		};
-		12A76F5915FA22B800B2E9D4 /* AttributesDataSource */ = {
-			isa = PBXGroup;
-			children = (
-				71D2BAC315FB99BD007AFDC3 /* AttributeCellView */,
-				71D8394115FA8305002AD951 /* AttributesHeaderView */,
-				1232F2E016005F3000EBB2BF /* HeroCareerCellView */,
-				12A76F3F15F9D56500B2E9D4 /* AttributesDataSource.h */,
-				12A76F4015F9D56500B2E9D4 /* AttributesDataSource.m */,
-			);
-			name = AttributesDataSource;
 			sourceTree = "<group>";
 		};
 		12A76F5A15FA22C800B2E9D4 /* GearInfoViewController */ = {
@@ -704,7 +700,6 @@
 				71D2BAD115FBA089007AFDC3 /* GemStatCellView */,
 				12A76F5B15FA22E000B2E9D4 /* GearInfoViewController.h */,
 				12A76F5C15FA22E000B2E9D4 /* GearInfoViewController.m */,
-				12A76F5D15FA22E000B2E9D4 /* GearInfoViewController.xib */,
 			);
 			name = GearInfoViewController;
 			sourceTree = "<group>";
@@ -728,7 +723,6 @@
 				12F6826D15FDC1040052A1AA /* RuneInfoCellView */,
 				12F6826215FDB6DC0052A1AA /* SkillInfoViewController.h */,
 				12F6826315FDB6DC0052A1AA /* SkillInfoViewController.m */,
-				12F6826415FDB6DC0052A1AA /* SkillInfoViewController.xib */,
 			);
 			name = SkillInfoViewController;
 			sourceTree = "<group>";
@@ -738,7 +732,6 @@
 			children = (
 				12F6826815FDB88D0052A1AA /* ActiveSkillInfoCellView.h */,
 				12F6826915FDB88D0052A1AA /* ActiveSkillInfoCellView.m */,
-				12F6826B15FDB8A00052A1AA /* ActiveSkillInfoCellView.xib */,
 			);
 			name = ActiveSkillInfoCellView;
 			sourceTree = "<group>";
@@ -748,7 +741,6 @@
 			children = (
 				12F6826E15FDC1160052A1AA /* RuneInfoCellView.h */,
 				12F6826F15FDC1160052A1AA /* RuneInfoCellView.m */,
-				12F6827115FDC1200052A1AA /* RuneInfoCellView.xib */,
 			);
 			name = RuneInfoCellView;
 			sourceTree = "<group>";
@@ -758,7 +750,6 @@
 			children = (
 				12F6827415FDC84D0052A1AA /* PassiveSkillInfoCellView.h */,
 				12F6827515FDC84D0052A1AA /* PassiveSkillInfoCellView.m */,
-				12F6827715FDC8560052A1AA /* PassiveSkillInfoCellView.xib */,
 			);
 			name = PassiveSkillInfoCellView;
 			sourceTree = "<group>";
@@ -768,7 +759,6 @@
 			children = (
 				12F682A215FDFBD80052A1AA /* RealmsViewController.h */,
 				12F682A315FDFBD80052A1AA /* RealmsViewController.m */,
-				12F682A415FDFBD80052A1AA /* RealmsViewController.xib */,
 			);
 			name = RealmsViewController;
 			sourceTree = "<group>";
@@ -814,8 +804,11 @@
 				12FB05FB15F7810700AE78E4 /* ProfilesViewController */,
 				124C68FC15F88F5800353EFB /* ProgressionView */,
 				71BF0B9A15F961C500CDEA4A /* HeroViewController */,
-				12A76F5A15FA22C800B2E9D4 /* GearInfoViewController */,
+				128F22F1160875E80045B36F /* GearViewController */,
+				128F22FB160885DA0045B36F /* AttributesViewController */,
+				128F23131608A0A50045B36F /* GearAttributesViewController */,
 				71ACC42E15FBE26D00544EBE /* SkillsViewController */,
+				12A76F5A15FA22C800B2E9D4 /* GearInfoViewController */,
 				12F682A115FDFBBF0052A1AA /* RealmsViewController */,
 				12FB054B15F7806700AE78E4 /* AppDelegate.h */,
 				12FB054C15F7806700AE78E4 /* AppDelegate.m */,
@@ -828,9 +821,10 @@
 			isa = PBXGroup;
 			children = (
 				12FB055715F780C200AE78E4 /* Graphics */,
+				1259CA4D16085A8C00DAF114 /* MainStoryboard-iPad.storyboard */,
+				12ACA3A01609BFCA0086ACEE /* MainStoryboard.storyboard */,
 				12FB054415F7806700AE78E4 /* D3Assistant-Info.plist */,
 				121FD96115FF128600AA6947 /* MainWindow.xib */,
-				121FD96815FF134F00AA6947 /* MainWindow-iPad.xib */,
 				12FB054515F7806700AE78E4 /* InfoPlist.strings */,
 				12FB054815F7806700AE78E4 /* main.m */,
 				12FB054A15F7806700AE78E4 /* D3Assistant-Prefix.pch */,
@@ -923,8 +917,6 @@
 				12FB062115F78C5400AE78E4 /* Views */,
 				12FB05F415F7810100AE78E4 /* ProfilesViewController.h */,
 				12FB05F515F7810100AE78E4 /* ProfilesViewController.m */,
-				12FB05F615F7810100AE78E4 /* ProfilesViewController.xib */,
-				12736E991603384B009D3263 /* ProfilesViewController-iPad.xib */,
 			);
 			name = ProfilesViewController;
 			sourceTree = "<group>";
@@ -934,10 +926,8 @@
 			children = (
 				12FB05F115F7810100AE78E4 /* HeroCellView.h */,
 				12FB05F215F7810100AE78E4 /* HeroCellView.m */,
-				12FB05F315F7810100AE78E4 /* HeroCellView.xib */,
 				124C694815F89AF600353EFB /* CareerCellView.h */,
 				124C694915F89AF600353EFB /* CareerCellView.m */,
-				124C694B15F89B0900353EFB /* CareerCellView.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -982,8 +972,6 @@
 				12F6825B15FDB67C0052A1AA /* SkillInfoViewController */,
 				71ACC4DB15FBE62200544EBE /* SkillsViewController.h */,
 				71ACC4DC15FBE62200544EBE /* SkillsViewController.m */,
-				71ACC4DD15FBE62200544EBE /* SkillsViewController.xib */,
-				121FDA4315FF2B7900AA6947 /* SkillsViewController-iPad.xib */,
 			);
 			name = SkillsViewController;
 			sourceTree = "<group>";
@@ -1027,12 +1015,8 @@
 		71BF0B9A15F961C500CDEA4A /* HeroViewController */ = {
 			isa = PBXGroup;
 			children = (
-				12A76F5915FA22B800B2E9D4 /* AttributesDataSource */,
-				71BF0BA315F9672900CDEA4A /* GearView */,
 				71BF0B9E15F9624600CDEA4A /* HeroViewController.h */,
 				71BF0B9F15F9624600CDEA4A /* HeroViewController.m */,
-				71BF0BA015F9624600CDEA4A /* HeroViewController.xib */,
-				121FD97215FF19BA00AA6947 /* HeroViewController-iPad.xib */,
 			);
 			name = HeroViewController;
 			sourceTree = "<group>";
@@ -1052,7 +1036,6 @@
 			children = (
 				71D2BAC415FB99D7007AFDC3 /* AttributeCellView.h */,
 				71D2BAC515FB99D7007AFDC3 /* AttributeCellView.m */,
-				71D2BAC715FB99E4007AFDC3 /* AttributeCellView.xib */,
 			);
 			name = AttributeCellView;
 			sourceTree = "<group>";
@@ -1062,7 +1045,6 @@
 			children = (
 				71D2BACA15FB9E6C007AFDC3 /* GearStatCellView.h */,
 				71D2BACB15FB9E6C007AFDC3 /* GearStatCellView.m */,
-				71D2BACD15FB9E79007AFDC3 /* GearStatCellView.xib */,
 			);
 			name = GearStatCellView;
 			sourceTree = "<group>";
@@ -1072,7 +1054,6 @@
 			children = (
 				71D2BAD215FBA0A6007AFDC3 /* GemStatCellView.h */,
 				71D2BAD315FBA0A6007AFDC3 /* GemStatCellView.m */,
-				71D2BAD515FBA0B2007AFDC3 /* GemStatCellView.xib */,
 			);
 			name = GemStatCellView;
 			sourceTree = "<group>";
@@ -1134,7 +1115,7 @@
 		12FB052F15F7806700AE78E4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0440;
+				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Artem Shimanski";
 			};
 			buildConfigurationList = 12FB053215F7806700AE78E4 /* Build configuration list for PBXProject "D3Assistant" */;
@@ -1160,10 +1141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				12FB054715F7806700AE78E4 /* InfoPlist.strings in Resources */,
-				12FB05F815F7810100AE78E4 /* HeroCellView.xib in Resources */,
-				12FB05FA15F7810100AE78E4 /* ProfilesViewController.xib in Resources */,
 				12FB063715F78CA800AE78E4 /* ProfileHeaderView.xib in Resources */,
-				124C694C15F89B0A00353EFB /* CareerCellView.xib in Resources */,
 				71B0AAC415F93BA80079F9B9 /* background@2x.png in Resources */,
 				71B0AAC515F93BA80079F9B9 /* cellBackground@2x.png in Resources */,
 				71B0AAC615F93BA80079F9B9 /* cellBackgroundSelected@2x.png in Resources */,
@@ -1172,27 +1150,14 @@
 				71B0AAC915F93BA80079F9B9 /* favoritesOn@2x.png in Resources */,
 				71B0AACA15F93BA80079F9B9 /* separator@2x.png in Resources */,
 				71B0AACB15F93BA80079F9B9 /* skull@2x.png in Resources */,
-				71BF0BA215F9624600CDEA4A /* HeroViewController.xib in Resources */,
-				12A76F5F15FA22E000B2E9D4 /* GearInfoViewController.xib in Resources */,
 				71D8392915FA74D6002AD951 /* WeaponBaseInfoView.xib in Resources */,
 				71D8394615FA8326002AD951 /* AttributesHeaderView.xib in Resources */,
-				71D2BAC815FB99E4007AFDC3 /* AttributeCellView.xib in Resources */,
-				71D2BACE15FB9E79007AFDC3 /* GearStatCellView.xib in Resources */,
-				71D2BAD615FBA0B2007AFDC3 /* GemStatCellView.xib in Resources */,
 				71D2BAE015FBAECE007AFDC3 /* ArmorBaseInfoView.xib in Resources */,
 				71D2BAE215FBB5F2007AFDC3 /* ArmorBaseInfoSmallView.xib in Resources */,
-				71ACC4DF15FBE62200544EBE /* SkillsViewController.xib in Resources */,
 				71ACC4E515FBE6DC00544EBE /* ActiveSkillView.xib in Resources */,
 				71B9040915FC9A6D00307AC7 /* PassiveSkillView.xib in Resources */,
-				12F6826615FDB6DC0052A1AA /* SkillInfoViewController.xib in Resources */,
-				12F6826C15FDB8A00052A1AA /* ActiveSkillInfoCellView.xib in Resources */,
-				12F6827215FDC1200052A1AA /* RuneInfoCellView.xib in Resources */,
-				12F6827815FDC8560052A1AA /* PassiveSkillInfoCellView.xib in Resources */,
 				12F6829F15FDFA250052A1AA /* realms.plist in Resources */,
-				12F682A615FDFBD80052A1AA /* RealmsViewController.xib in Resources */,
 				121FD96215FF128600AA6947 /* MainWindow.xib in Resources */,
-				121FD96915FF134F00AA6947 /* MainWindow-iPad.xib in Resources */,
-				121FD97315FF19BA00AA6947 /* HeroViewController-iPad.xib in Resources */,
 				121FD9E115FF201000AA6947 /* attributesBackground.png in Resources */,
 				121FD9E215FF201000AA6947 /* attributesHeaderView.png in Resources */,
 				121FD9E315FF201000AA6947 /* background.png in Resources */,
@@ -1214,26 +1179,6 @@
 				121FD9F315FF201000AA6947 /* frameHeroSC.png in Resources */,
 				121FD9F415FF201000AA6947 /* frameHeroSelectedHC.png in Resources */,
 				121FD9F515FF201000AA6947 /* frameHeroSelectedSC.png in Resources */,
-				121FD9F615FF201000AA6947 /* gearBarbarianFemale-iPad.png in Resources */,
-				121FD9F715FF201000AA6947 /* gearBarbarianFemale.png in Resources */,
-				121FD9F815FF201000AA6947 /* gearBarbarianMale-iPad.png in Resources */,
-				121FD9F915FF201000AA6947 /* gearBarbarianMale.png in Resources */,
-				121FD9FA15FF201000AA6947 /* gearDemonHunterFemale-iPad.png in Resources */,
-				121FD9FB15FF201000AA6947 /* gearDemonHunterFemale.png in Resources */,
-				121FD9FC15FF201000AA6947 /* gearDemonHunterMale-iPad.png in Resources */,
-				121FD9FD15FF201000AA6947 /* gearDemonHunterMale.png in Resources */,
-				121FD9FE15FF201000AA6947 /* gearMonkFemale-iPad.png in Resources */,
-				121FD9FF15FF201000AA6947 /* gearMonkFemale.png in Resources */,
-				121FDA0015FF201000AA6947 /* gearMonkMale-iPad.png in Resources */,
-				121FDA0115FF201000AA6947 /* gearMonkMale.png in Resources */,
-				121FDA0215FF201000AA6947 /* gearWitchDoctorFemale-iPad.png in Resources */,
-				121FDA0315FF201000AA6947 /* gearWitchDoctorFemale.png in Resources */,
-				121FDA0415FF201000AA6947 /* gearWitchDoctorMale-iPad.png in Resources */,
-				121FDA0515FF201000AA6947 /* gearWitchDoctorMale.png in Resources */,
-				121FDA0615FF201000AA6947 /* gearWizardFemale-iPad.png in Resources */,
-				121FDA0715FF201000AA6947 /* gearWizardFemale.png in Resources */,
-				121FDA0815FF201000AA6947 /* gearWizardMale-iPad.png in Resources */,
-				121FDA0915FF201000AA6947 /* gearWizardMale.png in Resources */,
 				121FDA0A15FF201000AA6947 /* blue.png in Resources */,
 				121FDA0B15FF201000AA6947 /* blueHighlighted.png in Resources */,
 				121FDA0C15FF201000AA6947 /* brown.png in Resources */,
@@ -1291,10 +1236,8 @@
 				121FDA4015FF201000AA6947 /* titleGreen.png in Resources */,
 				121FDA4115FF201000AA6947 /* titleOrange.png in Resources */,
 				121FDA4215FF201000AA6947 /* titleYellow.png in Resources */,
-				121FDA4415FF2B7900AA6947 /* SkillsViewController-iPad.xib in Resources */,
 				121FDA4615FF2C2500AA6947 /* PassiveSkillView-iPad.xib in Resources */,
 				121FDA4815FF363E00AA6947 /* skillCalcBackground-iPad.png in Resources */,
-				1232F2E616005F5D00EBB2BF /* HeroCareerCellView.xib in Resources */,
 				12EB68251601C694004B1398 /* icon-iPad.png in Resources */,
 				12EB68261601C694004B1398 /* icon-iPad@2x.png in Resources */,
 				12EB68271601C694004B1398 /* icon.png in Resources */,
@@ -1302,7 +1245,30 @@
 				12736E9216031718009D3263 /* Default-568h@2x.png in Resources */,
 				12736E9316031718009D3263 /* Default.png in Resources */,
 				12736E9416031718009D3263 /* Default@2x.png in Resources */,
-				12736E9A1603384B009D3263 /* ProfilesViewController-iPad.xib in Resources */,
+				1259CA4E16085A8D00DAF114 /* MainStoryboard-iPad.storyboard in Resources */,
+				12ACA3A11609BFCA0086ACEE /* MainStoryboard.storyboard in Resources */,
+				128E7AD21613020000E19EE3 /* gearBarbarian-iPad.png in Resources */,
+				128E7AD31613020000E19EE3 /* gearBarbarian.png in Resources */,
+				128E7AD81613020000E19EE3 /* gearDemonHunter-iPad.png in Resources */,
+				128E7AD91613020000E19EE3 /* gearDemonHunter.png in Resources */,
+				128E7ADE1613020000E19EE3 /* gearMonk-iPad.png in Resources */,
+				128E7ADF1613020000E19EE3 /* gearMonk.png in Resources */,
+				128E7AE51613020000E19EE3 /* gearViewBracers.png in Resources */,
+				128E7AE61613020000E19EE3 /* gearViewFeet.png in Resources */,
+				128E7AE71613020000E19EE3 /* gearViewFinger.png in Resources */,
+				128E7AE81613020000E19EE3 /* gearViewHands.png in Resources */,
+				128E7AE91613020000E19EE3 /* gearViewHead.png in Resources */,
+				128E7AEA1613020000E19EE3 /* gearViewLegs.png in Resources */,
+				128E7AEB1613020000E19EE3 /* gearViewMainHand.png in Resources */,
+				128E7AEC1613020000E19EE3 /* gearViewNeck.png in Resources */,
+				128E7AED1613020000E19EE3 /* gearViewOffHand.png in Resources */,
+				128E7AEE1613020000E19EE3 /* gearViewShoulders.png in Resources */,
+				128E7AEF1613020000E19EE3 /* gearViewTorso.png in Resources */,
+				128E7AF01613020000E19EE3 /* gearViewWaist.png in Resources */,
+				128E7AF11613020000E19EE3 /* gearWitchDoctor-iPad.png in Resources */,
+				128E7AF21613020000E19EE3 /* gearWitchDoctor.png in Resources */,
+				128E7AF71613020000E19EE3 /* gearWizard-iPad.png in Resources */,
+				128E7AF81613020000E19EE3 /* gearWizard.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1342,7 +1308,6 @@
 				71BF0BB015F9686F00CDEA4A /* GearView.m in Sources */,
 				12A76F3915F9C0E600B2E9D4 /* SocketView.m in Sources */,
 				12A76F3C15F9CF3500B2E9D4 /* UIAlertView+Error.m in Sources */,
-				12A76F4115F9D56500B2E9D4 /* AttributesDataSource.m in Sources */,
 				12A76F5E15FA22E000B2E9D4 /* GearInfoViewController.m in Sources */,
 				71D8392B15FA7962002AD951 /* WeaponBaseInfoView.m in Sources */,
 				71D8394415FA831B002AD951 /* AttributesHeaderView.m in Sources */,
@@ -1362,6 +1327,9 @@
 				1232F2EB1600670D00EBB2BF /* UIActionSheet+Block.m in Sources */,
 				1232F2EC1600670D00EBB2BF /* UIAlertView+Block.m in Sources */,
 				12736E9F16033CC4009D3263 /* CollapsableTableView.m in Sources */,
+				128F22F51608760E0045B36F /* GearViewController.m in Sources */,
+				128F22FE160885F30045B36F /* AttributesViewController.m in Sources */,
+				128F23161608A0BE0045B36F /* GearAttributesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1400,6 +1368,7 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -1426,6 +1395,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -1449,8 +1419,9 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Artem Shimanski (EB6EUZ8H2P)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "D3Assistant/D3Assistant-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "D3Assistant/D3Assistant-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C16152CC-57DC-4C40-B311-043274F552FD";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1469,8 +1440,9 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Artem Shimanski";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "D3Assistant/D3Assistant-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "D3Assistant/D3Assistant-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6F77AE4B-9031-4B97-AD33-C4683444CFA7";
 				TARGETED_DEVICE_FAMILY = "1,2";

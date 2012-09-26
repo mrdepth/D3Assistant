@@ -7,34 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GearView.h"
-#import "AttributesDataSource.h"
+#import "AttributesViewController.h"
 #import "SkillsViewController.h"
+#import "GearViewController.h"
+#import "GearAttributesViewController.h"
 
-@interface HeroViewController : UIViewController<GearViewDelegate>
-@property (unsafe_unretained, nonatomic) IBOutlet GearView *headView;
-@property (unsafe_unretained, nonatomic) IBOutlet GearView *shouldersView;
-@property (unsafe_unretained, nonatomic) IBOutlet GearView *torsoView;
-@property (unsafe_unretained, nonatomic) IBOutlet GearView *feetView;
-@property (unsafe_unretained, nonatomic) IBOutlet GearView *handsView;
-@property (unsafe_unretained, nonatomic) IBOutlet GearView *legsView;
-@property (unsafe_unretained, nonatomic) IBOutlet GearView *bracersView;
-@property (unsafe_unretained, nonatomic) IBOutlet GearView *mainHandView;
-@property (unsafe_unretained, nonatomic) IBOutlet GearView *offHandView;
-@property (unsafe_unretained, nonatomic) IBOutlet GearView *waistView;
-@property (unsafe_unretained, nonatomic) IBOutlet GearView *leftFingerView;
-@property (unsafe_unretained, nonatomic) IBOutlet GearView *rightFingerView;
-@property (unsafe_unretained, nonatomic) IBOutlet GearView *neckView;
-@property (unsafe_unretained, nonatomic) IBOutlet UIImageView *backgroundImageView;
-@property (strong, nonatomic) IBOutlet UIView *gearsView;
-@property (strong, nonatomic) IBOutlet UITableView *attributesTableView;
-@property (strong, nonatomic) IBOutlet AttributesDataSource *attributesDataSource;
-@property (strong, nonatomic) IBOutlet SkillsViewController *skillsViewController;
+@interface HeroViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UISegmentedControl *sectionsControl;
-@property (unsafe_unretained, nonatomic) IBOutlet UILabel *heroNameLabel;
+@property (strong, nonatomic) GearViewController* gearViewController;
+@property (strong, nonatomic) SkillsViewController* skillsViewController;
+@property (strong, nonatomic) AttributesViewController* attributesViewController;
+@property (strong, nonatomic) GearAttributesViewController* gearAttributesViewController;
+@property (weak, nonatomic) IBOutlet UIView *contentView;
 
-@property (nonatomic, strong) NSDictionary* hero;
-@property (nonatomic, assign) BOOL fallen;
+@property (nonatomic, strong, readonly) NSDictionary* hero;
+@property (nonatomic, assign, readonly) BOOL fallen;
+
+- (void) setHero:(NSDictionary *)hero fallen:(BOOL) fallen;
 
 - (IBAction)onChangeSection:(id)sender;
+
 @end

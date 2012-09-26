@@ -10,7 +10,7 @@
 #import "ProgressionView.h"
 
 @interface CareerCellView : UITableViewCell
-@property (unsafe_unretained, nonatomic) IBOutlet ProgressionView *progressionSCView;
-@property (unsafe_unretained, nonatomic) IBOutlet ProgressionView *progressionHCView;
+@property (weak, nonatomic) IBOutlet ProgressionView *progressionSCView;
+@property (weak, nonatomic) IBOutlet ProgressionView *progressionHCView;
 
 @end

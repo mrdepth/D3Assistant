@@ -13,7 +13,6 @@
 
 @interface RealmsViewController ()
 @property (nonatomic, strong) NSArray* realms;
-- (IBAction)onCancel:(id)sender;
 @end
 
 @implementation RealmsViewController
@@ -24,8 +23,8 @@
 	self.title = @"Select your Region";
 	self.realms = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"realms" ofType:@"plist"]];
 
-	if ([[NSUserDefaults standardUserDefaults] valueForKey:@"realm"])
-		self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(onCancel:)];
+	if (![[NSUserDefaults standardUserDefaults] valueForKey:@"realm"])
+		self.navigationItem.leftBarButtonItem = nil;
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -41,10 +40,8 @@
     // e.g. self.myOutlet = nil;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-	return YES;
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+- (IBAction)onCancel:(id)sender {
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 #pragma mark - Table view data source
@@ -136,10 +133,5 @@
      */
 }
 
-#pragma mark - Private
-
-- (IBAction)onCancel:(id)sender {
-	[self dismissModalViewControllerAnimated:YES];
-}
 
 @end
