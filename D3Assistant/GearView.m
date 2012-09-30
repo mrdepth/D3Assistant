@@ -139,10 +139,10 @@
 }
 
 - (UIImage*) placeholderImage {
-	NSDictionary* gear = @{@"head" : @"gearViewHead.png", @"shoulders" : @"gearViewShoulders.png", @"torso" : @"gearViewTorso.png", @"feet" : @"gearViewFeet.png", @"hands" : @"gearViewHands.png",
+	NSDictionary* gearImages = @{@"head" : @"gearViewHead.png", @"shoulders" : @"gearViewShoulders.png", @"torso" : @"gearViewTorso.png", @"feet" : @"gearViewFeet.png", @"hands" : @"gearViewHands.png",
 	@"legs" : @"gearViewLegs.png", @"bracers" : @"gearViewBracers.png",	@"mainHand" : @"gearViewMainHand.png", @"offHand" : @"gearViewOffHand.png", @"waist" : @"gearViewWaist.png",
 	@"leftFinger" : @"gearViewFinger.png",  @"rightFinger" : @"gearViewFinger.png", @"neck" : @"gearViewNeck.png"};
-	return [UIImage imageNamed:[gear valueForKey:self.slot]];
+	return [UIImage imageNamed:[gearImages valueForKey:self.slot]];
 }
 
 @end

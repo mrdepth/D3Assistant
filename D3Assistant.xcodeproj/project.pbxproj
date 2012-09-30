@@ -145,12 +145,12 @@
 		128E7AFA1613020000E19EE3 /* gearWizardFemale.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7ACF1613020000E19EE3 /* gearWizardFemale.png */; };
 		128E7AFB1613020000E19EE3 /* gearWizardMale-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7AD01613020000E19EE3 /* gearWizardMale-iPad.png */; };
 		128E7AFC1613020000E19EE3 /* gearWizardMale.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7AD11613020000E19EE3 /* gearWizardMale.png */; };
-		128F22F51608760E0045B36F /* GearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 128F22F41608760E0045B36F /* GearViewController.m */; };
-		128F22FE160885F30045B36F /* AttributesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 128F22FD160885F30045B36F /* AttributesViewController.m */; };
-		128F23161608A0BE0045B36F /* GearAttributesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 128F23151608A0BE0045B36F /* GearAttributesViewController.m */; };
+		128F22F51608760E0045B36F /* GearViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 128F22F41608760E0045B36F /* GearViewController.mm */; };
+		128F22FE160885F30045B36F /* AttributesViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 128F22FD160885F30045B36F /* AttributesViewController.mm */; };
+		128F23161608A0BE0045B36F /* GearAttributesViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 128F23151608A0BE0045B36F /* GearAttributesViewController.mm */; };
 		12A76F3915F9C0E600B2E9D4 /* SocketView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A76F3815F9C0E600B2E9D4 /* SocketView.m */; };
 		12A76F3C15F9CF3500B2E9D4 /* UIAlertView+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A76F3B15F9CF3500B2E9D4 /* UIAlertView+Error.m */; };
-		12A76F5E15FA22E000B2E9D4 /* GearInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A76F5C15FA22E000B2E9D4 /* GearInfoViewController.m */; };
+		12A76F5E15FA22E000B2E9D4 /* GearInfoViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 12A76F5C15FA22E000B2E9D4 /* GearInfoViewController.mm */; };
 		12ACA3A11609BFCA0086ACEE /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12ACA3A01609BFCA0086ACEE /* MainStoryboard.storyboard */; };
 		12EB68251601C694004B1398 /* icon-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 12EB68211601C694004B1398 /* icon-iPad.png */; };
 		12EB68261601C694004B1398 /* icon-iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12EB68221601C694004B1398 /* icon-iPad@2x.png */; };
@@ -167,7 +167,7 @@
 		12FB054115F7806700AE78E4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12FB054015F7806700AE78E4 /* CoreGraphics.framework */; };
 		12FB054715F7806700AE78E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 12FB054515F7806700AE78E4 /* InfoPlist.strings */; };
 		12FB054915F7806700AE78E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB054815F7806700AE78E4 /* main.m */; };
-		12FB054D15F7806700AE78E4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB054C15F7806700AE78E4 /* AppDelegate.m */; };
+		12FB054D15F7806700AE78E4 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 12FB054C15F7806700AE78E4 /* AppDelegate.mm */; };
 		12FB05D915F780CB00AE78E4 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB05A915F780CA00AE78E4 /* NSObject+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		12FB05DA15F780CB00AE78E4 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB05AB15F780CA00AE78E4 /* NSString+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		12FB05DB15F780CB00AE78E4 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB05AD15F780CA00AE78E4 /* SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -177,7 +177,7 @@
 		12FB05E615F780CB00AE78E4 /* UITableViewCell+Nib.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB05C915F780CB00AE78E4 /* UITableViewCell+Nib.m */; };
 		12FB05F015F780ED00AE78E4 /* D3APISession.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB05EF15F780ED00AE78E4 /* D3APISession.m */; };
 		12FB05F715F7810100AE78E4 /* HeroCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB05F215F7810100AE78E4 /* HeroCellView.m */; };
-		12FB05F915F7810100AE78E4 /* ProfilesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB05F515F7810100AE78E4 /* ProfilesViewController.m */; };
+		12FB05F915F7810100AE78E4 /* ProfilesViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 12FB05F515F7810100AE78E4 /* ProfilesViewController.mm */; };
 		12FB061915F781EF00AE78E4 /* EUActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB061115F781EF00AE78E4 /* EUActivityView.m */; };
 		12FB061A15F781EF00AE78E4 /* EUOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB061315F781EF00AE78E4 /* EUOperation.m */; };
 		12FB061B15F781EF00AE78E4 /* EUOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB061515F781EF00AE78E4 /* EUOperationQueue.m */; };
@@ -185,6 +185,52 @@
 		12FB063215F78C7F00AE78E4 /* UIView+Nib.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB063115F78C7F00AE78E4 /* UIView+Nib.m */; };
 		12FB063515F78C9900AE78E4 /* ProfileHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB063415F78C9900AE78E4 /* ProfileHeaderView.m */; };
 		12FB063715F78CA800AE78E4 /* ProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12FB063615F78CA800AE78E4 /* ProfileHeaderView.xib */; };
+		710B9DE7161733B40009ACCE /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 710B9DE6161733B40009ACCE /* libsqlite3.dylib */; };
+		710B9DEB161734020009ACCE /* D3CEHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 710B9DEA161734020009ACCE /* D3CEHelper.mm */; };
+		718433571617328A004599F4 /* d3.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 718433561617328A004599F4 /* d3.sqlite */; };
+		718433AC161732A9004599F4 /* Affix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7184335A161732A9004599F4 /* Affix.cpp */; };
+		718433AD161732A9004599F4 /* Armor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7184335C161732A9004599F4 /* Armor.cpp */; };
+		718433AE161732A9004599F4 /* Attribute.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7184335E161732A9004599F4 /* Attribute.cpp */; };
+		718433AF161732A9004599F4 /* Barbarian.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71843361161732A9004599F4 /* Barbarian.cpp */; };
+		718433B0161732A9004599F4 /* DemonHunter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71843363161732A9004599F4 /* DemonHunter.cpp */; };
+		718433B1161732A9004599F4 /* Engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71843365161732A9004599F4 /* Engine.cpp */; };
+		718433B2161732A9004599F4 /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71843367161732A9004599F4 /* Entity.cpp */; };
+		718433B3161732A9004599F4 /* Environment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71843369161732A9004599F4 /* Environment.cpp */; };
+		718433B4161732A9004599F4 /* Expression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7184336B161732A9004599F4 /* Expression.cpp */; };
+		718433B5161732A9004599F4 /* ExpressionAdd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7184336D161732A9004599F4 /* ExpressionAdd.cpp */; };
+		718433B6161732A9004599F4 /* ExpressionAttribute.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7184336F161732A9004599F4 /* ExpressionAttribute.cpp */; };
+		718433B7161732A9004599F4 /* ExpressionConst.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71843371161732A9004599F4 /* ExpressionConst.cpp */; };
+		718433B8161732A9004599F4 /* ExpressionDiv.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71843373161732A9004599F4 /* ExpressionDiv.cpp */; };
+		718433B9161732A9004599F4 /* ExpressionEq.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71843375161732A9004599F4 /* ExpressionEq.cpp */; };
+		718433BA161732A9004599F4 /* ExpressionIf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71843377161732A9004599F4 /* ExpressionIf.cpp */; };
+		718433BB161732A9004599F4 /* ExpressionMax.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71843379161732A9004599F4 /* ExpressionMax.cpp */; };
+		718433BC161732A9004599F4 /* ExpressionMin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7184337B161732A9004599F4 /* ExpressionMin.cpp */; };
+		718433BD161732A9004599F4 /* ExpressionSub.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7184337D161732A9004599F4 /* ExpressionSub.cpp */; };
+		718433BE161732A9004599F4 /* Follower.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7184337F161732A9004599F4 /* Follower.cpp */; };
+		718433BF161732A9004599F4 /* Gear.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71843381161732A9004599F4 /* Gear.cpp */; };
+		718433C0161732A9004599F4 /* Gem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71843383161732A9004599F4 /* Gem.cpp */; };
+		718433C1161732A9004599F4 /* Hero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71843385161732A9004599F4 /* Hero.cpp */; };
+		718433C2161732A9004599F4 /* Item.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71843387161732A9004599F4 /* Item.cpp */; };
+		718433C3161732A9004599F4 /* Modifier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71843389161732A9004599F4 /* Modifier.cpp */; };
+		718433C4161732A9004599F4 /* ModifierAdd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7184338B161732A9004599F4 /* ModifierAdd.cpp */; };
+		718433C5161732A9004599F4 /* ModifierPostBoost.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7184338D161732A9004599F4 /* ModifierPostBoost.cpp */; };
+		718433C6161732A9004599F4 /* ModifierPostDiv.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7184338F161732A9004599F4 /* ModifierPostDiv.cpp */; };
+		718433C7161732A9004599F4 /* ModifierPostMul.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71843391161732A9004599F4 /* ModifierPostMul.cpp */; };
+		718433C8161732A9004599F4 /* ModifierPostReduce.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71843393161732A9004599F4 /* ModifierPostReduce.cpp */; };
+		718433C9161732A9004599F4 /* ModifierPreAssign.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71843395161732A9004599F4 /* ModifierPreAssign.cpp */; };
+		718433CA161732A9004599F4 /* ModifierPreMul.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71843397161732A9004599F4 /* ModifierPreMul.cpp */; };
+		718433CB161732A9004599F4 /* ModifierSub.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71843399161732A9004599F4 /* ModifierSub.cpp */; };
+		718433CC161732A9004599F4 /* Monk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7184339B161732A9004599F4 /* Monk.cpp */; };
+		718433CD161732A9004599F4 /* OffHand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7184339D161732A9004599F4 /* OffHand.cpp */; };
+		718433CE161732A9004599F4 /* Party.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7184339F161732A9004599F4 /* Party.cpp */; };
+		718433CF161732A9004599F4 /* Range.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 718433A1161732A9004599F4 /* Range.cpp */; };
+		718433D0161732A9004599F4 /* Skill.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 718433A3161732A9004599F4 /* Skill.cpp */; };
+		718433D1161732A9004599F4 /* Weapon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 718433A6161732A9004599F4 /* Weapon.cpp */; };
+		718433D2161732A9004599F4 /* WitchDoctor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 718433A8161732A9004599F4 /* WitchDoctor.cpp */; };
+		718433D3161732A9004599F4 /* Wizard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 718433AA161732A9004599F4 /* Wizard.cpp */; };
+		71AA5B361618D47E0069EDB3 /* ExpressionMul.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71AA5B301618D47E0069EDB3 /* ExpressionMul.cpp */; };
+		71AA5B371618D47E0069EDB3 /* ItemSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71AA5B321618D47E0069EDB3 /* ItemSet.cpp */; };
+		71AA5B381618D47E0069EDB3 /* SetBonus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71AA5B341618D47E0069EDB3 /* SetBonus.cpp */; };
 		71ACC4DE15FBE62200544EBE /* SkillsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71ACC4DC15FBE62200544EBE /* SkillsViewController.m */; };
 		71ACC4E315FBE6CF00544EBE /* ActiveSkillView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71ACC4E215FBE6CF00544EBE /* ActiveSkillView.m */; };
 		71ACC4E515FBE6DC00544EBE /* ActiveSkillView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71ACC4E415FBE6DC00544EBE /* ActiveSkillView.xib */; };
@@ -201,8 +247,9 @@
 		71B0AACB15F93BA80079F9B9 /* skull@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71B0AAA215F93BA80079F9B9 /* skull@2x.png */; };
 		71B9040715FC9A6300307AC7 /* PassiveSkillView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B9040615FC9A6300307AC7 /* PassiveSkillView.m */; };
 		71B9040915FC9A6D00307AC7 /* PassiveSkillView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71B9040815FC9A6D00307AC7 /* PassiveSkillView.xib */; };
-		71BF0BA115F9624600CDEA4A /* HeroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BF0B9F15F9624600CDEA4A /* HeroViewController.m */; };
+		71BF0BA115F9624600CDEA4A /* HeroViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 71BF0B9F15F9624600CDEA4A /* HeroViewController.mm */; };
 		71BF0BB015F9686F00CDEA4A /* GearView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BF0BAF15F9686F00CDEA4A /* GearView.m */; };
+		71CDB8AE161849F2005FD1C3 /* SummaryCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CDB8AD161849F2005FD1C3 /* SummaryCellView.m */; };
 		71D2BAC615FB99D7007AFDC3 /* AttributeCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D2BAC515FB99D7007AFDC3 /* AttributeCellView.m */; };
 		71D2BACC15FB9E6C007AFDC3 /* GearStatCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D2BACB15FB9E6C007AFDC3 /* GearStatCellView.m */; };
 		71D2BAD415FBA0A6007AFDC3 /* GemStatCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D2BAD315FBA0A6007AFDC3 /* GemStatCellView.m */; };
@@ -363,17 +410,17 @@
 		128E7AD01613020000E19EE3 /* gearWizardMale-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gearWizardMale-iPad.png"; sourceTree = "<group>"; };
 		128E7AD11613020000E19EE3 /* gearWizardMale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearWizardMale.png; sourceTree = "<group>"; };
 		128F22F31608760E0045B36F /* GearViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GearViewController.h; sourceTree = "<group>"; };
-		128F22F41608760E0045B36F /* GearViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GearViewController.m; sourceTree = "<group>"; };
+		128F22F41608760E0045B36F /* GearViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GearViewController.mm; sourceTree = "<group>"; };
 		128F22FC160885F30045B36F /* AttributesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributesViewController.h; sourceTree = "<group>"; };
-		128F22FD160885F30045B36F /* AttributesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributesViewController.m; sourceTree = "<group>"; };
+		128F22FD160885F30045B36F /* AttributesViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AttributesViewController.mm; sourceTree = "<group>"; };
 		128F23141608A0BE0045B36F /* GearAttributesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GearAttributesViewController.h; sourceTree = "<group>"; };
-		128F23151608A0BE0045B36F /* GearAttributesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GearAttributesViewController.m; sourceTree = "<group>"; };
+		128F23151608A0BE0045B36F /* GearAttributesViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GearAttributesViewController.mm; sourceTree = "<group>"; };
 		12A76F3715F9C0E600B2E9D4 /* SocketView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketView.h; sourceTree = "<group>"; };
 		12A76F3815F9C0E600B2E9D4 /* SocketView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketView.m; sourceTree = "<group>"; };
 		12A76F3A15F9CF3500B2E9D4 /* UIAlertView+Error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Error.h"; sourceTree = "<group>"; };
 		12A76F3B15F9CF3500B2E9D4 /* UIAlertView+Error.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Error.m"; sourceTree = "<group>"; };
 		12A76F5B15FA22E000B2E9D4 /* GearInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GearInfoViewController.h; sourceTree = "<group>"; };
-		12A76F5C15FA22E000B2E9D4 /* GearInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GearInfoViewController.m; sourceTree = "<group>"; };
+		12A76F5C15FA22E000B2E9D4 /* GearInfoViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GearInfoViewController.mm; sourceTree = "<group>"; };
 		12ACA3A01609BFCA0086ACEE /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		12EB68211601C694004B1398 /* icon-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-iPad.png"; sourceTree = "<group>"; };
 		12EB68221601C694004B1398 /* icon-iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-iPad@2x.png"; sourceTree = "<group>"; };
@@ -399,7 +446,7 @@
 		12FB054815F7806700AE78E4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		12FB054A15F7806700AE78E4 /* D3Assistant-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "D3Assistant-Prefix.pch"; sourceTree = "<group>"; };
 		12FB054B15F7806700AE78E4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		12FB054C15F7806700AE78E4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		12FB054C15F7806700AE78E4 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		12FB05A715F780CA00AE78E4 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
 		12FB05A815F780CA00AE78E4 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
 		12FB05A915F780CA00AE78E4 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
@@ -420,7 +467,7 @@
 		12FB05F115F7810100AE78E4 /* HeroCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroCellView.h; sourceTree = "<group>"; };
 		12FB05F215F7810100AE78E4 /* HeroCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeroCellView.m; sourceTree = "<group>"; };
 		12FB05F415F7810100AE78E4 /* ProfilesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfilesViewController.h; sourceTree = "<group>"; };
-		12FB05F515F7810100AE78E4 /* ProfilesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfilesViewController.m; sourceTree = "<group>"; };
+		12FB05F515F7810100AE78E4 /* ProfilesViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ProfilesViewController.mm; sourceTree = "<group>"; };
 		12FB061015F781EF00AE78E4 /* EUActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUActivityView.h; sourceTree = "<group>"; };
 		12FB061115F781EF00AE78E4 /* EUActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EUActivityView.m; sourceTree = "<group>"; };
 		12FB061215F781EF00AE78E4 /* EUOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUOperation.h; sourceTree = "<group>"; };
@@ -434,6 +481,99 @@
 		12FB063315F78C9900AE78E4 /* ProfileHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileHeaderView.h; sourceTree = "<group>"; };
 		12FB063415F78C9900AE78E4 /* ProfileHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileHeaderView.m; sourceTree = "<group>"; };
 		12FB063615F78CA800AE78E4 /* ProfileHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileHeaderView.xib; sourceTree = "<group>"; };
+		710B9DE6161733B40009ACCE /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		710B9DE9161734020009ACCE /* D3CEHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3CEHelper.h; sourceTree = "<group>"; };
+		710B9DEA161734020009ACCE /* D3CEHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = D3CEHelper.mm; sourceTree = "<group>"; };
+		718433561617328A004599F4 /* d3.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = d3.sqlite; sourceTree = "<group>"; };
+		7184335A161732A9004599F4 /* Affix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Affix.cpp; path = ../../d3ce/d3ce/Affix.cpp; sourceTree = "<group>"; };
+		7184335B161732A9004599F4 /* Affix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Affix.h; path = ../../d3ce/d3ce/Affix.h; sourceTree = "<group>"; };
+		7184335C161732A9004599F4 /* Armor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Armor.cpp; path = ../../d3ce/d3ce/Armor.cpp; sourceTree = "<group>"; };
+		7184335D161732A9004599F4 /* Armor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Armor.h; path = ../../d3ce/d3ce/Armor.h; sourceTree = "<group>"; };
+		7184335E161732A9004599F4 /* Attribute.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Attribute.cpp; path = ../../d3ce/d3ce/Attribute.cpp; sourceTree = "<group>"; };
+		7184335F161732A9004599F4 /* Attribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Attribute.h; path = ../../d3ce/d3ce/Attribute.h; sourceTree = "<group>"; };
+		71843360161732A9004599F4 /* AttributeIDs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AttributeIDs.h; path = ../../d3ce/d3ce/AttributeIDs.h; sourceTree = "<group>"; };
+		71843361161732A9004599F4 /* Barbarian.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Barbarian.cpp; path = ../../d3ce/d3ce/Barbarian.cpp; sourceTree = "<group>"; };
+		71843362161732A9004599F4 /* Barbarian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Barbarian.h; path = ../../d3ce/d3ce/Barbarian.h; sourceTree = "<group>"; };
+		71843363161732A9004599F4 /* DemonHunter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DemonHunter.cpp; path = ../../d3ce/d3ce/DemonHunter.cpp; sourceTree = "<group>"; };
+		71843364161732A9004599F4 /* DemonHunter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DemonHunter.h; path = ../../d3ce/d3ce/DemonHunter.h; sourceTree = "<group>"; };
+		71843365161732A9004599F4 /* Engine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Engine.cpp; path = ../../d3ce/d3ce/Engine.cpp; sourceTree = "<group>"; };
+		71843366161732A9004599F4 /* Engine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Engine.h; path = ../../d3ce/d3ce/Engine.h; sourceTree = "<group>"; };
+		71843367161732A9004599F4 /* Entity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Entity.cpp; path = ../../d3ce/d3ce/Entity.cpp; sourceTree = "<group>"; };
+		71843368161732A9004599F4 /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Entity.h; path = ../../d3ce/d3ce/Entity.h; sourceTree = "<group>"; };
+		71843369161732A9004599F4 /* Environment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Environment.cpp; path = ../../d3ce/d3ce/Environment.cpp; sourceTree = "<group>"; };
+		7184336A161732A9004599F4 /* Environment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Environment.h; path = ../../d3ce/d3ce/Environment.h; sourceTree = "<group>"; };
+		7184336B161732A9004599F4 /* Expression.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Expression.cpp; path = ../../d3ce/d3ce/Expression.cpp; sourceTree = "<group>"; };
+		7184336C161732A9004599F4 /* Expression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Expression.h; path = ../../d3ce/d3ce/Expression.h; sourceTree = "<group>"; };
+		7184336D161732A9004599F4 /* ExpressionAdd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ExpressionAdd.cpp; path = ../../d3ce/d3ce/ExpressionAdd.cpp; sourceTree = "<group>"; };
+		7184336E161732A9004599F4 /* ExpressionAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpressionAdd.h; path = ../../d3ce/d3ce/ExpressionAdd.h; sourceTree = "<group>"; };
+		7184336F161732A9004599F4 /* ExpressionAttribute.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ExpressionAttribute.cpp; path = ../../d3ce/d3ce/ExpressionAttribute.cpp; sourceTree = "<group>"; };
+		71843370161732A9004599F4 /* ExpressionAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpressionAttribute.h; path = ../../d3ce/d3ce/ExpressionAttribute.h; sourceTree = "<group>"; };
+		71843371161732A9004599F4 /* ExpressionConst.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ExpressionConst.cpp; path = ../../d3ce/d3ce/ExpressionConst.cpp; sourceTree = "<group>"; };
+		71843372161732A9004599F4 /* ExpressionConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpressionConst.h; path = ../../d3ce/d3ce/ExpressionConst.h; sourceTree = "<group>"; };
+		71843373161732A9004599F4 /* ExpressionDiv.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ExpressionDiv.cpp; path = ../../d3ce/d3ce/ExpressionDiv.cpp; sourceTree = "<group>"; };
+		71843374161732A9004599F4 /* ExpressionDiv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpressionDiv.h; path = ../../d3ce/d3ce/ExpressionDiv.h; sourceTree = "<group>"; };
+		71843375161732A9004599F4 /* ExpressionEq.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ExpressionEq.cpp; path = ../../d3ce/d3ce/ExpressionEq.cpp; sourceTree = "<group>"; };
+		71843376161732A9004599F4 /* ExpressionEq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpressionEq.h; path = ../../d3ce/d3ce/ExpressionEq.h; sourceTree = "<group>"; };
+		71843377161732A9004599F4 /* ExpressionIf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ExpressionIf.cpp; path = ../../d3ce/d3ce/ExpressionIf.cpp; sourceTree = "<group>"; };
+		71843378161732A9004599F4 /* ExpressionIf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpressionIf.h; path = ../../d3ce/d3ce/ExpressionIf.h; sourceTree = "<group>"; };
+		71843379161732A9004599F4 /* ExpressionMax.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ExpressionMax.cpp; path = ../../d3ce/d3ce/ExpressionMax.cpp; sourceTree = "<group>"; };
+		7184337A161732A9004599F4 /* ExpressionMax.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpressionMax.h; path = ../../d3ce/d3ce/ExpressionMax.h; sourceTree = "<group>"; };
+		7184337B161732A9004599F4 /* ExpressionMin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ExpressionMin.cpp; path = ../../d3ce/d3ce/ExpressionMin.cpp; sourceTree = "<group>"; };
+		7184337C161732A9004599F4 /* ExpressionMin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpressionMin.h; path = ../../d3ce/d3ce/ExpressionMin.h; sourceTree = "<group>"; };
+		7184337D161732A9004599F4 /* ExpressionSub.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ExpressionSub.cpp; path = ../../d3ce/d3ce/ExpressionSub.cpp; sourceTree = "<group>"; };
+		7184337E161732A9004599F4 /* ExpressionSub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpressionSub.h; path = ../../d3ce/d3ce/ExpressionSub.h; sourceTree = "<group>"; };
+		7184337F161732A9004599F4 /* Follower.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Follower.cpp; path = ../../d3ce/d3ce/Follower.cpp; sourceTree = "<group>"; };
+		71843380161732A9004599F4 /* Follower.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Follower.h; path = ../../d3ce/d3ce/Follower.h; sourceTree = "<group>"; };
+		71843381161732A9004599F4 /* Gear.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Gear.cpp; path = ../../d3ce/d3ce/Gear.cpp; sourceTree = "<group>"; };
+		71843382161732A9004599F4 /* Gear.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Gear.h; path = ../../d3ce/d3ce/Gear.h; sourceTree = "<group>"; };
+		71843383161732A9004599F4 /* Gem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Gem.cpp; path = ../../d3ce/d3ce/Gem.cpp; sourceTree = "<group>"; };
+		71843384161732A9004599F4 /* Gem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Gem.h; path = ../../d3ce/d3ce/Gem.h; sourceTree = "<group>"; };
+		71843385161732A9004599F4 /* Hero.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Hero.cpp; path = ../../d3ce/d3ce/Hero.cpp; sourceTree = "<group>"; };
+		71843386161732A9004599F4 /* Hero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hero.h; path = ../../d3ce/d3ce/Hero.h; sourceTree = "<group>"; };
+		71843387161732A9004599F4 /* Item.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Item.cpp; path = ../../d3ce/d3ce/Item.cpp; sourceTree = "<group>"; };
+		71843388161732A9004599F4 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Item.h; path = ../../d3ce/d3ce/Item.h; sourceTree = "<group>"; };
+		71843389161732A9004599F4 /* Modifier.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Modifier.cpp; path = ../../d3ce/d3ce/Modifier.cpp; sourceTree = "<group>"; };
+		7184338A161732A9004599F4 /* Modifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Modifier.h; path = ../../d3ce/d3ce/Modifier.h; sourceTree = "<group>"; };
+		7184338B161732A9004599F4 /* ModifierAdd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ModifierAdd.cpp; path = ../../d3ce/d3ce/ModifierAdd.cpp; sourceTree = "<group>"; };
+		7184338C161732A9004599F4 /* ModifierAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModifierAdd.h; path = ../../d3ce/d3ce/ModifierAdd.h; sourceTree = "<group>"; };
+		7184338D161732A9004599F4 /* ModifierPostBoost.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ModifierPostBoost.cpp; path = ../../d3ce/d3ce/ModifierPostBoost.cpp; sourceTree = "<group>"; };
+		7184338E161732A9004599F4 /* ModifierPostBoost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModifierPostBoost.h; path = ../../d3ce/d3ce/ModifierPostBoost.h; sourceTree = "<group>"; };
+		7184338F161732A9004599F4 /* ModifierPostDiv.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ModifierPostDiv.cpp; path = ../../d3ce/d3ce/ModifierPostDiv.cpp; sourceTree = "<group>"; };
+		71843390161732A9004599F4 /* ModifierPostDiv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModifierPostDiv.h; path = ../../d3ce/d3ce/ModifierPostDiv.h; sourceTree = "<group>"; };
+		71843391161732A9004599F4 /* ModifierPostMul.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ModifierPostMul.cpp; path = ../../d3ce/d3ce/ModifierPostMul.cpp; sourceTree = "<group>"; };
+		71843392161732A9004599F4 /* ModifierPostMul.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModifierPostMul.h; path = ../../d3ce/d3ce/ModifierPostMul.h; sourceTree = "<group>"; };
+		71843393161732A9004599F4 /* ModifierPostReduce.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ModifierPostReduce.cpp; path = ../../d3ce/d3ce/ModifierPostReduce.cpp; sourceTree = "<group>"; };
+		71843394161732A9004599F4 /* ModifierPostReduce.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModifierPostReduce.h; path = ../../d3ce/d3ce/ModifierPostReduce.h; sourceTree = "<group>"; };
+		71843395161732A9004599F4 /* ModifierPreAssign.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ModifierPreAssign.cpp; path = ../../d3ce/d3ce/ModifierPreAssign.cpp; sourceTree = "<group>"; };
+		71843396161732A9004599F4 /* ModifierPreAssign.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModifierPreAssign.h; path = ../../d3ce/d3ce/ModifierPreAssign.h; sourceTree = "<group>"; };
+		71843397161732A9004599F4 /* ModifierPreMul.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ModifierPreMul.cpp; path = ../../d3ce/d3ce/ModifierPreMul.cpp; sourceTree = "<group>"; };
+		71843398161732A9004599F4 /* ModifierPreMul.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModifierPreMul.h; path = ../../d3ce/d3ce/ModifierPreMul.h; sourceTree = "<group>"; };
+		71843399161732A9004599F4 /* ModifierSub.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ModifierSub.cpp; path = ../../d3ce/d3ce/ModifierSub.cpp; sourceTree = "<group>"; };
+		7184339A161732A9004599F4 /* ModifierSub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModifierSub.h; path = ../../d3ce/d3ce/ModifierSub.h; sourceTree = "<group>"; };
+		7184339B161732A9004599F4 /* Monk.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Monk.cpp; path = ../../d3ce/d3ce/Monk.cpp; sourceTree = "<group>"; };
+		7184339C161732A9004599F4 /* Monk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Monk.h; path = ../../d3ce/d3ce/Monk.h; sourceTree = "<group>"; };
+		7184339D161732A9004599F4 /* OffHand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OffHand.cpp; path = ../../d3ce/d3ce/OffHand.cpp; sourceTree = "<group>"; };
+		7184339E161732A9004599F4 /* OffHand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OffHand.h; path = ../../d3ce/d3ce/OffHand.h; sourceTree = "<group>"; };
+		7184339F161732A9004599F4 /* Party.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Party.cpp; path = ../../d3ce/d3ce/Party.cpp; sourceTree = "<group>"; };
+		718433A0161732A9004599F4 /* Party.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Party.h; path = ../../d3ce/d3ce/Party.h; sourceTree = "<group>"; };
+		718433A1161732A9004599F4 /* Range.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Range.cpp; path = ../../d3ce/d3ce/Range.cpp; sourceTree = "<group>"; };
+		718433A2161732A9004599F4 /* Range.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Range.h; path = ../../d3ce/d3ce/Range.h; sourceTree = "<group>"; };
+		718433A3161732A9004599F4 /* Skill.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Skill.cpp; path = ../../d3ce/d3ce/Skill.cpp; sourceTree = "<group>"; };
+		718433A4161732A9004599F4 /* Skill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Skill.h; path = ../../d3ce/d3ce/Skill.h; sourceTree = "<group>"; };
+		718433A5161732A9004599F4 /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = types.h; path = ../../d3ce/d3ce/types.h; sourceTree = "<group>"; };
+		718433A6161732A9004599F4 /* Weapon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Weapon.cpp; path = ../../d3ce/d3ce/Weapon.cpp; sourceTree = "<group>"; };
+		718433A7161732A9004599F4 /* Weapon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Weapon.h; path = ../../d3ce/d3ce/Weapon.h; sourceTree = "<group>"; };
+		718433A8161732A9004599F4 /* WitchDoctor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WitchDoctor.cpp; path = ../../d3ce/d3ce/WitchDoctor.cpp; sourceTree = "<group>"; };
+		718433A9161732A9004599F4 /* WitchDoctor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WitchDoctor.h; path = ../../d3ce/d3ce/WitchDoctor.h; sourceTree = "<group>"; };
+		718433AA161732A9004599F4 /* Wizard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Wizard.cpp; path = ../../d3ce/d3ce/Wizard.cpp; sourceTree = "<group>"; };
+		718433AB161732A9004599F4 /* Wizard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Wizard.h; path = ../../d3ce/d3ce/Wizard.h; sourceTree = "<group>"; };
+		7189BC5B16173736004CE480 /* d3ce.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = d3ce.h; path = ../../d3ce/d3ce/d3ce.h; sourceTree = "<group>"; };
+		71AA5B301618D47E0069EDB3 /* ExpressionMul.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ExpressionMul.cpp; path = ../../d3ce/d3ce/ExpressionMul.cpp; sourceTree = "<group>"; };
+		71AA5B311618D47E0069EDB3 /* ExpressionMul.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpressionMul.h; path = ../../d3ce/d3ce/ExpressionMul.h; sourceTree = "<group>"; };
+		71AA5B321618D47E0069EDB3 /* ItemSet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ItemSet.cpp; path = ../../d3ce/d3ce/ItemSet.cpp; sourceTree = "<group>"; };
+		71AA5B331618D47E0069EDB3 /* ItemSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemSet.h; path = ../../d3ce/d3ce/ItemSet.h; sourceTree = "<group>"; };
+		71AA5B341618D47E0069EDB3 /* SetBonus.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SetBonus.cpp; path = ../../d3ce/d3ce/SetBonus.cpp; sourceTree = "<group>"; };
+		71AA5B351618D47E0069EDB3 /* SetBonus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetBonus.h; path = ../../d3ce/d3ce/SetBonus.h; sourceTree = "<group>"; };
 		71ACC4DB15FBE62200544EBE /* SkillsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkillsViewController.h; sourceTree = "<group>"; };
 		71ACC4DC15FBE62200544EBE /* SkillsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkillsViewController.m; sourceTree = "<group>"; };
 		71ACC4E115FBE6CF00544EBE /* ActiveSkillView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ActiveSkillView.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -457,9 +597,11 @@
 		71B9040615FC9A6300307AC7 /* PassiveSkillView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PassiveSkillView.m; sourceTree = "<group>"; };
 		71B9040815FC9A6D00307AC7 /* PassiveSkillView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PassiveSkillView.xib; sourceTree = "<group>"; };
 		71BF0B9E15F9624600CDEA4A /* HeroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroViewController.h; sourceTree = "<group>"; };
-		71BF0B9F15F9624600CDEA4A /* HeroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeroViewController.m; sourceTree = "<group>"; };
+		71BF0B9F15F9624600CDEA4A /* HeroViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HeroViewController.mm; sourceTree = "<group>"; };
 		71BF0BAE15F9686F00CDEA4A /* GearView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GearView.h; sourceTree = "<group>"; };
 		71BF0BAF15F9686F00CDEA4A /* GearView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GearView.m; sourceTree = "<group>"; };
+		71CDB8AC161849F2005FD1C3 /* SummaryCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummaryCellView.h; sourceTree = "<group>"; };
+		71CDB8AD161849F2005FD1C3 /* SummaryCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummaryCellView.m; sourceTree = "<group>"; };
 		71D2BAC415FB99D7007AFDC3 /* AttributeCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributeCellView.h; sourceTree = "<group>"; };
 		71D2BAC515FB99D7007AFDC3 /* AttributeCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributeCellView.m; sourceTree = "<group>"; };
 		71D2BACA15FB9E6C007AFDC3 /* GearStatCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GearStatCellView.h; sourceTree = "<group>"; };
@@ -483,6 +625,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				710B9DE7161733B40009ACCE /* libsqlite3.dylib in Frameworks */,
 				1232F2F2160068EE00EBB2BF /* StoreKit.framework in Frameworks */,
 				124C697615F8CE5800353EFB /* QuartzCore.framework in Frameworks */,
 				12FB053D15F7806700AE78E4 /* UIKit.framework in Frameworks */,
@@ -719,7 +862,7 @@
 			children = (
 				71BF0BA315F9672900CDEA4A /* GearView */,
 				128F22F31608760E0045B36F /* GearViewController.h */,
-				128F22F41608760E0045B36F /* GearViewController.m */,
+				128F22F41608760E0045B36F /* GearViewController.mm */,
 			);
 			name = GearViewController;
 			sourceTree = "<group>";
@@ -731,7 +874,7 @@
 				1232F2E016005F3000EBB2BF /* HeroCareerCellView */,
 				71D8394115FA8305002AD951 /* AttributesHeaderView */,
 				128F22FC160885F30045B36F /* AttributesViewController.h */,
-				128F22FD160885F30045B36F /* AttributesViewController.m */,
+				128F22FD160885F30045B36F /* AttributesViewController.mm */,
 			);
 			name = AttributesViewController;
 			sourceTree = "<group>";
@@ -740,7 +883,7 @@
 			isa = PBXGroup;
 			children = (
 				128F23141608A0BE0045B36F /* GearAttributesViewController.h */,
-				128F23151608A0BE0045B36F /* GearAttributesViewController.m */,
+				128F23151608A0BE0045B36F /* GearAttributesViewController.mm */,
 			);
 			name = GearAttributesViewController;
 			sourceTree = "<group>";
@@ -761,8 +904,9 @@
 				71D8392315FA69FB002AD951 /* WeaponBaseInfoView */,
 				71D2BAC915FB9E58007AFDC3 /* GearStatCellView */,
 				71D2BAD115FBA089007AFDC3 /* GemStatCellView */,
+				71CDB8AA161849D8005FD1C3 /* SummaryCellView */,
 				12A76F5B15FA22E000B2E9D4 /* GearInfoViewController.h */,
-				12A76F5C15FA22E000B2E9D4 /* GearInfoViewController.m */,
+				12A76F5C15FA22E000B2E9D4 /* GearInfoViewController.mm */,
 			);
 			name = GearInfoViewController;
 			sourceTree = "<group>";
@@ -829,8 +973,6 @@
 		12FB052D15F7806700AE78E4 = {
 			isa = PBXGroup;
 			children = (
-				1232F2F1160068ED00EBB2BF /* StoreKit.framework */,
-				124C697515F8CE5800353EFB /* QuartzCore.framework */,
 				12FB054215F7806700AE78E4 /* D3Assistant */,
 				12FB053B15F7806700AE78E4 /* Frameworks */,
 				12FB053915F7806700AE78E4 /* Products */,
@@ -848,6 +990,9 @@
 		12FB053B15F7806700AE78E4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				710B9DE6161733B40009ACCE /* libsqlite3.dylib */,
+				1232F2F1160068ED00EBB2BF /* StoreKit.framework */,
+				124C697515F8CE5800353EFB /* QuartzCore.framework */,
 				12FB053C15F7806700AE78E4 /* UIKit.framework */,
 				12FB053E15F7806700AE78E4 /* Foundation.framework */,
 				12FB054015F7806700AE78E4 /* CoreGraphics.framework */,
@@ -858,6 +1003,8 @@
 		12FB054215F7806700AE78E4 /* D3Assistant */ = {
 			isa = PBXGroup;
 			children = (
+				710B9DE8161733E00009ACCE /* D3CEHelper */,
+				7184335916173294004599F4 /* d3ce */,
 				12736E9C16033CC4009D3263 /* CollapsableTableView */,
 				12FB060F15F781EE00AE78E4 /* EUOperationQueue */,
 				12FB061615F781EF00AE78E4 /* UIImageView+URL */,
@@ -874,7 +1021,7 @@
 				12A76F5A15FA22C800B2E9D4 /* GearInfoViewController */,
 				12F682A115FDFBBF0052A1AA /* RealmsViewController */,
 				12FB054B15F7806700AE78E4 /* AppDelegate.h */,
-				12FB054C15F7806700AE78E4 /* AppDelegate.m */,
+				12FB054C15F7806700AE78E4 /* AppDelegate.mm */,
 				12FB054315F7806700AE78E4 /* Supporting Files */,
 			);
 			path = D3Assistant;
@@ -884,6 +1031,7 @@
 			isa = PBXGroup;
 			children = (
 				12FB055715F780C200AE78E4 /* Graphics */,
+				718433551617328A004599F4 /* Resources */,
 				1259CA4D16085A8C00DAF114 /* MainStoryboard-iPad.storyboard */,
 				12ACA3A01609BFCA0086ACEE /* MainStoryboard.storyboard */,
 				12FB054415F7806700AE78E4 /* D3Assistant-Info.plist */,
@@ -979,7 +1127,7 @@
 				12FB05FC15F7811200AE78E4 /* Cells */,
 				12FB062115F78C5400AE78E4 /* Views */,
 				12FB05F415F7810100AE78E4 /* ProfilesViewController.h */,
-				12FB05F515F7810100AE78E4 /* ProfilesViewController.m */,
+				12FB05F515F7810100AE78E4 /* ProfilesViewController.mm */,
 			);
 			name = ProfilesViewController;
 			sourceTree = "<group>";
@@ -1025,6 +1173,167 @@
 				12FB063615F78CA800AE78E4 /* ProfileHeaderView.xib */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		710B9DE1161732D10009ACCE /* Expressions */ = {
+			isa = PBXGroup;
+			children = (
+				71AA5B301618D47E0069EDB3 /* ExpressionMul.cpp */,
+				71AA5B311618D47E0069EDB3 /* ExpressionMul.h */,
+				7184336B161732A9004599F4 /* Expression.cpp */,
+				7184336C161732A9004599F4 /* Expression.h */,
+				7184336D161732A9004599F4 /* ExpressionAdd.cpp */,
+				7184336E161732A9004599F4 /* ExpressionAdd.h */,
+				7184336F161732A9004599F4 /* ExpressionAttribute.cpp */,
+				71843370161732A9004599F4 /* ExpressionAttribute.h */,
+				71843371161732A9004599F4 /* ExpressionConst.cpp */,
+				71843372161732A9004599F4 /* ExpressionConst.h */,
+				71843373161732A9004599F4 /* ExpressionDiv.cpp */,
+				71843374161732A9004599F4 /* ExpressionDiv.h */,
+				71843375161732A9004599F4 /* ExpressionEq.cpp */,
+				71843376161732A9004599F4 /* ExpressionEq.h */,
+				71843377161732A9004599F4 /* ExpressionIf.cpp */,
+				71843378161732A9004599F4 /* ExpressionIf.h */,
+				71843379161732A9004599F4 /* ExpressionMax.cpp */,
+				7184337A161732A9004599F4 /* ExpressionMax.h */,
+				7184337B161732A9004599F4 /* ExpressionMin.cpp */,
+				7184337C161732A9004599F4 /* ExpressionMin.h */,
+				7184337D161732A9004599F4 /* ExpressionSub.cpp */,
+				7184337E161732A9004599F4 /* ExpressionSub.h */,
+			);
+			name = Expressions;
+			sourceTree = "<group>";
+		};
+		710B9DE3161733010009ACCE /* Heroes */ = {
+			isa = PBXGroup;
+			children = (
+				71843361161732A9004599F4 /* Barbarian.cpp */,
+				71843362161732A9004599F4 /* Barbarian.h */,
+				71843363161732A9004599F4 /* DemonHunter.cpp */,
+				71843364161732A9004599F4 /* DemonHunter.h */,
+				71843385161732A9004599F4 /* Hero.cpp */,
+				71843386161732A9004599F4 /* Hero.h */,
+				7184339B161732A9004599F4 /* Monk.cpp */,
+				7184339C161732A9004599F4 /* Monk.h */,
+				718433A8161732A9004599F4 /* WitchDoctor.cpp */,
+				718433A9161732A9004599F4 /* WitchDoctor.h */,
+				718433AA161732A9004599F4 /* Wizard.cpp */,
+				718433AB161732A9004599F4 /* Wizard.h */,
+			);
+			name = Heroes;
+			sourceTree = "<group>";
+		};
+		710B9DE41617331D0009ACCE /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				7184335C161732A9004599F4 /* Armor.cpp */,
+				7184335D161732A9004599F4 /* Armor.h */,
+				71843381161732A9004599F4 /* Gear.cpp */,
+				71843382161732A9004599F4 /* Gear.h */,
+				71843383161732A9004599F4 /* Gem.cpp */,
+				71843384161732A9004599F4 /* Gem.h */,
+				71843387161732A9004599F4 /* Item.cpp */,
+				71843388161732A9004599F4 /* Item.h */,
+				7184339D161732A9004599F4 /* OffHand.cpp */,
+				7184339E161732A9004599F4 /* OffHand.h */,
+				718433A6161732A9004599F4 /* Weapon.cpp */,
+				718433A7161732A9004599F4 /* Weapon.h */,
+			);
+			name = Items;
+			sourceTree = "<group>";
+		};
+		710B9DE51617333D0009ACCE /* Attributes */ = {
+			isa = PBXGroup;
+			children = (
+				7184335E161732A9004599F4 /* Attribute.cpp */,
+				7184335F161732A9004599F4 /* Attribute.h */,
+				71843360161732A9004599F4 /* AttributeIDs.h */,
+				71843369161732A9004599F4 /* Environment.cpp */,
+				7184336A161732A9004599F4 /* Environment.h */,
+				718433A1161732A9004599F4 /* Range.cpp */,
+				718433A2161732A9004599F4 /* Range.h */,
+				718433A5161732A9004599F4 /* types.h */,
+			);
+			name = Attributes;
+			sourceTree = "<group>";
+		};
+		710B9DE8161733E00009ACCE /* D3CEHelper */ = {
+			isa = PBXGroup;
+			children = (
+				710B9DE9161734020009ACCE /* D3CEHelper.h */,
+				710B9DEA161734020009ACCE /* D3CEHelper.mm */,
+			);
+			name = D3CEHelper;
+			sourceTree = "<group>";
+		};
+		718433551617328A004599F4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				718433561617328A004599F4 /* d3.sqlite */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7184335916173294004599F4 /* d3ce */ = {
+			isa = PBXGroup;
+			children = (
+				710B9DE1161732D10009ACCE /* Expressions */,
+				718433D4161732AB004599F4 /* Modifiers */,
+				710B9DE3161733010009ACCE /* Heroes */,
+				710B9DE41617331D0009ACCE /* Items */,
+				710B9DE51617333D0009ACCE /* Attributes */,
+				71AA5B3A1618D4880069EDB3 /* ItemSet */,
+				7184335A161732A9004599F4 /* Affix.cpp */,
+				7184335B161732A9004599F4 /* Affix.h */,
+				71843365161732A9004599F4 /* Engine.cpp */,
+				71843366161732A9004599F4 /* Engine.h */,
+				71843367161732A9004599F4 /* Entity.cpp */,
+				71843368161732A9004599F4 /* Entity.h */,
+				7184337F161732A9004599F4 /* Follower.cpp */,
+				71843380161732A9004599F4 /* Follower.h */,
+				7184339F161732A9004599F4 /* Party.cpp */,
+				718433A0161732A9004599F4 /* Party.h */,
+				718433A3161732A9004599F4 /* Skill.cpp */,
+				718433A4161732A9004599F4 /* Skill.h */,
+				7189BC5B16173736004CE480 /* d3ce.h */,
+			);
+			name = d3ce;
+			sourceTree = "<group>";
+		};
+		718433D4161732AB004599F4 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				71843389161732A9004599F4 /* Modifier.cpp */,
+				7184338A161732A9004599F4 /* Modifier.h */,
+				7184338B161732A9004599F4 /* ModifierAdd.cpp */,
+				7184338C161732A9004599F4 /* ModifierAdd.h */,
+				7184338D161732A9004599F4 /* ModifierPostBoost.cpp */,
+				7184338E161732A9004599F4 /* ModifierPostBoost.h */,
+				7184338F161732A9004599F4 /* ModifierPostDiv.cpp */,
+				71843390161732A9004599F4 /* ModifierPostDiv.h */,
+				71843391161732A9004599F4 /* ModifierPostMul.cpp */,
+				71843392161732A9004599F4 /* ModifierPostMul.h */,
+				71843393161732A9004599F4 /* ModifierPostReduce.cpp */,
+				71843394161732A9004599F4 /* ModifierPostReduce.h */,
+				71843395161732A9004599F4 /* ModifierPreAssign.cpp */,
+				71843396161732A9004599F4 /* ModifierPreAssign.h */,
+				71843397161732A9004599F4 /* ModifierPreMul.cpp */,
+				71843398161732A9004599F4 /* ModifierPreMul.h */,
+				71843399161732A9004599F4 /* ModifierSub.cpp */,
+				7184339A161732A9004599F4 /* ModifierSub.h */,
+			);
+			name = Modifiers;
+			sourceTree = "<group>";
+		};
+		71AA5B3A1618D4880069EDB3 /* ItemSet */ = {
+			isa = PBXGroup;
+			children = (
+				71AA5B321618D47E0069EDB3 /* ItemSet.cpp */,
+				71AA5B331618D47E0069EDB3 /* ItemSet.h */,
+				71AA5B341618D47E0069EDB3 /* SetBonus.cpp */,
+				71AA5B351618D47E0069EDB3 /* SetBonus.h */,
+			);
+			name = ItemSet;
 			sourceTree = "<group>";
 		};
 		71ACC42E15FBE26D00544EBE /* SkillsViewController */ = {
@@ -1079,7 +1388,7 @@
 			isa = PBXGroup;
 			children = (
 				71BF0B9E15F9624600CDEA4A /* HeroViewController.h */,
-				71BF0B9F15F9624600CDEA4A /* HeroViewController.m */,
+				71BF0B9F15F9624600CDEA4A /* HeroViewController.mm */,
 			);
 			name = HeroViewController;
 			sourceTree = "<group>";
@@ -1092,6 +1401,15 @@
 				71BF0BAF15F9686F00CDEA4A /* GearView.m */,
 			);
 			name = GearView;
+			sourceTree = "<group>";
+		};
+		71CDB8AA161849D8005FD1C3 /* SummaryCellView */ = {
+			isa = PBXGroup;
+			children = (
+				71CDB8AC161849F2005FD1C3 /* SummaryCellView.h */,
+				71CDB8AD161849F2005FD1C3 /* SummaryCellView.m */,
+			);
+			name = SummaryCellView;
 			sourceTree = "<group>";
 		};
 		71D2BAC315FB99BD007AFDC3 /* AttributeCellView */ = {
@@ -1353,6 +1671,7 @@
 				128E7AFA1613020000E19EE3 /* gearWizardFemale.png in Resources */,
 				128E7AFB1613020000E19EE3 /* gearWizardMale-iPad.png in Resources */,
 				128E7AFC1613020000E19EE3 /* gearWizardMale.png in Resources */,
+				718433571617328A004599F4 /* d3.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1364,7 +1683,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				12FB054915F7806700AE78E4 /* main.m in Sources */,
-				12FB054D15F7806700AE78E4 /* AppDelegate.m in Sources */,
+				12FB054D15F7806700AE78E4 /* AppDelegate.mm in Sources */,
 				12FB05D915F780CB00AE78E4 /* NSObject+SBJSON.m in Sources */,
 				12FB05DA15F780CB00AE78E4 /* NSString+SBJSON.m in Sources */,
 				12FB05DB15F780CB00AE78E4 /* SBJSON.m in Sources */,
@@ -1374,7 +1693,7 @@
 				12FB05E615F780CB00AE78E4 /* UITableViewCell+Nib.m in Sources */,
 				12FB05F015F780ED00AE78E4 /* D3APISession.m in Sources */,
 				12FB05F715F7810100AE78E4 /* HeroCellView.m in Sources */,
-				12FB05F915F7810100AE78E4 /* ProfilesViewController.m in Sources */,
+				12FB05F915F7810100AE78E4 /* ProfilesViewController.mm in Sources */,
 				12FB061915F781EF00AE78E4 /* EUActivityView.m in Sources */,
 				12FB061A15F781EF00AE78E4 /* EUOperation.m in Sources */,
 				12FB061B15F781EF00AE78E4 /* EUOperationQueue.m in Sources */,
@@ -1388,11 +1707,11 @@
 				71B0AA1D15F924EA0079F9B9 /* NSDictionary+DeepMutableCopy.m in Sources */,
 				71B0AA2015F925F20079F9B9 /* NSArray+DeepMutableCopy.m in Sources */,
 				71B0AA2715F934F40079F9B9 /* UIColor+NSNumber.m in Sources */,
-				71BF0BA115F9624600CDEA4A /* HeroViewController.m in Sources */,
+				71BF0BA115F9624600CDEA4A /* HeroViewController.mm in Sources */,
 				71BF0BB015F9686F00CDEA4A /* GearView.m in Sources */,
 				12A76F3915F9C0E600B2E9D4 /* SocketView.m in Sources */,
 				12A76F3C15F9CF3500B2E9D4 /* UIAlertView+Error.m in Sources */,
-				12A76F5E15FA22E000B2E9D4 /* GearInfoViewController.m in Sources */,
+				12A76F5E15FA22E000B2E9D4 /* GearInfoViewController.mm in Sources */,
 				71D8392B15FA7962002AD951 /* WeaponBaseInfoView.m in Sources */,
 				71D8394415FA831B002AD951 /* AttributesHeaderView.m in Sources */,
 				71D2BAC615FB99D7007AFDC3 /* AttributeCellView.m in Sources */,
@@ -1411,9 +1730,54 @@
 				1232F2EB1600670D00EBB2BF /* UIActionSheet+Block.m in Sources */,
 				1232F2EC1600670D00EBB2BF /* UIAlertView+Block.m in Sources */,
 				12736E9F16033CC4009D3263 /* CollapsableTableView.m in Sources */,
-				128F22F51608760E0045B36F /* GearViewController.m in Sources */,
-				128F22FE160885F30045B36F /* AttributesViewController.m in Sources */,
-				128F23161608A0BE0045B36F /* GearAttributesViewController.m in Sources */,
+				128F22F51608760E0045B36F /* GearViewController.mm in Sources */,
+				128F22FE160885F30045B36F /* AttributesViewController.mm in Sources */,
+				128F23161608A0BE0045B36F /* GearAttributesViewController.mm in Sources */,
+				718433AC161732A9004599F4 /* Affix.cpp in Sources */,
+				718433AD161732A9004599F4 /* Armor.cpp in Sources */,
+				718433AE161732A9004599F4 /* Attribute.cpp in Sources */,
+				718433AF161732A9004599F4 /* Barbarian.cpp in Sources */,
+				718433B0161732A9004599F4 /* DemonHunter.cpp in Sources */,
+				718433B1161732A9004599F4 /* Engine.cpp in Sources */,
+				718433B2161732A9004599F4 /* Entity.cpp in Sources */,
+				718433B3161732A9004599F4 /* Environment.cpp in Sources */,
+				718433B4161732A9004599F4 /* Expression.cpp in Sources */,
+				718433B5161732A9004599F4 /* ExpressionAdd.cpp in Sources */,
+				718433B6161732A9004599F4 /* ExpressionAttribute.cpp in Sources */,
+				718433B7161732A9004599F4 /* ExpressionConst.cpp in Sources */,
+				718433B8161732A9004599F4 /* ExpressionDiv.cpp in Sources */,
+				718433B9161732A9004599F4 /* ExpressionEq.cpp in Sources */,
+				718433BA161732A9004599F4 /* ExpressionIf.cpp in Sources */,
+				718433BB161732A9004599F4 /* ExpressionMax.cpp in Sources */,
+				718433BC161732A9004599F4 /* ExpressionMin.cpp in Sources */,
+				718433BD161732A9004599F4 /* ExpressionSub.cpp in Sources */,
+				718433BE161732A9004599F4 /* Follower.cpp in Sources */,
+				718433BF161732A9004599F4 /* Gear.cpp in Sources */,
+				718433C0161732A9004599F4 /* Gem.cpp in Sources */,
+				718433C1161732A9004599F4 /* Hero.cpp in Sources */,
+				718433C2161732A9004599F4 /* Item.cpp in Sources */,
+				718433C3161732A9004599F4 /* Modifier.cpp in Sources */,
+				718433C4161732A9004599F4 /* ModifierAdd.cpp in Sources */,
+				718433C5161732A9004599F4 /* ModifierPostBoost.cpp in Sources */,
+				718433C6161732A9004599F4 /* ModifierPostDiv.cpp in Sources */,
+				718433C7161732A9004599F4 /* ModifierPostMul.cpp in Sources */,
+				718433C8161732A9004599F4 /* ModifierPostReduce.cpp in Sources */,
+				718433C9161732A9004599F4 /* ModifierPreAssign.cpp in Sources */,
+				718433CA161732A9004599F4 /* ModifierPreMul.cpp in Sources */,
+				718433CB161732A9004599F4 /* ModifierSub.cpp in Sources */,
+				718433CC161732A9004599F4 /* Monk.cpp in Sources */,
+				718433CD161732A9004599F4 /* OffHand.cpp in Sources */,
+				718433CE161732A9004599F4 /* Party.cpp in Sources */,
+				718433CF161732A9004599F4 /* Range.cpp in Sources */,
+				718433D0161732A9004599F4 /* Skill.cpp in Sources */,
+				718433D1161732A9004599F4 /* Weapon.cpp in Sources */,
+				718433D2161732A9004599F4 /* WitchDoctor.cpp in Sources */,
+				718433D3161732A9004599F4 /* Wizard.cpp in Sources */,
+				710B9DEB161734020009ACCE /* D3CEHelper.mm in Sources */,
+				71CDB8AE161849F2005FD1C3 /* SummaryCellView.m in Sources */,
+				71AA5B361618D47E0069EDB3 /* ExpressionMul.cpp in Sources */,
+				71AA5B371618D47E0069EDB3 /* ItemSet.cpp in Sources */,
+				71AA5B381618D47E0069EDB3 /* SetBonus.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

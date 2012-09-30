@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "D3CEHelper.h"
 
 @interface GearInfoViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *nameFrameImageView;
@@ -18,5 +19,6 @@
 @property (nonatomic, strong) NSDictionary* hero;
 @property (nonatomic, strong) NSDictionary* gear;
 @property (nonatomic, strong) NSString* slot;
+@property (nonatomic, assign) d3ce::Party* party;
 
 @end

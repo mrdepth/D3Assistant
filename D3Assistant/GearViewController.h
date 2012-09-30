@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "GearView.h"
+#import "D3CEHelper.h"
 
 @interface GearViewController : UIViewController<GearViewDelegate>
 @property (weak, nonatomic) IBOutlet GearView *headView;
@@ -28,6 +29,8 @@
 
 @property (nonatomic, strong, readonly) NSDictionary* hero;
 @property (nonatomic, assign, readonly) BOOL fallen;
+@property (nonatomic, strong) NSDictionary* gears;
+@property (nonatomic, assign) d3ce::Party* party;
 
 - (void) setHero:(NSDictionary *)hero fallen:(BOOL) fallen;
 

@@ -11,6 +11,7 @@
 #import "SkillsViewController.h"
 #import "GearViewController.h"
 #import "GearAttributesViewController.h"
+#import "D3CEHelper.h"
 
 @interface HeroViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UISegmentedControl *sectionsControl;
