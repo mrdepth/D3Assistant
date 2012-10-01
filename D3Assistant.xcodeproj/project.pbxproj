@@ -177,7 +177,7 @@
 		12FB05E615F780CB00AE78E4 /* UITableViewCell+Nib.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB05C915F780CB00AE78E4 /* UITableViewCell+Nib.m */; };
 		12FB05F015F780ED00AE78E4 /* D3APISession.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB05EF15F780ED00AE78E4 /* D3APISession.m */; };
 		12FB05F715F7810100AE78E4 /* HeroCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB05F215F7810100AE78E4 /* HeroCellView.m */; };
-		12FB05F915F7810100AE78E4 /* ProfilesViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 12FB05F515F7810100AE78E4 /* ProfilesViewController.mm */; };
+		12FB05F915F7810100AE78E4 /* ProfilesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB05F515F7810100AE78E4 /* ProfilesViewController.m */; };
 		12FB061915F781EF00AE78E4 /* EUActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB061115F781EF00AE78E4 /* EUActivityView.m */; };
 		12FB061A15F781EF00AE78E4 /* EUOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB061315F781EF00AE78E4 /* EUOperation.m */; };
 		12FB061B15F781EF00AE78E4 /* EUOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB061515F781EF00AE78E4 /* EUOperationQueue.m */; };
@@ -467,7 +467,7 @@
 		12FB05F115F7810100AE78E4 /* HeroCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroCellView.h; sourceTree = "<group>"; };
 		12FB05F215F7810100AE78E4 /* HeroCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeroCellView.m; sourceTree = "<group>"; };
 		12FB05F415F7810100AE78E4 /* ProfilesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfilesViewController.h; sourceTree = "<group>"; };
-		12FB05F515F7810100AE78E4 /* ProfilesViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ProfilesViewController.mm; sourceTree = "<group>"; };
+		12FB05F515F7810100AE78E4 /* ProfilesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfilesViewController.m; sourceTree = "<group>"; };
 		12FB061015F781EF00AE78E4 /* EUActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUActivityView.h; sourceTree = "<group>"; };
 		12FB061115F781EF00AE78E4 /* EUActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EUActivityView.m; sourceTree = "<group>"; };
 		12FB061215F781EF00AE78E4 /* EUOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUOperation.h; sourceTree = "<group>"; };
@@ -1127,7 +1127,7 @@
 				12FB05FC15F7811200AE78E4 /* Cells */,
 				12FB062115F78C5400AE78E4 /* Views */,
 				12FB05F415F7810100AE78E4 /* ProfilesViewController.h */,
-				12FB05F515F7810100AE78E4 /* ProfilesViewController.mm */,
+				12FB05F515F7810100AE78E4 /* ProfilesViewController.m */,
 			);
 			name = ProfilesViewController;
 			sourceTree = "<group>";
@@ -1693,7 +1693,7 @@
 				12FB05E615F780CB00AE78E4 /* UITableViewCell+Nib.m in Sources */,
 				12FB05F015F780ED00AE78E4 /* D3APISession.m in Sources */,
 				12FB05F715F7810100AE78E4 /* HeroCellView.m in Sources */,
-				12FB05F915F7810100AE78E4 /* ProfilesViewController.mm in Sources */,
+				12FB05F915F7810100AE78E4 /* ProfilesViewController.m in Sources */,
 				12FB061915F781EF00AE78E4 /* EUActivityView.m in Sources */,
 				12FB061A15F781EF00AE78E4 /* EUOperation.m in Sources */,
 				12FB061B15F781EF00AE78E4 /* EUOperationQueue.m in Sources */,
