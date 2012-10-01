@@ -14,6 +14,7 @@
 + (d3ce::Engine*) newEgine;
 + (d3ce::Hero*) addHeroFromDictionary:(NSDictionary*) hero toParty:(d3ce::Party*) party;
 + (d3ce::Gear*) addItemFromDictionary:(NSDictionary*) item toHero:(d3ce::Hero*) hero slot:(d3ce::Item::Slot) slot replaceExisting:(BOOL) replaceExisting;
++ (d3ce::Skill*) addSkillFromDictionary:(NSDictionary*) skill toHero:(d3ce::Hero*) hero;
 + (d3ce::Item::Slot) slotFromString:(NSString*) string;
 
 @end

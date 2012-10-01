@@ -229,6 +229,11 @@
 				
 				operation.progress = (float) ++i / (float) n;
 			}
+			
+//			for (NSDictionary* skill in [self.hero valueForKeyPath:@"skills.active"])
+//				[D3CEHelper addSkillFromDictionary:skill toHero:d3ceHero];
+			for (NSDictionary* skill in [self.hero valueForKeyPath:@"skills.passive"])
+				[D3CEHelper addSkillFromDictionary:skill toHero:d3ceHero];
 		}
 	}];
 	

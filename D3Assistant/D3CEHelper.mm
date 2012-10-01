@@ -66,6 +66,16 @@
 	return gear;
 }
 
++ (d3ce::Skill*) addSkillFromDictionary:(NSDictionary*) skill toHero:(d3ce::Hero*) hero {
+	NSString* skillName = [skill valueForKeyPath:@"rune.slug"];
+	if (!skillName)
+		skillName = [skill valueForKeyPath:@"skill.slug"];
+	if (skillName)
+		return hero->addSkill([skillName cStringUsingEncoding:NSUTF8StringEncoding]);
+	else
+		return NULL;
+}
+
 + (d3ce::Item::Slot) slotFromString:(NSString*) string {
 	if ([string isEqualToString:@"head"])
 		return d3ce::Item::SlotHead;

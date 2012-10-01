@@ -133,7 +133,7 @@
 		static NSString *CellIdentifier = @"CareerCellView";
 		CareerCellView *cell = (CareerCellView*) [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 		if (!cell)
-			cell = [CareerCellView cellWithNibName:@"CareerCellView" bundle:nil reuseIdentifier:CellIdentifier];
+			cell = (CareerCellView*) [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 		NSDictionary* profile = tableView == self.searchDisplayController.searchResultsTableView ? [self.searchResults objectAtIndex:indexPath.section] : [self.profiles objectAtIndex:indexPath.section];
 		cell.progressionHCView.hardcore = YES;
 
@@ -145,7 +145,7 @@
 		static NSString *CellIdentifier = @"HeroCellView";
 		HeroCellView *cell = (HeroCellView*) [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 		if (!cell)
-			cell = [HeroCellView cellWithNibName:@"HeroCellView" bundle:nil reuseIdentifier:CellIdentifier];
+			cell = (HeroCellView*) [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 		NSDictionary* profile = tableView == self.searchDisplayController.searchResultsTableView ? [self.searchResults objectAtIndex:indexPath.section] : [self.profiles objectAtIndex:indexPath.section];
 		NSArray* array = [profile valueForKey:@"heroes"];
 		NSInteger count = [array count];

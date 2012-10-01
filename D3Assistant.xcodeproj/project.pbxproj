@@ -104,23 +104,10 @@
 		12736E9F16033CC4009D3263 /* CollapsableTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12736E9E16033CC4009D3263 /* CollapsableTableView.m */; };
 		128E7AD21613020000E19EE3 /* gearBarbarian-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7AA71613020000E19EE3 /* gearBarbarian-iPad.png */; };
 		128E7AD31613020000E19EE3 /* gearBarbarian.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7AA81613020000E19EE3 /* gearBarbarian.png */; };
-		128E7AD41613020000E19EE3 /* gearBarbarianFemale-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7AA91613020000E19EE3 /* gearBarbarianFemale-iPad.png */; };
-		128E7AD51613020000E19EE3 /* gearBarbarianFemale.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7AAA1613020000E19EE3 /* gearBarbarianFemale.png */; };
-		128E7AD61613020000E19EE3 /* gearBarbarianMale-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7AAB1613020000E19EE3 /* gearBarbarianMale-iPad.png */; };
-		128E7AD71613020000E19EE3 /* gearBarbarianMale.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7AAC1613020000E19EE3 /* gearBarbarianMale.png */; };
 		128E7AD81613020000E19EE3 /* gearDemonHunter-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7AAD1613020000E19EE3 /* gearDemonHunter-iPad.png */; };
 		128E7AD91613020000E19EE3 /* gearDemonHunter.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7AAE1613020000E19EE3 /* gearDemonHunter.png */; };
-		128E7ADA1613020000E19EE3 /* gearDemonHunterFemale-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7AAF1613020000E19EE3 /* gearDemonHunterFemale-iPad.png */; };
-		128E7ADB1613020000E19EE3 /* gearDemonHunterFemale.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7AB01613020000E19EE3 /* gearDemonHunterFemale.png */; };
-		128E7ADC1613020000E19EE3 /* gearDemonHunterMale-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7AB11613020000E19EE3 /* gearDemonHunterMale-iPad.png */; };
-		128E7ADD1613020000E19EE3 /* gearDemonHunterMale.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7AB21613020000E19EE3 /* gearDemonHunterMale.png */; };
 		128E7ADE1613020000E19EE3 /* gearMonk-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7AB31613020000E19EE3 /* gearMonk-iPad.png */; };
 		128E7ADF1613020000E19EE3 /* gearMonk.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7AB41613020000E19EE3 /* gearMonk.png */; };
-		128E7AE01613020000E19EE3 /* gearMonkFemale-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7AB51613020000E19EE3 /* gearMonkFemale-iPad.png */; };
-		128E7AE11613020000E19EE3 /* gearMonkFemale.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7AB61613020000E19EE3 /* gearMonkFemale.png */; };
-		128E7AE21613020000E19EE3 /* gearMonkMale-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7AB71613020000E19EE3 /* gearMonkMale-iPad.png */; };
-		128E7AE31613020000E19EE3 /* gearMonkMale.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7AB81613020000E19EE3 /* gearMonkMale.png */; };
-		128E7AE41613020000E19EE3 /* gearView.psd in Resources */ = {isa = PBXBuildFile; fileRef = 128E7AB91613020000E19EE3 /* gearView.psd */; };
 		128E7AE51613020000E19EE3 /* gearViewBracers.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7ABA1613020000E19EE3 /* gearViewBracers.png */; };
 		128E7AE61613020000E19EE3 /* gearViewFeet.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7ABB1613020000E19EE3 /* gearViewFeet.png */; };
 		128E7AE71613020000E19EE3 /* gearViewFinger.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7ABC1613020000E19EE3 /* gearViewFinger.png */; };
@@ -135,16 +122,8 @@
 		128E7AF01613020000E19EE3 /* gearViewWaist.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7AC51613020000E19EE3 /* gearViewWaist.png */; };
 		128E7AF11613020000E19EE3 /* gearWitchDoctor-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7AC61613020000E19EE3 /* gearWitchDoctor-iPad.png */; };
 		128E7AF21613020000E19EE3 /* gearWitchDoctor.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7AC71613020000E19EE3 /* gearWitchDoctor.png */; };
-		128E7AF31613020000E19EE3 /* gearWitchDoctorFemale-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7AC81613020000E19EE3 /* gearWitchDoctorFemale-iPad.png */; };
-		128E7AF41613020000E19EE3 /* gearWitchDoctorFemale.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7AC91613020000E19EE3 /* gearWitchDoctorFemale.png */; };
-		128E7AF51613020000E19EE3 /* gearWitchDoctorMale-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7ACA1613020000E19EE3 /* gearWitchDoctorMale-iPad.png */; };
-		128E7AF61613020000E19EE3 /* gearWitchDoctorMale.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7ACB1613020000E19EE3 /* gearWitchDoctorMale.png */; };
 		128E7AF71613020000E19EE3 /* gearWizard-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7ACC1613020000E19EE3 /* gearWizard-iPad.png */; };
 		128E7AF81613020000E19EE3 /* gearWizard.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7ACD1613020000E19EE3 /* gearWizard.png */; };
-		128E7AF91613020000E19EE3 /* gearWizardFemale-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7ACE1613020000E19EE3 /* gearWizardFemale-iPad.png */; };
-		128E7AFA1613020000E19EE3 /* gearWizardFemale.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7ACF1613020000E19EE3 /* gearWizardFemale.png */; };
-		128E7AFB1613020000E19EE3 /* gearWizardMale-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7AD01613020000E19EE3 /* gearWizardMale-iPad.png */; };
-		128E7AFC1613020000E19EE3 /* gearWizardMale.png in Resources */ = {isa = PBXBuildFile; fileRef = 128E7AD11613020000E19EE3 /* gearWizardMale.png */; };
 		128F22F51608760E0045B36F /* GearViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 128F22F41608760E0045B36F /* GearViewController.mm */; };
 		128F22FE160885F30045B36F /* AttributesViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 128F22FD160885F30045B36F /* AttributesViewController.mm */; };
 		128F23161608A0BE0045B36F /* GearAttributesViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 128F23151608A0BE0045B36F /* GearAttributesViewController.mm */; };
@@ -177,7 +156,7 @@
 		12FB05E615F780CB00AE78E4 /* UITableViewCell+Nib.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB05C915F780CB00AE78E4 /* UITableViewCell+Nib.m */; };
 		12FB05F015F780ED00AE78E4 /* D3APISession.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB05EF15F780ED00AE78E4 /* D3APISession.m */; };
 		12FB05F715F7810100AE78E4 /* HeroCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB05F215F7810100AE78E4 /* HeroCellView.m */; };
-		12FB05F915F7810100AE78E4 /* ProfilesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB05F515F7810100AE78E4 /* ProfilesViewController.m */; };
+		12FB05F915F7810100AE78E4 /* ProfilesViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 12FB05F515F7810100AE78E4 /* ProfilesViewController.mm */; };
 		12FB061915F781EF00AE78E4 /* EUActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB061115F781EF00AE78E4 /* EUActivityView.m */; };
 		12FB061A15F781EF00AE78E4 /* EUOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB061315F781EF00AE78E4 /* EUOperation.m */; };
 		12FB061B15F781EF00AE78E4 /* EUOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB061515F781EF00AE78E4 /* EUOperationQueue.m */; };
@@ -368,23 +347,10 @@
 		12736E9E16033CC4009D3263 /* CollapsableTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollapsableTableView.m; sourceTree = "<group>"; };
 		128E7AA71613020000E19EE3 /* gearBarbarian-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gearBarbarian-iPad.png"; sourceTree = "<group>"; };
 		128E7AA81613020000E19EE3 /* gearBarbarian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearBarbarian.png; sourceTree = "<group>"; };
-		128E7AA91613020000E19EE3 /* gearBarbarianFemale-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gearBarbarianFemale-iPad.png"; sourceTree = "<group>"; };
-		128E7AAA1613020000E19EE3 /* gearBarbarianFemale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearBarbarianFemale.png; sourceTree = "<group>"; };
-		128E7AAB1613020000E19EE3 /* gearBarbarianMale-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gearBarbarianMale-iPad.png"; sourceTree = "<group>"; };
-		128E7AAC1613020000E19EE3 /* gearBarbarianMale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearBarbarianMale.png; sourceTree = "<group>"; };
 		128E7AAD1613020000E19EE3 /* gearDemonHunter-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gearDemonHunter-iPad.png"; sourceTree = "<group>"; };
 		128E7AAE1613020000E19EE3 /* gearDemonHunter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearDemonHunter.png; sourceTree = "<group>"; };
-		128E7AAF1613020000E19EE3 /* gearDemonHunterFemale-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gearDemonHunterFemale-iPad.png"; sourceTree = "<group>"; };
-		128E7AB01613020000E19EE3 /* gearDemonHunterFemale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearDemonHunterFemale.png; sourceTree = "<group>"; };
-		128E7AB11613020000E19EE3 /* gearDemonHunterMale-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gearDemonHunterMale-iPad.png"; sourceTree = "<group>"; };
-		128E7AB21613020000E19EE3 /* gearDemonHunterMale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearDemonHunterMale.png; sourceTree = "<group>"; };
 		128E7AB31613020000E19EE3 /* gearMonk-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gearMonk-iPad.png"; sourceTree = "<group>"; };
 		128E7AB41613020000E19EE3 /* gearMonk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearMonk.png; sourceTree = "<group>"; };
-		128E7AB51613020000E19EE3 /* gearMonkFemale-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gearMonkFemale-iPad.png"; sourceTree = "<group>"; };
-		128E7AB61613020000E19EE3 /* gearMonkFemale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearMonkFemale.png; sourceTree = "<group>"; };
-		128E7AB71613020000E19EE3 /* gearMonkMale-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gearMonkMale-iPad.png"; sourceTree = "<group>"; };
-		128E7AB81613020000E19EE3 /* gearMonkMale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearMonkMale.png; sourceTree = "<group>"; };
-		128E7AB91613020000E19EE3 /* gearView.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = gearView.psd; sourceTree = "<group>"; };
 		128E7ABA1613020000E19EE3 /* gearViewBracers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearViewBracers.png; sourceTree = "<group>"; };
 		128E7ABB1613020000E19EE3 /* gearViewFeet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearViewFeet.png; sourceTree = "<group>"; };
 		128E7ABC1613020000E19EE3 /* gearViewFinger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearViewFinger.png; sourceTree = "<group>"; };
@@ -399,16 +365,8 @@
 		128E7AC51613020000E19EE3 /* gearViewWaist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearViewWaist.png; sourceTree = "<group>"; };
 		128E7AC61613020000E19EE3 /* gearWitchDoctor-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gearWitchDoctor-iPad.png"; sourceTree = "<group>"; };
 		128E7AC71613020000E19EE3 /* gearWitchDoctor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearWitchDoctor.png; sourceTree = "<group>"; };
-		128E7AC81613020000E19EE3 /* gearWitchDoctorFemale-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gearWitchDoctorFemale-iPad.png"; sourceTree = "<group>"; };
-		128E7AC91613020000E19EE3 /* gearWitchDoctorFemale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearWitchDoctorFemale.png; sourceTree = "<group>"; };
-		128E7ACA1613020000E19EE3 /* gearWitchDoctorMale-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gearWitchDoctorMale-iPad.png"; sourceTree = "<group>"; };
-		128E7ACB1613020000E19EE3 /* gearWitchDoctorMale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearWitchDoctorMale.png; sourceTree = "<group>"; };
 		128E7ACC1613020000E19EE3 /* gearWizard-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gearWizard-iPad.png"; sourceTree = "<group>"; };
 		128E7ACD1613020000E19EE3 /* gearWizard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearWizard.png; sourceTree = "<group>"; };
-		128E7ACE1613020000E19EE3 /* gearWizardFemale-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gearWizardFemale-iPad.png"; sourceTree = "<group>"; };
-		128E7ACF1613020000E19EE3 /* gearWizardFemale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearWizardFemale.png; sourceTree = "<group>"; };
-		128E7AD01613020000E19EE3 /* gearWizardMale-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gearWizardMale-iPad.png"; sourceTree = "<group>"; };
-		128E7AD11613020000E19EE3 /* gearWizardMale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearWizardMale.png; sourceTree = "<group>"; };
 		128F22F31608760E0045B36F /* GearViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GearViewController.h; sourceTree = "<group>"; };
 		128F22F41608760E0045B36F /* GearViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GearViewController.mm; sourceTree = "<group>"; };
 		128F22FC160885F30045B36F /* AttributesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributesViewController.h; sourceTree = "<group>"; };
@@ -467,7 +425,7 @@
 		12FB05F115F7810100AE78E4 /* HeroCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroCellView.h; sourceTree = "<group>"; };
 		12FB05F215F7810100AE78E4 /* HeroCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeroCellView.m; sourceTree = "<group>"; };
 		12FB05F415F7810100AE78E4 /* ProfilesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfilesViewController.h; sourceTree = "<group>"; };
-		12FB05F515F7810100AE78E4 /* ProfilesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfilesViewController.m; sourceTree = "<group>"; };
+		12FB05F515F7810100AE78E4 /* ProfilesViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ProfilesViewController.mm; sourceTree = "<group>"; };
 		12FB061015F781EF00AE78E4 /* EUActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUActivityView.h; sourceTree = "<group>"; };
 		12FB061115F781EF00AE78E4 /* EUActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EUActivityView.m; sourceTree = "<group>"; };
 		12FB061215F781EF00AE78E4 /* EUOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUOperation.h; sourceTree = "<group>"; };
@@ -812,23 +770,10 @@
 			children = (
 				128E7AA71613020000E19EE3 /* gearBarbarian-iPad.png */,
 				128E7AA81613020000E19EE3 /* gearBarbarian.png */,
-				128E7AA91613020000E19EE3 /* gearBarbarianFemale-iPad.png */,
-				128E7AAA1613020000E19EE3 /* gearBarbarianFemale.png */,
-				128E7AAB1613020000E19EE3 /* gearBarbarianMale-iPad.png */,
-				128E7AAC1613020000E19EE3 /* gearBarbarianMale.png */,
 				128E7AAD1613020000E19EE3 /* gearDemonHunter-iPad.png */,
 				128E7AAE1613020000E19EE3 /* gearDemonHunter.png */,
-				128E7AAF1613020000E19EE3 /* gearDemonHunterFemale-iPad.png */,
-				128E7AB01613020000E19EE3 /* gearDemonHunterFemale.png */,
-				128E7AB11613020000E19EE3 /* gearDemonHunterMale-iPad.png */,
-				128E7AB21613020000E19EE3 /* gearDemonHunterMale.png */,
 				128E7AB31613020000E19EE3 /* gearMonk-iPad.png */,
 				128E7AB41613020000E19EE3 /* gearMonk.png */,
-				128E7AB51613020000E19EE3 /* gearMonkFemale-iPad.png */,
-				128E7AB61613020000E19EE3 /* gearMonkFemale.png */,
-				128E7AB71613020000E19EE3 /* gearMonkMale-iPad.png */,
-				128E7AB81613020000E19EE3 /* gearMonkMale.png */,
-				128E7AB91613020000E19EE3 /* gearView.psd */,
 				128E7ABA1613020000E19EE3 /* gearViewBracers.png */,
 				128E7ABB1613020000E19EE3 /* gearViewFeet.png */,
 				128E7ABC1613020000E19EE3 /* gearViewFinger.png */,
@@ -843,16 +788,8 @@
 				128E7AC51613020000E19EE3 /* gearViewWaist.png */,
 				128E7AC61613020000E19EE3 /* gearWitchDoctor-iPad.png */,
 				128E7AC71613020000E19EE3 /* gearWitchDoctor.png */,
-				128E7AC81613020000E19EE3 /* gearWitchDoctorFemale-iPad.png */,
-				128E7AC91613020000E19EE3 /* gearWitchDoctorFemale.png */,
-				128E7ACA1613020000E19EE3 /* gearWitchDoctorMale-iPad.png */,
-				128E7ACB1613020000E19EE3 /* gearWitchDoctorMale.png */,
 				128E7ACC1613020000E19EE3 /* gearWizard-iPad.png */,
 				128E7ACD1613020000E19EE3 /* gearWizard.png */,
-				128E7ACE1613020000E19EE3 /* gearWizardFemale-iPad.png */,
-				128E7ACF1613020000E19EE3 /* gearWizardFemale.png */,
-				128E7AD01613020000E19EE3 /* gearWizardMale-iPad.png */,
-				128E7AD11613020000E19EE3 /* gearWizardMale.png */,
 			);
 			path = gear;
 			sourceTree = "<group>";
@@ -1127,7 +1064,7 @@
 				12FB05FC15F7811200AE78E4 /* Cells */,
 				12FB062115F78C5400AE78E4 /* Views */,
 				12FB05F415F7810100AE78E4 /* ProfilesViewController.h */,
-				12FB05F515F7810100AE78E4 /* ProfilesViewController.m */,
+				12FB05F515F7810100AE78E4 /* ProfilesViewController.mm */,
 			);
 			name = ProfilesViewController;
 			sourceTree = "<group>";
@@ -1630,23 +1567,10 @@
 				12ACA3A11609BFCA0086ACEE /* MainStoryboard.storyboard in Resources */,
 				128E7AD21613020000E19EE3 /* gearBarbarian-iPad.png in Resources */,
 				128E7AD31613020000E19EE3 /* gearBarbarian.png in Resources */,
-				128E7AD41613020000E19EE3 /* gearBarbarianFemale-iPad.png in Resources */,
-				128E7AD51613020000E19EE3 /* gearBarbarianFemale.png in Resources */,
-				128E7AD61613020000E19EE3 /* gearBarbarianMale-iPad.png in Resources */,
-				128E7AD71613020000E19EE3 /* gearBarbarianMale.png in Resources */,
 				128E7AD81613020000E19EE3 /* gearDemonHunter-iPad.png in Resources */,
 				128E7AD91613020000E19EE3 /* gearDemonHunter.png in Resources */,
-				128E7ADA1613020000E19EE3 /* gearDemonHunterFemale-iPad.png in Resources */,
-				128E7ADB1613020000E19EE3 /* gearDemonHunterFemale.png in Resources */,
-				128E7ADC1613020000E19EE3 /* gearDemonHunterMale-iPad.png in Resources */,
-				128E7ADD1613020000E19EE3 /* gearDemonHunterMale.png in Resources */,
 				128E7ADE1613020000E19EE3 /* gearMonk-iPad.png in Resources */,
 				128E7ADF1613020000E19EE3 /* gearMonk.png in Resources */,
-				128E7AE01613020000E19EE3 /* gearMonkFemale-iPad.png in Resources */,
-				128E7AE11613020000E19EE3 /* gearMonkFemale.png in Resources */,
-				128E7AE21613020000E19EE3 /* gearMonkMale-iPad.png in Resources */,
-				128E7AE31613020000E19EE3 /* gearMonkMale.png in Resources */,
-				128E7AE41613020000E19EE3 /* gearView.psd in Resources */,
 				128E7AE51613020000E19EE3 /* gearViewBracers.png in Resources */,
 				128E7AE61613020000E19EE3 /* gearViewFeet.png in Resources */,
 				128E7AE71613020000E19EE3 /* gearViewFinger.png in Resources */,
@@ -1661,16 +1585,8 @@
 				128E7AF01613020000E19EE3 /* gearViewWaist.png in Resources */,
 				128E7AF11613020000E19EE3 /* gearWitchDoctor-iPad.png in Resources */,
 				128E7AF21613020000E19EE3 /* gearWitchDoctor.png in Resources */,
-				128E7AF31613020000E19EE3 /* gearWitchDoctorFemale-iPad.png in Resources */,
-				128E7AF41613020000E19EE3 /* gearWitchDoctorFemale.png in Resources */,
-				128E7AF51613020000E19EE3 /* gearWitchDoctorMale-iPad.png in Resources */,
-				128E7AF61613020000E19EE3 /* gearWitchDoctorMale.png in Resources */,
 				128E7AF71613020000E19EE3 /* gearWizard-iPad.png in Resources */,
 				128E7AF81613020000E19EE3 /* gearWizard.png in Resources */,
-				128E7AF91613020000E19EE3 /* gearWizardFemale-iPad.png in Resources */,
-				128E7AFA1613020000E19EE3 /* gearWizardFemale.png in Resources */,
-				128E7AFB1613020000E19EE3 /* gearWizardMale-iPad.png in Resources */,
-				128E7AFC1613020000E19EE3 /* gearWizardMale.png in Resources */,
 				718433571617328A004599F4 /* d3.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1693,7 +1609,7 @@
 				12FB05E615F780CB00AE78E4 /* UITableViewCell+Nib.m in Sources */,
 				12FB05F015F780ED00AE78E4 /* D3APISession.m in Sources */,
 				12FB05F715F7810100AE78E4 /* HeroCellView.m in Sources */,
-				12FB05F915F7810100AE78E4 /* ProfilesViewController.m in Sources */,
+				12FB05F915F7810100AE78E4 /* ProfilesViewController.mm in Sources */,
 				12FB061915F781EF00AE78E4 /* EUActivityView.m in Sources */,
 				12FB061A15F781EF00AE78E4 /* EUOperation.m in Sources */,
 				12FB061B15F781EF00AE78E4 /* EUOperationQueue.m in Sources */,
