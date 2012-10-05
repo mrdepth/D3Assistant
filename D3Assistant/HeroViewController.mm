@@ -232,15 +232,27 @@
 			
 //			for (NSDictionary* skill in [self.hero valueForKeyPath:@"skills.active"])
 //				[D3CEHelper addSkillFromDictionary:skill toHero:d3ceHero];
-			for (NSDictionary* skill in [self.hero valueForKeyPath:@"skills.passive"])
-				[D3CEHelper addSkillFromDictionary:skill toHero:d3ceHero];
+//			for (NSDictionary* skill in [self.hero valueForKeyPath:@"skills.passive"])
+//				[D3CEHelper addSkillFromDictionary:skill toHero:d3ceHero];
 		}
 	}];
 	
 	[operation setCompletionBlockInCurrentThread:^{
 		if (![operation isCancelled]) {
+			auto res = d3ceHero->getPrimaryResourceEffectiveMax();
+			auto regen = d3ceHero->getPrimaryResourceRegen();
+			auto dodge = d3ceHero->getDodgeChance();
+			auto defense = d3ceHero->getAverageDamageReduction();
+			auto aspd = d3ceHero->getAttackSpeed();
+			auto dps = d3ceHero->getDPS();
+			auto hero = d3ceHero;
+			auto critChance = d3ceHero->getCritChance();
+			auto critDamage = d3ceHero->getCritDamage();
+			auto intelligence = d3ceHero->getIntelligence();
+			auto wdps = d3ceHero->getItem(d3ce::Item::SlotMainHand)->getAttribute(d3ce::AttributeDPSID)->value();
 			self.gearViewController.gears = gears;
 			self.gearViewController.party = party;
+			
 		}
 	}];
 	

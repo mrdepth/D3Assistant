@@ -25,10 +25,12 @@
 		pHero = party->addHero(d3ce::ClassMaskBarbarian);
 	else if ([className isEqualToString:@"demon-hunter"])
 		pHero = party->addHero(d3ce::ClassMaskDemonHunter);
-	else if ([className isEqualToString:@"witch-doctoer"])
+	else if ([className isEqualToString:@"witch-doctor"])
 		pHero = party->addHero(d3ce::ClassMaskWitchDoctor);
-	pHero->setLevel([[hero valueForKey:@"level"] integerValue]);
-	pHero->setParagonLevel([[hero valueForKey:@"paragonLevel"] integerValue]);
+	if (pHero) {
+		pHero->setLevel([[hero valueForKey:@"level"] integerValue]);
+		pHero->setParagonLevel([[hero valueForKey:@"paragonLevel"] integerValue]);
+	}
 	return pHero;
 }
 

@@ -158,7 +158,7 @@
 		
 		d3ce::Hero* oldHero = self.party->getHeroes().front();
 		d3ce::Hero* newHero = alternateParty->getHeroes().front();
-
+		
 		d3ce::Range oldDPS = oldHero->getDPS();
 		d3ce::Range newDPS = newHero->getDPS();
 		float dpsDif = oldDPS.max - newDPS.max;

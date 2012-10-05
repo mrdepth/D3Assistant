@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		120B0525161EF2790067D102 /* ModifierPostAssign.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 120B0523161EF2790067D102 /* ModifierPostAssign.cpp */; };
 		121FD96215FF128600AA6947 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 121FD96115FF128600AA6947 /* MainWindow.xib */; };
 		121FD9E115FF201000AA6947 /* attributesBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 121FD97715FF201000AA6947 /* attributesBackground.png */; };
 		121FD9E215FF201000AA6947 /* attributesHeaderView.png in Resources */ = {isa = PBXBuildFile; fileRef = 121FD97815FF201000AA6947 /* attributesHeaderView.png */; };
@@ -176,15 +177,6 @@
 		718433B2161732A9004599F4 /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71843367161732A9004599F4 /* Entity.cpp */; };
 		718433B3161732A9004599F4 /* Environment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71843369161732A9004599F4 /* Environment.cpp */; };
 		718433B4161732A9004599F4 /* Expression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7184336B161732A9004599F4 /* Expression.cpp */; };
-		718433B5161732A9004599F4 /* ExpressionAdd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7184336D161732A9004599F4 /* ExpressionAdd.cpp */; };
-		718433B6161732A9004599F4 /* ExpressionAttribute.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7184336F161732A9004599F4 /* ExpressionAttribute.cpp */; };
-		718433B7161732A9004599F4 /* ExpressionConst.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71843371161732A9004599F4 /* ExpressionConst.cpp */; };
-		718433B8161732A9004599F4 /* ExpressionDiv.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71843373161732A9004599F4 /* ExpressionDiv.cpp */; };
-		718433B9161732A9004599F4 /* ExpressionEq.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71843375161732A9004599F4 /* ExpressionEq.cpp */; };
-		718433BA161732A9004599F4 /* ExpressionIf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71843377161732A9004599F4 /* ExpressionIf.cpp */; };
-		718433BB161732A9004599F4 /* ExpressionMax.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71843379161732A9004599F4 /* ExpressionMax.cpp */; };
-		718433BC161732A9004599F4 /* ExpressionMin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7184337B161732A9004599F4 /* ExpressionMin.cpp */; };
-		718433BD161732A9004599F4 /* ExpressionSub.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7184337D161732A9004599F4 /* ExpressionSub.cpp */; };
 		718433BE161732A9004599F4 /* Follower.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7184337F161732A9004599F4 /* Follower.cpp */; };
 		718433BF161732A9004599F4 /* Gear.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71843381161732A9004599F4 /* Gear.cpp */; };
 		718433C0161732A9004599F4 /* Gem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71843383161732A9004599F4 /* Gem.cpp */; };
@@ -207,7 +199,6 @@
 		718433D1161732A9004599F4 /* Weapon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 718433A6161732A9004599F4 /* Weapon.cpp */; };
 		718433D2161732A9004599F4 /* WitchDoctor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 718433A8161732A9004599F4 /* WitchDoctor.cpp */; };
 		718433D3161732A9004599F4 /* Wizard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 718433AA161732A9004599F4 /* Wizard.cpp */; };
-		71AA5B361618D47E0069EDB3 /* ExpressionMul.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71AA5B301618D47E0069EDB3 /* ExpressionMul.cpp */; };
 		71AA5B371618D47E0069EDB3 /* ItemSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71AA5B321618D47E0069EDB3 /* ItemSet.cpp */; };
 		71AA5B381618D47E0069EDB3 /* SetBonus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71AA5B341618D47E0069EDB3 /* SetBonus.cpp */; };
 		71ACC4DE15FBE62200544EBE /* SkillsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71ACC4DC15FBE62200544EBE /* SkillsViewController.m */; };
@@ -242,6 +233,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		120B0523161EF2790067D102 /* ModifierPostAssign.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ModifierPostAssign.cpp; path = ../../d3ce/d3ce/ModifierPostAssign.cpp; sourceTree = "<group>"; };
+		120B0524161EF2790067D102 /* ModifierPostAssign.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModifierPostAssign.h; path = ../../d3ce/d3ce/ModifierPostAssign.h; sourceTree = "<group>"; };
 		121FD96115FF128600AA6947 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		121FD97715FF201000AA6947 /* attributesBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = attributesBackground.png; sourceTree = "<group>"; };
 		121FD97815FF201000AA6947 /* attributesHeaderView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = attributesHeaderView.png; sourceTree = "<group>"; };
@@ -462,24 +455,6 @@
 		7184336A161732A9004599F4 /* Environment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Environment.h; path = ../../d3ce/d3ce/Environment.h; sourceTree = "<group>"; };
 		7184336B161732A9004599F4 /* Expression.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Expression.cpp; path = ../../d3ce/d3ce/Expression.cpp; sourceTree = "<group>"; };
 		7184336C161732A9004599F4 /* Expression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Expression.h; path = ../../d3ce/d3ce/Expression.h; sourceTree = "<group>"; };
-		7184336D161732A9004599F4 /* ExpressionAdd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ExpressionAdd.cpp; path = ../../d3ce/d3ce/ExpressionAdd.cpp; sourceTree = "<group>"; };
-		7184336E161732A9004599F4 /* ExpressionAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpressionAdd.h; path = ../../d3ce/d3ce/ExpressionAdd.h; sourceTree = "<group>"; };
-		7184336F161732A9004599F4 /* ExpressionAttribute.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ExpressionAttribute.cpp; path = ../../d3ce/d3ce/ExpressionAttribute.cpp; sourceTree = "<group>"; };
-		71843370161732A9004599F4 /* ExpressionAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpressionAttribute.h; path = ../../d3ce/d3ce/ExpressionAttribute.h; sourceTree = "<group>"; };
-		71843371161732A9004599F4 /* ExpressionConst.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ExpressionConst.cpp; path = ../../d3ce/d3ce/ExpressionConst.cpp; sourceTree = "<group>"; };
-		71843372161732A9004599F4 /* ExpressionConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpressionConst.h; path = ../../d3ce/d3ce/ExpressionConst.h; sourceTree = "<group>"; };
-		71843373161732A9004599F4 /* ExpressionDiv.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ExpressionDiv.cpp; path = ../../d3ce/d3ce/ExpressionDiv.cpp; sourceTree = "<group>"; };
-		71843374161732A9004599F4 /* ExpressionDiv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpressionDiv.h; path = ../../d3ce/d3ce/ExpressionDiv.h; sourceTree = "<group>"; };
-		71843375161732A9004599F4 /* ExpressionEq.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ExpressionEq.cpp; path = ../../d3ce/d3ce/ExpressionEq.cpp; sourceTree = "<group>"; };
-		71843376161732A9004599F4 /* ExpressionEq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpressionEq.h; path = ../../d3ce/d3ce/ExpressionEq.h; sourceTree = "<group>"; };
-		71843377161732A9004599F4 /* ExpressionIf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ExpressionIf.cpp; path = ../../d3ce/d3ce/ExpressionIf.cpp; sourceTree = "<group>"; };
-		71843378161732A9004599F4 /* ExpressionIf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpressionIf.h; path = ../../d3ce/d3ce/ExpressionIf.h; sourceTree = "<group>"; };
-		71843379161732A9004599F4 /* ExpressionMax.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ExpressionMax.cpp; path = ../../d3ce/d3ce/ExpressionMax.cpp; sourceTree = "<group>"; };
-		7184337A161732A9004599F4 /* ExpressionMax.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpressionMax.h; path = ../../d3ce/d3ce/ExpressionMax.h; sourceTree = "<group>"; };
-		7184337B161732A9004599F4 /* ExpressionMin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ExpressionMin.cpp; path = ../../d3ce/d3ce/ExpressionMin.cpp; sourceTree = "<group>"; };
-		7184337C161732A9004599F4 /* ExpressionMin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpressionMin.h; path = ../../d3ce/d3ce/ExpressionMin.h; sourceTree = "<group>"; };
-		7184337D161732A9004599F4 /* ExpressionSub.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ExpressionSub.cpp; path = ../../d3ce/d3ce/ExpressionSub.cpp; sourceTree = "<group>"; };
-		7184337E161732A9004599F4 /* ExpressionSub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpressionSub.h; path = ../../d3ce/d3ce/ExpressionSub.h; sourceTree = "<group>"; };
 		7184337F161732A9004599F4 /* Follower.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Follower.cpp; path = ../../d3ce/d3ce/Follower.cpp; sourceTree = "<group>"; };
 		71843380161732A9004599F4 /* Follower.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Follower.h; path = ../../d3ce/d3ce/Follower.h; sourceTree = "<group>"; };
 		71843381161732A9004599F4 /* Gear.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Gear.cpp; path = ../../d3ce/d3ce/Gear.cpp; sourceTree = "<group>"; };
@@ -526,8 +501,6 @@
 		718433AA161732A9004599F4 /* Wizard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Wizard.cpp; path = ../../d3ce/d3ce/Wizard.cpp; sourceTree = "<group>"; };
 		718433AB161732A9004599F4 /* Wizard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Wizard.h; path = ../../d3ce/d3ce/Wizard.h; sourceTree = "<group>"; };
 		7189BC5B16173736004CE480 /* d3ce.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = d3ce.h; path = ../../d3ce/d3ce/d3ce.h; sourceTree = "<group>"; };
-		71AA5B301618D47E0069EDB3 /* ExpressionMul.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ExpressionMul.cpp; path = ../../d3ce/d3ce/ExpressionMul.cpp; sourceTree = "<group>"; };
-		71AA5B311618D47E0069EDB3 /* ExpressionMul.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpressionMul.h; path = ../../d3ce/d3ce/ExpressionMul.h; sourceTree = "<group>"; };
 		71AA5B321618D47E0069EDB3 /* ItemSet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ItemSet.cpp; path = ../../d3ce/d3ce/ItemSet.cpp; sourceTree = "<group>"; };
 		71AA5B331618D47E0069EDB3 /* ItemSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemSet.h; path = ../../d3ce/d3ce/ItemSet.h; sourceTree = "<group>"; };
 		71AA5B341618D47E0069EDB3 /* SetBonus.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SetBonus.cpp; path = ../../d3ce/d3ce/SetBonus.cpp; sourceTree = "<group>"; };
@@ -1115,28 +1088,8 @@
 		710B9DE1161732D10009ACCE /* Expressions */ = {
 			isa = PBXGroup;
 			children = (
-				71AA5B301618D47E0069EDB3 /* ExpressionMul.cpp */,
-				71AA5B311618D47E0069EDB3 /* ExpressionMul.h */,
 				7184336B161732A9004599F4 /* Expression.cpp */,
 				7184336C161732A9004599F4 /* Expression.h */,
-				7184336D161732A9004599F4 /* ExpressionAdd.cpp */,
-				7184336E161732A9004599F4 /* ExpressionAdd.h */,
-				7184336F161732A9004599F4 /* ExpressionAttribute.cpp */,
-				71843370161732A9004599F4 /* ExpressionAttribute.h */,
-				71843371161732A9004599F4 /* ExpressionConst.cpp */,
-				71843372161732A9004599F4 /* ExpressionConst.h */,
-				71843373161732A9004599F4 /* ExpressionDiv.cpp */,
-				71843374161732A9004599F4 /* ExpressionDiv.h */,
-				71843375161732A9004599F4 /* ExpressionEq.cpp */,
-				71843376161732A9004599F4 /* ExpressionEq.h */,
-				71843377161732A9004599F4 /* ExpressionIf.cpp */,
-				71843378161732A9004599F4 /* ExpressionIf.h */,
-				71843379161732A9004599F4 /* ExpressionMax.cpp */,
-				7184337A161732A9004599F4 /* ExpressionMax.h */,
-				7184337B161732A9004599F4 /* ExpressionMin.cpp */,
-				7184337C161732A9004599F4 /* ExpressionMin.h */,
-				7184337D161732A9004599F4 /* ExpressionSub.cpp */,
-				7184337E161732A9004599F4 /* ExpressionSub.h */,
 			);
 			name = Expressions;
 			sourceTree = "<group>";
@@ -1240,6 +1193,8 @@
 		718433D4161732AB004599F4 /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
+				120B0523161EF2790067D102 /* ModifierPostAssign.cpp */,
+				120B0524161EF2790067D102 /* ModifierPostAssign.h */,
 				71843389161732A9004599F4 /* Modifier.cpp */,
 				7184338A161732A9004599F4 /* Modifier.h */,
 				7184338B161732A9004599F4 /* ModifierAdd.cpp */,
@@ -1658,15 +1613,6 @@
 				718433B2161732A9004599F4 /* Entity.cpp in Sources */,
 				718433B3161732A9004599F4 /* Environment.cpp in Sources */,
 				718433B4161732A9004599F4 /* Expression.cpp in Sources */,
-				718433B5161732A9004599F4 /* ExpressionAdd.cpp in Sources */,
-				718433B6161732A9004599F4 /* ExpressionAttribute.cpp in Sources */,
-				718433B7161732A9004599F4 /* ExpressionConst.cpp in Sources */,
-				718433B8161732A9004599F4 /* ExpressionDiv.cpp in Sources */,
-				718433B9161732A9004599F4 /* ExpressionEq.cpp in Sources */,
-				718433BA161732A9004599F4 /* ExpressionIf.cpp in Sources */,
-				718433BB161732A9004599F4 /* ExpressionMax.cpp in Sources */,
-				718433BC161732A9004599F4 /* ExpressionMin.cpp in Sources */,
-				718433BD161732A9004599F4 /* ExpressionSub.cpp in Sources */,
 				718433BE161732A9004599F4 /* Follower.cpp in Sources */,
 				718433BF161732A9004599F4 /* Gear.cpp in Sources */,
 				718433C0161732A9004599F4 /* Gem.cpp in Sources */,
@@ -1691,9 +1637,9 @@
 				718433D3161732A9004599F4 /* Wizard.cpp in Sources */,
 				710B9DEB161734020009ACCE /* D3CEHelper.mm in Sources */,
 				71CDB8AE161849F2005FD1C3 /* SummaryCellView.m in Sources */,
-				71AA5B361618D47E0069EDB3 /* ExpressionMul.cpp in Sources */,
 				71AA5B371618D47E0069EDB3 /* ItemSet.cpp in Sources */,
 				71AA5B381618D47E0069EDB3 /* SetBonus.cpp in Sources */,
+				120B0525161EF2790067D102 /* ModifierPostAssign.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
