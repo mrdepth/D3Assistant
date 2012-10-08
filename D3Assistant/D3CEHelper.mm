@@ -107,4 +107,42 @@
 		return d3ce::Item::SlotNeck;
 }
 
++ (NSString*) heroClassNameFromClassMask:(d3ce::ClassMask) classMask {
+	switch (classMask) {
+		case d3ce::ClassMaskBarbarian:
+			return @"Barbarian";
+		case d3ce::ClassMaskWizard:
+			return @"Wizard";
+		case d3ce::ClassMaskWitchDoctor:
+			return @"Witch Doctor";
+		case d3ce::ClassMaskDemonHunter:
+			return @"Demon Hunter";
+		case d3ce::ClassMaskMonk:
+			return @"Monk";
+		default:
+			break;
+	}
+	return nil;
+}
+
++ (NSString*) resourceNameFromResourceID:(d3ce::AttributeSubID) resourceID {
+	switch (resourceID) {
+		case d3ce::AttributeManaSubID:
+			return @"Mana";
+		case d3ce::AttributeArcanumSubID:
+			return @"Arcane Power";
+		case d3ce::AttributeFurySubID:
+			return @"Fury";
+		case d3ce::AttributeSpiritSubID:
+			return @"Spirit";
+		case d3ce::AttributeHatredSubID:
+			return @"Hatred";
+		case d3ce::AttributeDisciplineSubID:
+			return @"Discipline";
+		default:
+			break;
+	}
+	return nil;
+}
+
 @end
