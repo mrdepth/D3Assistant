@@ -22,7 +22,6 @@
 }
 @synthesize sectionsControl;
 @synthesize hero;
-@synthesize fallen;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -150,9 +149,9 @@
 
 }
 
-- (void) setHero:(NSDictionary *)aHero fallen:(BOOL) isFallen {
+- (void) setHero:(NSDictionary *)aHero {// fallen:(BOOL) isFallen {
 	hero = aHero;
-	fallen = isFallen;
+//	fallen = isFallen;
 	
 	if ([self isViewLoaded])
 		[self reload];
@@ -161,8 +160,8 @@
 #pragma mark - Private
 
 - (void) reload {
-	[self.attributesViewController setHero:self.hero fallen:self.fallen];
-	[self.gearViewController setHero:self.hero fallen:self.fallen];
+	self.attributesViewController.hero = self.hero;
+	self.gearViewController.hero = self.hero;
 	[self.skillsViewController setHero:self.hero];
 	
 	if (!self.hero) {
@@ -173,7 +172,7 @@
 		self.title = [self.hero valueForKey:@"name"];
 	
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		if (fallen) {
+		if (![hero valueForKey:@"skills"]) {
 			[self.navigationItem setLeftBarButtonItem:nil animated:YES];
 			UIViewController* childViewController = [self.childViewControllers objectAtIndex:0];
 			if (childViewController != self.gearAttributesViewController) {
@@ -197,7 +196,7 @@
 		}
 	}
 	else {
-		if (fallen)
+		if (![hero valueForKey:@"skills"])
 			[self.sectionsControl removeSegmentAtIndex:2 animated:NO];
 	}
 	
@@ -232,8 +231,8 @@
 			
 //			for (NSDictionary* skill in [self.hero valueForKeyPath:@"skills.active"])
 //				[D3CEHelper addSkillFromDictionary:skill toHero:d3ceHero];
-			for (NSDictionary* skill in [self.hero valueForKeyPath:@"skills.passive"])
-				[D3CEHelper addSkillFromDictionary:skill toHero:d3ceHero];
+//			for (NSDictionary* skill in [self.hero valueForKeyPath:@"skills.passive"])
+//				[D3CEHelper addSkillFromDictionary:skill toHero:d3ceHero];
 		}
 	}];
 	

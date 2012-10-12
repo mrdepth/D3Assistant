@@ -17,11 +17,11 @@
 
 @interface AttributesViewController ()
 @property (nonatomic, strong) NSMutableArray* sections;
+- (void) reload;
 @end
 
 @implementation AttributesViewController
 @synthesize hero;
-@synthesize fallen;
 @synthesize d3ceHero;
 
 - (void) viewDidLoad {
@@ -31,216 +31,9 @@
 	self.tableView.backgroundView.contentStretch = CGRectMake(0, 0.1, 1, 0.8);
 }
 
-- (void) setHero:(NSDictionary *)aHero fallen:(BOOL) isFallen {
-	hero = aHero;
-	fallen = isFallen;
-}
-
 - (void) setD3ceHero:(d3ce::Hero *)value {
 	d3ceHero = value;
-	
-	if (d3ceHero) {
-		self.sections = [NSMutableArray array];
-		NSArray* rows;
-		NSDictionary* section;
-		
-		if (!self.fallen) {
-			rows = @[
-			@{@"progression" : @(YES)},
-			@{@"title" : @"Elite Kills", @"value" : [NSNumberFormatter localizedStringFromNumber:@([[hero valueForKeyPath:@"kills.elites"] integerValue]) numberStyle:NSNumberFormatterDecimalStyle]}];
-			
-			section = @{@"title" : @"Progression", @"rows" : rows};
-			[self.sections addObject:section];
-		}
-		
-		
-		rows = @[
-		@{@"title" : @"Strength", @"value" : [NSString stringWithFormat:@"%s", d3ceHero->getStrength().toString().c_str()]},
-		@{@"title" : @"Dexterity", @"value" : [NSString stringWithFormat:@"%s", d3ceHero->getDexterity().toString().c_str()]},
-		@{@"title" : @"Intelligence", @"value" : [NSString stringWithFormat:@"%s", d3ceHero->getIntelligence().toString().c_str()]},
-		@{@"title" : @"Vitality", @"value" : [NSString stringWithFormat:@"%s", d3ceHero->getVitality().toString().c_str()]}];
-
-		section = @{@"title" : @"Attributes", @"rows" : rows};
-		[self.sections addObject:section];
-
-
-		rows = @[
-		@{@"title" : @"Damage", @"value" : [NSString stringWithFormat:@"%s", d3ceHero->getDPS().toString(1).c_str()]},
-		@{@"title" : @"Weapon Damage", @"value" : [NSString stringWithFormat:@"%s-%s", d3ceHero->getMinDamage().toString().c_str(), d3ceHero->getMaxDamage().toString().c_str()]},
-		@{@"title" : @"Attacks per Second", @"value" : [NSString stringWithFormat:@"%s", d3ceHero->getAttackSpeed().toString(2).c_str()]},
-		@{@"title" : @"Critical Hit Change", @"value" : [NSString stringWithFormat:@"%s%%", (d3ceHero->getCritChance() * 100).toString().c_str()]},
-		@{@"title" : @"Critical Hit Damage", @"value" : [NSString stringWithFormat:@"%s%%", (d3ceHero->getCritDamage() * 100).toString().c_str()]}];
-		
-		section = @{@"title" : @"Offense", @"rows" : rows};
-		[self.sections addObject:section];
-
-		d3ce::Resistance resistances = d3ceHero->getResistances();
-		d3ce::Resistance damageReduction = d3ceHero->getDamageReductionFromResistances();
-		rows = @[
-		@{@"title" : @"Armor", @"value" : [NSString stringWithFormat:@"%s (%s%%)", d3ceHero->getArmor().toString().c_str(), (d3ceHero->getDamageReductionFromArmor() * 100).toString().c_str()]},
-		@{@"title" : @"Block Amount", @"value" : [NSString stringWithFormat:@"%s-%s", d3ceHero->getBlockAmmountMin().toString().c_str(), d3ceHero->getBlockAmmountMax().toString().c_str()]},
-		@{@"title" : @"Block Chance", @"value" : [NSString stringWithFormat:@"%s%%", (d3ceHero->getBlockChance() * 100).toString().c_str()]},
-		@{@"title" : @"Average Damage Reduction", @"value" : [NSString stringWithFormat:@"%s%%", (d3ceHero->getAverageDamageReduction() * 100).toString(1).c_str()]},
-		@{@"title" : @"Physical Resistance", @"value" : [NSString stringWithFormat:@"%s (%s%%)", resistances.physical.toString().c_str(), (damageReduction.physical * 100).toString().c_str()]},
-		@{@"title" : @"Cold Resistance", @"value" : [NSString stringWithFormat:@"%s (%s%%)", resistances.cold.toString().c_str(), (damageReduction.cold * 100).toString().c_str()]},
-		@{@"title" : @"Fire Resistance", @"value" : [NSString stringWithFormat:@"%s (%s%%)", resistances.fire.toString().c_str(), (damageReduction.fire * 100).toString().c_str()]},
-		@{@"title" : @"Lightning Resistance", @"value" : [NSString stringWithFormat:@"%s (%s%%)", resistances.lightning.toString().c_str(), (damageReduction.lightning * 100).toString().c_str()]},
-		@{@"title" : @"Arcane/Holy Resistance", @"value" : [NSString stringWithFormat:@"%s (%s%%)", resistances.arcane.toString().c_str(), (damageReduction.arcane * 100).toString().c_str()]},
-		@{@"title" : @"Poison Resistance", @"value" : [NSString stringWithFormat:@"%s (%s%%)", resistances.poison.toString().c_str(), (damageReduction.poison * 100).toString().c_str()]}];
-//		@{@"title" : @"Thorns", @"stat" : @"thorns"}];
-		
-		section = @{@"title" : @"Defense", @"rows" : rows};
-		[self.sections addObject:section];
-
-		rows = @[
-		@{@"title" : @"Maximum Life", @"value" : [NSString stringWithFormat:@"%s", d3ceHero->getHitPoints().toString().c_str()]},
-		@{@"title" : @"Life Steal", @"value" : [NSString stringWithFormat:@"%s%%", (d3ceHero->getLifeSteal() * 100).toString().c_str()]},
-		@{@"title" : @"Life per Kill", @"value" : [NSString stringWithFormat:@"%s", d3ceHero->getLifePerKill().toString().c_str()]},
-		@{@"title" : @"Life per Hit", @"value" : [NSString stringWithFormat:@"%s", d3ceHero->getLifePerHit().toString().c_str()]}];
-		
-		section = @{@"title" : @"Life", @"rows" : rows};
-		[self.sections addObject:section];
-		
-		d3ce::AttributeSubID resourceTypePrimary = d3ceHero->getResourceTypePrimary();
-		d3ce::AttributeSubID resourceTypeSecondary = d3ceHero->getResourceTypeSecondary();
-		
-		NSString* primaryResourceName = [D3CEHelper resourceNameFromResourceID:resourceTypePrimary];
-		d3ce::Range primaryResourceMax = d3ceHero->getPrimaryResourceEffectiveMax();
-		d3ce::Range primaryResourceRegen = d3ceHero->getPrimaryResourceRegen();
-		NSString* primaryResourceValue = [NSString stringWithFormat:@"%s (%s/s)", primaryResourceMax.toString().c_str(), primaryResourceRegen.toString().c_str()];
-
-		
-		if (resourceTypeSecondary != d3ce::AttributeNoneSubID) {
-			NSString* secondaryResourceName = [D3CEHelper resourceNameFromResourceID:resourceTypeSecondary];
-			d3ce::Range secondaryResourceMax = d3ceHero->getSecondaryResourceEffectiveMax();
-			d3ce::Range secondaryResourceRegen = d3ceHero->getSecondaryResourceRegen();
-			NSString* secondaryResourceValue = [NSString stringWithFormat:@"%s (%s/s)", secondaryResourceMax.toString().c_str(), secondaryResourceRegen.toString().c_str()];
-			rows = @[
-			@{@"title" : [NSString stringWithFormat:@"%@", primaryResourceName], @"value" : primaryResourceValue},
-			@{@"title" : [NSString stringWithFormat:@"%@", secondaryResourceName], @"value" : secondaryResourceValue}];
-		}
-		else {
-			rows = @[@{@"title" : [NSString stringWithFormat:@"%@", primaryResourceName], @"value" : primaryResourceValue}];
-		}
-
-		section = @{@"title" : @"Resources", @"rows" : rows};
-		[self.sections addObject:section];
-
-		rows = @[
-		@{@"title" : @"Gold Find", @"value" : [NSString stringWithFormat:@"%s%%", (d3ceHero->getGoldFind() * 100).toString().c_str()]},
-		@{@"title" : @"Magic Find", @"value" : [NSString stringWithFormat:@"%s%%", (d3ceHero->getMagicFind() * 100).toString().c_str()]}];
-		
-		section = @{@"title" : @"Adventure", @"rows" : rows};
-		[self.sections addObject:section];
-/*	
-		NSString* className = [hero valueForKey:@"class"];
-		NSDictionary* primaryAttributes = @{@"demon-hunter" : @"Dexterity", @"monk" : @"Dexterity", @"witch-doctor" : @"Intelligence", @"wizard" : @"Intelligence", @"barbarian" : @"Strength"};
-		NSString* primaryAttribute = [primaryAttributes valueForKey:className];
-
-		rows = @[
-		@{@"title" : @"Strength", @"stat" : @"strength"},
-		@{@"title" : @"Dexterity", @"stat" : @"dexterity"},
-		@{@"title" : @"Intelligence", @"stat" : @"intelligence"},
-		@{@"title" : @"Vitality", @"stat" : @"vitality"}];
-		
-		section = @{@"title" : @"Attributes", @"rows" : rows};
-		[self.sections addObject:section];
-		
-		if (self.fallen) {
-			rows = @[
-			@{@"title" : @"Damage", @"stat" : @"damage"},
-			@{@"title" : [NSString stringWithFormat:@"Damage Increased by %@", primaryAttribute], @"value" : [NSString stringWithFormat:@"%.1f%%", [[self.hero valueForKeyPath:@"stats.damageIncrease"] floatValue] * 100]},
-			@{@"title" : @"Critical Hit Change", @"value" : [NSString stringWithFormat:@"%.1f%%", [[self.hero valueForKeyPath:@"stats.critChance"] floatValue] * 100]}];
-			
-			section = @{@"title" : @"Offense", @"rows" : rows};
-			[self.sections addObject:section];
-			
-			rows = @[
-			@{@"title" : @"Armor", @"stat" : @"armor"},
-			@{@"title" : @"Damage Reduction", @"value" : [NSString stringWithFormat:@"%.1f%%", [[self.hero valueForKeyPath:@"stats.damageReduction"] floatValue] * 100]},
-			@{@"title" : @"Physical Resistance", @"stat" : @"physicalResist"},
-			@{@"title" : @"Cold Resistance", @"stat" : @"coldResist"},
-			@{@"title" : @"Fire Resistance", @"stat" : @"fireResist"},
-			@{@"title" : @"Lightning Resistance", @"stat" : @"lightningResist"},
-			@{@"title" : @"Arcane/Holy Resistance", @"stat" : @"arcaneResist"},
-			@{@"title" : @"Poison Resistance", @"stat" : @"poisonResist"}];
-			
-			section = @{@"title" : @"Defense", @"rows" : rows};
-			[self.sections addObject:section];
-			
-			rows = @[
-			@{@"title" : @"Maximum Life", @"stat" : @"life"}];
-			
-			section = @{@"title" : @"Life", @"rows" : rows};
-			[self.sections addObject:section];
-		}
-		else {
-			rows = @[
-			@{@"title" : @"Damage", @"stat" : @"damage"},
-			@{@"title" : [NSString stringWithFormat:@"Damage Increased by %@", primaryAttribute], @"value" : [NSString stringWithFormat:@"%.1f%%", [[self.hero valueForKeyPath:@"stats.damageIncrease"] floatValue] * 100]},
-			@{@"title" : @"Attacks per Second", @"stat" : @"attackSpeed"},
-			@{@"title" : @"Critical Hit Change", @"value" : [NSString stringWithFormat:@"%.1f%%", [[self.hero valueForKeyPath:@"stats.critChance"] floatValue] * 100]},
-			@{@"title" : @"Critical Hit Damage", @"value" : [NSString stringWithFormat:@"%.1f%%", ([[self.hero valueForKeyPath:@"stats.critDamage"] floatValue] - 1) * 100]}];
-			
-			section = @{@"title" : @"Offense", @"rows" : rows};
-			[self.sections addObject:section];
-			
-			rows = @[
-			@{@"title" : @"Armor", @"stat" : @"armor"},
-			@{@"title" : @"Block Amount", @"stat" : @"blockAmountMax"},
-			@{@"title" : @"Block Chance", @"value" : [NSString stringWithFormat:@"%.1f%%", [[self.hero valueForKeyPath:@"stats.blockChance"] floatValue] * 100]},
-			@{@"title" : @"Damage Reduction", @"value" : [NSString stringWithFormat:@"%.1f%%", [[self.hero valueForKeyPath:@"stats.damageReduction"] floatValue] * 100]},
-			@{@"title" : @"Physical Resistance", @"stat" : @"physicalResist"},
-			@{@"title" : @"Cold Resistance", @"stat" : @"coldResist"},
-			@{@"title" : @"Fire Resistance", @"stat" : @"fireResist"},
-			@{@"title" : @"Lightning Resistance", @"stat" : @"lightningResist"},
-			@{@"title" : @"Arcane/Holy Resistance", @"stat" : @"arcaneResist"},
-			@{@"title" : @"Poison Resistance", @"stat" : @"poisonResist"},
-			@{@"title" : @"Thorns", @"stat" : @"thorns"}];
-			
-			section = @{@"title" : @"Defense", @"rows" : rows};
-			[self.sections addObject:section];
-			
-			rows = @[
-			@{@"title" : @"Maximum Life", @"stat" : @"life"},
-			@{@"title" : @"Life Steal", @"value" : [NSString stringWithFormat:@"%.1f%%", [[self.hero valueForKeyPath:@"stats.lifeSteal"] floatValue] * 100]},
-			@{@"title" : @"Life per Kill", @"stat" : @"lifePerKill"},
-			@{@"title" : @"Life per Hit", @"stat" : @"lifeOnHit"}];
-			
-			section = @{@"title" : @"Life", @"rows" : rows};
-			[self.sections addObject:section];
-			
-			
-			
-			NSDictionary* primaryResources = @{@"demon-hunter" : @"Maximum Hatred", @"monk" : @"Maximum Spirit", @"witch-doctor" : @"Maximum Mana", @"wizard" : @"Maximum Arcane Power", @"barbarian" : @"Maximum Fury"};
-			NSDictionary* secondaryResources = @{@"demon-hunter" : @"Maximum Discipline"};
-			NSString* primaryResourceName = [primaryResources valueForKey:className];
-			NSString* secondaryResourceName = [secondaryResources valueForKey:className];
-			
-			
-			NSDictionary* primaryResource = @{@"title" : primaryResourceName, @"stat" : @"primaryResource"};
-			NSDictionary* secondaryResource = secondaryResourceName ? @{@"title" : secondaryResourceName, @"stat" : @"secondaryResource"} : nil;
-			
-			if (secondaryResource)
-				rows = @[primaryResource, secondaryResource];
-			else
-				rows = @[primaryResource];
-			
-			section = @{@"title" : @"Resources", @"rows" : rows};
-			[self.sections addObject:section];
-			
-			rows = @[
-			@{@"title" : @"Gold Find", @"value" : [NSString stringWithFormat:@"%.1f%%", [[self.hero valueForKeyPath:@"stats.goldFind"] floatValue] * 100]},
-			@{@"title" : @"Magic Find", @"value" : [NSString stringWithFormat:@"%.1f%%", [[self.hero valueForKeyPath:@"stats.magicFind"] floatValue] * 100]}];
-			
-			section = @{@"title" : @"Adventure", @"rows" : rows};
-			[self.sections addObject:section];
-		}*/
-	}
-	else
-		self.sections = nil;
-	
-	[self.tableView reloadData];
+	[self reload];
 }
 
 #pragma mark - Table view data source
@@ -301,6 +94,111 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+#pragma mark - Private
+
+- (void) reload {
+	if (d3ceHero && hero) {
+		self.sections = [NSMutableArray array];
+		NSArray* rows;
+		NSDictionary* section;
+		
+		if ([hero valueForKey:@"progress"]) {
+			rows = @[
+			@{@"progression" : @(YES)},
+			@{@"title" : @"Elite Kills", @"value" : [NSNumberFormatter localizedStringFromNumber:@([[hero valueForKeyPath:@"kills.elites"] integerValue]) numberStyle:NSNumberFormatterDecimalStyle]}];
+		}
+		else
+			rows = @[@{@"title" : @"Elite Kills", @"value" : [NSNumberFormatter localizedStringFromNumber:@([[hero valueForKeyPath:@"kills.elites"] integerValue]) numberStyle:NSNumberFormatterDecimalStyle]}];
+		
+		section = @{@"title" : @"Progression", @"rows" : rows};
+		[self.sections addObject:section];
+		
+		
+		rows = @[
+		@{@"title" : @"Strength", @"value" : [NSString stringWithFormat:@"%s", d3ceHero->getStrength().toString().c_str()]},
+		@{@"title" : @"Dexterity", @"value" : [NSString stringWithFormat:@"%s", d3ceHero->getDexterity().toString().c_str()]},
+		@{@"title" : @"Intelligence", @"value" : [NSString stringWithFormat:@"%s", d3ceHero->getIntelligence().toString().c_str()]},
+		@{@"title" : @"Vitality", @"value" : [NSString stringWithFormat:@"%s", d3ceHero->getVitality().toString().c_str()]}];
+		
+		section = @{@"title" : @"Attributes", @"rows" : rows};
+		[self.sections addObject:section];
+		
+		
+		rows = @[
+		@{@"title" : @"Damage", @"value" : [NSString stringWithFormat:@"%s", d3ceHero->getDPS().toString(1).c_str()]},
+		@{@"title" : @"Weapon Damage", @"value" : [NSString stringWithFormat:@"%s-%s", d3ceHero->getMinDamage().toString().c_str(), d3ceHero->getMaxDamage().toString().c_str()]},
+		@{@"title" : @"Attacks per Second", @"value" : [NSString stringWithFormat:@"%s", d3ceHero->getAttackSpeed().toString(2).c_str()]},
+		@{@"title" : @"Critical Hit Change", @"value" : [NSString stringWithFormat:@"%s%%", (d3ceHero->getCritChance() * 100).toString().c_str()]},
+		@{@"title" : @"Critical Hit Damage", @"value" : [NSString stringWithFormat:@"%s%%", (d3ceHero->getCritDamage() * 100).toString().c_str()]}];
+		
+		section = @{@"title" : @"Offense", @"rows" : rows};
+		[self.sections addObject:section];
+		
+		d3ce::Resistance resistances = d3ceHero->getResistances();
+		d3ce::Resistance damageReduction = d3ceHero->getDamageReductionFromResistances();
+		rows = @[
+		@{@"title" : @"Armor", @"value" : [NSString stringWithFormat:@"%s (%s%%)", d3ceHero->getArmor().toString().c_str(), (d3ceHero->getDamageReductionFromArmor() * 100).toString().c_str()]},
+		@{@"title" : @"Block Amount", @"value" : [NSString stringWithFormat:@"%s-%s", d3ceHero->getBlockAmmountMin().toString().c_str(), d3ceHero->getBlockAmmountMax().toString().c_str()]},
+		@{@"title" : @"Block Chance", @"value" : [NSString stringWithFormat:@"%s%%", (d3ceHero->getBlockChance() * 100).toString().c_str()]},
+		@{@"title" : @"Average Damage Reduction", @"value" : [NSString stringWithFormat:@"%s%%", (d3ceHero->getAverageDamageReduction() * 100).toString(1).c_str()]},
+		@{@"title" : @"Physical Resistance", @"value" : [NSString stringWithFormat:@"%s (%s%%)", resistances.physical.toString().c_str(), (damageReduction.physical * 100).toString().c_str()]},
+		@{@"title" : @"Cold Resistance", @"value" : [NSString stringWithFormat:@"%s (%s%%)", resistances.cold.toString().c_str(), (damageReduction.cold * 100).toString().c_str()]},
+		@{@"title" : @"Fire Resistance", @"value" : [NSString stringWithFormat:@"%s (%s%%)", resistances.fire.toString().c_str(), (damageReduction.fire * 100).toString().c_str()]},
+		@{@"title" : @"Lightning Resistance", @"value" : [NSString stringWithFormat:@"%s (%s%%)", resistances.lightning.toString().c_str(), (damageReduction.lightning * 100).toString().c_str()]},
+		@{@"title" : @"Arcane/Holy Resistance", @"value" : [NSString stringWithFormat:@"%s (%s%%)", resistances.arcane.toString().c_str(), (damageReduction.arcane * 100).toString().c_str()]},
+		@{@"title" : @"Poison Resistance", @"value" : [NSString stringWithFormat:@"%s (%s%%)", resistances.poison.toString().c_str(), (damageReduction.poison * 100).toString().c_str()]}];
+		//		@{@"title" : @"Thorns", @"stat" : @"thorns"}];
+		
+		section = @{@"title" : @"Defense", @"rows" : rows};
+		[self.sections addObject:section];
+		
+		rows = @[
+		@{@"title" : @"Maximum Life", @"value" : [NSString stringWithFormat:@"%s", d3ceHero->getHitPoints().toString().c_str()]},
+		@{@"title" : @"Life Steal", @"value" : [NSString stringWithFormat:@"%s%%", (d3ceHero->getLifeSteal() * 100).toString().c_str()]},
+		@{@"title" : @"Life per Kill", @"value" : [NSString stringWithFormat:@"%s", d3ceHero->getLifePerKill().toString().c_str()]},
+		@{@"title" : @"Life per Hit", @"value" : [NSString stringWithFormat:@"%s", d3ceHero->getLifePerHit().toString().c_str()]}];
+		
+		section = @{@"title" : @"Life", @"rows" : rows};
+		[self.sections addObject:section];
+		
+		d3ce::AttributeSubID resourceTypePrimary = d3ceHero->getResourceTypePrimary();
+		d3ce::AttributeSubID resourceTypeSecondary = d3ceHero->getResourceTypeSecondary();
+		
+		NSString* primaryResourceName = [D3CEHelper resourceNameFromResourceID:resourceTypePrimary];
+		d3ce::Range primaryResourceMax = d3ceHero->getPrimaryResourceEffectiveMax();
+		d3ce::Range primaryResourceRegen = d3ceHero->getPrimaryResourceRegen();
+		NSString* primaryResourceValue = [NSString stringWithFormat:@"%s (%s/s)", primaryResourceMax.toString().c_str(), primaryResourceRegen.toString().c_str()];
+		
+		
+		if (resourceTypeSecondary != d3ce::AttributeNoneSubID) {
+			NSString* secondaryResourceName = [D3CEHelper resourceNameFromResourceID:resourceTypeSecondary];
+			d3ce::Range secondaryResourceMax = d3ceHero->getSecondaryResourceEffectiveMax();
+			d3ce::Range secondaryResourceRegen = d3ceHero->getSecondaryResourceRegen();
+			NSString* secondaryResourceValue = [NSString stringWithFormat:@"%s (%s/s)", secondaryResourceMax.toString().c_str(), secondaryResourceRegen.toString().c_str()];
+			rows = @[
+			@{@"title" : [NSString stringWithFormat:@"%@", primaryResourceName], @"value" : primaryResourceValue},
+			@{@"title" : [NSString stringWithFormat:@"%@", secondaryResourceName], @"value" : secondaryResourceValue}];
+		}
+		else {
+			rows = @[@{@"title" : [NSString stringWithFormat:@"%@", primaryResourceName], @"value" : primaryResourceValue}];
+		}
+		
+		section = @{@"title" : @"Resources", @"rows" : rows};
+		[self.sections addObject:section];
+		
+		rows = @[
+		@{@"title" : @"Gold Find", @"value" : [NSString stringWithFormat:@"%s%%", (d3ceHero->getGoldFind() * 100).toString().c_str()]},
+		@{@"title" : @"Magic Find", @"value" : [NSString stringWithFormat:@"%s%%", (d3ceHero->getMagicFind() * 100).toString().c_str()]}];
+		
+		section = @{@"title" : @"Adventure", @"rows" : rows};
+		[self.sections addObject:section];
+	}
+	else
+		self.sections = nil;
+	
+	[self.tableView reloadData];
 }
 
 @end

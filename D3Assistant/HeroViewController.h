@@ -21,10 +21,7 @@
 @property (strong, nonatomic) GearAttributesViewController* gearAttributesViewController;
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 
-@property (nonatomic, strong, readonly) NSDictionary* hero;
-@property (nonatomic, assign, readonly) BOOL fallen;
-
-- (void) setHero:(NSDictionary *)hero fallen:(BOOL) fallen;
+@property (nonatomic, strong) NSDictionary* hero;
 
 - (IBAction)onChangeSection:(id)sender;
 

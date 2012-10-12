@@ -89,6 +89,7 @@
 		121FDA4215FF201000AA6947 /* titleYellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 121FD9E015FF201000AA6947 /* titleYellow.png */; };
 		121FDA4615FF2C2500AA6947 /* PassiveSkillView-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 121FDA4515FF2C2500AA6947 /* PassiveSkillView-iPad.xib */; };
 		121FDA4815FF363E00AA6947 /* skillCalcBackground-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 121FDA4715FF363E00AA6947 /* skillCalcBackground-iPad.png */; };
+		1222B9FF1624393400E18D2D /* HeroSelectionViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1222B9FE1624393400E18D2D /* HeroSelectionViewController.mm */; };
 		1232F2E416005F4F00EBB2BF /* HeroCareerCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1232F2E316005F4F00EBB2BF /* HeroCareerCellView.m */; };
 		1232F2EB1600670D00EBB2BF /* UIActionSheet+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 1232F2E81600670D00EBB2BF /* UIActionSheet+Block.m */; };
 		1232F2EC1600670D00EBB2BF /* UIAlertView+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 1232F2EA1600670D00EBB2BF /* UIAlertView+Block.m */; };
@@ -316,6 +317,8 @@
 		121FD9E015FF201000AA6947 /* titleYellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = titleYellow.png; sourceTree = "<group>"; };
 		121FDA4515FF2C2500AA6947 /* PassiveSkillView-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "PassiveSkillView-iPad.xib"; sourceTree = "<group>"; };
 		121FDA4715FF363E00AA6947 /* skillCalcBackground-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "skillCalcBackground-iPad.png"; sourceTree = "<group>"; };
+		1222B9FD1624393400E18D2D /* HeroSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroSelectionViewController.h; sourceTree = "<group>"; };
+		1222B9FE1624393400E18D2D /* HeroSelectionViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HeroSelectionViewController.mm; sourceTree = "<group>"; };
 		1232F2E216005F4F00EBB2BF /* HeroCareerCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroCareerCellView.h; sourceTree = "<group>"; };
 		1232F2E316005F4F00EBB2BF /* HeroCareerCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeroCareerCellView.m; sourceTree = "<group>"; };
 		1232F2E71600670D00EBB2BF /* UIActionSheet+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+Block.h"; sourceTree = "<group>"; };
@@ -711,6 +714,15 @@
 			path = titleFrames;
 			sourceTree = "<group>";
 		};
+		1222B9FB1624391900E18D2D /* HeroSelectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1222B9FD1624393400E18D2D /* HeroSelectionViewController.h */,
+				1222B9FE1624393400E18D2D /* HeroSelectionViewController.mm */,
+			);
+			name = HeroSelectionViewController;
+			sourceTree = "<group>";
+		};
 		1232F2E016005F3000EBB2BF /* HeroCareerCellView */ = {
 			isa = PBXGroup;
 			children = (
@@ -930,6 +942,7 @@
 				71ACC42E15FBE26D00544EBE /* SkillsViewController */,
 				12A76F5A15FA22C800B2E9D4 /* GearInfoViewController */,
 				12F682A115FDFBBF0052A1AA /* RealmsViewController */,
+				1222B9FB1624391900E18D2D /* HeroSelectionViewController */,
 				12FB054B15F7806700AE78E4 /* AppDelegate.h */,
 				12FB054C15F7806700AE78E4 /* AppDelegate.mm */,
 				12FB054315F7806700AE78E4 /* Supporting Files */,
@@ -1640,6 +1653,7 @@
 				71AA5B371618D47E0069EDB3 /* ItemSet.cpp in Sources */,
 				71AA5B381618D47E0069EDB3 /* SetBonus.cpp in Sources */,
 				120B0525161EF2790067D102 /* ModifierPostAssign.cpp in Sources */,
+				1222B9FF1624393400E18D2D /* HeroSelectionViewController.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

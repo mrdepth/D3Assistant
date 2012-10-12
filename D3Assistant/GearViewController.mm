@@ -17,7 +17,6 @@
 
 @implementation GearViewController
 @synthesize hero;
-@synthesize fallen;
 @synthesize gears;
 @synthesize party;
 
@@ -62,9 +61,8 @@
 	self.heroNameLabel = nil;
 }
 
-- (void) setHero:(NSDictionary *)aHero fallen:(BOOL) isFallen {
+- (void) setHero:(NSDictionary *)aHero {
 	hero = aHero;
-	fallen = isFallen;
 	
 	if ([self isViewLoaded])
 		[self reload];

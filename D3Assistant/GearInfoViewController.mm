@@ -55,7 +55,9 @@
     [super viewDidLoad];
 	alternateParty = self.party->clone();
 	d3ce::Hero* d3ceHero = alternateParty->getHeroes().front();
-	d3ceHero->removeItem(d3ceHero->getItem([D3CEHelper slotFromString:self.slot]));
+	d3ce::Gear* item = d3ceHero->getItem([D3CEHelper slotFromString:self.slot]);
+	if (item)
+		d3ceHero->removeItem(item);
 	
 	if ([self.gear valueForKey:@"dps"]) {
 		WeaponBaseInfoView* view = [WeaponBaseInfoView viewWithNibName:@"WeaponBaseInfoView" bundle:nil];

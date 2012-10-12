@@ -22,11 +22,16 @@
 #import "UIActionSheet+Block.h"
 #import "AppDelegate.h"
 
+#define DidAddToFavoritesNotification @"DidAddToFavoritesNotification"
+#define DidRemoveFromFavoritesNotification @"DidRemoveFromFavoritesNotification"
+
 @interface ProfilesViewController ()
 @property (nonatomic, strong) NSMutableArray* searchResults;
 @property (nonatomic, strong) NSMutableArray* profiles;
 
 - (void) didChangeRealm:(NSNotification*) notification;
+- (void) didAddToFavorites:(NSNotification*) notification;
+- (void) didRemoveFromFavorites:(NSNotification*) notification;
 - (void) reload;
 - (NSString*) profilesFilePath;
 
@@ -39,9 +44,11 @@
     [super viewDidLoad];
 	self.title = @"Profiles";
 	self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
-	self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Donate" style:UIBarButtonItemStyleBordered target:self action:@selector(onDonate:)];
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didChangeRealm:) name:DidChangeRealmNotification object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didAddToFavorites:) name:DidAddToFavoritesNotification object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didRemoveFromFavorites:) name:DidRemoveFromFavoritesNotification object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reload) name:UIApplicationWillEnterForegroundNotification object:nil];
 
 	if (![[NSUserDefaults standardUserDefaults] valueForKey:@"realm"]) {
 		int64_t delayInSeconds = 0.0;
@@ -50,20 +57,21 @@
 			[self performSegueWithIdentifier:@"Realms" sender:nil];
 			self.navigationItem.rightBarButtonItem.title = @"Region";
 		});
-//		self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Region" style:UIBarButtonItemStyleBordered target:self action:@selector(onRealm:)];
-/*		RealmsViewController* controller = [[RealmsViewController alloc] initWithNibName:@"RealmsViewController" bundle:nil];
-		UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController:controller];
-		navController.navigationBar.barStyle = UIBarStyleBlackOpaque;
-		[self presentModalViewController:navController animated:NO];*/
 	}
 	else {
 		[self reload];
 	}
 	
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reload) name:UIApplicationWillEnterForegroundNotification object:nil];
 	
 	if (self.splitViewController)
 		self.heroViewController = (HeroViewController*) [[self.splitViewController.viewControllers objectAtIndex:1] topViewController];
+}
+
+- (void) dealloc {
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:DidChangeRealmNotification object:nil];
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:DidAddToFavoritesNotification object:nil];
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:DidRemoveFromFavoritesNotification object:nil];
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationWillEnterForegroundNotification object:nil];
 }
 
 - (void)viewDidUnload
@@ -80,7 +88,17 @@
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 	if ([segue.identifier isEqualToString:@"HeroInfo"]) {
 		HeroViewController* controller = (HeroViewController*) [segue destinationViewController];
-		[controller setHero:[sender valueForKey:@"hero"] fallen:[[sender valueForKey:@"fallen"] boolValue]];
+		//[controller setHero:[sender valueForKey:@"hero"] fallen:[[sender valueForKey:@"fallen"] boolValue]];
+		[controller setHero:sender];
+	}
+}
+
+- (void) didSelectHero:(NSDictionary*) hero {
+	if (self.heroViewController) {
+		[self.heroViewController setHero:hero];
+	}
+	else {
+		[self performSegueWithIdentifier:@"HeroInfo" sender:hero];
 	}
 }
 
@@ -261,15 +279,7 @@
 		}
 		
 		if (fallen) {
-			if (self.heroViewController) {
-				[self.heroViewController setHero:hero fallen:fallen];
-			}
-			else {
-				[self performSegueWithIdentifier:@"HeroInfo" sender:@{@"hero" : hero, @"fallen" : @(fallen)}];
-/*				HeroViewController* controller = [[HeroViewController alloc] initWithNibName:@"HeroViewController" bundle:nil];
-				[self.heroViewController setHero:hero fallen:fallen];
-				[self.navigationController pushViewController:controller animated:YES];*/
-			}
+			[self didSelectHero:hero];
 		}
 		else {
 			__block __weak EUOperation* operation = [EUOperation operationWithIdentifier:@"ProfilesViewController+LoadingHero" name:@"Loading Hero"];
@@ -290,16 +300,7 @@
 					if (error)
 						[[UIAlertView alertViewWithError:error] show];
 					else {
-						if (self.heroViewController) {
-							[self.heroViewController setHero:heroDetails fallen:fallen];
-						}
-						else {
-							[self performSegueWithIdentifier:@"HeroInfo" sender:@{@"hero" : heroDetails, @"fallen" : @(fallen)}];
-/*
-							HeroViewController* controller = [[HeroViewController alloc] initWithNibName:@"HeroViewController" bundle:nil];
-							[self.heroViewController setHero:heroDetails fallen:fallen];
-							[self.navigationController pushViewController:controller animated:YES];*/
-						}
+						[self didSelectHero:heroDetails];
 					}
 				}
 			}];
@@ -395,33 +396,15 @@
 #pragma mark - ProfileHeaderViewDelegate
 
 - (void) profileHeaderViewDidPressFavoritesButton:(ProfileHeaderView*) profileHeaderView {
-	NSString* battleTag = [profileHeaderView.profile valueForKey:@"battleTag"];
-	
 	if ([[profileHeaderView.profile valueForKey:@"inFavorites"] boolValue]) {
-		NSInteger i = 0;
 		[profileHeaderView.profile setValue:@(NO) forKey:@"inFavorites"];
 		profileHeaderView.favoritesButton.selected = NO;
-		for (NSDictionary* profile in self.profiles) {
-			if ([[profile valueForKey:@"battleTag"] isEqualToString:battleTag]) {
-				[self.profiles removeObjectAtIndex:i];
-				[self.tableView deleteSections:[NSIndexSet indexSetWithIndex:i] withRowAnimation:UITableViewRowAnimationFade];
-				break;
-			}
-			i++;
-		}
+		[[NSNotificationCenter defaultCenter] postNotificationName:DidRemoveFromFavoritesNotification object:profileHeaderView.profile];
 	}
 	else {
-		NSInteger i = 0;
-		for (NSDictionary* profile in self.profiles) {
-			if ([[profile valueForKey:@"battleTag"] compare:battleTag options:NSCaseInsensitivePredicateOption] == NSOrderedDescending) {
-				break;
-			}
-			i++;
-		}
 		[profileHeaderView.profile setValue:@(YES) forKey:@"inFavorites"];
-		[self.profiles insertObject:profileHeaderView.profile atIndex:i];
-		[self.tableView insertSections:[NSIndexSet indexSetWithIndex:i] withRowAnimation:UITableViewRowAnimationFade];
 		profileHeaderView.favoritesButton.selected = YES;
+		[[NSNotificationCenter defaultCenter] postNotificationName:DidAddToFavoritesNotification object:profileHeaderView.profile];
 	}
 
 	[self.profiles writeToFile:[self profilesFilePath] atomically:YES];
@@ -437,8 +420,41 @@
 	[self reload];
 }
 
+- (void) didAddToFavorites:(NSNotification*) notification {
+	NSMutableDictionary* profile = [[notification object] deepMutableCopy];
+	NSString* battleTag = [profile valueForKey:@"battleTag"];
+	
+	NSInteger i = 0;
+	for (NSDictionary* profile in self.profiles) {
+		if ([[profile valueForKey:@"battleTag"] compare:battleTag options:NSCaseInsensitivePredicateOption] == NSOrderedDescending) {
+			break;
+		}
+		i++;
+	}
+	[self.profiles insertObject:profile atIndex:i];
+	[self.tableView insertSections:[NSIndexSet indexSetWithIndex:i] withRowAnimation:UITableViewRowAnimationFade];
+}
+
+- (void) didRemoveFromFavorites:(NSNotification*) notification {
+	NSMutableDictionary* profile = [notification object];
+	NSString* battleTag = [profile valueForKey:@"battleTag"];
+	
+	NSInteger i = 0;
+	for (NSDictionary* profile in self.profiles) {
+		if ([[profile valueForKey:@"battleTag"] isEqualToString:battleTag]) {
+			[self.profiles removeObjectAtIndex:i];
+			[self.tableView deleteSections:[NSIndexSet indexSetWithIndex:i] withRowAnimation:UITableViewRowAnimationFade];
+			break;
+		}
+		i++;
+	}
+}
+
 - (void) reload {
 	NSDictionary* realm = [[NSUserDefaults standardUserDefaults] valueForKey:@"realm"];
+	if (!realm)
+		return;
+	
 	//self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:[realm valueForKey:@"name"] style:UIBarButtonItemStyleBordered target:self action:@selector(onRealm:)];
 	self.navigationItem.rightBarButtonItem.title = [realm valueForKey:@"name"];
 

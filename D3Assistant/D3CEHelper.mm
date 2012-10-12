@@ -35,37 +35,32 @@
 }
 
 + (d3ce::Gear*) addItemFromDictionary:(NSDictionary*) item toHero:(d3ce::Hero*) hero slot:(d3ce::Item::Slot) slot replaceExisting:(BOOL) replaceExisting {
-	if (!hero->slotIsEmpty(slot)) {
+	try {
+		NSString* itemID = [item valueForKey:@"id"];
+		d3ce::Gear* gear = hero->addItem([itemID cStringUsingEncoding:NSUTF8StringEncoding]);
+		gear->setSlot(slot);
+
+		NSDictionary* attributes = [item valueForKey:@"attributesRaw"];
+		for (NSString* key in [attributes allKeys]) {
+			NSDictionary* attribute = [attributes valueForKey:key];
+			d3ce::Range value;
+			value.min = [[attribute valueForKey:@"min"] floatValue];
+			value.max = [[attribute valueForKey:@"max"] floatValue];
+			gear->getAttribute([key cStringUsingEncoding:NSUTF8StringEncoding])->setValue(value);
+		}
+		
+		for (NSDictionary* gem in [item valueForKey:@"gems"])
+			gear->addGem([[gem valueForKeyPath:@"item.id"] cStringUsingEncoding:NSUTF8StringEncoding]);
+		return gear;
+
+	} catch (d3ce::Hero::SlotIsAlreadyFilledException& exception) {
 		if (replaceExisting) {
-			hero->removeItem(hero->getItem(slot));
+			hero->removeItem(hero->getItem(exception.slot));
+			return [self addItemFromDictionary:item toHero:hero slot:slot replaceExisting:NO];
 		}
 		else
-			return NULL;
+			return nil;
 	}
-	
-	if ([[item valueForKeyPath:@"type.twoHanded"] boolValue] && !hero->slotIsEmpty(d3ce::Item::SlotOffHand)) {
-		if (replaceExisting)
-			hero->removeItem(hero->getItem(d3ce::Item::SlotOffHand));
-		else
-			return NULL;
-	}
-	
-	NSString* itemID = [item valueForKey:@"id"];
-	d3ce::Gear* gear = hero->addItem([itemID cStringUsingEncoding:NSUTF8StringEncoding]);
-	gear->setSlot(slot);
-	
-	NSDictionary* attributes = [item valueForKey:@"attributesRaw"];
-	for (NSString* key in [attributes allKeys]) {
-		NSDictionary* attribute = [attributes valueForKey:key];
-		d3ce::Range value;
-		value.min = [[attribute valueForKey:@"min"] floatValue];
-		value.max = [[attribute valueForKey:@"max"] floatValue];
-		gear->getAttribute([key cStringUsingEncoding:NSUTF8StringEncoding])->setValue(value);
-	}
-	
-	for (NSDictionary* gem in [item valueForKey:@"gems"])
-		gear->addGem([[gem valueForKeyPath:@"item.id"] cStringUsingEncoding:NSUTF8StringEncoding]);
-	return gear;
 }
 
 + (d3ce::Skill*) addSkillFromDictionary:(NSDictionary*) skill toHero:(d3ce::Hero*) hero {

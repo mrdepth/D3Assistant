@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet HeroViewController* heroViewController;
 
+- (void) didSelectHero:(NSDictionary*) hero;
 - (IBAction)onDonate:(id)sender;
 
 @end

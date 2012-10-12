@@ -27,11 +27,9 @@
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @property (weak, nonatomic) IBOutlet UILabel *heroNameLabel;
 
-@property (nonatomic, strong, readonly) NSDictionary* hero;
-@property (nonatomic, assign, readonly) BOOL fallen;
+@property (nonatomic, strong) NSDictionary* hero;
 @property (nonatomic, strong) NSDictionary* gears;
 @property (nonatomic, assign) d3ce::Party* party;
 
-- (void) setHero:(NSDictionary *)hero fallen:(BOOL) fallen;
 
 @end
