@@ -25,6 +25,8 @@
 	d3ce::Party* alternateParty;
 }
 
+- (void) reload;
+- (IBAction)onChangeHero:(id)sender;
 @end
 
 @implementation GearInfoViewController
@@ -34,6 +36,7 @@
 @synthesize itemLevelLabel;
 @synthesize requiredLevelLabel;
 @synthesize gear;
+@synthesize compareGear;
 @synthesize slot;
 @synthesize party;
 
@@ -53,42 +56,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
 	alternateParty = self.party->clone();
 	d3ce::Hero* d3ceHero = alternateParty->getHeroes().front();
 	d3ce::Gear* item = d3ceHero->getItem([D3CEHelper slotFromString:self.slot]);
 	if (item)
 		d3ceHero->removeItem(item);
-	
-	if ([self.gear valueForKey:@"dps"]) {
-		WeaponBaseInfoView* view = [WeaponBaseInfoView viewWithNibName:@"WeaponBaseInfoView" bundle:nil];
-		view.weapon = self.gear;
-		self.tableView.tableHeaderView = view;
+	if (self.compareGear && self.compareHero) {
+		[D3CEHelper addItemFromDictionary:self.compareGear toHero:d3ceHero slot:[D3CEHelper slotFromString:self.slot] replaceExisting:YES];
+
+		UISegmentedControl* control = [[UISegmentedControl alloc] initWithItems:@[[self.hero valueForKey:@"name"], [self.compareHero valueForKey:@"name"]]];
+		control.segmentedControlStyle = UISegmentedControlStyleBar;
+		control.selectedSegmentIndex = self.activeCompareHero ? 1 : 0;
+		[control addTarget:self action:@selector(onChangeHero:) forControlEvents:UIControlEventValueChanged];
+		self.navigationItem.titleView = control;
 	}
-	else {
-		NSString* nibName = nil;
-		if ([@[@"waist", @"rightFinger", @"leftFinger", @"neck"] containsObject:self.slot])
-			nibName = @"ArmorBaseInfoSmallView";
-		else
-			nibName = @"ArmorBaseInfoView";
-		ArmorBaseInfoView* view = [ArmorBaseInfoView viewWithNibName:nibName bundle:nil];
-		view.armor = self.gear;
-		self.tableView.tableHeaderView = view;
-	}
+	else
+		self.title = [self.hero valueForKey:@"name"];
 	
-	self.title = [self.hero valueForKey:@"name"];
-	self.nameLabel.text = [self.gear valueForKey:@"name"];
-	NSString* color = [self.gear valueForKey:@"displayColor"];
-	self.nameFrameImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"title%@.png", [color capitalizedString]]];
-	if (!self.nameFrameImageView.image)
-		self.nameFrameImageView.image = [UIImage imageNamed:@"titleBrown.png"];
-	self.nameLabel.textColor = [D3Utility colorWithColorName:color];
 	
-	self.itemLevelLabel.text = [NSString stringWithFormat:@"%d", [[self.gear valueForKey:@"itemLevel"] integerValue]];
-	self.requiredLevelLabel.text = [NSString stringWithFormat:@"%d", [[self.gear valueForKey:@"requiredLevel"] integerValue]];
-	
+	[self reload];
 
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		[self.tableView reloadData];
 		CGRect r = [self.tableView rectForSection:[self numberOfSectionsInTableView:self.tableView] - 1];
 		CGFloat height = self.tableView.frame.origin.y + self.tableView.tableFooterView.frame.size.height + 40;
 		height += r.origin.y + r.size.height;
@@ -117,16 +106,20 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-	return 3;
+	if (self.compareGear)
+		return self.activeCompareHero ? 3 : 2;
+	else
+		return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+	NSDictionary* currentGear = self.activeCompareHero ? self.compareGear : self.gear;
 	if (section == 0) {
-		return [[self.gear valueForKey:@"attributes"] count];
+		return [[currentGear valueForKey:@"attributes"] count];
 	}
 	else if (section == 1) {
-		return [[self.gear valueForKey:@"gems"] count];
+		return [[currentGear valueForKey:@"gems"] count];
 	}
 	else
 		return 1;
@@ -134,12 +127,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+	NSDictionary* currentGear = self.activeCompareHero ? self.compareGear : self.gear;
 	if (indexPath.section == 0) {
 		static NSString *CellIdentifier = @"GearStatCellView";
 		GearStatCellView *cell = (GearStatCellView*) [aTableView dequeueReusableCellWithIdentifier:CellIdentifier];
 		if (!cell)
 			cell = [GearStatCellView cellWithNibName:@"GearStatCellView" bundle:nil reuseIdentifier:CellIdentifier];
-		cell.statLabel.text = [[self.gear valueForKey:@"attributes"] objectAtIndex:indexPath.row];
+		cell.statLabel.text = [[currentGear valueForKey:@"attributes"] objectAtIndex:indexPath.row];
 		return cell;
 	}
 	else if (indexPath.section == 1) {
@@ -147,7 +141,7 @@
 		GemStatCellView *cell = (GemStatCellView*) [aTableView dequeueReusableCellWithIdentifier:CellIdentifier];
 		if (!cell)
 			cell = [GearStatCellView cellWithNibName:@"GemStatCellView" bundle:nil reuseIdentifier:CellIdentifier];
-		NSDictionary* gem = [[self.gear valueForKey:@"gems"] objectAtIndex:indexPath.row];
+		NSDictionary* gem = [[currentGear valueForKey:@"gems"] objectAtIndex:indexPath.row];
 		cell.statLabel.text = [[gem valueForKey:@"attributes"] objectAtIndex:0];
 		[cell.gemImageView setImageWithContentsOfURL:[[D3APISession sharedSession] itemImageURLWithItem:[gem valueForKeyPath:@"item.icon"] size:@"small"]];
 		return cell;
@@ -165,20 +159,26 @@
 		d3ce::Range newDPS = newHero->getDPS();
 		float dpsDif = oldDPS.max - newDPS.max;
 
-		d3ce::Range oldDefnse = oldHero->getAverageDamageReduction();
-		d3ce::Range newDefnse = newHero->getAverageDamageReduction();
-		float defnseDif = (oldDefnse.max - newDefnse.max) * 100;
+		d3ce::Range oldDefense = oldHero->getAverageDamageReduction();
+		d3ce::Range newDefense = newHero->getAverageDamageReduction();
+		float defenseDif = (oldDefense.max - newDefense.max) * 100;
 
 		d3ce::Range oldHP = oldHero->getHitPoints();
 		d3ce::Range newHP = newHero->getHitPoints();
 		float hpDif = oldHP.max - newHP.max;
 		
+		if (compareGear) {
+			dpsDif = -dpsDif;
+			defenseDif = -defenseDif;
+			hpDif = -hpDif;
+		}
+		
 		cell.damageLabel.text = [NSString stringWithFormat:@"%@%.1f", dpsDif >= 0 ? @"+" : @"", dpsDif];
-		cell.defenseLabel.text = [NSString stringWithFormat:@"%@%.1f%%", defnseDif >= 0 ? @"+" : @"", defnseDif];
+		cell.defenseLabel.text = [NSString stringWithFormat:@"%@%.1f%%", defenseDif >= 0 ? @"+" : @"", defenseDif];
 		cell.hitPointsLabel.text = [NSString stringWithFormat:@"%@%.1f", hpDif >= 0 ? @"+" : @"", hpDif];
 		
 		cell.damageLabel.textColor = dpsDif >= 0 ? [UIColor greenColor] : [UIColor redColor];
-		cell.defenseLabel.textColor = defnseDif >= 0 ? [UIColor greenColor] : [UIColor redColor];
+		cell.defenseLabel.textColor = defenseDif >= 0 ? [UIColor greenColor] : [UIColor redColor];
 		cell.hitPointsLabel.textColor = hpDif >= 0 ? [UIColor greenColor] : [UIColor redColor];
 		return cell;
 	}
@@ -206,6 +206,43 @@
 
 - (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[aTableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+#pragma mark - Private
+
+- (void) reload {
+	NSDictionary* currentGear = self.activeCompareHero ? self.compareGear : self.gear;
+	if ([currentGear valueForKey:@"dps"]) {
+		WeaponBaseInfoView* view = [WeaponBaseInfoView viewWithNibName:@"WeaponBaseInfoView" bundle:nil];
+		view.weapon = currentGear;
+		self.tableView.tableHeaderView = view;
+	}
+	else {
+		NSString* nibName = nil;
+		if ([@[@"waist", @"rightFinger", @"leftFinger", @"neck"] containsObject:self.slot])
+			nibName = @"ArmorBaseInfoSmallView";
+		else
+			nibName = @"ArmorBaseInfoView";
+		ArmorBaseInfoView* view = [ArmorBaseInfoView viewWithNibName:nibName bundle:nil];
+		view.armor = currentGear;
+		self.tableView.tableHeaderView = view;
+	}
+	self.nameLabel.text = [currentGear valueForKey:@"name"];
+
+	NSString* color = [currentGear valueForKey:@"displayColor"];
+	self.nameFrameImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"title%@.png", [color capitalizedString]]];
+	if (!self.nameFrameImageView.image)
+		self.nameFrameImageView.image = [UIImage imageNamed:@"titleBrown.png"];
+	self.nameLabel.textColor = [D3Utility colorWithColorName:color];
+	
+	self.itemLevelLabel.text = [NSString stringWithFormat:@"%d", [[currentGear valueForKey:@"itemLevel"] integerValue]];
+	self.requiredLevelLabel.text = [NSString stringWithFormat:@"%d", [[currentGear valueForKey:@"requiredLevel"] integerValue]];
+	[self.tableView reloadData];
+}
+
+- (IBAction)onChangeHero:(id)sender {
+	self.activeCompareHero = [sender selectedSegmentIndex] == 1;
+	[self reload];
 }
 
 @end

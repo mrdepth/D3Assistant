@@ -16,7 +16,9 @@
 @property (nonatomic, retain) UIProgressView* progressView;
 @property (nonatomic, retain) NSMutableArray* operations;
 - (void) layout;
+- (void) deviceOrientationDidChange:(NSNotification*) notification;
 - (void) setup;
+
 @end
 
 @implementation EUActivityView
@@ -35,6 +37,7 @@
 
 - (void) dealloc {
 	[[EUOperationQueue sharedQueue] setDelegate:nil];
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:UIDeviceOrientationDidChangeNotification object:nil];
 #if ! __has_feature(objc_arc)
 	[contentView release];
 	[activityIndicatorView release];
@@ -43,10 +46,6 @@
 	[operations release];
 	[super dealloc];
 #endif
-}
-
-- (void) didMoveToSuperview {
-	
 }
 
 - (void) layoutSubviews {
@@ -58,17 +57,40 @@
 #pragma mark - Private
 
 - (void) layout {
+	UIViewController* controller = [(UIWindow*) self.superview rootViewController];
+//	while (controller.presentedViewController)
+//		controller = controller.presentedViewController;
+	
+	self.transform = controller.view.transform;
+	self.frame = controller.view.frame;
+
 	CGSize labelSize = [self.activityNameLabel sizeThatFits:CGSizeMake(self.bounds.size.width - 20, self.activityNameLabel.frame.size.height)];
 	CGRect frame = self.contentView.frame;
 	
 	if (labelSize.width < 128 - 20)
 		labelSize.width = 128 - 20;
 	frame.size.width = labelSize.width + 20;
-	frame.origin.x = self.frame.size.width / 2 - frame.size.width / 2;
+	frame.origin.x = self.bounds.size.width / 2 - frame.size.width / 2;
 	self.contentView.frame = frame;
 }
 
+- (void) deviceOrientationDidChange:(NSNotification*) notification {
+	int64_t delayInSeconds = 0.0;
+	dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+	dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+		[UIView animateWithDuration:0.3
+							  delay:0
+							options:UIViewAnimationOptionBeginFromCurrentState
+						 animations:^{
+							 [self layout];
+						 }
+						 completion:nil];
+	});
+}
+
 - (void) setup {
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientationDidChange:) name:UIDeviceOrientationDidChangeNotification object:nil];
+	
 	self.userInteractionEnabled = NO;
 	[[EUOperationQueue sharedQueue] setDelegate:self];
 	self.operations = [NSMutableArray array];

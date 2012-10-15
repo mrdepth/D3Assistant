@@ -21,6 +21,7 @@
 #import "RealmsViewController.h"
 #import "UIActionSheet+Block.h"
 #import "AppDelegate.h"
+#import "HeroViewController.h"
 
 #define DidAddToFavoritesNotification @"DidAddToFavoritesNotification"
 #define DidRemoveFromFavoritesNotification @"DidRemoveFromFavoritesNotification"

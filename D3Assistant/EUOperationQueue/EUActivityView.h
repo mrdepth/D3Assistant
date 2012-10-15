@@ -11,3 +11,7 @@
 
 @interface EUActivityView : UIView<EUOperationQueueDelegate>
 @end
+
+@interface EUActivityViewController : UIViewController
+
+@end

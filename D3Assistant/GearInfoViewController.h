@@ -18,7 +18,10 @@
 
 @property (nonatomic, strong) NSDictionary* hero;
 @property (nonatomic, strong) NSDictionary* gear;
+@property (nonatomic, strong) NSDictionary* compareHero;
+@property (nonatomic, strong) NSDictionary* compareGear;
 @property (nonatomic, strong) NSString* slot;
 @property (nonatomic, assign) d3ce::Party* party;
+@property (nonatomic, assign, getter = isActiveCompareHero) BOOL activeCompareHero;
 
 @end

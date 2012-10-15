@@ -508,7 +508,7 @@
                     <navigationItem key="navigationItem" id="TUw-pe-h1Y">
                         <barButtonItem key="rightBarButtonItem" title="Compare" id="iy0-rz-FGb">
                             <connections>
-                                <segue destination="MaC-Bw-s8L" kind="modal" id="tWN-aB-E1b"/>
+                                <segue destination="MaC-Bw-s8L" kind="modal" identifier="SelectCompareHero" id="tWN-aB-E1b"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1531,6 +1531,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HeroSelectionViewController.h"/>
             <relationships>
                 <relationship kind="action" name="onCancel:"/>
+                <relationship kind="outlet" name="delegate"/>
             </relationships>
         </class>
         <class className="HeroViewController" superclassName="UIViewController">

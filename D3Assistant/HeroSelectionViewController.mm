@@ -27,7 +27,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,12 +40,8 @@
 }
 
 - (void) didSelectHero:(NSDictionary*) hero {
-	if (self.heroViewController) {
-//		self.dele
-	}
-	else {
-		[self performSegueWithIdentifier:@"HeroInfo" sender:hero];
-	}
+	[self.delegate heroSelectionViewController:self didSelectHero:hero];
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 @end

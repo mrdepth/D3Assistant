@@ -19,6 +19,8 @@
 - (void) restoreTransaction: (SKPaymentTransaction *)transaction;
 - (void) failedTransaction: (SKPaymentTransaction *)transaction;
 
+@property (nonatomic, strong) UIViewController* ctrl;
+
 @end
 
 @implementation AppDelegate
@@ -26,10 +28,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-	[self.window makeKeyAndVisible];
 	EUActivityView* activityView = [[EUActivityView alloc] initWithFrame:self.window.rootViewController.view.bounds];
-	[self.window.rootViewController.view addSubview:activityView];
-
+	[self.window makeKeyAndVisible];
+	[self.window addSubview:activityView];
+	
 	[[SKPaymentQueue defaultQueue] addTransactionObserver:self];
     return YES;
 }

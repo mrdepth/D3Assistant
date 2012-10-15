@@ -30,6 +30,10 @@
 @property (nonatomic, strong) NSDictionary* hero;
 @property (nonatomic, strong) NSDictionary* gears;
 @property (nonatomic, assign) d3ce::Party* party;
+@property (nonatomic, strong) NSDictionary* compareHero;
+@property (nonatomic, strong) NSDictionary* compareGears;
+@property (nonatomic, assign) d3ce::Party* compareParty;
+@property (nonatomic, assign, getter = isActiveCompareHero) BOOL activeCompareHero;
 
 
 @end

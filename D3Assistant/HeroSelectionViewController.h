@@ -14,7 +14,7 @@
 @end
 
 @interface HeroSelectionViewController : ProfilesViewController
-@property (nonatomic, assign) id<HeroSelectionViewControllerDelegate> delegate;
+@property (nonatomic, assign) IBOutlet id<HeroSelectionViewControllerDelegate> delegate;
 
 - (IBAction)onCancel:(id)sender;
 

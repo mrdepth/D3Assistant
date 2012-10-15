@@ -19,6 +19,10 @@
 @synthesize hero;
 @synthesize gears;
 @synthesize party;
+@synthesize compareHero;
+@synthesize compareGears;
+@synthesize compareParty;
+@synthesize activeCompareHero;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -72,24 +76,28 @@
 	if ([segue.destinationViewController isKindOfClass:[GearInfoViewController class]]) {
 		GearInfoViewController* controller = (GearInfoViewController*) segue.destinationViewController;
 		controller.hero = self.hero;
-		controller.gear = [sender gear];
+		controller.compareHero = self.compareHero;
+		controller.gear = [self.gears valueForKey:[sender slot]];
+		controller.compareGear = [self.compareGears valueForKey:[sender slot]];
 		controller.slot = [sender slot];
 		controller.party = self.party;
+		controller.activeCompareHero = self.activeCompareHero;
 	}
 }
 
 - (void) setGears:(NSDictionary *)value {
 	gears = value;
-	
-	NSDictionary* gear = @{@"head" : self.headView, @"shoulders" : self.shouldersView, @"torso" : self.torsoView, @"feet" : self.feetView, @"hands" : self.handsView,
-	@"legs" : self.legsView, @"bracers" : self.bracersView,	@"mainHand" : self.mainHandView, @"offHand" : self.offHandView, @"waist" : self.waistView,
-	@"leftFinger" : self.leftFingerView, @"rightFinger" : self.rightFingerView, @"neck" : self.neckView};
-	
-	for (NSString* key in [gears allKeys]) {
-		GearView* gearView = [gear valueForKey:key];
-		gearView.gear = [gears valueForKey:key];
-		//				gearView.slot = key;
-	}
+	[self reload];
+}
+
+- (void) setCompareGears:(NSDictionary *)value {
+	compareGears = value;
+	[self reload];
+}
+
+- (void) setActiveCompareHero:(BOOL)value {
+	activeCompareHero = value;
+	[self reload];
 }
 
 #pragma mark - GearViewDelegate
@@ -106,12 +114,14 @@
 #pragma mark - Private
 
 - (void) reload {
-	self.heroNameLabel.text = [self.hero valueForKey:@"name"];
+	NSDictionary* currentHero = self.activeCompareHero ? self.compareHero : self.hero;
+	NSDictionary* currentGears = self.activeCompareHero ? self.compareGears : self.gears;
 	
-	NSString* heroClass = [self.hero valueForKey:@"class"];
+	self.heroNameLabel.text = [currentHero valueForKey:@"name"];
+	
+	NSString* heroClass = [currentHero valueForKey:@"class"];
 	NSString* deviceSuffix = nil;
 	NSString* className = nil;
-//	NSString* gender = [[self.hero valueForKey:@"gender"] integerValue] ? @"Female" : @"Male";
 
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 		deviceSuffix = @"-iPad";
@@ -136,7 +146,7 @@
 	
 	for (GearView* gearView in @[self.headView, self.shouldersView, self.torsoView, self.feetView, self.feetView, self.handsView, self.legsView,
 		 self.bracersView, self.mainHandView, self.offHandView, self.waistView, self.leftFingerView, self.rightFingerView, self.neckView]) {
-		gearView.gear = nil;
+		gearView.gear = [currentGears valueForKey:gearView.slot];
 	}
 }
 

@@ -12,8 +12,9 @@
 #import "GearViewController.h"
 #import "GearAttributesViewController.h"
 #import "D3CEHelper.h"
+#import "HeroSelectionViewController.h"
 
-@interface HeroViewController : UIViewController
+@interface HeroViewController : UIViewController<HeroSelectionViewControllerDelegate>
 @property (strong, nonatomic) IBOutlet UISegmentedControl *sectionsControl;
 @property (strong, nonatomic) GearViewController* gearViewController;
 @property (strong, nonatomic) SkillsViewController* skillsViewController;
@@ -22,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 
 @property (nonatomic, strong) NSDictionary* hero;
+@property (nonatomic, strong) NSDictionary* compareHero;
 
 - (IBAction)onChangeSection:(id)sender;
 
