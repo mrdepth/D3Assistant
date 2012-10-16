@@ -13,6 +13,7 @@
 @interface D3APISession : NSObject
 @property (nonatomic, strong) NSString* host;
 @property (nonatomic, strong) NSString* locale;
+@property (nonatomic, strong) NSString* realm;
 
 + (id) sharedSession;
 + (void) setSharedSession: (D3APISession*) session;

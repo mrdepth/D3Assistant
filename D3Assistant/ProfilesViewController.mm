@@ -22,19 +22,19 @@
 #import "UIActionSheet+Block.h"
 #import "AppDelegate.h"
 #import "HeroViewController.h"
+#import "ProfilesStorage.h"
 
 #define DidAddToFavoritesNotification @"DidAddToFavoritesNotification"
 #define DidRemoveFromFavoritesNotification @"DidRemoveFromFavoritesNotification"
 
 @interface ProfilesViewController ()
 @property (nonatomic, strong) NSMutableArray* searchResults;
-@property (nonatomic, strong) NSMutableArray* profiles;
+@property (nonatomic, copy) NSArray* profiles;
 
 - (void) didChangeRealm:(NSNotification*) notification;
 - (void) didAddToFavorites:(NSNotification*) notification;
 - (void) didRemoveFromFavorites:(NSNotification*) notification;
 - (void) reload;
-- (NSString*) profilesFilePath;
 
 @end
 
@@ -50,6 +50,7 @@
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didAddToFavorites:) name:DidAddToFavoritesNotification object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didRemoveFromFavorites:) name:DidRemoveFromFavoritesNotification object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reload) name:UIApplicationWillEnterForegroundNotification object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reload) name:DidUpdateProfilesNotification object:nil];
 
 	if (![[NSUserDefaults standardUserDefaults] valueForKey:@"realm"]) {
 		int64_t delayInSeconds = 0.0;
@@ -73,6 +74,7 @@
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:DidAddToFavoritesNotification object:nil];
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:DidRemoveFromFavoritesNotification object:nil];
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationWillEnterForegroundNotification object:nil];
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:DidUpdateProfilesNotification object:nil];
 }
 
 - (void)viewDidUnload
@@ -373,8 +375,26 @@
 #pragma mark - UISearchDisplayDelegate
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
-	NSPredicate* predicate = [NSPredicate predicateWithFormat:@"battleTag CONTAINS[c] %@", [searchString validBattleTagString]];
-	self.searchResults = [NSMutableArray arrayWithArray:[self.profiles filteredArrayUsingPredicate:predicate]];
+	NSMutableArray* results = [NSMutableArray array];
+	NSString* validBattleTag = [searchString validBattleTagString];
+	for (NSDictionary* profile in self.profiles) {
+		NSString* battleTag = [profile valueForKey:@"battleTag"];
+		if ([battleTag rangeOfString:searchString options:NSCaseInsensitiveSearch].location != NSNotFound ||
+			[battleTag rangeOfString:validBattleTag options:NSCaseInsensitiveSearch].location != NSNotFound) {
+			[results addObject:profile];
+			continue;
+		}
+		
+		for (NSDictionary* hero in [profile valueForKey:@"heroes"]) {
+			if ([[hero valueForKey:@"name"] rangeOfString:searchString options:NSCaseInsensitiveSearch].location != NSNotFound) {
+				[results addObject:profile];
+				break;
+			}
+		}
+	}
+	self.searchResults = results;
+//	NSPredicate* predicate = [NSPredicate predicateWithFormat:@"battleTag CONTAINS[c] %@", [searchString validBattleTagString]];
+//	self.searchResults = [NSMutableArray arrayWithArray:[self.profiles filteredArrayUsingPredicate:predicate]];
 	return YES;
 }
 
@@ -400,15 +420,17 @@
 	if ([[profileHeaderView.profile valueForKey:@"inFavorites"] boolValue]) {
 		[profileHeaderView.profile setValue:@(NO) forKey:@"inFavorites"];
 		profileHeaderView.favoritesButton.selected = NO;
-		[[NSNotificationCenter defaultCenter] postNotificationName:DidRemoveFromFavoritesNotification object:profileHeaderView.profile];
+		NSInteger index = [[ProfilesStorage sharedStorage] removeProfile:profileHeaderView.profile];
+		if (index != NSNotFound)
+			[[NSNotificationCenter defaultCenter] postNotificationName:DidRemoveFromFavoritesNotification object:nil userInfo:@{@"index" : @(index)}];
 	}
 	else {
 		[profileHeaderView.profile setValue:@(YES) forKey:@"inFavorites"];
 		profileHeaderView.favoritesButton.selected = YES;
-		[[NSNotificationCenter defaultCenter] postNotificationName:DidAddToFavoritesNotification object:profileHeaderView.profile];
+		NSInteger index = [[ProfilesStorage sharedStorage] addProfile:profileHeaderView.profile];
+		if (index != NSNotFound)
+			[[NSNotificationCenter defaultCenter] postNotificationName:DidAddToFavoritesNotification object:nil userInfo:@{@"index" : @(index)}];
 	}
-
-	[self.profiles writeToFile:[self profilesFilePath] atomically:YES];
 }
 
 #pragma mark - Private
@@ -422,7 +444,7 @@
 }
 
 - (void) didAddToFavorites:(NSNotification*) notification {
-	NSMutableDictionary* profile = [[notification object] deepMutableCopy];
+/*	NSMutableDictionary* profile = [[notification object] deepMutableCopy];
 	NSString* battleTag = [profile valueForKey:@"battleTag"];
 	
 	NSInteger i = 0;
@@ -432,32 +454,42 @@
 		}
 		i++;
 	}
-	[self.profiles insertObject:profile atIndex:i];
-	[self.tableView insertSections:[NSIndexSet indexSetWithIndex:i] withRowAnimation:UITableViewRowAnimationFade];
+//	[self.profiles insertObject:profile atIndex:i];*/
+	self.profiles = [[ProfilesStorage sharedStorage] profiles];
+	NSInteger index = [[notification.userInfo valueForKey:@"index"] integerValue];
+	if (index != NSNotFound)
+		[self.tableView insertSections:[NSIndexSet indexSetWithIndex:index] withRowAnimation:UITableViewRowAnimationFade];
 }
 
 - (void) didRemoveFromFavorites:(NSNotification*) notification {
-	NSMutableDictionary* profile = [notification object];
+	self.profiles = [[ProfilesStorage sharedStorage] profiles];
+	NSInteger index = [[notification.userInfo valueForKey:@"index"] integerValue];
+	if (index != NSNotFound)
+		[self.tableView deleteSections:[NSIndexSet indexSetWithIndex:index] withRowAnimation:UITableViewRowAnimationFade];
+/*	NSMutableDictionary* profile = [notification object];
 	NSString* battleTag = [profile valueForKey:@"battleTag"];
 	
 	NSInteger i = 0;
 	for (NSDictionary* profile in self.profiles) {
 		if ([[profile valueForKey:@"battleTag"] isEqualToString:battleTag]) {
-			[self.profiles removeObjectAtIndex:i];
+//			[self.profiles removeObjectAtIndex:i];
 			[self.tableView deleteSections:[NSIndexSet indexSetWithIndex:i] withRowAnimation:UITableViewRowAnimationFade];
 			break;
 		}
 		i++;
-	}
+	}*/
 }
 
 - (void) reload {
 	NSDictionary* realm = [[NSUserDefaults standardUserDefaults] valueForKey:@"realm"];
 	if (!realm)
 		return;
+	self.profiles = [[ProfilesStorage sharedStorage] profiles];
+	[self.tableView reloadData];
+	[self.searchDisplayController.searchResultsTableView reloadData];
 	
 	//self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:[realm valueForKey:@"name"] style:UIBarButtonItemStyleBordered target:self action:@selector(onRealm:)];
-	self.navigationItem.rightBarButtonItem.title = [realm valueForKey:@"name"];
+	/*self.navigationItem.rightBarButtonItem.title = [realm valueForKey:@"name"];
 
 	[D3APISession setSharedSession:[[D3APISession alloc] initWithHost:[realm valueForKey:@"url"] locale:[[NSLocale preferredLanguages] objectAtIndex:0]]];
 	
@@ -511,12 +543,7 @@
 	}
 	else {
 		self.profiles = [NSMutableArray array];
-	}
-}
-
-- (NSString*) profilesFilePath {
-	NSDictionary* realm = [[NSUserDefaults standardUserDefaults] valueForKey:@"realm"];
-	return [[AppDelegate documentsDirectory] stringByAppendingPathComponent:[NSString stringWithFormat:@"profiles%@.plist", [realm valueForKey:@"name"]]];
+	}*/
 }
 
 @end

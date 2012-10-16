@@ -94,6 +94,7 @@
 		1232F2EB1600670D00EBB2BF /* UIActionSheet+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 1232F2E81600670D00EBB2BF /* UIActionSheet+Block.m */; };
 		1232F2EC1600670D00EBB2BF /* UIAlertView+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 1232F2EA1600670D00EBB2BF /* UIAlertView+Block.m */; };
 		1232F2F2160068EE00EBB2BF /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1232F2F1160068ED00EBB2BF /* StoreKit.framework */; };
+		12377E00162D309100DB976D /* ProfilesStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 12377DFF162D309100DB976D /* ProfilesStorage.m */; };
 		124C68FB15F887F800353EFB /* NSString+D3API.m in Sources */ = {isa = PBXBuildFile; fileRef = 124C68FA15F887F800353EFB /* NSString+D3API.m */; };
 		124C68FF15F88F6D00353EFB /* ProgressionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 124C68FE15F88F6D00353EFB /* ProgressionView.m */; };
 		124C694A15F89AF600353EFB /* CareerCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 124C694915F89AF600353EFB /* CareerCellView.m */; };
@@ -326,6 +327,8 @@
 		1232F2E91600670D00EBB2BF /* UIAlertView+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Block.h"; sourceTree = "<group>"; };
 		1232F2EA1600670D00EBB2BF /* UIAlertView+Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Block.m"; sourceTree = "<group>"; };
 		1232F2F1160068ED00EBB2BF /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		12377DFE162D309100DB976D /* ProfilesStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfilesStorage.h; sourceTree = "<group>"; };
+		12377DFF162D309100DB976D /* ProfilesStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfilesStorage.m; sourceTree = "<group>"; };
 		124C68F915F887F800353EFB /* NSString+D3API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+D3API.h"; sourceTree = "<group>"; };
 		124C68FA15F887F800353EFB /* NSString+D3API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+D3API.m"; sourceTree = "<group>"; };
 		124C68FD15F88F6D00353EFB /* ProgressionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressionView.h; sourceTree = "<group>"; };
@@ -732,6 +735,15 @@
 			name = HeroCareerCellView;
 			sourceTree = "<group>";
 		};
+		12377DFC162D307400DB976D /* ProfilesStorage */ = {
+			isa = PBXGroup;
+			children = (
+				12377DFE162D309100DB976D /* ProfilesStorage.h */,
+				12377DFF162D309100DB976D /* ProfilesStorage.m */,
+			);
+			name = ProfilesStorage;
+			sourceTree = "<group>";
+		};
 		124C68FC15F88F5800353EFB /* ProgressionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -927,12 +939,12 @@
 			children = (
 				710B9DE8161733E00009ACCE /* D3CEHelper */,
 				7184335916173294004599F4 /* d3ce */,
+				12FB05ED15F780DE00AE78E4 /* D3API */,
 				12736E9C16033CC4009D3263 /* CollapsableTableView */,
 				12FB060F15F781EE00AE78E4 /* EUOperationQueue */,
 				12FB061615F781EF00AE78E4 /* UIImageView+URL */,
 				12FB05A515F780CA00AE78E4 /* ThirdParty */,
 				12FB05C715F780CB00AE78E4 /* Utility */,
-				12FB05ED15F780DE00AE78E4 /* D3API */,
 				12FB05FB15F7810700AE78E4 /* ProfilesViewController */,
 				124C68FC15F88F5800353EFB /* ProgressionView */,
 				71BF0B9A15F961C500CDEA4A /* HeroViewController */,
@@ -943,6 +955,7 @@
 				12A76F5A15FA22C800B2E9D4 /* GearInfoViewController */,
 				12F682A115FDFBBF0052A1AA /* RealmsViewController */,
 				1222B9FB1624391900E18D2D /* HeroSelectionViewController */,
+				12377DFC162D307400DB976D /* ProfilesStorage */,
 				12FB054B15F7806700AE78E4 /* AppDelegate.h */,
 				12FB054C15F7806700AE78E4 /* AppDelegate.mm */,
 				12FB054315F7806700AE78E4 /* Supporting Files */,
@@ -1654,6 +1667,7 @@
 				71AA5B381618D47E0069EDB3 /* SetBonus.cpp in Sources */,
 				120B0525161EF2790067D102 /* ModifierPostAssign.cpp in Sources */,
 				1222B9FF1624393400E18D2D /* HeroSelectionViewController.mm in Sources */,
+				12377E00162D309100DB976D /* ProfilesStorage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
