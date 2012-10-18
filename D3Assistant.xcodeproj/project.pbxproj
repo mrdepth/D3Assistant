@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		120B0525161EF2790067D102 /* ModifierPostAssign.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 120B0523161EF2790067D102 /* ModifierPostAssign.cpp */; };
-		121FD96215FF128600AA6947 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 121FD96115FF128600AA6947 /* MainWindow.xib */; };
 		121FD9E115FF201000AA6947 /* attributesBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 121FD97715FF201000AA6947 /* attributesBackground.png */; };
 		121FD9E215FF201000AA6947 /* attributesHeaderView.png in Resources */ = {isa = PBXBuildFile; fileRef = 121FD97815FF201000AA6947 /* attributesHeaderView.png */; };
 		121FD9E315FF201000AA6947 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 121FD97915FF201000AA6947 /* background.png */; };
@@ -237,7 +236,6 @@
 /* Begin PBXFileReference section */
 		120B0523161EF2790067D102 /* ModifierPostAssign.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ModifierPostAssign.cpp; path = ../../d3ce/d3ce/ModifierPostAssign.cpp; sourceTree = "<group>"; };
 		120B0524161EF2790067D102 /* ModifierPostAssign.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModifierPostAssign.h; path = ../../d3ce/d3ce/ModifierPostAssign.h; sourceTree = "<group>"; };
-		121FD96115FF128600AA6947 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		121FD97715FF201000AA6947 /* attributesBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = attributesBackground.png; sourceTree = "<group>"; };
 		121FD97815FF201000AA6947 /* attributesHeaderView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = attributesHeaderView.png; sourceTree = "<group>"; };
 		121FD97915FF201000AA6947 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
@@ -971,7 +969,6 @@
 				1259CA4D16085A8C00DAF114 /* MainStoryboard-iPad.storyboard */,
 				12ACA3A01609BFCA0086ACEE /* MainStoryboard.storyboard */,
 				12FB054415F7806700AE78E4 /* D3Assistant-Info.plist */,
-				121FD96115FF128600AA6947 /* MainWindow.xib */,
 				12FB054515F7806700AE78E4 /* InfoPlist.strings */,
 				12FB054815F7806700AE78E4 /* main.m */,
 				12FB054A15F7806700AE78E4 /* D3Assistant-Prefix.pch */,
@@ -1456,7 +1453,6 @@
 				71ACC4E515FBE6DC00544EBE /* ActiveSkillView.xib in Resources */,
 				71B9040915FC9A6D00307AC7 /* PassiveSkillView.xib in Resources */,
 				12F6829F15FDFA250052A1AA /* realms.plist in Resources */,
-				121FD96215FF128600AA6947 /* MainWindow.xib in Resources */,
 				121FD9E115FF201000AA6947 /* attributesBackground.png in Resources */,
 				121FD9E215FF201000AA6947 /* attributesHeaderView.png in Resources */,
 				121FD9E315FF201000AA6947 /* background.png in Resources */,

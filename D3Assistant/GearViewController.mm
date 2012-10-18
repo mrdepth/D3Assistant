@@ -73,8 +73,12 @@
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-	if ([segue.destinationViewController isKindOfClass:[GearInfoViewController class]]) {
-		GearInfoViewController* controller = (GearInfoViewController*) segue.destinationViewController;
+	if ([sender isKindOfClass:[GearView class]]) {
+		GearInfoViewController* controller;
+		if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+			controller = (GearInfoViewController*) [(UINavigationController*) segue.destinationViewController topViewController];
+		else
+			controller = (GearInfoViewController*) segue.destinationViewController;
 		controller.hero = self.hero;
 		controller.compareHero = self.compareHero;
 		controller.gear = [self.gears valueForKey:[sender slot]];

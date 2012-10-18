@@ -164,6 +164,19 @@
 }
 
 - (void) setHero:(NSDictionary *)aHero {
+	self.navigationItem.rightBarButtonItem.enabled = YES;
+	self.navigationItem.titleView = nil;
+	
+	self.gearViewController.compareHero = nil;
+	self.gearViewController.compareParty = nil;
+	self.gearViewController.activeCompareHero = nil;
+	
+	self.compareHero = nil;
+	if (compareParty) {
+		delete compareParty;
+		compareParty = nil;
+	}
+	
 	hero = aHero;
 	
 	if ([self isViewLoaded])

@@ -31,6 +31,7 @@
 - (id)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
 		[self setup];
+		self.layer.zPosition = 1;
     }
     return self;
 }
@@ -53,6 +54,15 @@
 	[self layout];
 }
 
+- (void) willMoveToSuperview:(UIView *)newSuperview {
+	if (self.superview)
+		[self.superview removeObserver:self forKeyPath:@"subviews"];
+	[newSuperview addObserver:self forKeyPath:@"subviews" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
+}
+
+- (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+	
+}
 
 #pragma mark - Private
 
