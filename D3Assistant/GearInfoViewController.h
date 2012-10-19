@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *itemLevelLabel;
 @property (weak, nonatomic) IBOutlet UILabel *requiredLevelLabel;
+@property (weak, nonatomic) IBOutlet UILabel *perfectionLabel;
 
 @property (nonatomic, strong) NSDictionary* hero;
 @property (nonatomic, strong) NSDictionary* gear;

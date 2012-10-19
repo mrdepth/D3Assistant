@@ -23,6 +23,8 @@
 
 @interface GearInfoViewController () {
 	d3ce::Party* alternateParty;
+	float perfection;
+	float comparePerfection;
 }
 
 - (void) reload;
@@ -35,6 +37,7 @@
 @synthesize tableView;
 @synthesize itemLevelLabel;
 @synthesize requiredLevelLabel;
+@synthesize perfectionLabel;
 @synthesize gear;
 @synthesize compareGear;
 @synthesize slot;
@@ -60,10 +63,24 @@
 	alternateParty = self.party->clone();
 	d3ce::Hero* d3ceHero = alternateParty->getHeroes().front();
 	d3ce::Gear* item = d3ceHero->getItem([D3CEHelper slotFromString:self.slot]);
-	if (item)
+
+	if (item) {
+		perfection = item->perfection();
 		d3ceHero->removeItem(item);
+	}
+	else
+		perfection = 0;
+	
 	if (self.compareGear && self.compareHero) {
-		[D3CEHelper addItemFromDictionary:self.compareGear toHero:d3ceHero slot:[D3CEHelper slotFromString:self.slot] replaceExisting:YES];
+
+		item = [D3CEHelper addItemFromDictionary:self.compareGear toHero:d3ceHero slot:[D3CEHelper slotFromString:self.slot] replaceExisting:YES];
+		comparePerfection = 0;
+		if (item)
+			comparePerfection = item->perfection();
+		else
+			comparePerfection = 0;
+			
+		
 
 		UISegmentedControl* control = [[UISegmentedControl alloc] initWithItems:@[[self.hero valueForKey:@"name"], [self.compareHero valueForKey:@"name"]]];
 		control.segmentedControlStyle = UISegmentedControlStyleBar;
@@ -92,6 +109,7 @@
 	[self setTableView:nil];
 	[self setItemLevelLabel:nil];
 	[self setRequiredLevelLabel:nil];
+	[self setPerfectionLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -237,6 +255,7 @@
 	
 	self.itemLevelLabel.text = [NSString stringWithFormat:@"%d", [[currentGear valueForKey:@"itemLevel"] integerValue]];
 	self.requiredLevelLabel.text = [NSString stringWithFormat:@"%d", [[currentGear valueForKey:@"requiredLevel"] integerValue]];
+	self.perfectionLabel.text = [NSString stringWithFormat:@"%.0f%%", self.activeCompareHero ? comparePerfection * 100 : perfection * 100];
 	[self.tableView reloadData];
 }
 
