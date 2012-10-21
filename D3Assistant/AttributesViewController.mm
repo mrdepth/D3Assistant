@@ -156,6 +156,7 @@
 		
 		rows = @[
 		@{@"title" : @"Maximum Life", @"value" : [NSString stringWithFormat:@"%s", d3ceHero->getHitPoints().toString().c_str()]},
+		@{@"title" : @"EHP", @"value" : [NSString stringWithFormat:@"%s", d3ceHero->getEffectiveHitPoints().toString().c_str()]},
 		@{@"title" : @"Life Steal", @"value" : [NSString stringWithFormat:@"%s%%", (d3ceHero->getLifeSteal() * 100).toString().c_str()]},
 		@{@"title" : @"Life per Kill", @"value" : [NSString stringWithFormat:@"%s", d3ceHero->getLifePerKill().toString().c_str()]},
 		@{@"title" : @"Life per Hit", @"value" : [NSString stringWithFormat:@"%s", d3ceHero->getLifePerHit().toString().c_str()]}];
