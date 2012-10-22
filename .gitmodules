@@ -1,0 +1,3 @@
+[submodule "D3Assistant/d3ce"]
+	path = D3Assistant/d3ce
+	url = ../d3ce.git
