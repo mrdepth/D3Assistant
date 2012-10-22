@@ -123,7 +123,7 @@
 	
 	self.heroNameLabel.text = [currentHero valueForKey:@"name"];
 	
-	NSString* heroClass = [currentHero valueForKey:@"class"];
+/*	NSString* heroClass = [currentHero valueForKey:@"class"];
 	NSString* deviceSuffix = nil;
 	NSString* className = nil;
 
@@ -143,10 +143,10 @@
 	else if ([heroClass isEqualToString:@"witch-doctor"])
 		className = @"WitchDoctor";
 	else
-		className = @"Wizard";
+		className = @"Wizard";*/
 
 	//self.backgroundImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"gear%@%@%@.png", className, gender, deviceSuffix]];
-	self.backgroundImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"gear%@%@.png", className, deviceSuffix]];
+	//self.backgroundImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"gear%@%@.png", className, deviceSuffix]];
 	
 	for (GearView* gearView in @[self.headView, self.shouldersView, self.torsoView, self.feetView, self.feetView, self.handsView, self.legsView,
 		 self.bracersView, self.mainHandView, self.offHandView, self.waistView, self.leftFingerView, self.rightFingerView, self.neckView]) {

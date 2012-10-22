@@ -33,7 +33,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="383" height="704"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="gearWizard-iPad.png" id="Dqc-V7-Rf5">
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="gearBackground.png" id="Dqc-V7-Rf5">
                                         <rect key="frame" x="0.0" y="0.0" width="383" height="704"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -269,7 +269,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="bQN-F4-hc8">
-                                <rect key="frame" x="0.0" y="40" width="320" height="448"/>
+                                <rect key="frame" x="0.0" y="40" width="320" height="438"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -328,61 +328,75 @@
                                             <outlet property="statLabel" destination="vhY-BQ-6hj" id="9xe-Vx-3Yk"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="SummaryCellView" rowHeight="61" id="7bU-2w-K8Q" customClass="SummaryCellView">
-                                        <rect key="frame" x="0.0" y="82" width="320" height="61"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="SummaryCellView" rowHeight="81" id="dTt-S5-mNE" customClass="SummaryCellView">
+                                        <rect key="frame" x="0.0" y="82" width="320" height="81"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="separator.png" id="DDw-i5-vzB">
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="separator.png" id="1HW-8J-Hlg">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Stat Changes if Equipped" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" id="aBi-7b-Vua">
-                                                    <rect key="frame" x="20" y="0.0" width="82" height="60"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Stat Changes if Equipped" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" id="x43-SV-XSR">
+                                                    <rect key="frame" x="20" y="0.0" width="82" height="80"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" red="0.9450981021" green="0.94117653369999998" blue="0.91764712329999998" alpha="1" colorSpace="deviceRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Damage" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" id="71A-MI-GLE">
-                                                    <rect key="frame" x="208" y="20" width="66" height="20"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" red="0.9450981021" green="0.94117653369999998" blue="0.91764712329999998" alpha="1" colorSpace="deviceRGB"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" id="dtR-gm-bnK">
-                                                    <rect key="frame" x="125" y="20" width="80" height="20"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" red="0.9450981021" green="0.94117653369999998" blue="0.91764712329999998" alpha="1" colorSpace="deviceRGB"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" id="3Ej-BF-gId">
-                                                    <rect key="frame" x="125" y="40" width="80" height="20"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" red="0.9450981021" green="0.94117653369999998" blue="0.91764712329999998" alpha="1" colorSpace="deviceRGB"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" id="VHD-jM-foe">
-                                                    <rect key="frame" x="125" y="0.0" width="80" height="20"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" red="0.9450981021" green="0.94117653369999998" blue="0.91764712329999998" alpha="1" colorSpace="deviceRGB"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Protection" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" id="CUf-ap-Rbv">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Damage" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" id="xIb-dn-TEm">
                                                     <rect key="frame" x="208" y="40" width="66" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" red="0.9450981021" green="0.94117653369999998" blue="0.91764712329999998" alpha="1" colorSpace="deviceRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Life" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" id="2O3-Qf-sZq">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" id="zWm-kb-nYE">
+                                                    <rect key="frame" x="125" y="40" width="80" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="0.9450981021" green="0.94117653369999998" blue="0.91764712329999998" alpha="1" colorSpace="deviceRGB"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" id="47O-Zx-rGL">
+                                                    <rect key="frame" x="125" y="60" width="80" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="0.9450981021" green="0.94117653369999998" blue="0.91764712329999998" alpha="1" colorSpace="deviceRGB"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" id="cIA-DY-rFw">
+                                                    <rect key="frame" x="125" y="0.0" width="80" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="0.9450981021" green="0.94117653369999998" blue="0.91764712329999998" alpha="1" colorSpace="deviceRGB"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Protection" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" id="cSg-82-vpv">
+                                                    <rect key="frame" x="208" y="60" width="66" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="0.9450981021" green="0.94117653369999998" blue="0.91764712329999998" alpha="1" colorSpace="deviceRGB"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Life" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" id="HHK-Fb-gEb">
                                                     <rect key="frame" x="208" y="0.0" width="66" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="0.9450981021" green="0.94117653369999998" blue="0.91764712329999998" alpha="1" colorSpace="deviceRGB"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" id="jOg-nW-D4D">
+                                                    <rect key="frame" x="125" y="20" width="80" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="0.9450981021" green="0.94117653369999998" blue="0.91764712329999998" alpha="1" colorSpace="deviceRGB"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="EHP" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" id="QYB-bw-nS3">
+                                                    <rect key="frame" x="208" y="20" width="66" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" red="0.9450981021" green="0.94117653369999998" blue="0.91764712329999998" alpha="1" colorSpace="deviceRGB"/>
@@ -392,9 +406,10 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
-                                            <outlet property="damageLabel" destination="dtR-gm-bnK" id="IDv-5u-oaZ"/>
-                                            <outlet property="defenseLabel" destination="3Ej-BF-gId" id="kdx-gK-J3u"/>
-                                            <outlet property="hitPointsLabel" destination="VHD-jM-foe" id="vBa-LK-D1l"/>
+                                            <outlet property="damageLabel" destination="zWm-kb-nYE" id="BR1-wF-Evf"/>
+                                            <outlet property="defenseLabel" destination="47O-Zx-rGL" id="1bJ-bT-qOC"/>
+                                            <outlet property="ehpLabel" destination="jOg-nW-D4D" id="gxm-oY-ng9"/>
+                                            <outlet property="hitPointsLabel" destination="cIA-DY-rFw" id="8AT-tM-AaU"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -404,33 +419,47 @@
                                 </connections>
                             </tableView>
                             <view opaque="NO" contentMode="scaleToFill" id="szy-6V-cqt">
-                                <rect key="frame" x="0.0" y="488" width="320" height="32"/>
+                                <rect key="frame" x="0.0" y="478" width="320" height="42"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Item Level:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="U20-pt-AHc">
                                         <rect key="frame" x="10" y="0.0" width="70" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" red="0.82352948189999997" green="0.72156864399999998" blue="0.44705885649999999" alpha="1" colorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="60" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="13d-dk-edx">
                                         <rect key="frame" x="80" y="0.0" width="20" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" red="0.9450981021" green="0.94117653369999998" blue="0.91764712329999998" alpha="1" colorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Required Level:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="azl-lO-Rlo">
                                         <rect key="frame" x="190" y="0.0" width="100" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" red="0.82352948189999997" green="0.72156864399999998" blue="0.44705885649999999" alpha="1" colorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="60" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="g2q-6l-Y4M">
                                         <rect key="frame" x="290" y="0.0" width="20" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.9450981021" green="0.94117653369999998" blue="0.91764712329999998" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Perfection:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="rAe-GP-jZq">
+                                        <rect key="frame" x="10" y="20" width="70" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.82352948189999997" green="0.72156864399999998" blue="0.44705885649999999" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="60" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="wuJ-rK-RhM">
+                                        <rect key="frame" x="80" y="20" width="52" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" red="0.9450981021" green="0.94117653369999998" blue="0.91764712329999998" alpha="1" colorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
@@ -449,6 +478,7 @@
                         <outlet property="itemLevelLabel" destination="13d-dk-edx" id="POE-dg-Bjt"/>
                         <outlet property="nameFrameImageView" destination="IWe-1m-rMy" id="IGx-oS-eXc"/>
                         <outlet property="nameLabel" destination="HPh-pS-kDX" id="A8N-sB-B9N"/>
+                        <outlet property="perfectionLabel" destination="wuJ-rK-RhM" id="hwH-QS-xwo"/>
                         <outlet property="requiredLevelLabel" destination="g2q-6l-Y4M" id="KBw-gu-mUn"/>
                         <outlet property="tableView" destination="bQN-F4-hc8" id="H5u-73-RfO"/>
                     </connections>
@@ -983,9 +1013,13 @@
                         <rect key="frame" x="0.0" y="64" width="540" height="556"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="attributesBackground.png" id="YOG-oT-B0N">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="skillCalcBackground-iPad.png" id="YOG-oT-B0N">
                                 <rect key="frame" x="0.0" y="0.0" width="540" height="556"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="regionFrame.png" id="zlA-Mu-vYw">
+                                <rect key="frame" x="140" y="190" width="260" height="176"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="g3Y-xq-VSX">
                                 <rect key="frame" x="140" y="190" width="260" height="176"/>
@@ -1491,224 +1525,21 @@
         </scene>
     </scenes>
     <resources>
-        <image name="attributesBackground.png" width="320" height="696"/>
         <image name="bullet.png" width="8" height="8"/>
         <image name="cellBackground.png" width="320" height="75"/>
         <image name="cellBackgroundSelected.png" width="320" height="75"/>
         <image name="disclosureIndicator.png" width="8" height="12"/>
         <image name="frameHeroSC.png" width="97" height="106"/>
-        <image name="gearWizard-iPad.png" width="383" height="748"/>
+        <image name="gearBackground.png" width="320" height="460"/>
+        <image name="regionFrame.png" width="260" height="176"/>
         <image name="runeA.png" width="36" height="46"/>
         <image name="separator.png" width="320" height="1"/>
-        <image name="skillCalcBackground-iPad.png" width="540" height="627"/>
+        <image name="skillCalcBackground-iPad.png" width="703" height="704"/>
         <image name="skillPassiveFrameLarge.png" width="81" height="81"/>
         <image name="skull.png" width="16" height="16"/>
         <image name="titleBrown.png" width="350" height="40"/>
         <image name="titleYellow.png" width="350" height="40"/>
     </resources>
-    <classes>
-        <class className="ActiveSkillInfoCellView" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ActiveSkillInfoCellView.h"/>
-            <relationships>
-                <relationship kind="outlet" name="levelLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="skillCategoryLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="skillDescriptionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="skillImageView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="ActiveSkillView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ActiveSkillView.h"/>
-            <relationships>
-                <relationship kind="action" name="onTap:"/>
-                <relationship kind="outlet" name="contentView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="delegate"/>
-                <relationship kind="outlet" name="frameImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="runeImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="runeNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="skillImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="skillNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="skillOrderImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="skillOrderLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="AttributeCellView" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AttributeCellView.h"/>
-            <relationships>
-                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="valueLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="AttributesViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AttributesViewController.h"/>
-        </class>
-        <class className="CareerCellView" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CareerCellView.h"/>
-            <relationships>
-                <relationship kind="outlet" name="progressionHCView" candidateClass="ProgressionView"/>
-                <relationship kind="outlet" name="progressionSCView" candidateClass="ProgressionView"/>
-            </relationships>
-        </class>
-        <class className="CollapsableTableView" superclassName="UITableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CollapsableTableView.h"/>
-        </class>
-        <class className="GearAttributesViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GearAttributesViewController.h"/>
-        </class>
-        <class className="GearInfoViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GearInfoViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="onChangeHero:"/>
-                <relationship kind="outlet" name="itemLevelLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="nameFrameImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="requiredLevelLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="GearStatCellView" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GearStatCellView.h"/>
-            <relationships>
-                <relationship kind="outlet" name="statLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="GearView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GearView.h"/>
-            <relationships>
-                <relationship kind="outlet" name="delegate"/>
-            </relationships>
-        </class>
-        <class className="GearViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GearViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="backgroundImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="bracersView" candidateClass="GearView"/>
-                <relationship kind="outlet" name="feetView" candidateClass="GearView"/>
-                <relationship kind="outlet" name="handsView" candidateClass="GearView"/>
-                <relationship kind="outlet" name="headView" candidateClass="GearView"/>
-                <relationship kind="outlet" name="heroNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="leftFingerView" candidateClass="GearView"/>
-                <relationship kind="outlet" name="legsView" candidateClass="GearView"/>
-                <relationship kind="outlet" name="mainHandView" candidateClass="GearView"/>
-                <relationship kind="outlet" name="neckView" candidateClass="GearView"/>
-                <relationship kind="outlet" name="offHandView" candidateClass="GearView"/>
-                <relationship kind="outlet" name="rightFingerView" candidateClass="GearView"/>
-                <relationship kind="outlet" name="shouldersView" candidateClass="GearView"/>
-                <relationship kind="outlet" name="torsoView" candidateClass="GearView"/>
-                <relationship kind="outlet" name="waistView" candidateClass="GearView"/>
-            </relationships>
-        </class>
-        <class className="GemStatCellView" superclassName="GearStatCellView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GemStatCellView.h"/>
-            <relationships>
-                <relationship kind="outlet" name="gemImageView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="HeroCareerCellView" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HeroCareerCellView.h"/>
-            <relationships>
-                <relationship kind="outlet" name="progressionView" candidateClass="ProgressionView"/>
-            </relationships>
-        </class>
-        <class className="HeroCellView" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HeroCellView.h"/>
-            <relationships>
-                <relationship kind="outlet" name="avatarImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="classLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="deadLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="frameImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="hardcoreLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="paragonLevelLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="skullImageView" candidateClass="UIImageView"/>
-                <relationship kind="outletCollection" name="levelLabels" candidateClass="UILabel"/>
-                <relationship kind="outletCollection" name="nameLabels" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="HeroSelectionViewController" superclassName="ProfilesViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HeroSelectionViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="onCancel:"/>
-                <relationship kind="outlet" name="delegate"/>
-            </relationships>
-        </class>
-        <class className="HeroViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HeroViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="onChangeHero:"/>
-                <relationship kind="action" name="onChangeSection:"/>
-                <relationship kind="outlet" name="contentView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="sectionsControl" candidateClass="UISegmentedControl"/>
-            </relationships>
-        </class>
-        <class className="PassiveSkillInfoCellView" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PassiveSkillInfoCellView.h"/>
-            <relationships>
-                <relationship kind="outlet" name="levelLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="skillDescriptionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="skillImageView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="PassiveSkillView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PassiveSkillView.h"/>
-            <relationships>
-                <relationship kind="action" name="onTap:"/>
-                <relationship kind="outlet" name="contentView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="delegate"/>
-                <relationship kind="outlet" name="frameImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="skillImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="skillNameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="ProfilesViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfilesViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="onDonate:"/>
-                <relationship kind="outlet" name="heroViewController" candidateClass="HeroViewController"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="ProgressionView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProgressionView.h"/>
-        </class>
-        <class className="RealmsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RealmsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="onCancel:"/>
-            </relationships>
-        </class>
-        <class className="RuneInfoCellView" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RuneInfoCellView.h"/>
-            <relationships>
-                <relationship kind="outlet" name="levelLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="runeDescriptionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="runeImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="runeNameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="SkillInfoViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SkillInfoViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="skillNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="SkillsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SkillsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="contentView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outletCollection" name="activeSkills" candidateClass="ActiveSkillView"/>
-                <relationship kind="outletCollection" name="passiveSkills" candidateClass="PassiveSkillView"/>
-            </relationships>
-        </class>
-        <class className="SummaryCellView" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SummaryCellView.h"/>
-            <relationships>
-                <relationship kind="outlet" name="damageLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="defenseLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="hitPointsLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

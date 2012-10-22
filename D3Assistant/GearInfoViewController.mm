@@ -59,7 +59,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
 	alternateParty = self.party->clone();
 	d3ce::Hero* d3ceHero = alternateParty->getHeroes().front();
 	d3ce::Gear* item = d3ceHero->getItem([D3CEHelper slotFromString:self.slot]);
@@ -81,12 +80,15 @@
 			comparePerfection = 0;
 			
 		
-
-		UISegmentedControl* control = [[UISegmentedControl alloc] initWithItems:@[[self.hero valueForKey:@"name"], [self.compareHero valueForKey:@"name"]]];
-		control.segmentedControlStyle = UISegmentedControlStyleBar;
-		control.selectedSegmentIndex = self.activeCompareHero ? 1 : 0;
-		[control addTarget:self action:@selector(onChangeHero:) forControlEvents:UIControlEventValueChanged];
-		self.navigationItem.titleView = control;
+		if (self.gear) {
+			UISegmentedControl* control = [[UISegmentedControl alloc] initWithItems:@[[self.hero valueForKey:@"name"], [self.compareHero valueForKey:@"name"]]];
+			control.segmentedControlStyle = UISegmentedControlStyleBar;
+			control.selectedSegmentIndex = self.activeCompareHero ? 1 : 0;
+			[control addTarget:self action:@selector(onChangeHero:) forControlEvents:UIControlEventValueChanged];
+			self.navigationItem.titleView = control;
+		}
+		else
+			self.title = [self.hero valueForKey:@"name"];
 	}
 	else
 		self.title = [self.hero valueForKey:@"name"];
@@ -184,20 +186,35 @@
 		d3ce::Range oldHP = oldHero->getHitPoints();
 		d3ce::Range newHP = newHero->getHitPoints();
 		float hpDif = oldHP.max - newHP.max;
+
+		d3ce::Range oldEHP = oldHero->getEffectiveHitPoints();
+		d3ce::Range newEHP = newHero->getEffectiveHitPoints();
+		float ehpDif = oldEHP.max - newEHP.max;
 		
 		if (compareGear) {
 			dpsDif = -dpsDif;
 			defenseDif = -defenseDif;
 			hpDif = -hpDif;
+			ehpDif = -ehpDif;
+			if (fabs(dpsDif) <= FLT_EPSILON)
+				dpsDif = 0;
+			if (fabs(defenseDif) <= FLT_EPSILON)
+				defenseDif = 0;
+			if (fabs(hpDif) <= FLT_EPSILON)
+				hpDif = 0;
+			if (fabs(ehpDif) <= FLT_EPSILON)
+				ehpDif = 0;
 		}
 		
 		cell.damageLabel.text = [NSString stringWithFormat:@"%@%.1f", dpsDif >= 0 ? @"+" : @"", dpsDif];
 		cell.defenseLabel.text = [NSString stringWithFormat:@"%@%.1f%%", defenseDif >= 0 ? @"+" : @"", defenseDif];
 		cell.hitPointsLabel.text = [NSString stringWithFormat:@"%@%.1f", hpDif >= 0 ? @"+" : @"", hpDif];
+		cell.ehpLabel.text = [NSString stringWithFormat:@"%@%.1f", ehpDif >= 0 ? @"+" : @"", ehpDif];
 		
 		cell.damageLabel.textColor = dpsDif >= 0 ? [UIColor greenColor] : [UIColor redColor];
 		cell.defenseLabel.textColor = defenseDif >= 0 ? [UIColor greenColor] : [UIColor redColor];
 		cell.hitPointsLabel.textColor = hpDif >= 0 ? [UIColor greenColor] : [UIColor redColor];
+		cell.ehpLabel.textColor = ehpDif >= 0 ? [UIColor greenColor] : [UIColor redColor];
 		return cell;
 	}
 	return nil;

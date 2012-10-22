@@ -12,5 +12,6 @@
 @property (nonatomic, weak) IBOutlet UILabel* damageLabel;
 @property (nonatomic, weak) IBOutlet UILabel* defenseLabel;
 @property (nonatomic, weak) IBOutlet UILabel* hitPointsLabel;
+@property (nonatomic, weak) IBOutlet UILabel* ehpLabel;
 
 @end
