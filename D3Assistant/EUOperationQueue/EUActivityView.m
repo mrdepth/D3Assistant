@@ -208,7 +208,7 @@
 									 self.alpha = 0;
 								 }
 								 completion:^(BOOL finished) {
-									 if (finished)
+									 if (finished && self.operations.count == 0)
 										 self.hidden = YES;
 								 }];
 			}
