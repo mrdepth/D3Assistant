@@ -36,23 +36,6 @@
 				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">274</int>
 				<array class="NSMutableArray" key="NSSubviews">
-					<object class="IBUIImageView" id="576810339">
-						<reference key="NSNextResponder" ref="819634009"/>
-						<int key="NSvFlags">256</int>
-						<string key="NSFrame">{{10, 10}, {252, 125}}</string>
-						<reference key="NSSuperview" ref="819634009"/>
-						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="511935390"/>
-						<bool key="IBUIOpaque">NO</bool>
-						<bool key="IBUIClipsSubviews">YES</bool>
-						<int key="IBUIContentMode">1</int>
-						<bool key="IBUIMultipleTouchEnabled">YES</bool>
-						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<object class="NSCustomResource" key="IBUIImage">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">fire.png</string>
-						</object>
-					</object>
 					<object class="IBUIImageView" id="511935390">
 						<reference key="NSNextResponder" ref="819634009"/>
 						<int key="NSvFlags">292</int>
@@ -337,7 +320,7 @@
 				<string key="NSFrameSize">{320, 135}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView" ref="576810339"/>
+				<reference key="NSNextKeyView"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
 					<bytes key="NSWhite">MAA</bytes>
@@ -370,14 +353,6 @@
 						<reference key="destination" ref="511935390"/>
 					</object>
 					<int key="connectionID">20</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">itemEffectImageView</string>
-						<reference key="source" ref="819634009"/>
-						<reference key="destination" ref="576810339"/>
-					</object>
-					<int key="connectionID">21</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
@@ -463,7 +438,6 @@
 							<reference ref="826825069"/>
 							<reference ref="803556906"/>
 							<reference ref="586771270"/>
-							<reference ref="576810339"/>
 							<reference ref="881475605"/>
 							<reference ref="511935390"/>
 							<reference ref="480598882"/>
@@ -492,11 +466,6 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">7</int>
 						<reference key="object" ref="586771270"/>
-						<reference key="parent" ref="819634009"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">8</int>
-						<reference key="object" ref="576810339"/>
 						<reference key="parent" ref="819634009"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -552,7 +521,6 @@
 				<string key="5.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="6.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="7.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="8.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="9.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
@@ -640,10 +608,10 @@
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
-		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="fire.png">{298, 147}</string>
-			<string key="yellow.png">{87, 166}</string>
-		</dictionary>
+		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
+			<string key="NS.key.0">yellow.png</string>
+			<string key="NS.object.0">{87, 166}</string>
+		</object>
 		<string key="IBCocoaTouchPluginVersion">1929</string>
 	</data>
 </archive>

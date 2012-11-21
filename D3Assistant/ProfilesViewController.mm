@@ -23,6 +23,7 @@
 #import "AppDelegate.h"
 #import "HeroViewController.h"
 #import "ProfilesStorage.h"
+#import "UIImageView+URL.h"
 
 #define DidAddToFavoritesNotification @"DidAddToFavoritesNotification"
 #define DidRemoveFromFavoritesNotification @"DidRemoveFromFavoritesNotification"
@@ -145,12 +146,12 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 	NSDictionary* profile = tableView == self.searchDisplayController.searchResultsTableView ? [self.searchResults objectAtIndex:section] : [self.profiles objectAtIndex:section];
-	return [[profile valueForKey:@"heroes"] count] + [[profile valueForKey:@"fallenHeroes"] count] + 1;
+	return [[profile valueForKey:@"heroes"] count] + [[profile valueForKey:@"fallenHeroes"] count];// + 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	if (indexPath.row == 0) {
+/*	if (indexPath.row == 0) {
 		static NSString *CellIdentifier = @"CareerCellView";
 		CareerCellView *cell = (CareerCellView*) [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 		if (!cell)
@@ -162,7 +163,7 @@
 		cell.progressionHCView.progression = [D3Utility progressionWithProfile:profile hardcore:YES];
 		return cell;
 	}
-	else {
+	else*/ {
 		static NSString *CellIdentifier = @"HeroCellView";
 		HeroCellView *cell = (HeroCellView*) [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 		if (!cell)
@@ -173,12 +174,14 @@
 		
 		NSDictionary* hero;
 		BOOL fallen;
-		if (indexPath.row - 1 >= count) {
-			hero = [[profile valueForKey:@"fallenHeroes"] objectAtIndex:indexPath.row - 1 - count];
+		if (indexPath.row >= count) {
+			//hero = [[profile valueForKey:@"fallenHeroes"] objectAtIndex:indexPath.row - 1 - count];
+			hero = [[profile valueForKey:@"fallenHeroes"] objectAtIndex:indexPath.row - count];
 			fallen = YES;
 		}
 		else {
-			hero = [[profile valueForKey:@"heroes"] objectAtIndex:indexPath.row - 1];
+			//hero = [[profile valueForKey:@"heroes"] objectAtIndex:indexPath.row - 1];
+			hero = [[profile valueForKey:@"heroes"] objectAtIndex:indexPath.row];
 			fallen = NO;
 		}
 		
@@ -192,10 +195,12 @@
 		for (UILabel* label in cell.levelLabels)
 			label.text = level;
 
-		cell.paragonLevelLabel.text = [NSString stringWithFormat:@"%d", [[hero valueForKey:@"paragonLevel"] integerValue]];
-		cell.classLabel.text = [[hero valueForKey:@"class"] capitalizedString];
+		cell.paragonLevelLabel.text = [NSString stringWithFormat:@"(%d)", [[hero valueForKey:@"paragonLevel"] integerValue]];
+		cell.classLabel.text = [NSString stringWithFormat:@"%@ (%@)", [[hero valueForKey:@"class"] capitalizedString], [[hero valueForKey:@"gender"] integerValue] == 0 ? @"Male" : @"Female"];
 		
-		cell.avatarImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@%@.png", [hero valueForKey:@"class"], [hero valueForKey:@"gender"]]];
+		//cell.avatarImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@%@.png", [hero valueForKey:@"class"], [hero valueForKey:@"gender"]]];
+		cell.avatarImageView.image = nil;
+		[cell.avatarImageView setImageWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://eu.battle.net/d3/static/images/hero/%@/crest.png", [hero valueForKey:@"class"]]]];
 		cell.deadLabel.hidden = !fallen;
 		cell.skullImageView.hidden = !fallen;
 		return cell;
@@ -260,24 +265,28 @@
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	return indexPath.row == 0 ? 65 : 116;
+	return 93;
+	//return indexPath.row == 0 ? 65 : 93;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	if (indexPath.row > 0) {
+	/*if (indexPath.row > 0)*/ {
 		NSDictionary* profile = tableView == self.searchDisplayController.searchResultsTableView ? [self.searchResults objectAtIndex:indexPath.section] : [self.profiles objectAtIndex:indexPath.section];
 		NSArray* array = [profile valueForKey:@"heroes"];
 		NSInteger count = [array count];
 		
 		NSDictionary* hero;
 		BOOL fallen;
-		if (indexPath.row - 1 >= count) {
-			hero = [[profile valueForKey:@"fallenHeroes"] objectAtIndex:indexPath.row - 1 - count];
+		//if (indexPath.row - 1 >= count) {
+		if (indexPath.row >= count) {
+			//hero = [[profile valueForKey:@"fallenHeroes"] objectAtIndex:indexPath.row - 1 - count];
+			hero = [[profile valueForKey:@"fallenHeroes"] objectAtIndex:indexPath.row  - count];
 			fallen = YES;
 		}
 		else {
-			hero = [[profile valueForKey:@"heroes"] objectAtIndex:indexPath.row - 1];
+			//hero = [[profile valueForKey:@"heroes"] objectAtIndex:indexPath.row - 1];
+			hero = [[profile valueForKey:@"heroes"] objectAtIndex:indexPath.row];
 			fallen = NO;
 		}
 		
