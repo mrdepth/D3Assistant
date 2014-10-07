@@ -1,3 +1,9 @@
 [submodule "D3Assistant/d3ce"]
 	path = D3Assistant/d3ce
 	url = ../d3ce.git
+[submodule "d3ce"]
+	path = d3ce
+	url = https://github.com/mrdepth/d3ce
+[submodule "tools"]
+	path = tools
+	url = https://github.com/mrdepth/tools
