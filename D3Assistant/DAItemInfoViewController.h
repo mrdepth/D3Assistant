@@ -18,4 +18,5 @@
 @property (strong, nonatomic) DAHero* hero;
 
 - (IBAction)onClose:(id)sender;
+- (IBAction)onItems:(UIGestureRecognizer*)sender;
 @end

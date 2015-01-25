@@ -191,6 +191,11 @@
 	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (IBAction)onItems:(UIGestureRecognizer* )sender {
+	if (sender.state == UIGestureRecognizerStateRecognized)
+		[self performSegueWithIdentifier:@"DAItemsViewController" sender:nil];
+}
+
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 	if ([segue.identifier isEqualToString:@"DAItemsViewController"]) {
 		DAItemsViewController* controller = segue.destinationViewController;
