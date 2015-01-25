@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view opaque="NO" contentMode="scaleToFill" id="nWv-iF-Ult" customClass="DAHeroesTableHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="bar.png" translatesAutoresizingMaskIntoConstraints="NO" id="9q6-Fv-W8Z">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="37"/>
+                </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="MrDepth#12345" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="XdF-Fn-fTb">
+                    <rect key="frame" x="20" y="0.0" width="216" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.79607850309999995" green="0.39607846740000002" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cng-qB-XH7">
+                    <rect key="frame" x="261" y="0.0" width="44" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="kYU-ar-jEd"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <state key="normal" image="favoritesOff.png">
+                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" image="favoritesOn.png"/>
+                    <state key="highlighted" image="favoritesOn.png">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onFavorites:" destination="nWv-iF-Ult" eventType="touchUpInside" id="e9g-gp-Fqu"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="XdF-Fn-fTb" secondAttribute="bottom" id="CId-Cd-uoF"/>
+                <constraint firstAttribute="bottom" secondItem="9q6-Fv-W8Z" secondAttribute="bottom" constant="-7" id="Eve-zN-31b"/>
+                <constraint firstItem="cng-qB-XH7" firstAttribute="top" secondItem="nWv-iF-Ult" secondAttribute="top" id="MhL-MN-d2h"/>
+                <constraint firstAttribute="trailing" secondItem="cng-qB-XH7" secondAttribute="trailing" constant="15" id="Tkg-sj-K80"/>
+                <constraint firstAttribute="bottom" secondItem="cng-qB-XH7" secondAttribute="bottom" id="bQj-yh-DXG"/>
+                <constraint firstItem="XdF-Fn-fTb" firstAttribute="top" secondItem="nWv-iF-Ult" secondAttribute="top" id="ffu-qZ-0th"/>
+                <constraint firstItem="cng-qB-XH7" firstAttribute="leading" secondItem="XdF-Fn-fTb" secondAttribute="trailing" constant="25" id="h7D-Vf-gXM"/>
+                <constraint firstItem="9q6-Fv-W8Z" firstAttribute="leading" secondItem="nWv-iF-Ult" secondAttribute="leading" id="jok-gj-jWb"/>
+                <constraint firstAttribute="trailing" secondItem="9q6-Fv-W8Z" secondAttribute="trailing" id="nR0-p3-6UG"/>
+                <constraint firstItem="XdF-Fn-fTb" firstAttribute="leading" secondItem="nWv-iF-Ult" secondAttribute="leading" constant="20" id="sen-f9-JbY"/>
+                <constraint firstItem="9q6-Fv-W8Z" firstAttribute="top" secondItem="nWv-iF-Ult" secondAttribute="top" id="vWO-6g-71e"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="battleTagLabel" destination="XdF-Fn-fTb" id="DVz-4W-sZU"/>
+                <outlet property="favoritesButton" destination="cng-qB-XH7" id="h2Z-Br-rcK"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="bar.png" width="640" height="38"/>
+        <image name="favoritesOff.png" width="16" height="16"/>
+        <image name="favoritesOn.png" width="16" height="16"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

@@ -25,12 +25,14 @@
 		for (NSInteger i = length - 1; i >= 0; i--) {
 			if (![set characterIsMember:cString[i]]) {
 				if (i < length - 1)
-					s = [NSString stringWithFormat:@"%@#%@", [s substringToIndex:i + 1], [s substringFromIndex:i + 1]];
+					return [NSString stringWithFormat:@"%@#%@", [s substringToIndex:i + 1], [s substringFromIndex:i + 1]];
 				break;
 			}
 		}
 	}
-	return s;
+    else
+        return s;
+	return nil;
 }
 
 - (NSString*) validBattleTagURLString {

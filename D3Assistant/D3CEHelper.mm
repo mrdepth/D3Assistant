@@ -7,74 +7,86 @@
 //
 
 #import "D3CEHelper.h"
+#import "DAStorage.h"
 
 @implementation D3CEHelper
 
-+ (d3ce::Engine*) newEgine {
-	return new d3ce::Engine([[[NSBundle mainBundle] pathForResource:@"d3" ofType:@"sqlite"] cStringUsingEncoding:NSUTF8StringEncoding]);
++ (std::shared_ptr<d3ce::Engine>) sharedEngine {
+	static std::shared_ptr<d3ce::Engine> engine;
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
+		engine = d3ce::Engine::Create([[[NSBundle mainBundle] pathForResource:@"d3" ofType:@"sqlite"] cStringUsingEncoding:NSUTF8StringEncoding]);
+	});
+	return engine;
 }
 
-+ (d3ce::Hero*) addHeroFromDictionary:(NSDictionary*) hero toParty:(d3ce::Party*) party {
-	NSString* className = [hero valueForKey:@"class"];
-	d3ce::Hero* pHero = NULL;
-	if ([className isEqualToString:@"wizard"])
-		pHero = party->addHero(d3ce::ClassMaskWizard);
-	else if ([className isEqualToString:@"monk"])
-		pHero = party->addHero(d3ce::ClassMaskMonk);
-	else if ([className isEqualToString:@"barbarian"])
-		pHero = party->addHero(d3ce::ClassMaskBarbarian);
-	else if ([className isEqualToString:@"demon-hunter"])
-		pHero = party->addHero(d3ce::ClassMaskDemonHunter);
-	else if ([className isEqualToString:@"witch-doctor"])
-		pHero = party->addHero(d3ce::ClassMaskWitchDoctor);
++ (std::shared_ptr<d3ce::Hero>) addHero:(DAHero*) hero toParty:(std::shared_ptr<d3ce::Party>) party {
+	NSString* className = hero.heroClass;
+	std::shared_ptr<d3ce::Hero> pHero = NULL;
+	pHero = party->addHero(static_cast<d3ce::ClassMask>([DAHero heroClassFromString:className]));
 	if (pHero) {
-		pHero->setLevel([[hero valueForKey:@"level"] integerValue]);
-		pHero->setParagonLevel([[hero valueForKey:@"paragonLevel"] integerValue]);
+		pHero->setLevel(hero.level);
+		pHero->setParagonLevel(hero.paragonLevel);
 	}
+	for (DAGear* gear in hero.defaultEquipment.gear)
+		[self addItem:gear.item toHero:pHero slot:static_cast<d3ce::Item::Slot>(gear.slot) replaceExisting:false];
 	return pHero;
 }
 
-+ (d3ce::Gear*) addItemFromDictionary:(NSDictionary*) item toHero:(d3ce::Hero*) hero slot:(d3ce::Item::Slot) slot replaceExisting:(BOOL) replaceExisting {
++ (std::shared_ptr<d3ce::Gear>) addItem:(DAItem*) item toHero:(std::shared_ptr<d3ce::Hero>) hero slot:(d3ce::Item::Slot) slot replaceExisting:(BOOL) replaceExisting {
+	if (!item)
+		return nullptr;
+	
 	try {
-		NSString* itemID = [item valueForKey:@"id"];
-		try {
-			d3ce::Gear* gear = hero->addItem([itemID cStringUsingEncoding:NSUTF8StringEncoding]);
-			gear->setSlot(slot);
-			
-			NSDictionary* attributes = [item valueForKey:@"attributesRaw"];
-			for (NSString* key in [attributes allKeys]) {
-				NSDictionary* attribute = [attributes valueForKey:key];
+		NSString* itemID = item.identifier;
+		std::shared_ptr<d3ce::Gear> gear = hero->addItem([itemID cStringUsingEncoding:NSUTF8StringEncoding]);
+		gear->setSlot(slot);
+		
+		NSDictionary* attributes = item.itemInfo.attributesRaw;
+		[attributes enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+			try {
 				d3ce::Range value;
-				value.min = [[attribute valueForKey:@"min"] floatValue];
-				value.max = [[attribute valueForKey:@"max"] floatValue];
-				gear->getAttribute([key cStringUsingEncoding:NSUTF8StringEncoding])->setValue(value);
+				value.min = [obj[@"min"] floatValue];
+				value.max = [obj[@"max"] floatValue];
+				(*gear)[[key cStringUsingEncoding:NSUTF8StringEncoding]] = value;
+				//NSLog(@"%@ %@ %f", item.name, key, value.min);
 			}
-			
-			for (NSDictionary* gem in [item valueForKey:@"gems"]) {
-				try {
-					gear->addGem([[gem valueForKeyPath:@"item.id"] cStringUsingEncoding:NSUTF8StringEncoding]);
-				}
-				catch(...) {
-					
-				}
+			catch (std::invalid_argument& exception) {
+				NSLog(@"%@ %@", item.name, key);
 			}
-			return gear;
+		}];
+		
+		for (NSDictionary* gemDic in item.itemInfo.gems) {
+			try {
+				auto gem = gear->addGem([gemDic[@"item"][@"id"] cStringUsingEncoding:NSUTF8StringEncoding]);
+				[gemDic[@"attributesRaw"] enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+					d3ce::Range value;
+					value.min = [obj[@"min"] floatValue];
+					value.max = [obj[@"max"] floatValue];
+					(*gem)[[key cStringUsingEncoding:NSUTF8StringEncoding]] = value;
+					//NSLog(@"%@ %f", key, value.min);
+				}];
+			}
+			catch(...) {
+				
+			}
 		}
-		catch (...) {
-			return NULL;
-		}
-
+		return gear;
 	} catch (d3ce::Hero::SlotIsAlreadyFilledException& exception) {
 		if (replaceExisting) {
 			hero->removeItem(hero->getItem(exception.slot));
-			return [self addItemFromDictionary:item toHero:hero slot:slot replaceExisting:NO];
+			return [self addItem:item toHero:hero slot:slot replaceExisting:NO];
 		}
 		else
 			return nil;
 	}
+	catch (...) {
+		return nil;
+	}
+
 }
 
-+ (d3ce::Skill*) addSkillFromDictionary:(NSDictionary*) skill toHero:(d3ce::Hero*) hero {
+/*+ (d3ce::Skill*) addSkillFromDictionary:(NSDictionary*) skill toHero:(d3ce::Hero*) hero {
 	NSString* skillName = [skill valueForKeyPath:@"rune.slug"];
 	if (!skillName)
 		skillName = [skill valueForKeyPath:@"skill.slug"];
@@ -149,6 +161,6 @@
 			break;
 	}
 	return nil;
-}
+}*/
 
 @end

@@ -9,18 +9,18 @@
 #import <Foundation/Foundation.h>
 #import "NSString+D3API.h"
 #import "D3Utility.h"
+#import "D3APIRegion.h"
 
 @interface D3APISession : NSObject
-@property (nonatomic, strong) NSString* host;
-@property (nonatomic, strong) NSString* locale;
-@property (nonatomic, strong) NSString* realm;
+@property (nonatomic, strong, readonly) NSString* locale;
+@property (nonatomic, strong, readonly) D3APIRegion* region;
 
-+ (id) sharedSession;
++ (instancetype) sharedSession;
 + (void) setSharedSession: (D3APISession*) session;
 
-- (id) initWithHost:(NSString*) host locale:(NSString*) locale;
+- (id) initWithRegion:(D3APIRegion*) region locale:(NSString*) locale;
 - (NSDictionary*) careerProfileWithBattleTag:(NSString*) battleTag error:(NSError* __autoreleasing*) error;
-- (NSDictionary*) heroProfileWithBattleTag:(NSString*) battleTag heroID:(NSInteger) heroID error:(NSError* __autoreleasing*) error;
+- (NSDictionary*) heroProfileWithBattleTag:(NSString*) battleTag heroID:(int32_t) heroID error:(NSError* __autoreleasing*) error;
 - (NSDictionary*) itemInfoWithItemID:(NSString*) itemID error:(NSError* __autoreleasing*) error;
 - (NSDictionary*) followerInfoWithFollowerType:(NSString*) followerType error:(NSError* __autoreleasing*) error;
 - (NSDictionary*) artisanInfoWithArtisanType:(NSString*) artisanType error:(NSError* __autoreleasing*) error;
