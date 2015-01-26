@@ -19,6 +19,7 @@
 
 - (void) awakeFromNib {
 	self.hasAds = NO;
+	//return;
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 		//self.gadBannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner origin:CGPointMake(0, 0)];
 		self.gadBannerView = [[GADBannerView alloc] initWithAdSize:GADAdSizeFromCGSize(CGSizeMake(320, 50)) origin:CGPointMake(0, 0)];

@@ -52,7 +52,7 @@
 				//NSLog(@"%@ %@ %f", item.name, key, value.min);
 			}
 			catch (std::invalid_argument& exception) {
-				NSLog(@"%@ %@", item.name, key);
+				//NSLog(@"%@ %@", item.name, key);
 			}
 		}];
 		

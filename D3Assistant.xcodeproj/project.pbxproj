@@ -15,8 +15,6 @@
 		1208823E1A40AE94003F3C2F /* DAProfilesSearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1208823D1A40AE94003F3C2F /* DAProfilesSearchResultsViewController.m */; };
 		120882421A40B12C003F3C2F /* DAProfilesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 120882411A40B12C003F3C2F /* DAProfilesTableViewController.m */; };
 		121FD3CF1A01693000C78249 /* DAHero+DA.mm in Sources */ = {isa = PBXBuildFile; fileRef = 121FD3CE1A01693000C78249 /* DAHero+DA.mm */; };
-		1232F2EB1600670D00EBB2BF /* UIActionSheet+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 1232F2E81600670D00EBB2BF /* UIActionSheet+Block.m */; };
-		1232F2EC1600670D00EBB2BF /* UIAlertView+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 1232F2EA1600670D00EBB2BF /* UIAlertView+Block.m */; };
 		1232F2F2160068EE00EBB2BF /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1232F2F1160068ED00EBB2BF /* StoreKit.framework */; };
 		1242EBE91A434B8500FD488A /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1242EBE81A434B8500FD488A /* CoreImage.framework */; };
 		1242EBED1A43626600FD488A /* DAHeroViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1242EBEC1A43626600FD488A /* DAHeroViewController.mm */; };
@@ -34,7 +32,6 @@
 		1256923A1A26708D008F6468 /* D3APIRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = 125692391A26708D008F6468 /* D3APIRegion.m */; };
 		125692431A38C187008F6468 /* DAProfilesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 125692421A38C187008F6468 /* DAProfilesViewController.m */; };
 		125692461A38C1D5008F6468 /* DAProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 125692451A38C1D5008F6468 /* DAProfileCell.m */; };
-		1259CA4E16085A8D00DAF114 /* MainStoryboard-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1259CA4D16085A8C00DAF114 /* MainStoryboard-iPad.storyboard */; };
 		126C47081A74152E00CE4F14 /* libFlurry_6.0.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 126C47071A74152E00CE4F14 /* libFlurry_6.0.0.a */; };
 		126C47531A74181500CE4F14 /* attributeEnchant.png in Resources */ = {isa = PBXBuildFile; fileRef = 126C470C1A74181500CE4F14 /* attributeEnchant.png */; };
 		126C47541A74181500CE4F14 /* attributePrimary.png in Resources */ = {isa = PBXBuildFile; fileRef = 126C470D1A74181500CE4F14 /* attributePrimary.png */; };
@@ -105,6 +102,7 @@
 		126C47AA1A74DD9C00CE4F14 /* DAGear.m in Sources */ = {isa = PBXBuildFile; fileRef = 126C47A91A74DD9C00CE4F14 /* DAGear.m */; };
 		126C47AE1A74DDFE00CE4F14 /* DAEquipment+DA.m in Sources */ = {isa = PBXBuildFile; fileRef = 126C47AD1A74DDFE00CE4F14 /* DAEquipment+DA.m */; };
 		126C47B01A74FEF900CE4F14 /* ImageAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 126C47AF1A74FEF900CE4F14 /* ImageAssets.xcassets */; };
+		126C47B21A76B25300CE4F14 /* background@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 126C47B11A76B25300CE4F14 /* background@3x.png */; };
 		126FC5191A56EFDE008ADF05 /* DAItemInfoHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 126FC5181A56EFDE008ADF05 /* DAItemInfoHeaderView.m */; };
 		126FC51B1A56EFE9008ADF05 /* DAItemInfoHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 126FC51A1A56EFE9008ADF05 /* DAItemInfoHeaderView.xib */; };
 		126FC5A51A5737D4008ADF05 /* libd3ce.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 126FC5A21A5737D4008ADF05 /* libd3ce.a */; };
@@ -135,8 +133,6 @@
 		12A049CC19E92C8900B1FF1D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12A049CB19E92C8900B1FF1D /* Security.framework */; };
 		12A049CF19EAD63600B1FF1D /* DAHeroesTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A049CE19EAD63600B1FF1D /* DAHeroesTableHeaderView.m */; };
 		12A049D119EAD64C00B1FF1D /* DAHeroesTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12A049D019EAD64C00B1FF1D /* DAHeroesTableHeaderView.xib */; };
-		12A76F3C15F9CF3500B2E9D4 /* UIAlertView+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A76F3B15F9CF3500B2E9D4 /* UIAlertView+Error.m */; };
-		12ACA3A11609BFCA0086ACEE /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12ACA3A01609BFCA0086ACEE /* MainStoryboard.storyboard */; };
 		12B0CAF71A55AEA5007C2728 /* DAItemInfoViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 12B0CAF61A55AEA5007C2728 /* DAItemInfoViewController.mm */; };
 		12B0CB001A55D0AF007C2728 /* UIColor+DA.m in Sources */ = {isa = PBXBuildFile; fileRef = 12B0CAFF1A55D0AF007C2728 /* UIColor+DA.m */; };
 		12B0CB031A55F9A8007C2728 /* DAItemInfoStatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12B0CB021A55F9A8007C2728 /* DAItemInfoStatCell.m */; };
@@ -208,10 +204,6 @@
 		120882411A40B12C003F3C2F /* DAProfilesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAProfilesTableViewController.m; sourceTree = "<group>"; };
 		121FD3CD1A01693000C78249 /* DAHero+DA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DAHero+DA.h"; sourceTree = "<group>"; };
 		121FD3CE1A01693000C78249 /* DAHero+DA.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "DAHero+DA.mm"; sourceTree = "<group>"; };
-		1232F2E71600670D00EBB2BF /* UIActionSheet+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+Block.h"; sourceTree = "<group>"; };
-		1232F2E81600670D00EBB2BF /* UIActionSheet+Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+Block.m"; sourceTree = "<group>"; };
-		1232F2E91600670D00EBB2BF /* UIAlertView+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Block.h"; sourceTree = "<group>"; };
-		1232F2EA1600670D00EBB2BF /* UIAlertView+Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Block.m"; sourceTree = "<group>"; };
 		1232F2F1160068ED00EBB2BF /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		1242EBE81A434B8500FD488A /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		1242EBEB1A43626600FD488A /* DAHeroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAHeroViewController.h; sourceTree = "<group>"; };
@@ -227,8 +219,6 @@
 		124AEF371A01629400E837E3 /* DAHeroCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAHeroCell.m; sourceTree = "<group>"; };
 		124C68F915F887F800353EFB /* NSString+D3API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+D3API.h"; sourceTree = "<group>"; };
 		124C68FA15F887F800353EFB /* NSString+D3API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+D3API.m"; sourceTree = "<group>"; };
-		124C68FD15F88F6D00353EFB /* ProgressionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressionView.h; sourceTree = "<group>"; };
-		124C68FE15F88F6D00353EFB /* ProgressionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressionView.m; sourceTree = "<group>"; };
 		124C694D15F89D7200353EFB /* D3Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3Utility.h; sourceTree = "<group>"; };
 		124C694E15F89D7200353EFB /* D3Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3Utility.m; sourceTree = "<group>"; };
 		124C697515F8CE5800353EFB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -244,7 +234,6 @@
 		125692421A38C187008F6468 /* DAProfilesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAProfilesViewController.m; sourceTree = "<group>"; };
 		125692441A38C1D5008F6468 /* DAProfileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAProfileCell.h; sourceTree = "<group>"; };
 		125692451A38C1D5008F6468 /* DAProfileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAProfileCell.m; sourceTree = "<group>"; };
-		1259CA4D16085A8C00DAF114 /* MainStoryboard-iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "MainStoryboard-iPad.storyboard"; sourceTree = "<group>"; };
 		126C47061A74152E00CE4F14 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
 		126C47071A74152E00CE4F14 /* libFlurry_6.0.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_6.0.0.a; sourceTree = "<group>"; };
 		126C470C1A74181500CE4F14 /* attributeEnchant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = attributeEnchant.png; sourceTree = "<group>"; };
@@ -324,6 +313,7 @@
 		126C47AC1A74DDFE00CE4F14 /* DAEquipment+DA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DAEquipment+DA.h"; sourceTree = "<group>"; };
 		126C47AD1A74DDFE00CE4F14 /* DAEquipment+DA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DAEquipment+DA.m"; sourceTree = "<group>"; };
 		126C47AF1A74FEF900CE4F14 /* ImageAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ImageAssets.xcassets; sourceTree = "<group>"; };
+		126C47B11A76B25300CE4F14 /* background@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@3x.png"; sourceTree = "<group>"; };
 		126FC5171A56EFDE008ADF05 /* DAItemInfoHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAItemInfoHeaderView.h; sourceTree = "<group>"; };
 		126FC5181A56EFDE008ADF05 /* DAItemInfoHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAItemInfoHeaderView.m; sourceTree = "<group>"; };
 		126FC51A1A56EFE9008ADF05 /* DAItemInfoHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DAItemInfoHeaderView.xib; sourceTree = "<group>"; };
@@ -373,9 +363,6 @@
 		12A049CD19EAD63600B1FF1D /* DAHeroesTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAHeroesTableHeaderView.h; sourceTree = "<group>"; };
 		12A049CE19EAD63600B1FF1D /* DAHeroesTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAHeroesTableHeaderView.m; sourceTree = "<group>"; };
 		12A049D019EAD64C00B1FF1D /* DAHeroesTableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DAHeroesTableHeaderView.xib; sourceTree = "<group>"; };
-		12A76F3A15F9CF3500B2E9D4 /* UIAlertView+Error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Error.h"; sourceTree = "<group>"; };
-		12A76F3B15F9CF3500B2E9D4 /* UIAlertView+Error.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Error.m"; sourceTree = "<group>"; };
-		12ACA3A01609BFCA0086ACEE /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		12B0CAF51A55AEA5007C2728 /* DAItemInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAItemInfoViewController.h; sourceTree = "<group>"; };
 		12B0CAF61A55AEA5007C2728 /* DAItemInfoViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DAItemInfoViewController.mm; sourceTree = "<group>"; };
 		12B0CAFE1A55D0AF007C2728 /* UIColor+DA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+DA.h"; path = "../UIColor+DA.h"; sourceTree = "<group>"; };
@@ -569,15 +556,6 @@
 			name = DAGearView;
 			sourceTree = "<group>";
 		};
-		124C68FC15F88F5800353EFB /* ProgressionView */ = {
-			isa = PBXGroup;
-			children = (
-				124C68FD15F88F6D00353EFB /* ProgressionView.h */,
-				124C68FE15F88F6D00353EFB /* ProgressionView.m */,
-			);
-			name = ProgressionView;
-			sourceTree = "<group>";
-		};
 		125692401A38C168008F6468 /* DAProfilesViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -610,6 +588,7 @@
 				126C470F1A74181500CE4F14 /* background-iPad.png */,
 				126C47101A74181500CE4F14 /* background-iPad@2x.png */,
 				126C47111A74181500CE4F14 /* background@2x.png */,
+				126C47B11A76B25300CE4F14 /* background@3x.png */,
 				126C47121A74181500CE4F14 /* background@2x~ipad.png */,
 				126C47131A74181500CE4F14 /* background~ipad.png */,
 				126C47171A74181500CE4F14 /* favoritesOff.png */,
@@ -984,7 +963,6 @@
 				710B9DE8161733E00009ACCE /* D3CEHelper */,
 				12FB05ED15F780DE00AE78E4 /* D3API */,
 				12FB05C715F780CB00AE78E4 /* Utility */,
-				124C68FC15F88F5800353EFB /* ProgressionView */,
 				12FB054B15F7806700AE78E4 /* AppDelegate.h */,
 				12FB054C15F7806700AE78E4 /* AppDelegate.mm */,
 				12FB054315F7806700AE78E4 /* Supporting Files */,
@@ -997,8 +975,6 @@
 			children = (
 				126C470B1A74181500CE4F14 /* Graphics */,
 				718433551617328A004599F4 /* Resources */,
-				1259CA4D16085A8C00DAF114 /* MainStoryboard-iPad.storyboard */,
-				12ACA3A01609BFCA0086ACEE /* MainStoryboard.storyboard */,
 				84ECAABE19E4838200BBE5AF /* Main.storyboard */,
 				1276E41B1A6A6072008B0225 /* Launch Screen.xib */,
 				12FB054415F7806700AE78E4 /* D3Assistant-Info.plist */,
@@ -1027,12 +1003,6 @@
 			children = (
 				12B0CAFE1A55D0AF007C2728 /* UIColor+DA.h */,
 				12B0CAFF1A55D0AF007C2728 /* UIColor+DA.m */,
-				1232F2E71600670D00EBB2BF /* UIActionSheet+Block.h */,
-				1232F2E81600670D00EBB2BF /* UIActionSheet+Block.m */,
-				1232F2E91600670D00EBB2BF /* UIAlertView+Block.h */,
-				1232F2EA1600670D00EBB2BF /* UIAlertView+Block.m */,
-				12A76F3A15F9CF3500B2E9D4 /* UIAlertView+Error.h */,
-				12A76F3B15F9CF3500B2E9D4 /* UIAlertView+Error.m */,
 				71B0AA2515F934F40079F9B9 /* UIColor+NSNumber.h */,
 				71B0AA2615F934F40079F9B9 /* UIColor+NSNumber.m */,
 				1204C6531A658C9E00E8F527 /* NSString+DA.h */,
@@ -1183,6 +1153,7 @@
 				1281F16F1A6C4B44003B4BEA /* DAProfilesHeaderView.xib in Resources */,
 				126C476F1A74181500CE4F14 /* goForward@2x.png in Resources */,
 				126C47751A74181500CE4F14 /* blueHighlighted.png in Resources */,
+				126C47B21A76B25300CE4F14 /* background@3x.png in Resources */,
 				126C477D1A74181500CE4F14 /* whiteHighlighted.png in Resources */,
 				126C47901A74181500CE4F14 /* skillPassiveFrameLarge.png in Resources */,
 				126C476D1A74181500CE4F14 /* gearViewWaist.png in Resources */,
@@ -1210,13 +1181,11 @@
 				126C477E1A74181500CE4F14 /* yellow.png in Resources */,
 				126C47871A74181500CE4F14 /* runeSmallA.png in Resources */,
 				126C475A1A74181500CE4F14 /* background~ipad.png in Resources */,
-				1259CA4E16085A8D00DAF114 /* MainStoryboard-iPad.storyboard in Resources */,
 				126C47661A74181500CE4F14 /* gearViewHead.png in Resources */,
 				126C478B1A74181500CE4F14 /* runeSmallE.png in Resources */,
 				126C478A1A74181500CE4F14 /* runeSmallD.png in Resources */,
 				126C47761A74181500CE4F14 /* brown.png in Resources */,
 				126C47691A74181500CE4F14 /* gearViewNeck.png in Resources */,
-				12ACA3A11609BFCA0086ACEE /* MainStoryboard.storyboard in Resources */,
 				126C47611A74181500CE4F14 /* favoritesOn@2x.png in Resources */,
 				126C47B01A74FEF900CE4F14 /* ImageAssets.xcassets in Resources */,
 				126C47571A74181500CE4F14 /* background-iPad@2x.png in Resources */,
@@ -1294,7 +1263,6 @@
 				12B0CB001A55D0AF007C2728 /* UIColor+DA.m in Sources */,
 				124C694F15F89D7200353EFB /* D3Utility.m in Sources */,
 				71B0AA2715F934F40079F9B9 /* UIColor+NSNumber.m in Sources */,
-				12A76F3C15F9CF3500B2E9D4 /* UIAlertView+Error.m in Sources */,
 				121FD3CF1A01693000C78249 /* DAHero+DA.mm in Sources */,
 				120882421A40B12C003F3C2F /* DAProfilesTableViewController.m in Sources */,
 				12A049CF19EAD63600B1FF1D /* DAHeroesTableHeaderView.m in Sources */,
@@ -1306,8 +1274,6 @@
 				1281F17E1A6EC706003B4BEA /* DABannerView.m in Sources */,
 				12A049C819E9292800B1FF1D /* DATask.m in Sources */,
 				1204C6521A65899C00E8F527 /* DAActiveSkillInfoViewController.m in Sources */,
-				1232F2EB1600670D00EBB2BF /* UIActionSheet+Block.m in Sources */,
-				1232F2EC1600670D00EBB2BF /* UIAlertView+Block.m in Sources */,
 				1204C6601A6836F100E8F527 /* DAItemCell.m in Sources */,
 				126C47A41A74DD9C00CE4F14 /* DAItem.m in Sources */,
 				12B0CB031A55F9A8007C2728 /* DAItemInfoStatCell.m in Sources */,
