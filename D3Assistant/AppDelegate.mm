@@ -7,13 +7,13 @@
 //
 
 #import "AppDelegate.h"
-#import "ProfilesViewController.h"
-#import "EUOperationQueue.h"
-#import "EUActivityView.h"
 #import "UIAlertView+Error.h"
+#import "D3APISession.h"
+#import "Flurry.h"
 
-@interface AppDelegate()
+@interface AppDelegate()<UISplitViewControllerDelegate>
 @property (nonatomic, strong) UIView* donationActivityView;
+@property (nonatomic, strong) UIViewController* activityViewController;
 
 - (void) completeTransaction: (SKPaymentTransaction *)transaction;
 - (void) restoreTransaction: (SKPaymentTransaction *)transaction;
@@ -28,11 +28,45 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-	EUActivityView* activityView = [[EUActivityView alloc] initWithFrame:self.window.rootViewController.view.bounds];
+#if !TARGET_IPHONE_SIMULATOR
+	[Flurry setCrashReportingEnabled:YES];
+	[Flurry startSession:@"TVQZ6RVBYXCMZ9G4YGFP"];
+#endif
+
+	application.statusBarStyle = UIStatusBarStyleLightContent;
+	//EUActivityView* activityView = [[EUActivityView alloc] initWithFrame:self.window.rootViewController.view.bounds];
+	UISplitViewController* controller = (UISplitViewController*) self.window.rootViewController;
+	controller.delegate = self;
+	if (controller.displayMode != UISplitViewControllerDisplayModeAllVisible)
+		[[controller.viewControllers[1] viewControllers][0] navigationItem].leftBarButtonItem = controller.displayModeButtonItem;
+
+	//controller.preferredDisplayMode = UISplitViewControllerDisplayModePrimaryOverlay;
+	
 	[self.window makeKeyAndVisible];
-	[self.window addSubview:activityView];
+	//[self.window addSubview:activityView];
+	self.activityViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"DAActivityViewController"];
+	self.activityViewController.view.frame = self.window.bounds;
+	[self.window addSubview:self.activityViewController.view];
 	
 	[[SKPaymentQueue defaultQueue] addTransactionObserver:self];
+	
+	D3APIRegion* region = [D3APIRegion regionWithIdentifier:[[NSUserDefaults standardUserDefaults] valueForKey:DASettingsRegionKey]];
+	if (!region) {
+		UIAlertController* alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Choose your region", nil) message:nil preferredStyle:UIAlertControllerStyleAlert];
+		for (D3APIRegion* region in [D3APIRegion allRegions]) {
+			UIAlertAction* action = [UIAlertAction actionWithTitle:region.name style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+				D3APISession* session = [[D3APISession alloc] initWithRegion:region locale:[NSLocale preferredLanguages][0]];
+				[D3APISession setSharedSession:session];
+				[[NSUserDefaults standardUserDefaults] setValue:region.identifier forKey:DASettingsRegionKey];
+			}];
+			[alertController addAction:action];
+		}
+		[self.window.rootViewController presentViewController:alertController animated:YES completion:nil];
+	}
+	else {
+		D3APISession* session = [[D3APISession alloc] initWithRegion:region locale:[NSLocale preferredLanguages][0]];
+		[D3APISession setSharedSession:session];
+	}
     return YES;
 }
 
@@ -98,6 +132,33 @@
 				break;
 		}
 	}
+}
+
+#pragma mark - UISplitViewControllerDelegate
+
+- (BOOL)splitViewController:(UISplitViewController *)splitViewController showDetailViewController:(UIViewController *)vc sender:(id)sender {
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+		UINavigationController* navigationController = [[splitViewController.viewControllers[0] childViewControllers] lastObject];
+		[navigationController pushViewController:vc animated:YES];
+		return YES;
+	}
+	else
+		return NO;
+}
+
+- (BOOL)splitViewController:(UISplitViewController *)splitViewController collapseSecondaryViewController:(UIViewController *)secondaryViewController ontoPrimaryViewController:(UIViewController *)primaryViewController {
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+		return YES;
+	else
+		return NO;
+}
+
+- (void) splitViewController:(UISplitViewController *)svc willChangeToDisplayMode:(UISplitViewControllerDisplayMode)displayMode {
+	if (displayMode == UISplitViewControllerDisplayModeAllVisible) {
+		[[svc.viewControllers[1] viewControllers][0] navigationItem].leftBarButtonItem = nil;
+	}
+	else
+		[[svc.viewControllers[1] viewControllers][0] navigationItem].leftBarButtonItem = svc.displayModeButtonItem;
 }
 
 #pragma mark - Private

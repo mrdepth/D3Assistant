@@ -7,11 +7,12 @@
 //
 
 #import "D3APISession.h"
-#import "SBJSON.h"
 
 static D3APISession* sharedSession;
 
 @interface D3APISession()
+@property (nonatomic, strong, readwrite) NSString* locale;
+@property (nonatomic, strong, readwrite) D3APIRegion* region;
 
 - (NSDictionary*) sendRequestWithPath:(NSString*) path error:(NSError* __autoreleasing*) error;
 
@@ -19,7 +20,7 @@ static D3APISession* sharedSession;
 
 @implementation D3APISession
 
-+ (id) sharedSession {
++ (instancetype) sharedSession {
 	@synchronized(self) {
 		return sharedSession;
 	}
@@ -28,13 +29,14 @@ static D3APISession* sharedSession;
 + (void) setSharedSession: (D3APISession*) session {
 	@synchronized(self) {
 		sharedSession = session;
+		[[NSNotificationCenter defaultCenter] postNotificationName:DADidChangeRegionNotification object:nil];
 	}
 }
 
 
-- (id) initWithHost:(NSString*) host locale:(NSString*) locale {
+- (id) initWithRegion:(D3APIRegion*) region locale:(NSString*) locale {
 	if (self = [super init]) {
-		self.host = host;
+		self.region = region;
 		self.locale = locale;
 	}
 	return self;
@@ -44,7 +46,7 @@ static D3APISession* sharedSession;
 	return [self sendRequestWithPath:[NSString stringWithFormat:@"profile/%@/index", [battleTag validBattleTagURLString]] error:error];
 }
 
-- (NSDictionary*) heroProfileWithBattleTag:(NSString*) battleTag heroID:(NSInteger) heroID error:(NSError* __autoreleasing*) error {
+- (NSDictionary*) heroProfileWithBattleTag:(NSString*) battleTag heroID:(int32_t) heroID error:(NSError* __autoreleasing*) error {
 	return [self sendRequestWithPath:[NSString stringWithFormat:@"profile/%@/hero/%d", [battleTag validBattleTagURLString], heroID] error:error];
 }
 
@@ -77,14 +79,12 @@ static D3APISession* sharedSession;
 #pragma mark - Private
 
 - (NSDictionary*) sendRequestWithPath:(NSString*) path error:(NSError* __autoreleasing*) error {
-	NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/api/d3/%@%@", self.host, path, (self.locale ? [NSString stringWithFormat:@"?locale=%@", self.locale] : @"")]];
+	NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/api/d3/%@%@", self.region.host, path, (self.locale ? [NSString stringWithFormat:@"?locale=%@", self.locale] : @"")]];
 	
 	NSHTTPURLResponse* response = nil;
 	NSData* data = [NSURLConnection sendSynchronousRequest:[NSURLRequest requestWithURL:url] returningResponse:&response error:error];
 	if (data) {
-		NSString* s = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-		SBJsonParser* parser = [[SBJsonParser alloc] init];
-		NSDictionary* result = [parser objectWithString:s];
+		NSDictionary* result = [NSJSONSerialization JSONObjectWithData:data options:0 error:error];
 		
 		if ([result isKindOfClass:[NSDictionary class]]) {
 			NSString* reason = [result valueForKey:@"reason"];
@@ -95,8 +95,11 @@ static D3APISession* sharedSession;
 			}
 			return result;
 		}
-		else if (error)
-			*error = [NSError errorWithDomain:@"D3" code:0 userInfo:@{NSLocalizedDescriptionKey: s}];
+		else if (error) {
+			NSString* s = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+			if (s)
+				*error = [NSError errorWithDomain:@"D3" code:0 userInfo:@{NSLocalizedDescriptionKey: s}];
+		}
 		return nil;
 	}
 	return nil;

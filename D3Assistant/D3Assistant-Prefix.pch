@@ -13,6 +13,7 @@
 	#import <Foundation/Foundation.h>
 	#import <QuartzCore/QuartzCore.h>
 	#import <StoreKit/StoreKit.h>
+    #import <CoreData/CoreData.h>
 #endif
 
 #define HeroSCNameColor 0xcb6501ff
@@ -31,3 +32,6 @@
 #define ItemGreenBorderHighlightedColor 0x96b84fff
 
 #define DidChangeRealmNotification @"DidChangeRealmNotification"
+
+#define DASettingsRegionKey @"DASettingsRegionKey"
+#define DADidChangeRegionNotification @"DADidChangeRegionNotification"
